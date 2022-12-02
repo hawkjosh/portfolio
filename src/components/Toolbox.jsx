@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 import {
   Avatar,
@@ -6,7 +6,7 @@ import {
   createTheme,
   Tooltip,
   ThemeProvider
-} from '@mui/material';
+} from '@mui/material'
 
 import Apollo from '../assets/img/toolbox/apollo.png';
 import Babel from '../assets/img/toolbox/babel.png';
@@ -51,7 +51,7 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
 
 const icons = [
   {
@@ -166,9 +166,10 @@ const icons = [
     name: 'WebPack',
     picture: WebPack
   }
-];
+]
 
 export default function App() {
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -194,30 +195,15 @@ export default function App() {
                 background: 'transparent',
                 width: {
                   xxs: '17.5%',
-                  xs: '17.5%',
-                  sm: '17.5%',
-                  md: '10.85%',
-                  lg: '10.85%',
-                  xl: '10.85%',
-                  xxl: '10.85%',
+                  md: '10.85%'
                 },
                 padding: {
                   xxs: '2.75%',
-                  xs: '2.75%',
-                  sm: '2.75%',
-                  md: '2%',
-                  lg: '2%',
-                  xl: '2%',
-                  xxl: '2%'
+                  md: '2%'
                 },
                 marginX: {
                   xxs: '1.75%',
-                  xs: '1.75%',
-                  sm: '1.75%',
-                  md: '1%',
-                  lg: '1%',
-                  xl: '1%',
-                  xxl: '1%'
+                  md: '1%'
                 }
               }}>
             </Avatar>
@@ -226,4 +212,4 @@ export default function App() {
       </Box>
     </ThemeProvider>
   )
-};
+}

@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import noteTaker from '../assets/img/portfolio/note_taker.png';
+import noteTaker from '../assets/img/portfolio/note_taker.png'
 
 import {
   Box,
   createTheme,
   ThemeProvider,
-  Typography,
-} from '@mui/material';
+  Typography
+} from '@mui/material'
 
 const theme = createTheme({
   breakpoints: {
@@ -23,9 +23,10 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
 
 export default function App() {
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -41,14 +42,16 @@ export default function App() {
           src={noteTaker}
           alt="Note Taker App"
           sx={{
+            border: '4px solid white',
+            borderRadius: '10px',
+            marginBottom: {
+              md: '0.75rem'
+            },
             width: {
               xxs: '90%',
-              xs: '90%',
-              sm: '90%',
               md: '75%',
               lg: '65%',
-              xl: '60%',
-              xxl: '60%'
+              xl: '60%'
             }
           }}
         />
@@ -57,12 +60,9 @@ export default function App() {
             color: 'white',
             width: {
               xxs: '90%',
-              xs: '90%',
-              sm: '90%',
               md: '75%',
               lg: '65%',
-              xl: '60%',
-              xxl: '60%'
+              xl: '60%'
             },
             marginTop: '1.25rem',
             textAlign: 'justify',
@@ -100,5 +100,5 @@ export default function App() {
         </Typography>
       </Box>
     </ThemeProvider>
-  );
+  )
 }

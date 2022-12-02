@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 import {
   Box,
@@ -22,65 +22,21 @@ import {
   ThemeProvider,
   Toolbar,
   Typography
-} from '@mui/material';
+} from '@mui/material'
 
-import MuiAppBar from '@mui/material/AppBar';
+import MuiAppBar from '@mui/material/AppBar'
 
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
-import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone';
-import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
-import FolderSpecialTwoToneIcon from '@mui/icons-material/FolderSpecialTwoTone';
-import MenuIcon from '@mui/icons-material/Menu';
-import DescriptionIcon from '@mui/icons-material/Description';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone'
+import HomeTwoToneIcon from '@mui/icons-material/HomeTwoTone'
+import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone'
+import FolderSpecialTwoToneIcon from '@mui/icons-material/FolderSpecialTwoTone'
+import MenuIcon from '@mui/icons-material/Menu'
+import DescriptionIcon from '@mui/icons-material/Description'
 
-import Footer from './Footer.jsx';
+import Footer from './Footer.jsx'
 
-const drawerWidth = 200;
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    }),
-  }),
-);
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-  transition: theme.transitions.create(['margin', 'width'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-}));
+const drawerWidth = 200
 
 const theme = createTheme({
   breakpoints: {
@@ -96,7 +52,51 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
+
+const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
+  ({ theme, open }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    }),
+    marginLeft: `-${drawerWidth}px`,
+    ...(open && {
+      transition: theme.transitions.create('margin', {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen
+      }),
+      marginLeft: 0,
+    })
+  })
+)
+
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  transition: theme.transitions.create(['margin', 'width'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen
+  }),
+  ...(open && {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: `${drawerWidth}px`,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen
+    })
+  })
+}))
+
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end'
+}))
 
 const menu = [
   {
@@ -122,13 +122,12 @@ const menu = [
 ]
 
 export default function App() {
-  const [open, setOpen] = React.useState(false);
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+
+  const [open, setOpen] = React.useState(false)
+
+  const handleDrawerOpen = () => setOpen(true)
+
+  const handleDrawerClose = () => setOpen(false)
 
   return (
     <ThemeProvider theme={theme}>
@@ -243,5 +242,5 @@ export default function App() {
         </Main>
       </Box>
     </ThemeProvider>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import myAvatar from '../assets/img/my_avataaars.svg';
+import myAvatar from '../assets/img/my_avataaars.svg'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
   Box,
@@ -10,7 +10,7 @@ import {
   Divider,
   ThemeProvider,
   Typography
-} from '@mui/material';
+} from '@mui/material'
 
 const theme = createTheme({
   breakpoints: {
@@ -29,9 +29,10 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
 
 export default function App() {
+
   return (
     <ThemeProvider theme={theme}>
       <Box style={{ textAlign: 'center' }}>
@@ -67,7 +68,6 @@ export default function App() {
             marginTop: {
               xxs: '1.5rem',
               sm: '0.75rem',
-              md: '0.75rem',
               lg: '1.5rem',
               xl: '0rem'
             }
@@ -84,8 +84,7 @@ export default function App() {
               xxs: '9%',
               sm: '8%',
               md: '10%',
-              lg: '5%',
-              xl: '5%'
+              lg: '5%'
             },
             marginTop: {
               xxs: '1.75rem',
@@ -118,11 +117,7 @@ export default function App() {
               md: '12.5%',
               lg: '5%'
             },
-            marginBottom: {
-              xxs: '3.5rem',
-              // xs: '0.5rem',
-              // xxl: '3rem'
-            },
+            marginBottom: '3.5rem',
             flexDirection: {
               xxs: 'column',
               md: 'row'
@@ -145,11 +140,8 @@ export default function App() {
               },
               marginTop: {
                 xxs: '0rem',
-                xs: '0rem',
-                sm: '0rem',
                 md: '2rem',
-                lg: '0rem',
-                xl: '0rem'
+                lg: '0rem'
               }
             }}
           >
@@ -166,8 +158,6 @@ export default function App() {
                 },
                 lineHeight: {
                   xxs: '2.5rem',
-                  sm: '2.5rem',
-                  md: '2.5rem',
                   lg: '2.75rem',
                   xl: '3rem',
                   xxl: '3.5rem'
@@ -208,8 +198,7 @@ export default function App() {
                 xxs: '1.5rem',
                 sm: '1.25rem',
                 md: '2rem',
-                lg: '0rem',
-                xl: '0rem'
+                lg: '0rem'
               }
             }}
           >
@@ -226,8 +215,6 @@ export default function App() {
                 },
                 lineHeight: {
                   xxs: '2.5rem',
-                  sm: '2.5rem',
-                  md: '2.5rem',
                   lg: '2.75rem',
                   xl: '3rem',
                   xxl: '3.5rem'
@@ -266,9 +253,7 @@ export default function App() {
                 md1: '-0.75rem',
                 md2: '-2.25rem',
                 md3: '-3.75rem',
-                lg: '0rem',
-                xl: '0rem',
-                xxl: '0rem'
+                lg: '0rem'
               }
             }}
           >
@@ -285,8 +270,6 @@ export default function App() {
                 },
                 lineHeight: {
                   xxs: '2.5rem',
-                  sm: '2.5rem',
-                  md: '2.5rem',
                   lg: '2.75rem',
                   xl: '3rem',
                   xxl: '3.5rem'
@@ -314,5 +297,5 @@ export default function App() {
         </Box>
       </Box>
     </ThemeProvider>
-  );
+  )
 }

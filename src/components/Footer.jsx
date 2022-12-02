@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
   Box,
@@ -10,7 +10,7 @@ import {
   Stack,
   ThemeProvider,
   Typography
-} from '@mui/material';
+} from '@mui/material'
 
 const theme = createTheme({
   breakpoints: {
@@ -26,7 +26,7 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
 
 const icons = [
   {
@@ -44,6 +44,7 @@ const icons = [
 ]
 
 export default function App() {
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -61,14 +62,16 @@ export default function App() {
             xxs: 'auto',
             lg: '10vh'
           }
-        }}>
+        }}
+      >
         <Container
           sx={{
             display: {
               xxs: 'none',
               lg: 'block'
             }
-          }}>
+          }}
+        >
           <Typography
             sx={{
               fontSize: {
@@ -76,7 +79,8 @@ export default function App() {
                 xl: '1.75rem',
                 xxl: '2rem'
               }
-            }}>
+            }}
+          >
             © 2022 Joshua Wilde Hawk
           </Typography>
         </Container>
@@ -86,7 +90,8 @@ export default function App() {
           spacing={2}
           sx={{
             paddingY: '0.25rem'
-          }}>
+          }}
+        >
           {icons.map((icon) => (
             <Button
               href={icon.link}
@@ -94,11 +99,12 @@ export default function App() {
               rel='noreferrer'>
               <FontAwesomeIcon
                 className='footer-link-icon'
-                icon={icon.image} />
+                icon={icon.image}
+              />
             </Button>
           ))}
         </Stack>
       </Box>
     </ThemeProvider>
-  );
+  )
 }

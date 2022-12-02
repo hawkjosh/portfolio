@@ -1,26 +1,11 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import socialNetwork from '../assets/img/portfolio/social_network.png';
-import messageForum from '../assets/img/portfolio/message_forum.png';
-import songSearch from '../assets/img/portfolio/song_search.png';
-import noteTaker from '../assets/img/portfolio/note_taker.png';
-import weatherDashboard from '../assets/img/portfolio/weather_dashboard.png';
-import workdayScheduler from '../assets/img/portfolio/workday_scheduler.png';
-
-import PortfolioDialog1 from '../components/PortfolioDialog1.jsx';
-import PortfolioDialog2 from '../components/PortfolioDialog2.jsx';
-import PortfolioDialog3 from '../components/PortfolioDialog3.jsx';
-import PortfolioDialog4 from '../components/PortfolioDialog4.jsx';
-import PortfolioDialog5 from '../components/PortfolioDialog5.jsx';
-import PortfolioDialog6 from '../components/PortfolioDialog6.jsx';
-
-import GroupIcon from '@mui/icons-material/Group';
-import ChatIcon from '@mui/icons-material/Chat';
-import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import CreateIcon from '@mui/icons-material/Create';
-import ThunderstormIcon from '@mui/icons-material/Thunderstorm';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import CloseIcon from '@mui/icons-material/Close';
+import socialNetwork from '../assets/img/portfolio/social_network.png'
+import messageForum from '../assets/img/portfolio/message_forum.png'
+import songSearch from '../assets/img/portfolio/song_search.png'
+import noteTaker from '../assets/img/portfolio/note_taker.png'
+import weatherDashboard from '../assets/img/portfolio/weather_dashboard.png'
+import workdayScheduler from '../assets/img/portfolio/workday_scheduler.png'
 
 import {
   Box,
@@ -33,7 +18,22 @@ import {
   IconButton,
   ThemeProvider,
   Typography
-} from '@mui/material';
+} from '@mui/material'
+
+import GroupIcon from '@mui/icons-material/Group'
+import ChatIcon from '@mui/icons-material/Chat'
+import LibraryMusicIcon from '@mui/icons-material/LibraryMusic'
+import CreateIcon from '@mui/icons-material/Create'
+import ThunderstormIcon from '@mui/icons-material/Thunderstorm'
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import CloseIcon from '@mui/icons-material/Close'
+
+import PortfolioDialog1 from '../components/PortfolioDialog1.jsx'
+import PortfolioDialog2 from '../components/PortfolioDialog2.jsx'
+import PortfolioDialog3 from '../components/PortfolioDialog3.jsx'
+import PortfolioDialog4 from '../components/PortfolioDialog4.jsx'
+import PortfolioDialog5 from '../components/PortfolioDialog5.jsx'
+import PortfolioDialog6 from '../components/PortfolioDialog6.jsx'
 
 const theme = createTheme({
   breakpoints: {
@@ -49,54 +49,98 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
+
+const buttonSX = {
+  color: 'white',
+  borderColor: 'white',
+  marginX: {
+    xxs: '0.5rem',
+    md: '2rem',
+    lg: '4rem',
+  },
+  fontSize: {
+    xxs: '0.65rem',
+    xs: '0.95rem',
+    sm: '1.25rem',
+    md: '1.75rem',
+    lg: '2rem',
+    xl: '2.25rem',
+    xxl: '2.5rem'
+  },
+  '&:hover':{
+    color: 'var(--primary)',
+    borderColor: 'var(--primary)'
+  }
+}
 
 export default function App() {
-  const [openDialog1, setOpenDialog1] = React.useState(false);
-  const [openDialog2, setOpenDialog2] = React.useState(false);
-  const [openDialog3, setOpenDialog3] = React.useState(false);
-  const [openDialog4, setOpenDialog4] = React.useState(false);
-  const [openDialog5, setOpenDialog5] = React.useState(false);
-  const [openDialog6, setOpenDialog6] = React.useState(false);
+
+  const [openDialog1, setOpenDialog1] = React.useState(false)
+
+  const [openDialog2, setOpenDialog2] = React.useState(false)
+
+  const [openDialog3, setOpenDialog3] = React.useState(false)
+
+  const [openDialog4, setOpenDialog4] = React.useState(false)
+
+  const [openDialog5, setOpenDialog5] = React.useState(false)
+
+  const [openDialog6, setOpenDialog6] = React.useState(false)
   
-  const [scrollDialog1, setScrollDialog1] =React.useState();
-  const [scrollDialog2, setScrollDialog2] =React.useState();
-  const [scrollDialog3, setScrollDialog3] =React.useState();
-  const [scrollDialog4, setScrollDialog4] =React.useState();
-  const [scrollDialog5, setScrollDialog5] =React.useState();
-  const [scrollDialog6, setScrollDialog6] =React.useState();
+  const [scrollDialog1, setScrollDialog1] =React.useState()
+
+  const [scrollDialog2, setScrollDialog2] =React.useState()
+
+  const [scrollDialog3, setScrollDialog3] =React.useState()
+
+  const [scrollDialog4, setScrollDialog4] =React.useState()
+
+  const [scrollDialog5, setScrollDialog5] =React.useState()
+
+  const [scrollDialog6, setScrollDialog6] =React.useState()
 
   const handleOpenDialog1 = () => {
-    setOpenDialog1(true);
-    setScrollDialog1('body');
-  }
-  const handleOpenDialog2 = () => {
-    setOpenDialog2(true);
-    setScrollDialog2('body');
-  }
-  const handleOpenDialog3 = () => {
-    setOpenDialog3(true);
-    setScrollDialog3('body');
-  }
-  const handleOpenDialog4 = () => {
-    setOpenDialog4(true);
-    setScrollDialog4('body');
-  }
-  const handleOpenDialog5 = () => {
-    setOpenDialog5(true);
-    setScrollDialog5('body');
-  }
-  const handleOpenDialog6 = () => {
-    setOpenDialog6(true);
-    setScrollDialog6('body');
+    setOpenDialog1(true)
+    setScrollDialog1('body')
   }
 
-  const handleCloseDialog1 = () => setOpenDialog1(false);
-  const handleCloseDialog2 = () => setOpenDialog2(false);
-  const handleCloseDialog3 = () => setOpenDialog3(false);
-  const handleCloseDialog4 = () => setOpenDialog4(false);
-  const handleCloseDialog5 = () => setOpenDialog5(false);
-  const handleCloseDialog6 = () => setOpenDialog6(false);
+  const handleOpenDialog2 = () => {
+    setOpenDialog2(true)
+    setScrollDialog2('body')
+  }
+
+  const handleOpenDialog3 = () => {
+    setOpenDialog3(true)
+    setScrollDialog3('body')
+  }
+
+  const handleOpenDialog4 = () => {
+    setOpenDialog4(true)
+    setScrollDialog4('body')
+  }
+
+  const handleOpenDialog5 = () => {
+    setOpenDialog5(true)
+    setScrollDialog5('body')
+  }
+
+  const handleOpenDialog6 = () => {
+    setOpenDialog6(true)
+    setScrollDialog6('body')
+  }
+
+  const handleCloseDialog1 = () => setOpenDialog1(false)
+
+  const handleCloseDialog2 = () => setOpenDialog2(false)
+
+  const handleCloseDialog3 = () => setOpenDialog3(false)
+
+  const handleCloseDialog4 = () => setOpenDialog4(false)
+
+  const handleCloseDialog5 = () => setOpenDialog5(false)
+
+  const handleCloseDialog6 = () => setOpenDialog6(false)
 
   const samples = [
     {
@@ -220,7 +264,6 @@ export default function App() {
       >
         Work Samples
       </Typography>
-
       <Box
         sx={{
           display: 'flex',
@@ -231,7 +274,6 @@ export default function App() {
         }}
         gap={4}
       >
-
         {samples.map((sample) => (
           <Box
             onClick={sample.click}
@@ -266,11 +308,7 @@ export default function App() {
                 fontSize: {
                   xxs: 15,
                   xs: 20,
-                  sm: 20,
-                  md: 20,
-                  lg: 25,
-                  xl: 25,
-                  xxl: 25
+                  lg: 25
                 },
                 width: '100%',
                 color: 'var(--secondary)',
@@ -317,9 +355,7 @@ export default function App() {
             </Box>
           </Box>
         ))}
-
       </Box>
-
       {windows.map((window) => (
         <Dialog
           open={window.open}
@@ -380,40 +416,20 @@ export default function App() {
               }}
             >
               <Button
+                variant='outlined'
                 href={window.website}
                 target='_blank'
                 rel='noreferrer'
-                sx={{
-                  color: 'white',
-                  fontSize: {
-                    xxs: '1rem',
-                    xs: '1.25rem',
-                    sm: '1.5rem',
-                    md: '1.75rem',
-                    lg: '2rem',
-                    xl: '2.25rem',
-                    xxl: '2.5rem'
-                  }
-                }}
+                sx={buttonSX}
               >
                 Web App
               </Button>
               <Button
+                variant='outlined'
                 href={window.github}
                 target='_blank'
                 rel='noreferrer'
-                sx={{
-                  color: 'white',
-                  fontSize: {
-                    xxs: '1rem',
-                    xs: '1.25rem',
-                    sm: '1.5rem',
-                    md: '1.75rem',
-                    lg: '2rem',
-                    xl: '2.25rem',
-                    xxl: '2.5rem'
-                  }
-                }}
+                sx={buttonSX}
               >
                 GitHub Repo
               </Button>
@@ -422,5 +438,5 @@ export default function App() {
         </Dialog>
       ))}
     </ThemeProvider>
-  );
+  )
 }

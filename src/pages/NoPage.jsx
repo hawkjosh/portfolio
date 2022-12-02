@@ -1,11 +1,12 @@
-import * as React from 'react';
+import * as React from 'react'
 
 import {
   Alert,
+  AlertTitle,
   Box,
   createTheme,
-  ThemeProvider,
-} from '@mui/material';
+  ThemeProvider
+} from '@mui/material'
 
 const theme = createTheme({
   breakpoints: {
@@ -15,25 +16,45 @@ const theme = createTheme({
       xs: 375,
       sm: 425,
       md: 768,
-      md1: 832,
-      md2: 896,
-      md3: 960,
       // Breakpoints below change to horizontal layout
       lg: 1024,
       xl: 1440,
       xxl: 1620
     }
   }
-});
+})
 
 export default function App() {
+
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh'}}>
-        <Alert variant='outlined' severity='error'>
-          404 Error Page
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '50vh'
+        }}
+      >
+        <Alert
+          variant='outlined'
+          severity='error'
+          sx={{
+            width: '50%',
+            fontSize: '1.5rem'
+          }}
+        >
+          <AlertTitle
+            sx={{
+              fontSize: '2.5rem',
+              textAlign: 'center'
+            }}
+          >
+            404 Error
+          </AlertTitle>
+          Something seems to have gone wrong, sorry about that! Please click <a href='/' style={{color: 'red'}}>HERE</a> to return to my portfolio.
         </Alert>
       </Box>
     </ThemeProvider>
-  );
+  )
 }

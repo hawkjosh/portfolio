@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import ProfilePic from '../assets/img/profile_photo.jpg';
+import ProfilePic from '../assets/img/profile_photo.jpg'
 
 import {
   Box,
@@ -10,11 +10,11 @@ import {
   DialogActions,
   ThemeProvider,
   Typography
-} from '@mui/material';
+} from '@mui/material'
 
-import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
+import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService'
 
-import Toolbox from '../components/Toolbox.jsx';
+import Toolbox from '../components/Toolbox.jsx'
 
 const theme = createTheme({
   breakpoints: {
@@ -30,16 +30,20 @@ const theme = createTheme({
       xxl: 1620
     }
   }
-});
+})
 
 export default function App() {
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] =React.useState();
+
+  const [open, setOpen] = React.useState(false)
+
+  const [scroll, setScroll] =React.useState()
+
   const handleOpen = () => {
-    setOpen(true);
-    setScroll('body');
+    setOpen(true)
+    setScroll('body')
   }
-  const handleClose = () => setOpen(false);
+
+  const handleClose = () => setOpen(false)
 
   return (
     <ThemeProvider theme={theme}>
@@ -79,12 +83,10 @@ export default function App() {
             // Below adjust picture size at different breakpoints
             width: {
               xxs: '85%',
-              xs: '85%',
               sm: '80%',
               md: '60%',
               lg: '40%',
-              xl: '35%',
-              xxl: '35%'
+              xl: '35%'
             },
             // Below adds spacing between picture and text when in vertical layout
             marginBottom: {
@@ -104,12 +106,10 @@ export default function App() {
             alignItems: 'center',
             width: {
               xxs: '100%',
-              xs: '100%',
               sm: '95%',
               md: '85%',
               lg: '60%',
-              xl: '65%',
-              xxl: '65%'
+              xl: '65%'
             },
           }}
         >
@@ -199,7 +199,7 @@ export default function App() {
                   sm: '1.35rem',
                   md: '1.4rem',
                   lg: '1.25rem',
-                  xl: '1.55rem',
+                  xl: '1.5rem',
                   xxl: '1.55rem'
                 },
                 lineHeight: {
@@ -238,7 +238,11 @@ export default function App() {
       </Box>
       <Box
         sx={{
-          width: {xxs: '175px', md: '225px', lg: '250px'},
+          width: {
+            xxs: '175px',
+            md: '225px',
+            lg: '250px'
+          },
           marginX: 'auto',
           marginBottom: {
             xxs: '3.25rem',
@@ -309,5 +313,5 @@ export default function App() {
         </DialogActions>
       </Dialog>
     </ThemeProvider>
-  );
+  )
 }

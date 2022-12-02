@@ -14,7 +14,7 @@ Main {
   margin: 0rem auto;
   padding: 0rem;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   font-weight: var(--font-weight);
