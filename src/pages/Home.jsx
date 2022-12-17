@@ -18,299 +18,382 @@ const theme = createTheme({
   breakpoints: {
     values: {
       // Breakpoints below use vertical layout
-      xxs: 0,     // Change to 'zero'
-      xs: 375,     // DELETE THIS ONE
-      sm: 428,     // Change to 'mobile'
-      md: 768,     // Change to 'tabletSmall'
-      tabletLarge: 820,     // ADD THIS ONE
+      zero: 0,
+      mobile: 428,
+      tabletSmall: 768,
+      tabletLarge: 820,
       // Breakpoints below change to horizontal layout
-      lg: 1024,     // Change to 'laptopSmall: 1263'
-      xl: 1440,     // Change to 'laptopLarge: 1519'
-      xxl: 1620     // DELETE THIS ONE
+      laptopSmall: 1263,
+      laptopLarge: 1519
     }
   }
 })
 
-// const Laptop = ({ children }) => {
-//   const isLaptop = useMediaQuery({ minWidth: 1000 })
-//   return isLaptop ? children : null
-// }
+const Laptop = ({ children }) => {
+  const isLaptop = useMediaQuery({ minWidth: 1000 })
+  return isLaptop ? children : null
+}
 
-// const Tablet = ({ children }) => {
-//   const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
-//   return isTablet ? children : null
-// }
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  return isTablet ? children : null
+}
 
-// const Mobile = ({ children }) => {
-//   const isMobile = useMediaQuery({ maxWidth: 550 })
-//   return isMobile ? children : null
-// }
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 550 })
+  return isMobile ? children : null
+}
 
 export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box style={{ textAlign: 'center' }}>
+
+      {/* for laptop/desktop displays (horizontal layout) */}
+
+      <Laptop>
         <Box
-          component='img'
-          src={myAvatar}
-          alt='Josh Hawk Avatar'
-          sx={{
-            width: {
-              xxs: '70%',
-              xs: '60%',
-              sm: '55%',
-              md: '35%',
-              lg: '30%',
-              xl: '25%',
-              xxl: '27.5%'
-            },
-          }}
-        />
-  
-        <Typography
-          sx={{
-            fontSize: {
-              xxs: '2.25rem',
-              xs: '2.75rem',
-              sm: '3.25rem',
-              md: '4.25rem',
-              lg: '5.5rem',
-              xl: '6rem'
-            },
-            fontWeight: 'bold',
-            textTransform: 'uppercase',
-            marginTop: {
-              xxs: '1.5rem',
-              sm: '0.75rem',
-              lg: '1.5rem',
-              xl: '0rem'
-            }
-          }}
-        >
-          Josh Hawk
-        </Typography>
-  
-        <Divider
-          sx={{
-            background: 'white',
-            borderBottomWidth: 2,
-            marginX: {
-              xxs: '9%',
-              sm: '8%',
-              md: '10%',
-              lg: '5%'
-            },
-            marginTop: {
-              xxs: '1.75rem',
-              sm: '1.25rem',
-              md: '1rem',
-              lg: '1.5rem',
-              xl: '1rem',
-              xxl: '3rem'
-            },
-            marginBottom: {
-              xxs: '2.5rem',
-              sm: '2.25rem',
-              md: '0.5rem',
-              lg: '3rem',
-              xl: '2.5rem',
-              xxl: '4rem'
-            }
-          }}
-        />
-  
-        <Box
-          sx={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            marginX: {
-              xxs: '2.5%',
-              xs: '5%',
-              md: '12.5%',
-              lg: '5%'
-            },
-            marginBottom: '3.5rem',
-            flexDirection: {
-              xxs: 'column',
-              md: 'row'
-            }
-          }}
-        >
+          style={{ textAlign: 'center' }}
+          >
+          <Box
+            component='img'
+            src={myAvatar}
+            alt='Josh Hawk Avatar'
+            sx={{ width: '25%' }}
+          />
+    
+          <Typography
+            sx={{
+              fontSize: { laptopSmall: '5.5rem', laptopLarge: '6rem' },
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              marginTop: { laptopSmall: '1.5rem', laptopLarge: '0rem' }
+            }}
+            >
+            Josh Hawk
+          </Typography>
+    
+          <Divider
+            sx={{
+              background: 'white',
+              borderBottomWidth: 2,
+              marginX: '5%',
+              marginTop: { laptopSmall: '1.5rem', laptopLarge: '1rem' },
+              marginBottom: { laptopSmall: '3rem', laptopLarge: '2.5rem' }
+            }}
+          />
+    
           <Box
             sx={{
-              marginLeft: {
-                xxs: '0rem',
-                xs: '2rem',
-                md: '0rem',
-                lg: '2rem'
-              },
-              marginRight: {
-                xxs: '0rem',
-                xs: '2rem',
-                md: 'auto',
-                lg: '2rem'
-              },
-              marginTop: {
-                xxs: '0rem',
-                md: '2rem',
-                lg: '0rem'
-              }
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              marginX: '5%',
+              marginBottom: '3.5rem',
+              flexDirection: 'row'
             }}
-          >
-            <Typography
-              sx={{
-                fontWeight: '300',
-                fontSize: {
-                  xxs: '1.2rem',
-                  sm: '1.3rem',
-                  md: '1.4rem',
-                  lg: '1.55rem',
-                  xl: '1.75rem',
-                  xxl: '2rem'
-                },
-                lineHeight: {
-                  xxs: '2.5rem',
-                  lg: '2.75rem',
-                  xl: '3rem',
-                  xxl: '3.5rem'
-                }
-              }}
             >
-              Emerging Developer
-            </Typography>
             <Box
-              sx={{
-                color: 'var(--secondary)',
-                fontSize: {
-                  xxs: '1.6rem',
-                  sm: '1.85rem',
-                  md: '2.5rem',
-                  lg: '3.25rem',
-                  xl: '3.5rem',
-                  xxl: '4.5rem'
-                }
-              }}
-            >
-              <FontAwesomeIcon icon='laptop-code' />
+              sx={{ margin: '0rem 2rem' }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { laptopSmall: '1.55rem', laptopLarge: '1.75rem' },
+                  lineHeight: { laptopSmall: '2.75rem', laptopLarge: '3rem' }
+                }}
+                >
+                Emerging Developer
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { laptopSmall: '3.25rem', laptopLarge: '3.5rem' }
+                }}
+                >
+                <FontAwesomeIcon icon='laptop-code' />
+              </Box>
             </Box>
-          </Box>
-          <Box
-            sx={{
-              marginLeft: {
-                xxs: '2rem',
-                md: 'auto',
-                lg: '2rem'
-              },
-              marginRight: {
-                xxs: '2rem',
-                md: '0rem',
-                lg: '2rem'
-              },
-              marginTop: {
-                xxs: '1.5rem',
-                sm: '1.25rem',
-                md: '2rem',
-                lg: '0rem'
-              }
-            }}
-          >
-            <Typography
-              sx={{
-                fontWeight: '300',
-                fontSize: {
-                  xxs: '1.2rem',
-                  sm: '1.3rem',
-                  md: '1.4rem',
-                  lg: '1.55rem',
-                  xl: '1.75rem',
-                  xxl: '2rem'
-                },
-                lineHeight: {
-                  xxs: '2.5rem',
-                  lg: '2.75rem',
-                  xl: '3rem',
-                  xxl: '3.5rem'
-                }
-              }}
-            >
-              Super Dad/Husband
-            </Typography>
             <Box
-              sx={{
-                color: 'var(--secondary)',
-                fontSize: {
-                  xxs: '1.6rem',
-                  sm: '1.85rem',
-                  md: '2.5rem',
-                  lg: '3.25rem',
-                  xl: '3.5rem',
-                  xxl: '4.5rem'
-                }
-              }}
-            >
-              <FontAwesomeIcon icon='people-roof' />
+              sx={{ margin: '0rem 2rem' }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { laptopSmall: '1.55rem', laptopLarge: '1.75rem' },
+                  lineHeight: { laptopSmall: '2.75rem', laptopLarge: '3rem' }
+                }}
+                >
+                Super Dad/Husband
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { laptopSmall: '3.25rem', laptopLarge: '3.5rem' }
+                }}
+                >
+                <FontAwesomeIcon icon='people-roof' />
+              </Box>
             </Box>
-          </Box>
-          <Box
-            sx={{              
-              marginX: {
-                xxs: '2rem',
-                md: '8.7rem',
-                lg: '2rem'
-              },
-              marginTop: {
-                xxs: '1.5rem',
-                sm: '1.25rem',
-                md: '0.75rem',
-                md1: '-0.75rem',
-                md2: '-2.25rem',
-                md3: '-3.75rem',
-                lg: '0rem'
-              }
-            }}
-          >
-            <Typography
-              sx={{
-                fontWeight: '300',
-                fontSize: {
-                  xxs: '1.2rem',
-                  sm: '1.3rem',
-                  md: '1.4rem',
-                  lg: '1.55rem',
-                  xl: '1.75rem',
-                  xxl: '2rem'
-                },
-                lineHeight: {
-                  xxs: '2.5rem',
-                  lg: '2.75rem',
-                  xl: '3rem',
-                  xxl: '3.5rem'
-                }
-              }}
-            >
-              Lifetime Braves Fan
-            </Typography>
             <Box
-              sx={{
-                color: 'var(--secondary)',
-                fontSize: {
-                  xxs: '1.6rem',
-                  sm: '1.85rem',
-                  md: '2.5rem',
-                  lg: '3.25rem',
-                  xl: '3.5rem',
-                  xxl: '4.5rem'
-                }
-              }}
-            >
-              <FontAwesomeIcon icon='baseball-bat-ball' />
+              sx={{ margin: '0rem 2rem'}}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { laptopSmall: '1.55rem', laptopLarge: '1.75rem' },
+                  lineHeight: { laptopSmall: '2.75rem', laptopLarge: '3rem' }
+                }}
+                >
+                Lifetime Braves Fan
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { laptopSmall: '3.25rem', laptopLarge: '3.5rem' }
+                }}
+                >
+                <FontAwesomeIcon icon='baseball-bat-ball' />
+              </Box>
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Laptop>
+
+      {/* for tablet displays (vertical layout) */}
+
+      <Tablet>
+        <Box
+          style={{ textAlign: 'center' }}
+          >
+          <Box
+            component='img'
+            src={myAvatar}
+            alt='Josh Hawk Avatar'
+            sx={{ width: '35%'}}
+          />
+    
+          <Typography
+            sx={{
+              fontSize: '4.25rem',
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              marginTop: '0.75rem'
+            }}
+            >
+            Josh Hawk
+          </Typography>
+    
+          <Divider
+            sx={{
+              background: 'white',
+              borderBottomWidth: 2,
+              marginX: '10%',
+              marginTop: '1rem',
+              marginBottom: '0.5rem'
+            }}
+          />
+    
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              marginX: '12.5%',
+              marginBottom: '3.5rem',
+              flexDirection: 'row'
+            }}
+            >
+            <Box
+              sx={{ margin: '2rem auto 0rem 0rem' }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: '1.4rem',
+                  lineHeight: '2.5rem'
+                }}
+                >
+                Emerging Developer
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: '2.5rem'
+                }}
+                >
+                <FontAwesomeIcon icon='laptop-code' />
+              </Box>
+            </Box>
+            <Box
+              sx={{ margin: '2rem 0rem 0rem auto' }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: '1.4rem',
+                  lineHeight: '2.5rem'
+                }}
+                >
+                Super Dad/Husband
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: '2.5rem'
+                }}
+                >
+                <FontAwesomeIcon icon='people-roof' />
+              </Box>
+            </Box>
+            <Box
+              sx={{              
+                marginX: '8.7rem',
+                marginTop: '0.75rem'
+              }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: '1.4rem',
+                  lineHeight: '2.5rem'
+                }}
+                >
+                Lifetime Braves Fan
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: '2.5rem'
+                }}
+                >
+                <FontAwesomeIcon icon='baseball-bat-ball' />
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Tablet>
+
+      {/* for mobile displays (vertical layout) */}
+
+      <Mobile>
+        <Box
+          style={{ textAlign: 'center' }}
+          >
+          <Box
+            component='img'
+            src={myAvatar}
+            alt='Josh Hawk Avatar'
+            sx={{ width: { zero: '70%', mobile: '55%' } }}
+          />
+    
+          <Typography
+            sx={{
+              fontSize: { zero: '2.25rem', mobile: '3.25rem' },
+              fontWeight: 'bold',
+              textTransform: 'uppercase',
+              marginTop: { zero: '1.5rem', mobile: '0.75rem' }
+            }}
+            >
+            Josh Hawk
+          </Typography>
+    
+          <Divider
+            sx={{
+              background: 'white',
+              borderBottomWidth: 2,
+              marginX: { zero: '9%', mobile: '8%' },
+              marginTop: { zero: '1.75rem', mobile: '1.25rem' },
+              marginBottom: { zero: '2.5rem', mobile: '2.25rem' }
+            }}
+          />
+    
+          <Box
+            sx={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-around',
+              alignItems: 'center',
+              marginX: '2.5%',
+              marginBottom: '3.5rem',
+              flexDirection: 'column'
+            }}
+            >
+            <Box
+              sx={{ margin: '0rem ' }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { zero: '1.2rem', mobile: '1.3rem' },
+                  lineHeight: '2.5rem'
+                }}
+                >
+                Emerging Developer
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { zero: '1.6rem', mobile: '1.85rem' }
+                }}
+                >
+                <FontAwesomeIcon icon='laptop-code' />
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                marginX: '2rem',
+                marginTop: { zero: '1.5rem', mobile: '1.25rem' }
+              }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { zero: '1.2rem', mobile: '1.3rem' },
+                  lineHeight: '2.5rem'
+                }}
+                >
+                Super Dad/Husband
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { zero: '1.6rem', mobile: '1.85rem' }
+                }}
+                >
+                <FontAwesomeIcon icon='people-roof' />
+              </Box>
+            </Box>
+            <Box
+              sx={{              
+                marginX: '2rem',
+                marginTop: { zero: '1.5rem', mobile: '1.25rem' }
+              }}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { zero: '1.2rem', mobile: '1.3rem' },
+                  lineHeight: '2.5rem'
+                }}
+                >
+                Lifetime Braves Fan
+              </Typography>
+              <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { zero: '1.6rem', mobile: '1.85rem' }
+                }}
+                >
+                <FontAwesomeIcon icon='baseball-bat-ball' />
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Mobile>
+
     </ThemeProvider>
   )
 }

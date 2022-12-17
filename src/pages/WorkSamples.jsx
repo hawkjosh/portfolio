@@ -41,55 +41,38 @@ const theme = createTheme({
   breakpoints: {
     values: {
       // Breakpoints below use vertical layout
-      xxs: 0,     // Change to 'zero'
-      xs: 375,     // DELETE THIS ONE
-      sm: 428,     // Change to 'mobile'
-      md: 768,     // Change to 'tabletSmall'
-      tabletLarge: 820,     // ADD THIS ONE
+      zero: 0,
+      mobile: 428,
+      tabletSmall: 768,
+      tabletLarge: 820,
       // Breakpoints below change to horizontal layout
-      lg: 1024,     // Change to 'laptopSmall: 1263'
-      xl: 1440,     // Change to 'laptopLarge: 1519'
-      xxl: 1620     // DELETE THIS ONE
+      laptopSmall: 1263,
+      laptopLarge: 1519
     }
   }
 })
 
-// const Laptop = ({ children }) => {
-//   const isLaptop = useMediaQuery({ minWidth: 1000 })
-//   return isLaptop ? children : null
-// }
+const Laptop = ({ children }) => {
+  const isLaptop = useMediaQuery({ minWidth: 1000 })
+  return isLaptop ? children : null
+}
 
-// const Tablet = ({ children }) => {
-//   const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
-//   return isTablet ? children : null
-// }
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  return isTablet ? children : null
+}
 
-// const Mobile = ({ children }) => {
-//   const isMobile = useMediaQuery({ maxWidth: 550 })
-//   return isMobile ? children : null
-// }
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 550 })
+  return isMobile ? children : null
+}
 
 const buttonSX = {
   color: 'white',
   borderColor: 'white',
-  marginX: {
-    xxs: '0.5rem',
-    md: '2rem',
-    lg: '4rem',
-  },
-  fontSize: {
-    xxs: '0.65rem',
-    xs: '0.95rem',
-    sm: '1.25rem',
-    md: '1.75rem',
-    lg: '2rem',
-    xl: '2.25rem',
-    xxl: '2.5rem'
-  },
-  '&:hover':{
-    color: 'var(--primary)',
-    borderColor: 'var(--primary)'
-  }
+  marginX: { zero: '0.5rem', tabletSmall: '2rem', laptopSmall: '4rem', },
+  fontSize: { zero: '0.65rem', mobile: '1.25rem', tabletSmall: '1.75rem', laptopSmall: '2rem', laptopLarge: '2.25rem' },
+  '&:hover':{ color: 'var(--primary)', borderColor: 'var(--primary)' }
 }
 
 export default function App() {
@@ -264,140 +247,301 @@ export default function App() {
   
   return (
     <ThemeProvider theme={theme}>
-      <Typography
-        sx={{
-          textAlign: 'center',
-          fontWeight: 'bold',
-          marginBottom: '1.5rem',
-          fontSize: {
-            xxs: '2rem',
-            xs: '2.5rem',
-            sm: '3rem',
-            md: '3.5rem',
-            lg: '4rem',
-            xl: '4.5rem',
-            xxl: '5rem'
-          }
-        }}
-      >
-        Work Samples
-      </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: '5rem'
-        }}
-        gap={4}
-      >
-        {samples.map((sample) => (
-          <Box
-            onClick={sample.click}
-            sx={{
-              cursor: 'pointer',
-              position: 'relative',
-              display: 'block',
-              borderRadius: '0.5rem',
-              overflow: 'hidden',
-              marginX: 'auto',
-              maxWidth: {
-                xxs: '95%',
-                md: '47.5%',
-                xl: '31%'
-              }
-            }}
+
+      {/* for laptop/desktop displays (horizontal layout) */}
+
+      <Laptop>
+        <Typography
+          sx={{
+            textAlign: 'center',
+            fontWeight: 'bold',
+            marginBottom: '1.5rem',
+            fontSize: { laptopSmall: '4rem', laptopLarge: '4.5rem' }
+          }}
           >
+          Work Samples
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '5rem'
+          }}
+          gap={4}
+          >
+          {samples.map((sample, index) => (
             <Box
-              component='img'
-              src={sample.source}
-              alt='Social Network App'
+              key={index}
+              onClick={sample.click}
               sx={{
-                border: '0.35rem solid var(--secondary)',
-                borderRadius: '0.35rem',
-                maxWidth: '100%',
-                height: 'auto'
+                cursor: 'pointer',
+                position: 'relative',
+                display: 'block',
+                borderRadius: '0.5rem',
+                overflow: 'hidden',
+                marginX: 'auto',
+                maxWidth: { laptopSmall: '47.5%', laptopLarge: '31%' }
               }}
-            />
-            <Button
-              sx={{
-                textAlign: 'center',
-                fontSize: {
-                  xxs: 15,
-                  xs: 20,
-                  lg: 25
-                },
-                width: '100%',
-                color: 'var(--secondary)',
-                border: '0.25rem solid var(--secondary)',
-                bgcolor: 'white',
-                borderRadius: '2rem'
-              }}
-            >
-              {sample.full}
-            </Button>
-            <Box className='work-sample-img'>
+              >
               <Box
+                component='img'
+                src={sample.source}
+                alt='Social Network App'
+                sx={{
+                  border: '0.35rem solid var(--secondary)',
+                  borderRadius: '0.35rem',
+                  maxWidth: '100%',
+                  height: 'auto'
+                }}
+              />
+              <Button
                 sx={{
                   textAlign: 'center',
-                  fontSize: '1.5rem'
+                  fontSize: 25,
+                  width: '100%',
+                  color: 'var(--secondary)',
+                  border: '0.25rem solid var(--secondary)',
+                  bgcolor: 'white',
+                  borderRadius: '2rem'
                 }}
-              >
-                <sample.icon
-                  sx={{
-                    color: 'var(--secondary)',
-                    marginBottom: '1.5rem',
-                    fontSize: {
-                      xxs: 125,
-                      sm: 175,
-                      lg: 225
-                    }
-                  }}
-                />
-                <Typography
-                  sx={{
-                    fontWeight: 'bold',
-                    textAlign: 'center',
-                    fontSize: {
-                      xxs: 20,
-                      xs: 25,
-                      sm: 30,
-                      lg: 40
-                    }
-                  }}
                 >
-                  {sample.short}
-                </Typography>
+                {sample.full}
+              </Button>
+              <Box className='work-sample-img'>
+                <Box
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5rem'
+                  }}
+                  >
+                  <sample.icon
+                    sx={{
+                      color: 'var(--secondary)',
+                      marginBottom: '1.5rem',
+                      fontSize: 225
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontWeight: 'bold',
+                      textAlign: 'center',
+                      fontSize: 40
+                    }}
+                    >
+                    {sample.short}
+                  </Typography>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        ))}
-      </Box>
-      {windows.map((window) => (
+          ))}
+        </Box>
+      </Laptop>
+
+      {/* for tablet displays (vertical layout) */}
+
+      <Tablet>
+        <Typography
+          sx={{
+            textAlign: 'center',
+            fontWeight: 'bold',
+            marginBottom: '1.5rem',
+            fontSize: '3.5rem'
+          }}
+          >
+          Work Samples
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '5rem'
+          }}
+          gap={4}
+          >
+          {samples.map((sample, index) => (
+            <Box
+              key={index}
+              onClick={sample.click}
+              sx={{
+                cursor: 'pointer',
+                position: 'relative',
+                display: 'block',
+                borderRadius: '0.5rem',
+                overflow: 'hidden',
+                marginX: 'auto',
+                maxWidth: '47.5%'
+              }}
+              >
+              <Box
+                component='img'
+                src={sample.source}
+                alt='Social Network App'
+                sx={{
+                  border: '0.35rem solid var(--secondary)',
+                  borderRadius: '0.35rem',
+                  maxWidth: '100%',
+                  height: 'auto'
+                }}
+              />
+              <Button
+                sx={{
+                  textAlign: 'center',
+                  fontSize: 15,
+                  width: '100%',
+                  color: 'var(--secondary)',
+                  border: '0.25rem solid var(--secondary)',
+                  bgcolor: 'white',
+                  borderRadius: '2rem'
+                }}
+                >
+                {sample.full}
+              </Button>
+              <Box className='work-sample-img'>
+                <Box
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5rem'
+                  }}
+                  >
+                  <sample.icon
+                    sx={{
+                      color: 'var(--secondary)',
+                      marginBottom: '1.5rem',
+                      fontSize: 175
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontWeight: 'bold',
+                      textAlign: 'center',
+                      fontSize: 30
+                    }}
+                    >
+                    {sample.short}
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          ))}
+        </Box>
+      </Tablet>
+
+      {/* for mobile displays (vertical layout) */}
+
+      <Mobile>
+        <Typography
+          sx={{
+            textAlign: 'center',
+            fontWeight: 'bold',
+            marginBottom: '1.5rem',
+            fontSize: { zero: '2rem', mobile: '3rem' }
+          }}
+          >
+          Work Samples
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '5rem'
+          }}
+          gap={4}
+          >
+          {samples.map((sample, index) => (
+            <Box
+              key={index}
+              onClick={sample.click}
+              sx={{
+                cursor: 'pointer',
+                position: 'relative',
+                display: 'block',
+                borderRadius: '0.5rem',
+                overflow: 'hidden',
+                marginX: 'auto',
+                maxWidth: '95%'
+              }}
+              >
+              <Box
+                component='img'
+                src={sample.source}
+                alt='Social Network App'
+                sx={{
+                  border: '0.35rem solid var(--secondary)',
+                  borderRadius: '0.35rem',
+                  maxWidth: '100%',
+                  height: 'auto'
+                }}
+              />
+              <Button
+                sx={{
+                  textAlign: 'center',
+                  fontSize: 15,
+                  width: '100%',
+                  color: 'var(--secondary)',
+                  border: '0.25rem solid var(--secondary)',
+                  bgcolor: 'white',
+                  borderRadius: '2rem'
+                }}
+                >
+                {sample.full}
+              </Button>
+              <Box className='work-sample-img'>
+                <Box
+                  sx={{
+                    textAlign: 'center',
+                    fontSize: '1.5rem'
+                  }}
+                  >
+                  <sample.icon
+                    sx={{
+                      color: 'var(--secondary)',
+                      marginBottom: '1.5rem',
+                      fontSize: { zero: 125, mobile: 175 }
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontWeight: 'bold',
+                      textAlign: 'center',
+                      fontSize: { zero: 20, mobile: 30 }
+                    }}
+                    >
+                    {sample.short}
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          ))}
+        </Box>
+      </Mobile>
+
+      {windows.map((window, index) => (
         <Dialog
+          key={index}
           open={window.open}
           onClose={window.close}
           scroll={window.scroll}
           maxWidth='lg'
-        >
-          <Box
-            sx={{
-              bgcolor: 'var(--secondary)'
-            }}
           >
+          <Box
+            sx={{ bgcolor: 'var(--secondary)' }}
+            >
             <Box
               sx={{
                 display: 'flex',
                 justifyContent: 'flex-end'
               }}
-            >
+              >
               <IconButton
                 onClick={window.close}
-                sx={{
-                  color: 'white'
-                }}
-              >
+                sx={{ color: 'white' }}
+                >
                 <CloseIcon />
               </IconButton>
             </Box>
@@ -405,17 +549,9 @@ export default function App() {
               sx={{
                 textAlign: 'center',
                 color: 'white',
-                fontSize: {
-                  xxs: '1.25rem',
-                  xs: '1.5rem',
-                  sm: '1.75rem',
-                  md: '2rem',
-                  lg: '2.25rem',
-                  xl: '2.5rem',
-                  xxl: '2.75rem'
-                }
+                fontSize: { zero: '1.25rem', mobile: '1.75rem', tabletSmall: '2rem', laptopSmall: '2.25rem', laptopLarge: '2.5rem' }
               }}
-            >
+              >
               {window.name}
             </DialogTitle>
             <DialogContent
@@ -424,7 +560,7 @@ export default function App() {
                 flexDirection: 'column',
                 justifyContent: 'center'
               }}
-            >
+              >
               <window.link />
             </DialogContent>
             <DialogActions
@@ -432,14 +568,14 @@ export default function App() {
                 display: 'flex',
                 justifyContent: 'center'
               }}
-            >
+              >
               <Button
                 variant='outlined'
                 href={window.website}
                 target='_blank'
                 rel='noreferrer'
                 sx={buttonSX}
-              >
+                >
                 Web App
               </Button>
               <Button
@@ -448,13 +584,14 @@ export default function App() {
                 target='_blank'
                 rel='noreferrer'
                 sx={buttonSX}
-              >
+                >
                 GitHub Repo
               </Button>
             </DialogActions>
           </Box>
         </Dialog>
       ))}
+
     </ThemeProvider>
   )
 }

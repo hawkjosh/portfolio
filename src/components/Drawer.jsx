@@ -44,33 +44,31 @@ const theme = createTheme({
   breakpoints: {
     values: {
       // Breakpoints below use vertical layout
-      xxs: 0,     // Change to 'zero'
-      xs: 375,     // DELETE THIS ONE
-      sm: 428,     // Change to 'mobile'
-      md: 768,     // Change to 'tabletSmall'
-      tabletLarge: 820,     // ADD THIS ONE
+      zero: 0,
+      mobile: 428,
+      tabletSmall: 768,
+      tabletLarge: 820,
       // Breakpoints below change to horizontal layout
-      lg: 1024,     // Change to 'laptopSmall: 1263'
-      xl: 1440,     // Change to 'laptopLarge: 1519'
-      xxl: 1620     // DELETE THIS ONE
+      laptopSmall: 1263,
+      laptopLarge: 1519
     }
   }
 })
 
-// const Laptop = ({ children }) => {
-//   const isLaptop = useMediaQuery({ minWidth: 1000 })
-//   return isLaptop ? children : null
-// }
+const Laptop = ({ children }) => {
+  const isLaptop = useMediaQuery({ minWidth: 1000 })
+  return isLaptop ? children : null
+}
 
-// const Tablet = ({ children }) => {
-//   const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
-//   return isTablet ? children : null
-// }
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  return isTablet ? children : null
+}
 
-// const Mobile = ({ children }) => {
-//   const isMobile = useMediaQuery({ maxWidth: 550 })
-//   return isMobile ? children : null
-// }
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 550 })
+  return isMobile ? children : null
+}
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -150,61 +148,145 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box
-        sx={{
-          display: 'flex'
-        }}
-      >
-        <CssBaseline />
-        <AppBar
-          position='fixed'
-          open={open}
+        sx={{ display: 'flex' }}
         >
-          <Toolbar
-            sx={{
-              bgcolor: 'var(--secondary)'
-            }}
-          >
-            <IconButton
-              color='inherit'
-              aria-label='open drawer'
-              onClick={handleDrawerOpen}
-              edge='start'
-              sx={{
-                mr: 2,
-                ...(open && { display: 'none' })
-              }}
+        <CssBaseline />
+
+        {/* for laptop/desktop displays (horizontal layout) */}
+
+        <Laptop>
+          <AppBar
+            position='fixed'
+            open={open}
             >
-              <MenuIcon />
-            </IconButton>
-            <Box
-              gap={2}
-              sx={{
-                display: 'flex',
-                alignItems: 'center'
-              }}
-            >
-              <FontAwesomeIcon icon="square-h" />
-              <Typography
-                noWrap
-                component='div'
-                sx={{
-                  textTransform: 'uppercase',
-                  fontSize: {
-                    xxs: '1.25rem',
-                    xs: '1.5rem',
-                    sm: '1.75rem',
-                    md: '2rem',
-                    lg: '2.25rem',
-                    xl: '2.5rem',
-                    xxl: '2.75rem'
-                  }
-                }}
+            <Toolbar
+              sx={{ bgcolor: 'var(--secondary)' }}
               >
-                The Hawk's Nest
-              </Typography>
-            </Box>
-          </Toolbar>
-        </AppBar>
+              <IconButton
+                color='inherit'
+                aria-label='open drawer'
+                onClick={handleDrawerOpen}
+                edge='start'
+                sx={{
+                  marginRight: 2,
+                  ...(open && { display: 'none' })
+                }}
+                >
+                <MenuIcon />
+              </IconButton>
+              <Box
+                gap={2}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                >
+                <FontAwesomeIcon icon="square-h" />
+                <Typography
+                  noWrap
+                  component='div'
+                  sx={{
+                    textTransform: 'uppercase',
+                    fontSize: { laptopSmall: '2.25rem', laptopLarge: '2.5rem' }
+                  }}
+                  >
+                  The Hawk's Nest
+                </Typography>
+              </Box>
+            </Toolbar>
+          </AppBar>
+        </Laptop>
+
+        {/* for tablet displays (vertical layout) */}
+
+        <Tablet>
+          <AppBar
+            position='fixed'
+            open={open}
+            >
+            <Toolbar
+              sx={{ bgcolor: 'var(--secondary)' }}
+              >
+              <IconButton
+                color='inherit'
+                aria-label='open drawer'
+                onClick={handleDrawerOpen}
+                edge='start'
+                sx={{
+                  marginRight: 2,
+                  ...(open && { display: 'none' })
+                }}
+                >
+                <MenuIcon />
+              </IconButton>
+              <Box
+                gap={2}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                >
+                <FontAwesomeIcon icon="square-h" />
+                <Typography
+                  noWrap
+                  component='div'
+                  sx={{
+                    textTransform: 'uppercase',
+                    fontSize: '2rem'
+                  }}
+                  >
+                  The Hawk's Nest
+                </Typography>
+              </Box>
+            </Toolbar>
+          </AppBar>
+        </Tablet>
+
+        {/* for mobile displays (vertical layout) */}
+
+        <Mobile>
+          <AppBar
+            position='fixed'
+            open={open}
+            >
+            <Toolbar
+              sx={{ bgcolor: 'var(--secondary)' }}
+              >
+              <IconButton
+                color='inherit'
+                aria-label='open drawer'
+                onClick={handleDrawerOpen}
+                edge='start'
+                sx={{
+                  marginRight: 2,
+                  ...(open && { display: 'none' })
+                }}
+                >
+                <MenuIcon />
+              </IconButton>
+              <Box
+                gap={2}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
+                >
+                <FontAwesomeIcon icon="square-h" />
+                <Typography
+                  noWrap
+                  component='div'
+                  sx={{
+                    textTransform: 'uppercase',
+                    fontSize: { zero: '1.25rem', mobile: '1.75rem' }
+                  }}
+                  >
+                  The Hawk's Nest
+                </Typography>
+              </Box>
+            </Toolbar>
+          </AppBar>
+        </Mobile>
+
         <Drawer
           variant='persistent'
           anchor='left'
@@ -214,10 +296,10 @@ export default function App() {
             flexShrink: 0,
             '& .MuiDrawer-paper': {
               width: drawerWidth,
-              boxSizing: 'border-box',
-            },
+              boxSizing: 'border-box'
+            }
           }}
-        >
+          >
           <DrawerHeader sx={{ bgcolor: 'var(--secondary)' }}>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon sx={{ color: 'white' }} />
@@ -225,12 +307,12 @@ export default function App() {
           </DrawerHeader>
           <Divider />
           <List>
-            {menu.map((menu) => (
-              <ListItem disablePadding>
+            {menu.map((menu, index) => (
+              <ListItem disablePadding key={index}>
                 <ListItemButton
                   component={Link}
                   href={menu.link}
-                >
+                  >
                   <ListItemIcon>
                     <menu.icon />
                   </ListItemIcon>
@@ -244,7 +326,7 @@ export default function App() {
                 href='https://1drv.ms/b/s!AjbK_Cd8W85egfM7DSjzINlw1ZHZpA'
                 target='_blank'
                 rel='noreferrer'
-              >
+                >
                 <ListItemIcon>
                   <DescriptionIcon />
                 </ListItemIcon>
@@ -253,11 +335,13 @@ export default function App() {
             </ListItem>
           </List>
         </Drawer>
+
         <Main open={open}>
           <DrawerHeader />
           <Outlet />
           <Footer />
         </Main>
+
       </Box>
     </ThemeProvider>
   )
