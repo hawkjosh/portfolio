@@ -18,33 +18,31 @@ const theme = createTheme({
   breakpoints: {
     values: {
       // Breakpoints below use vertical layout
-      xxs: 0,     // Change to 'zero'
-      xs: 375,     // DELETE THIS ONE
-      sm: 428,     // Change to 'mobile'
-      md: 768,     // Change to 'tabletSmall'
-      tabletLarge: 820,     // ADD THIS ONE
+      zero: 0,
+      mobile: 428,
+      tabletSmall: 768,
+      tabletLarge: 820,
       // Breakpoints below change to horizontal layout
-      lg: 1024,     // Change to 'laptopSmall: 1263'
-      xl: 1440,     // Change to 'laptopLarge: 1519'
-      xxl: 1620     // DELETE THIS ONE
+      laptopSmall: 1263,
+      laptopLarge: 1519
     }
   }
 })
 
-// const Laptop = ({ children }) => {
-//   const isLaptop = useMediaQuery({ minWidth: 1000 })
-//   return isLaptop ? children : null
-// }
+const Laptop = ({ children }) => {
+  const isLaptop = useMediaQuery({ minWidth: 1000 })
+  return isLaptop ? children : null
+}
 
-// const Tablet = ({ children }) => {
-//   const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
-//   return isTablet ? children : null
-// }
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  return isTablet ? children : null
+}
 
-// const Mobile = ({ children }) => {
-//   const isMobile = useMediaQuery({ maxWidth: 550 })
-//   return isMobile ? children : null
-// }
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 550 })
+  return isMobile ? children : null
+}
 
 const icons = [
   {
@@ -65,64 +63,131 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-          bgcolor: 'var(--secondary)',
-          position: 'fixed',
-          bottom: '0rem',
-          left: '0rem',
-          width: '100vw',
-          height: {
-            xxs: 'auto',
-            lg: '10vh'
-          }
-        }}
-      >
-        <Container
+
+      {/* for laptop/desktop displays (horizontal layout) */}
+
+      <Laptop>
+        <Box
           sx={{
-            display: {
-              xxs: 'none',
-              lg: 'block'
-            }
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            bgcolor: 'var(--secondary)',
+            position: 'fixed',
+            bottom: '0rem',
+            left: '0rem',
+            width: '100vw',
+            height: '10vh'
           }}
-        >
-          <Typography
-            sx={{
-              fontSize: {
-                lg: '1.5rem',
-                xl: '1.75rem',
-                xxl: '2rem'
-              }
-            }}
           >
-            © 2022 Joshua Wilde Hawk
-          </Typography>
-        </Container>
-        <Stack
-          className='footer-link-container'
-          direction='row'
-          spacing={2}
+          <Container>
+            <Typography
+              sx={{
+                fontSize: { laptopSmall: '1.5rem', laptopLarge: '1.75rem' }
+              }}
+              >
+              © 2022 Joshua Wilde Hawk
+            </Typography>
+          </Container>
+          <Stack
+            className='footer-link-container'
+            direction='row'
+            spacing={2}
+            sx={{ paddingY: '0.25rem' }}
+            >
+            {icons.map((icon, index) => (
+              <Button
+                key={index}
+                href={icon.link}
+                target='_blank'
+                rel='noreferrer'>
+                <FontAwesomeIcon
+                  className='footer-link-icon'
+                  icon={icon.image}
+                />
+              </Button>
+            ))}
+          </Stack>
+        </Box>
+      </Laptop>
+
+      {/* for tablet displays (vertical layout) */}
+
+      <Tablet>
+        <Box
           sx={{
-            paddingY: '0.25rem'
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            bgcolor: 'var(--secondary)',
+            position: 'fixed',
+            bottom: '0rem',
+            left: '0rem',
+            width: '100vw'
           }}
-        >
-          {icons.map((icon) => (
-            <Button
-              href={icon.link}
-              target='_blank'
-              rel='noreferrer'>
-              <FontAwesomeIcon
-                className='footer-link-icon'
-                icon={icon.image}
-              />
-            </Button>
-          ))}
-        </Stack>
-      </Box>
+          >
+          <Stack
+            className='footer-link-container'
+            direction='row'
+            spacing={2}
+            sx={{ paddingY: '0.25rem' }}
+            >
+            {icons.map((icon, index) => (
+              <Button
+                key={index}
+                href={icon.link}
+                target='_blank'
+                rel='noreferrer'>
+                <FontAwesomeIcon
+                  className='footer-link-icon'
+                  icon={icon.image}
+                />
+              </Button>
+            ))}
+          </Stack>
+        </Box>
+      </Tablet>
+
+      {/* for mobile displays (vertical layout) */}
+
+      <Mobile>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            bgcolor: 'var(--secondary)',
+            position: 'fixed',
+            bottom: '0rem',
+            left: '0rem',
+            width: '100vw'
+          }}
+          >
+          <Stack
+            className='footer-link-container'
+            direction='row'
+            spacing={2}
+            sx={{ paddingY: '0.25rem' }}
+            >
+            {icons.map((icon, index) => (
+              <Button
+                key={index}
+                href={icon.link}
+                target='_blank'
+                rel='noreferrer'>
+                <FontAwesomeIcon
+                  className='footer-link-icon'
+                  icon={icon.image}
+                />
+              </Button>
+            ))}
+          </Stack>
+        </Box>
+      </Mobile>
+
     </ThemeProvider>
   )
 }

@@ -70,24 +70,12 @@ export default function App() {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: {
-              zero: 'column',
-              laptopSmall: 'row-reverse'
-            },
-            justifyContent: {
-              zero: 'center',
-              laptopSmall: 'space-between'
-            },
+            flexDirection: 'row-reverse',
+            justifyContent: 'space-between',
             alignItems: 'center',
             alignContent: 'center',
             // Below adjusts spacing between picture/text area and toolbox button on bottom
-            marginBottom: {
-              zero: '1.75rem',
-              mobile: '2.25rem',
-              tabletSmall: '2.5rem',
-              laptopSmall: '2.75rem',
-              laptopLarge: '3rem'
-            }
+            marginBottom: { laptopSmall: '2.75rem', laptopLarge: '3rem' }
           }}
           >
           <Box
@@ -99,22 +87,11 @@ export default function App() {
               borderRadius: '1.5rem',
               aspectRatio: '1/1',
               // Below adjust picture size at different breakpoints
-              width: {
-                zero: '85%',
-                mobile: '80%',
-                tabletSmall: '60%',
-                laptopSmall: '40%',
-                laptopLarge: '35%'
-              },
+              width: { laptopSmall: '40%', laptopLarge: '35%' },
               // Below adds spacing between picture and text when in vertical layout
-              marginBottom: {
-                zero: '2rem',
-                laptopSmall: '0rem'
-              },
-              // Below adds horizontal spacing around picture when in horizontal layout
-              marginX: {
-                laptopSmall: '2rem'
-              }
+              marginBottom: '0rem',
+              // Below adds horizontal spacing around picture
+              marginX: '2rem'
             }}
           />
           <Box
@@ -122,80 +99,37 @@ export default function App() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: {
-                zero: '100%',
-                mobile: '95%',
-                tabletSmall: '85%',
-                laptopSmall: '60%',
-                laptopLarge: '65%'
-              },
+              width: { laptopSmall: '60%', laptopLarge: '65%' }
             }}
-          >
+            >
             <Typography
               sx={{
                 fontWeight: 'bold',
-                display: {
-                  zero: 'none',
-                  laptopSmall: 'block'
-                },
-                fontSize: {
-                  laptopSmall: '2.75rem',
-                  laptopLarge: '4.75rem'
-                },
-                marginBottom: {
-                  laptopSmall: '0.25rem',
-                  laptopLarge: '0.75rem'
-                }
+                fontSize: { laptopSmall: '2.75rem', laptopLarge: '4.75rem' },
+                marginBottom: { laptopSmall: '0.25rem', laptopLarge: '0.75rem' }
               }}
-            >
+              >
               About Me
             </Typography>
             <Box
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                flexDirection: {
-                  zero: 'column',
-                  laptopLarge: 'row'
-                },
-                alignItems: {
-                  zero: 'center',
-                  laptopLarge: 'flex-start'
-                },
-                marginX: {
-                  zero: '0.25rem',
-                  laptopLarge: '1.25rem'
-                }
+                flexDirection: { laptopSmall: 'column', laptopLarge: 'row' },
+                alignItems: { laptopSmall: 'center', laptopLarge: 'flex-start' },
+                marginX: { laptopSmall: '0.25rem', laptopLarge: '1.25rem' }
               }}
-            >
+              >
               <Typography
                 sx={{
                   fontWeight: '300',
                   textAlign: 'justify',
                   width: '100%',
-                  fontSize: {
-                    zero: '1.15rem',
-                    mobile: '1.35rem',
-                    tabletSmall: '1.4rem',
-                    laptopSmall: '1.25rem',
-                    laptopLarge: '1.5rem'
-                  },
-                  lineHeight: {
-                    zero: '1.35rem',
-                    mobile: '1.75rem',
-                    tabletSmall: '1.8rem',
-                    laptopSmall: '1.7rem',
-                    laptopLarge: '2rem'
-                  },
-                  letterSpacing: {
-                    zero: '0rem',
-                    mobile: '0.055rem',
-                    tabletSmall: '0rem',
-                    laptopSmall: '0.006rem',
-                    laptopLarge: '0.09rem'
-                  }
+                  fontSize: { laptopSmall: '1.25rem', laptopLarge: '1.5rem' },
+                  lineHeight: { laptopSmall: '1.7rem', laptopLarge: '2rem' },
+                  letterSpacing: { laptopSmall: '0.006rem', laptopLarge: '0.09rem' }
                 }}
-              >
+                >
                 Welcome to my portfolio! My name is Josh Hawk and I have been an educator for the past 15 years. I recently decided to forge a new path into the exciting world of programming and web development. Having very little background in coding, I enrolled in a full stack web development boot camp through Georgia Tech to jumpstart this career change.
               </Typography>
               <Typography
@@ -203,37 +137,13 @@ export default function App() {
                   fontWeight: '300',
                   textAlign: 'justify',
                   width: '100%',
-                  fontSize: {
-                    zero: '1.15rem',
-                    mobile: '1.35rem',
-                    tabletSmall: '1.4rem',
-                    laptopSmall: '1.25rem',
-                    laptopLarge: '1.5rem'
-                  },
-                  lineHeight: {
-                    zero: '1.35rem',
-                    mobile: '1.75rem',
-                    tabletSmall: '1.8rem',
-                    laptopSmall: '1.7rem',
-                    laptopLarge: '2rem'
-                  },
-                  letterSpacing: {
-                    zero: '0rem',
-                    mobile: '0.055rem',
-                    tabletSmall: '0rem',
-                    laptopSmall: '0.006rem',
-                    laptopLarge: '0.01rem'
-                  },
-                  marginTop: {
-                    zero: '1.5rem',
-                    laptopLarge: '0rem'
-                  },
-                  marginLeft: {
-                    zero: '0rem',
-                    laptopLarge: '4.5rem'
-                  }
+                  fontSize: { laptopSmall: '1.25rem', laptopLarge: '1.5rem' },
+                  lineHeight: { laptopSmall: '1.7rem', laptopLarge: '2rem' },
+                  letterSpacing: { laptopSmall: '0.006rem', laptopLarge: '0.01rem' },
+                  marginTop: { laptopSmall: '1.5rem', laptopLarge: '0rem' },
+                  marginLeft: { laptopSmall: '0rem', laptopLarge: '4.5rem' }
                 }}
-              >
+                >
                 Please check out some of my favorite work samples while you're here. I've included various projects I created throughout the boot camp, as well as a few personal projects. You can also see the skills I've acquired in my toolbox link below. Feel free to reach out to me with any questions or comments. I hope you like what you see, and thanks for stopping by!
               </Typography>
             </Box>
@@ -241,19 +151,10 @@ export default function App() {
         </Box>
         <Box
           sx={{
-            width: {
-              zero: '175px',
-              tabletSmall: '225px',
-              laptopSmall: '250px'
-            },
-            marginX: 'auto',
-            marginBottom: {
-              zero: '3.25rem',
-              tabletSmall: '3.5rem',
-              laptopSmall: '4rem'
-            }
+            width: '17.5%',
+            margin: '0rem auto 4rem'
           }}
-        >
+          >
           <Box
             className='toolbox-btn'
             onClick={handleOpen}
@@ -266,25 +167,13 @@ export default function App() {
               padding: '0.25rem'
             }}
             gap={2}
-          >
+            >
             <HomeRepairServiceIcon
-              sx={{
-                fontSize: {
-                  zero: '1.75rem',
-                  tabletSmall: '2.25rem',
-                  laptopSmall: '2.5rem'
-                }
-              }}
+              sx={{ fontSize: { laptopSmall: '2.25rem', laptopLarge: '2.5rem' } }}
             />
             <Typography
-              sx={{
-                fontSize: {
-                  zero: '1.25rem',
-                  tabletSmall: '1.5rem',
-                  laptopSmall: '1.75rem'
-                }
-              }}
-            >
+              sx={{ fontSize: { laptopSmall: '1.5rem', laptopLarge: '1.75rem' } }}
+              >
               My Toolbox
             </Typography>
           </Box>
@@ -294,25 +183,23 @@ export default function App() {
           onClose={handleClose}
           scroll={scroll}
           maxWidth='lg'
-        >
+          >
           <Toolbox />
           <DialogActions
             sx={{
               display: 'flex',
               justifyContent: 'center'
-            }}>
-              <Button
-                onClick={handleClose}
-                sx={{
-                  color: 'var(--secondary)',
-                  fontSize: {
-                    zero: '1.25rem',
-                    tabletSmall: '1.75rem'
-                  }
-                }}
+            }}
+            >
+            <Button
+              onClick={handleClose}
+              sx={{
+                color: 'var(--secondary)',
+                fontSize: '1.75rem'
+              }}
               >
-                - Close -
-              </Button>
+              - Close -
+            </Button>
           </DialogActions>
         </Dialog>
       </Laptop>
@@ -323,24 +210,12 @@ export default function App() {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: {
-              zero: 'column',
-              laptopSmall: 'row-reverse'
-            },
-            justifyContent: {
-              zero: 'center',
-              laptopSmall: 'space-between'
-            },
+            flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
             alignContent: 'center',
             // Below adjusts spacing between picture/text area and toolbox button on bottom
-            marginBottom: {
-              zero: '1.75rem',
-              mobile: '2.25rem',
-              tabletSmall: '2.5rem',
-              laptopSmall: '2.75rem',
-              laptopLarge: '3rem'
-            }
+            marginBottom: '2.5rem'
           }}
           >
           <Box
@@ -352,22 +227,9 @@ export default function App() {
               borderRadius: '1.5rem',
               aspectRatio: '1/1',
               // Below adjust picture size at different breakpoints
-              width: {
-                zero: '85%',
-                mobile: '80%',
-                tabletSmall: '60%',
-                laptopSmall: '40%',
-                laptopLarge: '35%'
-              },
+              width: '60%',
               // Below adds spacing between picture and text when in vertical layout
-              marginBottom: {
-                zero: '2rem',
-                laptopSmall: '0rem'
-              },
-              // Below adds horizontal spacing around picture when in horizontal layout
-              marginX: {
-                laptopSmall: '2rem'
-              }
+              marginBottom: '2rem'
             }}
           />
           <Box
@@ -375,78 +237,26 @@ export default function App() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: {
-                zero: '100%',
-                mobile: '95%',
-                tabletSmall: '85%',
-                laptopSmall: '60%',
-                laptopLarge: '65%'
-              },
+              width: '85%',
             }}
-          >
-            <Typography
-              sx={{
-                fontWeight: 'bold',
-                display: {
-                  zero: 'none',
-                  laptopSmall: 'block'
-                },
-                fontSize: {
-                  laptopSmall: '2.75rem',
-                  laptopLarge: '4.75rem'
-                },
-                marginBottom: {
-                  laptopSmall: '0.25rem',
-                  laptopLarge: '0.75rem'
-                }
-              }}
             >
-              About Me
-            </Typography>
             <Box
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                flexDirection: {
-                  zero: 'column',
-                  laptopLarge: 'row'
-                },
-                alignItems: {
-                  zero: 'center',
-                  laptopLarge: 'flex-start'
-                },
-                marginX: {
-                  zero: '0.25rem',
-                  laptopLarge: '1.25rem'
-                }
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginX: '0.25rem'
               }}
-            >
+              >
               <Typography
                 sx={{
                   fontWeight: '300',
                   textAlign: 'justify',
                   width: '100%',
-                  fontSize: {
-                    zero: '1.15rem',
-                    mobile: '1.35rem',
-                    tabletSmall: '1.4rem',
-                    laptopSmall: '1.25rem',
-                    laptopLarge: '1.5rem'
-                  },
-                  lineHeight: {
-                    zero: '1.35rem',
-                    mobile: '1.75rem',
-                    tabletSmall: '1.8rem',
-                    laptopSmall: '1.7rem',
-                    laptopLarge: '2rem'
-                  },
-                  letterSpacing: {
-                    zero: '0rem',
-                    mobile: '0.055rem',
-                    tabletSmall: '0rem',
-                    laptopSmall: '0.006rem',
-                    laptopLarge: '0.09rem'
-                  }
+                  fontSize: '1.4rem',
+                  lineHeight: '1.8rem',
+                  letterSpacing: '0.04rem'
                 }}
               >
                 Welcome to my portfolio! My name is Josh Hawk and I have been an educator for the past 15 years. I recently decided to forge a new path into the exciting world of programming and web development. Having very little background in coding, I enrolled in a full stack web development boot camp through Georgia Tech to jumpstart this career change.
@@ -456,37 +266,12 @@ export default function App() {
                   fontWeight: '300',
                   textAlign: 'justify',
                   width: '100%',
-                  fontSize: {
-                    zero: '1.15rem',
-                    mobile: '1.35rem',
-                    tabletSmall: '1.4rem',
-                    laptopSmall: '1.25rem',
-                    laptopLarge: '1.5rem'
-                  },
-                  lineHeight: {
-                    zero: '1.35rem',
-                    mobile: '1.75rem',
-                    tabletSmall: '1.8rem',
-                    laptopSmall: '1.7rem',
-                    laptopLarge: '2rem'
-                  },
-                  letterSpacing: {
-                    zero: '0rem',
-                    mobile: '0.055rem',
-                    tabletSmall: '0rem',
-                    laptopSmall: '0.006rem',
-                    laptopLarge: '0.01rem'
-                  },
-                  marginTop: {
-                    zero: '1.5rem',
-                    laptopLarge: '0rem'
-                  },
-                  marginLeft: {
-                    zero: '0rem',
-                    laptopLarge: '4.5rem'
-                  }
+                  fontSize: '1.4rem',
+                  lineHeight: '1.8rem',
+                  letterSpacing: '0.04rem',
+                  marginTop: '1.5rem'
                 }}
-              >
+                >
                 Please check out some of my favorite work samples while you're here. I've included various projects I created throughout the boot camp, as well as a few personal projects. You can also see the skills I've acquired in my toolbox link below. Feel free to reach out to me with any questions or comments. I hope you like what you see, and thanks for stopping by!
               </Typography>
             </Box>
@@ -494,19 +279,10 @@ export default function App() {
         </Box>
         <Box
           sx={{
-            width: {
-              zero: '175px',
-              tabletSmall: '225px',
-              laptopSmall: '250px'
-            },
-            marginX: 'auto',
-            marginBottom: {
-              zero: '3.25rem',
-              tabletSmall: '3.5rem',
-              laptopSmall: '4rem'
-            }
+            width: '27.5%',
+            margin: '0rem auto 3.5rem'
           }}
-        >
+          >
           <Box
             className='toolbox-btn'
             onClick={handleOpen}
@@ -519,25 +295,13 @@ export default function App() {
               padding: '0.25rem'
             }}
             gap={2}
-          >
+            >
             <HomeRepairServiceIcon
-              sx={{
-                fontSize: {
-                  zero: '1.75rem',
-                  tabletSmall: '2.25rem',
-                  laptopSmall: '2.5rem'
-                }
-              }}
+              sx={{ fontSize: { tabletSmall: '2rem', tabletLarge: '2.25rem' } }}
             />
             <Typography
-              sx={{
-                fontSize: {
-                  zero: '1.25rem',
-                  tabletSmall: '1.5rem',
-                  laptopSmall: '1.75rem'
-                }
-              }}
-            >
+              sx={{ fontSize: { tabletSmall: '1.25rem', tabletLarge: '1.5rem' } }}
+              >
               My Toolbox
             </Typography>
           </Box>
@@ -547,25 +311,23 @@ export default function App() {
           onClose={handleClose}
           scroll={scroll}
           maxWidth='lg'
-        >
+          >
           <Toolbox />
           <DialogActions
             sx={{
               display: 'flex',
               justifyContent: 'center'
-            }}>
-              <Button
-                onClick={handleClose}
-                sx={{
-                  color: 'var(--secondary)',
-                  fontSize: {
-                    zero: '1.25rem',
-                    tabletSmall: '1.75rem'
-                  }
-                }}
+            }}
+            >
+            <Button
+              onClick={handleClose}
+              sx={{
+                color: 'var(--secondary)',
+                fontSize: '1.75rem'
+              }}
               >
-                - Close -
-              </Button>
+              - Close -
+            </Button>
           </DialogActions>
         </Dialog>
       </Tablet>
@@ -576,24 +338,12 @@ export default function App() {
         <Box
           sx={{
             display: 'flex',
-            flexDirection: {
-              zero: 'column',
-              laptopSmall: 'row-reverse'
-            },
-            justifyContent: {
-              zero: 'center',
-              laptopSmall: 'space-between'
-            },
+            flexDirection: 'column',
+            justifyContent: 'center',
             alignItems: 'center',
             alignContent: 'center',
             // Below adjusts spacing between picture/text area and toolbox button on bottom
-            marginBottom: {
-              zero: '1.75rem',
-              mobile: '2.25rem',
-              tabletSmall: '2.5rem',
-              laptopSmall: '2.75rem',
-              laptopLarge: '3rem'
-            }
+            marginBottom: { zero: '1.75rem', mobile: '2.25rem' }
           }}
           >
           <Box
@@ -605,22 +355,9 @@ export default function App() {
               borderRadius: '1.5rem',
               aspectRatio: '1/1',
               // Below adjust picture size at different breakpoints
-              width: {
-                zero: '85%',
-                mobile: '80%',
-                tabletSmall: '60%',
-                laptopSmall: '40%',
-                laptopLarge: '35%'
-              },
+              width: { zero: '85%', mobile: '80%' },
               // Below adds spacing between picture and text when in vertical layout
-              marginBottom: {
-                zero: '2rem',
-                laptopSmall: '0rem'
-              },
-              // Below adds horizontal spacing around picture when in horizontal layout
-              marginX: {
-                laptopSmall: '2rem'
-              }
+              marginBottom: '2rem'
             }}
           />
           <Box
@@ -628,80 +365,28 @@ export default function App() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: {
-                zero: '100%',
-                mobile: '95%',
-                tabletSmall: '85%',
-                laptopSmall: '60%',
-                laptopLarge: '65%'
-              },
+              width: { zero: '100%', mobile: '95%' }
             }}
-          >
-            <Typography
-              sx={{
-                fontWeight: 'bold',
-                display: {
-                  zero: 'none',
-                  laptopSmall: 'block'
-                },
-                fontSize: {
-                  laptopSmall: '2.75rem',
-                  laptopLarge: '4.75rem'
-                },
-                marginBottom: {
-                  laptopSmall: '0.25rem',
-                  laptopLarge: '0.75rem'
-                }
-              }}
             >
-              About Me
-            </Typography>
             <Box
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                flexDirection: {
-                  zero: 'column',
-                  laptopLarge: 'row'
-                },
-                alignItems: {
-                  zero: 'center',
-                  laptopLarge: 'flex-start'
-                },
-                marginX: {
-                  zero: '0.25rem',
-                  laptopLarge: '1.25rem'
-                }
+                flexDirection: 'column',
+                alignItems: 'center',
+                marginX: '0.25rem'
               }}
-            >
+              >
               <Typography
                 sx={{
                   fontWeight: '300',
                   textAlign: 'justify',
                   width: '100%',
-                  fontSize: {
-                    zero: '1.15rem',
-                    mobile: '1.35rem',
-                    tabletSmall: '1.4rem',
-                    laptopSmall: '1.25rem',
-                    laptopLarge: '1.5rem'
-                  },
-                  lineHeight: {
-                    zero: '1.35rem',
-                    mobile: '1.75rem',
-                    tabletSmall: '1.8rem',
-                    laptopSmall: '1.7rem',
-                    laptopLarge: '2rem'
-                  },
-                  letterSpacing: {
-                    zero: '0rem',
-                    mobile: '0.055rem',
-                    tabletSmall: '0rem',
-                    laptopSmall: '0.006rem',
-                    laptopLarge: '0.09rem'
-                  }
+                  fontSize: { zero: '1.15rem', mobile: '1.35rem' },
+                  lineHeight: { zero: '1.35rem', mobile: '1.75rem' },
+                  letterSpacing: { zero: '0rem', mobile: '0.055rem' }
                 }}
-              >
+                >
                 Welcome to my portfolio! My name is Josh Hawk and I have been an educator for the past 15 years. I recently decided to forge a new path into the exciting world of programming and web development. Having very little background in coding, I enrolled in a full stack web development boot camp through Georgia Tech to jumpstart this career change.
               </Typography>
               <Typography
@@ -709,37 +394,12 @@ export default function App() {
                   fontWeight: '300',
                   textAlign: 'justify',
                   width: '100%',
-                  fontSize: {
-                    zero: '1.15rem',
-                    mobile: '1.35rem',
-                    tabletSmall: '1.4rem',
-                    laptopSmall: '1.25rem',
-                    laptopLarge: '1.5rem'
-                  },
-                  lineHeight: {
-                    zero: '1.35rem',
-                    mobile: '1.75rem',
-                    tabletSmall: '1.8rem',
-                    laptopSmall: '1.7rem',
-                    laptopLarge: '2rem'
-                  },
-                  letterSpacing: {
-                    zero: '0rem',
-                    mobile: '0.055rem',
-                    tabletSmall: '0rem',
-                    laptopSmall: '0.006rem',
-                    laptopLarge: '0.01rem'
-                  },
-                  marginTop: {
-                    zero: '1.5rem',
-                    laptopLarge: '0rem'
-                  },
-                  marginLeft: {
-                    zero: '0rem',
-                    laptopLarge: '4.5rem'
-                  }
+                  fontSize: { zero: '1.15rem', mobile: '1.35rem' },
+                  lineHeight: { zero: '1.35rem', mobile: '1.75rem' },
+                  letterSpacing: { zero: '0rem', mobile: '0.055rem' },
+                  marginTop: '1.5rem'
                 }}
-              >
+                >
                 Please check out some of my favorite work samples while you're here. I've included various projects I created throughout the boot camp, as well as a few personal projects. You can also see the skills I've acquired in my toolbox link below. Feel free to reach out to me with any questions or comments. I hope you like what you see, and thanks for stopping by!
               </Typography>
             </Box>
@@ -747,19 +407,10 @@ export default function App() {
         </Box>
         <Box
           sx={{
-            width: {
-              zero: '175px',
-              tabletSmall: '225px',
-              laptopSmall: '250px'
-            },
-            marginX: 'auto',
-            marginBottom: {
-              zero: '3.25rem',
-              tabletSmall: '3.5rem',
-              laptopSmall: '4rem'
-            }
+            width: '50%',
+            margin: '0rem auto 3.25rem'
           }}
-        >
+          >
           <Box
             className='toolbox-btn'
             onClick={handleOpen}
@@ -772,25 +423,13 @@ export default function App() {
               padding: '0.25rem'
             }}
             gap={2}
-          >
+            >
             <HomeRepairServiceIcon
-              sx={{
-                fontSize: {
-                  zero: '1.75rem',
-                  tabletSmall: '2.25rem',
-                  laptopSmall: '2.5rem'
-                }
-              }}
+              sx={{ fontSize: '1.75rem' }}
             />
             <Typography
-              sx={{
-                fontSize: {
-                  zero: '1.25rem',
-                  tabletSmall: '1.5rem',
-                  laptopSmall: '1.75rem'
-                }
-              }}
-            >
+              sx={{ fontSize: '1.25rem' }}
+              >
               My Toolbox
             </Typography>
           </Box>
@@ -800,25 +439,23 @@ export default function App() {
           onClose={handleClose}
           scroll={scroll}
           maxWidth='lg'
-        >
+          >
           <Toolbox />
           <DialogActions
             sx={{
               display: 'flex',
               justifyContent: 'center'
-            }}>
-              <Button
-                onClick={handleClose}
-                sx={{
-                  color: 'var(--secondary)',
-                  fontSize: {
-                    zero: '1.25rem',
-                    tabletSmall: '1.75rem'
-                  }
-                }}
-              >
-                - Close -
-              </Button>
+            }}
+            >
+            <Button
+              onClick={handleClose}
+              sx={{
+                color: 'var(--secondary)',
+                fontSize: '1.25rem'
+              }}
+            >
+              - Close -
+            </Button>
           </DialogActions>
         </Dialog>
       </Mobile>

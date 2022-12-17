@@ -43,33 +43,31 @@ const theme = createTheme({
   breakpoints: {
     values: {
       // Breakpoints below use vertical layout
-      xxs: 0,     // Change to 'zero'
-      xs: 375,     // DELETE THIS ONE
-      sm: 428,     // Change to 'mobile'
-      md: 768,     // Change to 'tabletSmall'
-      tabletLarge: 820,     // ADD THIS ONE
+      zero: 0,
+      mobile: 428,
+      tabletSmall: 768,
+      tabletLarge: 820,
       // Breakpoints below change to horizontal layout
-      lg: 1024,     // Change to 'laptopSmall: 1263'
-      xl: 1440,     // Change to 'laptopLarge: 1519'
-      xxl: 1620     // DELETE THIS ONE
+      laptopSmall: 1263,
+      laptopLarge: 1519
     }
   }
 })
 
-// const Laptop = ({ children }) => {
-//   const isLaptop = useMediaQuery({ minWidth: 1000 })
-//   return isLaptop ? children : null
-// }
+const Laptop = ({ children }) => {
+  const isLaptop = useMediaQuery({ minWidth: 1000 })
+  return isLaptop ? children : null
+}
 
-// const Tablet = ({ children }) => {
-//   const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
-//   return isTablet ? children : null
-// }
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  return isTablet ? children : null
+}
 
-// const Mobile = ({ children }) => {
-//   const isMobile = useMediaQuery({ maxWidth: 550 })
-//   return isMobile ? children : null
-// }
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 550 })
+  return isMobile ? children : null
+}
 
 const icons = [
   {
@@ -190,44 +188,112 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-evenly',
-          alignItems: 'center',
-          alignContent: 'center'
-        }}
-      >
-        {icons.map((icon) => (
-          <Tooltip
-            title={icon.name}
-            arrow
-            followCursor
-            placement='top'
+
+      {/* for laptop/desktop displays (horizontal layout) */}
+      
+      <Laptop>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            alignContent: 'center'
+          }}
           >
-            <Avatar
-              src={icon.picture}
-              sx={{
-                height: 'auto',
-                background: 'transparent',
-                width: {
-                  xxs: '17.5%',
-                  md: '10.85%'
-                },
-                padding: {
-                  xxs: '2.75%',
-                  md: '2%'
-                },
-                marginX: {
-                  xxs: '1.75%',
-                  md: '1%'
-                }
-              }}>
-            </Avatar>
-          </Tooltip>
-        ))}
-      </Box>
+          {icons.map((icon, index) => (
+            <Tooltip
+              key={index}
+              title={icon.name}
+              arrow
+              followCursor
+              placement='top'
+              >
+              <Avatar
+                src={icon.picture}
+                sx={{
+                  height: 'auto',
+                  background: 'transparent',
+                  width: '10.85%',
+                  padding: '2%',
+                  marginX: '1%'
+                }}
+              />
+            </Tooltip>
+          ))}
+        </Box>
+      </Laptop>
+
+      {/* for tablet displays (vertical layout) */}
+      
+      <Tablet>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            alignContent: 'center'
+          }}
+          >
+          {icons.map((icon, index) => (
+            <Tooltip
+              key={index}
+              title={icon.name}
+              arrow
+              followCursor
+              placement='top'
+              >
+              <Avatar
+                src={icon.picture}
+                sx={{
+                  height: 'auto',
+                  background: 'transparent',
+                  width: '10.85%',
+                  padding: '2%',
+                  marginX: '1%'
+                }}
+              />
+            </Tooltip>
+          ))}
+        </Box>
+      </Tablet>
+
+      {/* for mobile displays (vertical layout) */}
+      
+      <Mobile>
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            alignContent: 'center'
+          }}
+          >
+          {icons.map((icon, index) => (
+            <Tooltip
+              key={index}
+              title={icon.name}
+              arrow
+              followCursor
+              placement='top'
+              >
+              <Avatar
+                src={icon.picture}
+                sx={{
+                  height: 'auto',
+                  background: 'transparent',
+                  width: '17.5%',
+                  padding: '2.75%',
+                  marginX: '1.75%'
+                }}
+              />
+            </Tooltip>
+          ))}
+        </Box>
+      </Mobile>
+
     </ThemeProvider>
   )
 }
