@@ -3,6 +3,9 @@ import * as React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import myAvatar from '../assets/img/my_avataaars.svg'
+import laptop from '../assets/img/laptop.svg'
+import family from '../assets/img/family.svg'
+import tennessee from '../assets/img/tennessee.svg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -35,7 +38,7 @@ const Laptop = ({ children }) => {
 }
 
 const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  const isTablet = useMediaQuery({ minWidth: 550, maxWidth: 1000 })
   return isTablet ? children : null
 }
 
@@ -62,7 +65,7 @@ export default function App() {
             sx={{ width: '25%' }}
           />
     
-          <Typography
+          {/* <Typography
             sx={{
               fontSize: { laptopSmall: '5.5rem', laptopLarge: '6rem' },
               fontWeight: 'bold',
@@ -71,9 +74,9 @@ export default function App() {
             }}
             >
             Josh Hawk
-          </Typography>
+          </Typography> */}
     
-          <Divider
+          {/* <Divider
             sx={{
               background: 'white',
               borderBottomWidth: 2,
@@ -81,7 +84,7 @@ export default function App() {
               marginTop: { laptopSmall: '1.5rem', laptopLarge: '1rem' },
               marginBottom: { laptopSmall: '3rem', laptopLarge: '2.5rem' }
             }}
-          />
+          /> */}
     
           <Box
             sx={{
@@ -106,14 +109,20 @@ export default function App() {
                 >
                 Emerging Developer
               </Typography>
-              <Box
+              {/* <Box
                 sx={{
                   color: 'var(--secondary)',
                   fontSize: { laptopSmall: '3.25rem', laptopLarge: '3.5rem' }
                 }}
-                >
-                <FontAwesomeIcon icon='laptop-code' />
-              </Box>
+                > */}
+                {/* <FontAwesomeIcon icon='laptop-code' /> */}
+                <Box
+                  component='img'
+                  src={laptop}
+                  alt='Laptop Icon'
+                  sx={{ width: '100px', marginTop: '15px' }}
+                />
+              {/* </Box> */}
             </Box>
             <Box
               sx={{ margin: '0rem 2rem' }}
@@ -127,16 +136,22 @@ export default function App() {
                 >
                 Super Dad/Husband
               </Typography>
-              <Box
+              {/* <Box
                 sx={{
                   color: 'var(--secondary)',
                   fontSize: { laptopSmall: '3.25rem', laptopLarge: '3.5rem' }
                 }}
-                >
-                <FontAwesomeIcon icon='people-roof' />
-              </Box>
+                > */}
+                {/* <FontAwesomeIcon icon='people-roof' /> */}
+                <Box
+                  component='img'
+                  src={family}
+                  alt='Family Icon'
+                  sx={{ width: '100px', marginTop: '15px' }}
+                />
+              {/* </Box> */}
             </Box>
-            <Box
+            {/* <Box
               sx={{ margin: '0rem 2rem'}}
               >
               <Typography
@@ -156,6 +171,32 @@ export default function App() {
                 >
                 <FontAwesomeIcon icon='baseball-bat-ball' />
               </Box>
+            </Box> */}
+            <Box
+              sx={{ margin: '0rem 2rem'}}
+              >
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: { laptopSmall: '1.55rem', laptopLarge: '1.75rem' },
+                  lineHeight: { laptopSmall: '2.75rem', laptopLarge: '3rem' }
+                }}
+                >
+                Vol For Life
+              </Typography>
+              {/* <Box
+                sx={{
+                  color: 'var(--secondary)',
+                  fontSize: { laptopSmall: '3.25rem', laptopLarge: '3.5rem' }
+                }}
+                > */}
+                <Box
+                  component='img'
+                  src={tennessee}
+                  alt='UT Icon'
+                  sx={{ width: '100px', marginTop: '15px' }}
+                />
+              {/* </Box> */}
             </Box>
           </Box>
         </Box>

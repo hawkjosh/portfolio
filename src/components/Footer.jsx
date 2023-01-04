@@ -35,7 +35,7 @@ const Laptop = ({ children }) => {
 }
 
 const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({ minWidth: 551, maxWidth: 999 })
+  const isTablet = useMediaQuery({ minWidth: 550, maxWidth: 1000 })
   return isTablet ? children : null
 }
 
