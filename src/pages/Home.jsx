@@ -120,7 +120,7 @@ export default function App() {
                   component='img'
                   src={laptop}
                   alt='Laptop Icon'
-                  sx={{ width: '100px', marginTop: '15px' }}
+                  sx={{ width: '40%', marginTop: '15px' }}
                 />
               {/* </Box> */}
             </Box>
@@ -147,7 +147,7 @@ export default function App() {
                   component='img'
                   src={family}
                   alt='Family Icon'
-                  sx={{ width: '100px', marginTop: '15px' }}
+                  sx={{ width: '50%', marginTop: '15px' }}
                 />
               {/* </Box> */}
             </Box>
@@ -194,7 +194,7 @@ export default function App() {
                   component='img'
                   src={tennessee}
                   alt='UT Icon'
-                  sx={{ width: '100px', marginTop: '15px' }}
+                  sx={{ marginTop: '15px' }}
                 />
               {/* </Box> */}
             </Box>
