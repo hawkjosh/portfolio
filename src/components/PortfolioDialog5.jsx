@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import weatherDashboard from '../assets/img/portfolio/weather_dashboard.png'
+import weatherDashboard from '../assets/img/work-samples/weather_dashboard.png'
 
 import {
   Box,

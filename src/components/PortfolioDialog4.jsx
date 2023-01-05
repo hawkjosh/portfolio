@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import noteTaker from '../assets/img/portfolio/note_taker.png'
+import noteTaker from '../assets/img/work-samples/note_taker.png'
 
 import {
   Box,

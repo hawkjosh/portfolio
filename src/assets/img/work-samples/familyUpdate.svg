@@ -1,0 +1,20 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+  width="640"
+  height="360"
+	viewBox="0 0 640 360"
+	>
+
+  <rect width="640" height="360" fill="none" stroke="white" stroke-width="5px" />
+
+	<path
+    fill="none"
+    stroke="blue"
+    stroke-width="2.5px"
+		d="
+    M 0,0
+			
+		Z"
+	/>
+
+</svg>

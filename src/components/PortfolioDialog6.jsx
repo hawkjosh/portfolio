@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import workdayScheduler from '../assets/img/portfolio/workday_scheduler.png'
+import workdayScheduler from '../assets/img/work-samples/workday_scheduler.png'
 
 import {
   Box,

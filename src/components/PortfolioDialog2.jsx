@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import messageForum from '../assets/img/portfolio/message_forum.png'
+import messageForum from '../assets/img/work-samples/message_forum.png'
 
 import {
   Box,

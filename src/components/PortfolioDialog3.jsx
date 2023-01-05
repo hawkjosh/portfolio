@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import songSearch from '../assets/img/portfolio/song_search.png'
+import songSearch from '../assets/img/work-samples/song_search.png'
 
 import {
   Box,

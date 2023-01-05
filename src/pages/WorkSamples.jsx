@@ -2,12 +2,12 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import socialNetwork from '../assets/img/portfolio/social_network.png'
-import messageForum from '../assets/img/portfolio/message_forum.png'
-import songSearch from '../assets/img/portfolio/song_search.png'
-import noteTaker from '../assets/img/portfolio/note_taker.png'
-import weatherDashboard from '../assets/img/portfolio/weather_dashboard.png'
-import workdayScheduler from '../assets/img/portfolio/workday_scheduler.png'
+import socialNetwork from '../assets/img/work-samples/social_network.png'
+import messageForum from '../assets/img/work-samples/message_forum.png'
+import songSearch from '../assets/img/work-samples/song_search.png'
+import noteTaker from '../assets/img/work-samples/note_taker.png'
+import weatherDashboard from '../assets/img/work-samples/weather_dashboard.png'
+import workdayScheduler from '../assets/img/work-samples/workday_scheduler.png'
 
 import {
   Box,

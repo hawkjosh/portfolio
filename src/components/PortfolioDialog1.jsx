@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import socialNetwork from '../assets/img/portfolio/social_network.png'
+import socialNetwork from '../assets/img/work-samples/social_network.png'
 
 import {
   Box,
