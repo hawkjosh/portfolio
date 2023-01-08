@@ -7,8 +7,6 @@ import laptop from '../assets/img/laptop.svg'
 import family from '../assets/img/family.svg'
 import tennessee from '../assets/img/tennessee.svg'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import {
   Box,
   createTheme,

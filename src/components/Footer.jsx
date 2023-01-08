@@ -2,7 +2,9 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import linkedin from '../assets/img/linkedin.svg'
+import github from '../assets/img/github.svg'
+import stackOverflow from '../assets/img/stack-overflow.svg'
 
 import {
   Box,
@@ -47,15 +49,15 @@ const Mobile = ({ children }) => {
 const icons = [
   {
     link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
-    image: 'fab fa-fw fa-linkedin-in'
+    image: linkedin
   },
   {
     link: 'https://github.com/hawkjosh',
-    image: 'fab fa-fw fa-github'
+    image: github
   },
   {
     link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
-    image: 'fab fa-fw fa-stack-overflow'
+    image: stackOverflow
   }
 ]
 
@@ -102,9 +104,10 @@ export default function App() {
                 href={icon.link}
                 target='_blank'
                 rel='noreferrer'>
-                <FontAwesomeIcon
-                  className='footer-link-icon'
-                  icon={icon.image}
+                <Box
+                  component='img'
+                  // className='footer-link-icon'
+                  src={icon.image}
                 />
               </Button>
             ))}
@@ -140,9 +143,10 @@ export default function App() {
                 href={icon.link}
                 target='_blank'
                 rel='noreferrer'>
-                <FontAwesomeIcon
-                  className='footer-link-icon'
-                  icon={icon.image}
+                <Box
+                  component='image'
+                  src={icon.image}
+                  alt='GitHub Logo'
                 />
               </Button>
             ))}
@@ -178,9 +182,10 @@ export default function App() {
                 href={icon.link}
                 target='_blank'
                 rel='noreferrer'>
-                <FontAwesomeIcon
+                <Box
+                  component='img'
                   className='footer-link-icon'
-                  icon={icon.image}
+                  src={icon.image}
                 />
               </Button>
             ))}
