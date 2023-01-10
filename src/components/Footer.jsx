@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 
 import linkedin from '../assets/img/linkedin.svg'
 import github from '../assets/img/github.svg'
+import codepen from '../assets/img/codepen.svg'
 import stackOverflow from '../assets/img/stack-overflow.svg'
 
 import {
@@ -56,6 +57,10 @@ const icons = [
     image: github
   },
   {
+    link: 'https://codepen.io/hawkjosh',
+    image: codepen
+  },
+  {
     link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
     image: stackOverflow
   }
@@ -106,7 +111,7 @@ export default function App() {
                 rel='noreferrer'>
                 <Box
                   component='img'
-                  // className='footer-link-icon'
+                  className='footer-icon'
                   src={icon.image}
                 />
               </Button>
@@ -145,8 +150,8 @@ export default function App() {
                 rel='noreferrer'>
                 <Box
                   component='image'
+                  className='footer-icon'
                   src={icon.image}
-                  alt='GitHub Logo'
                 />
               </Button>
             ))}
@@ -184,7 +189,7 @@ export default function App() {
                 rel='noreferrer'>
                 <Box
                   component='img'
-                  className='footer-link-icon'
+                  className='footer-icon'
                   src={icon.image}
                 />
               </Button>
