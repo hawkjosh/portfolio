@@ -4,8 +4,6 @@ import { useMediaQuery } from 'react-responsive'
 
 import { Outlet } from 'react-router-dom'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { styled } from '@mui/material/styles'
 
 import {
@@ -37,6 +35,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 import DescriptionIcon from '@mui/icons-material/Description'
 
 import Footer from './Footer.jsx'
+
+import squareH from '../assets/img/square-h.svg'
 
 const drawerWidth = 200
 
@@ -181,7 +181,11 @@ export default function App() {
                   alignItems: 'center'
                 }}
                 >
-                <FontAwesomeIcon icon="square-h" />
+                <Box
+                  component='img'
+                  src={squareH}
+                  alt='Square-H Icon'
+                />
                 <Typography
                   noWrap
                   component='div'
@@ -226,7 +230,11 @@ export default function App() {
                   alignItems: 'center'
                 }}
                 >
-                <FontAwesomeIcon icon="square-h" />
+                <Box
+                  component='img'
+                  src={squareH}
+                  alt='Square-H Icon'
+                />
                 <Typography
                   noWrap
                   component='div'
@@ -271,7 +279,11 @@ export default function App() {
                   alignItems: 'center'
                 }}
                 >
-                <FontAwesomeIcon icon="square-h" />
+                <Box
+                  component='img'
+                  src={squareH}
+                  alt='Square-H Icon'
+                />
                 <Typography
                   noWrap
                   component='div'

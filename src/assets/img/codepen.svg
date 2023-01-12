@@ -1,0 +1,82 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+  width="48"
+  height="48"
+  viewBox="0 0 110 110">
+
+  <!-- Relative Path -->
+  <path
+    fill="none"
+    stroke="white"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="
+    M 105 38
+      v 33
+    
+    m -100 0
+      v -33
+    
+    m 50 67
+      v -34
+    
+    m 0 -66
+      v 33
+    
+    m 0 33
+      l -50 -33
+      l 50 -33
+      l 50 33
+      l -50 33
+    
+    m 0 34
+      l -50 -34
+      l 50 -33
+      l 50 33
+      l -50 34
+    "
+  />
+
+  <!-- Absolute Path -->
+  <!-- <path
+    fill="none"
+    stroke="white"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="
+    M105 38
+      V71
+
+    M5 71
+      V38
+
+    M55 105
+      V71
+
+    M55 5
+      V38
+
+    M55 71
+      L5 38
+      L55 5
+      L105 38
+      L55 71
+
+    M55 105
+      L5 71
+      L55 38
+      L105 71
+      L55 105
+    "
+  /> -->
+
+  <!-- <line x1="0" x2="110" y1="5" y2="5" stroke="cyan" stroke-width="0.5" /> -->
+  <!-- <line x1="0" x2="110" y1="105" y2="105" stroke="cyan" stroke-width="0.5" /> -->
+  <!-- <line x1="5" x2="5" y1="0" y2="110" stroke="cyan" stroke-width="0.5" /> -->
+  <!-- <line x1="105" x2="105" y1="0" y2="110" stroke="cyan" stroke-width="0.5" /> -->
+
+  <!-- <rect width="110" height="110" fill="none" stroke="#e70fbf" /> -->
+
+</svg>

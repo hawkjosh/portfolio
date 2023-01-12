@@ -35,7 +35,7 @@ Main {
   }
 }
 
-.footer-link-icon {
+/* .footer-link-icon {
   padding: 0.25rem 0.5rem;
   font-size: 1.5rem;
   border: 0.1rem solid white;
@@ -52,13 +52,12 @@ Main {
     font-size: 2rem;
   }
 }
-
-.footer-link-icon:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+ */
+.footer-icon:hover {
+  fill: var(--primary);
 }
 
-.fa-square-h {
+/* .fa-square-h {
   font-size: 2.25rem;
   color: var(--primary);
 }
@@ -91,7 +90,7 @@ Main {
   .fa-square-h {
     font-size: 3.75rem;
   }
-}
+} */
 
 .work-sample-img {
   display: flex;

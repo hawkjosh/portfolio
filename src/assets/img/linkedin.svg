@@ -1,0 +1,93 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+  width="48"
+  height="48"
+  viewBox="0 0 110 110">
+  
+  <!-- Relative Path -->
+  <style>
+    .footer-icon:hover {
+      fill: var(--primary);
+    }
+  </style>
+  <path
+    fill="none"
+    stroke="white"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="
+    M 105 30
+      v 50
+      a 25 25 0 0 1 -25 25
+      h -50
+      a 25 25 0 0 1 -25 -25
+      v -50
+      a 25 25 0 0 1 25 -25
+      h 50
+      a 25 25 0 0 1 25 25
+    
+    m -75 -2
+      a 1 1 0 0 1 0 4
+      a 1 1 0 0 1 0 -4
+    
+    m 0 52
+      v -35
+    
+    m 20 35
+      v -15
+    
+    m 0 -20
+      v 20
+    
+    m 0 0
+      c 0 -20 30 -20 30 0
+      v 15
+    "
+  />
+
+  <!-- Absolute Path -->
+  <!-- <path
+    fill="none"
+    stroke="white"
+    stroke-width="5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="
+    M 105 30
+      V 80
+      A 25 25 0 0 1 80 105
+      H 30
+      A 25 25 0 0 1 5 80
+      V 30
+      A 25 25 0 0 1 30 5
+      H 80
+      A 25 25 0 0 1 105 30
+
+    M 30 28
+      A 1 1 0 0 1 30 32
+      A 1 1 0 0 1 30 28
+
+    M 30 80
+      V 45
+
+    M 50 80
+      V 65
+
+    M 50 45
+      V 65
+
+    M 50 65
+      C 50 45 80 45 80 65
+      V 80
+    "
+  /> -->
+
+  <!-- <line x1="0" x2="110" y1="5" y2="5" stroke="cyan" stroke-width="0.5" /> -->
+  <!-- <line x1="0" x2="110" y1="105" y2="105" stroke="cyan" stroke-width="0.5" /> -->
+  <!-- <line x1="5" x2="5" y1="0" y2="110" stroke="cyan" stroke-width="0.5" /> -->
+  <!-- <line x1="105" x2="105" y1="0" y2="110" stroke="cyan" stroke-width="0.5" /> -->
+
+  <!-- <rect width="110" height="110" fill="none" stroke="#e70fbf" /> -->
+
+</svg>

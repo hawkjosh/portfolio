@@ -2,12 +2,10 @@ import * as React from 'react'
 
 import { useMediaQuery } from 'react-responsive'
 
-import myAvatar from '../assets/img/my_avataaars.svg'
+import myAvatar from '../assets/img/my-avatar.svg'
 import laptop from '../assets/img/laptop.svg'
 import family from '../assets/img/family.svg'
 import tennessee from '../assets/img/tennessee.svg'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import {
   Box,
