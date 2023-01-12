@@ -54,7 +54,7 @@ export default function App() {
 
       {/* for laptop/desktop displays (horizontal layout) */}
 
-      <Laptop>
+      {/* <Laptop>
         <Box
           style={{ textAlign: 'center' }}
           >
@@ -126,6 +126,83 @@ export default function App() {
             </Box>
           </Box>
         </Box>
+      </Laptop> */}
+
+      <Laptop>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr'
+          }}
+          >
+          <img
+            src={myAvatar}
+            alt='Josh Hawk Avatar'
+            style={{width: '75%'}}
+          />
+          {/* <svg width="500" height="500" viewBox="0 0 100 100">
+              <circle r="50" cx="50" cy="50" fill="var(--secondary)" />
+          </svg> */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateRows: '1fr 1fr 1fr',
+              textAlign: 'center'
+            }}
+            >
+            <div>
+              <Box
+                component='img'
+                src={laptop}
+                alt='Laptop Icon'
+                sx={{ width: '30%' }}
+              />
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: '1.75rem',
+                  lineHeight: '3rem'
+                }}
+                >
+                Emerging Developer
+              </Typography>
+            </div>
+            <div>
+              <Box
+                component='img'
+                src={family}
+                alt='Family Icon'
+                sx={{ width: '30%' }}
+              />
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: '1.75rem',
+                  lineHeight: '3rem'
+                }}
+                >
+                Super Dad/Husband
+              </Typography>
+            </div>
+            <div>
+              <Box
+                component='img'
+                src={tennessee}
+                alt='UT Icon'
+                sx={{ width: '30%' }}
+              />
+              <Typography
+                sx={{
+                  fontWeight: '300',
+                  fontSize: '1.75rem',
+                  lineHeight: '3rem'
+                }}
+                >
+                Vol For Life
+              </Typography>
+            </div>
+          </div>
+        </div>
       </Laptop>
 
       {/* for tablet displays (vertical layout) */}
