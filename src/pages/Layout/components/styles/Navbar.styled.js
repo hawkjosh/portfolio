@@ -11,13 +11,12 @@ const StyledNavbar = styled.nav`
 	width: 100%;
 	height: 8rem;
 	position: sticky;
-	top: -0.0625rem;
+  top: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: var(--color-secondary);
 	border-bottom: 0.25rem solid hsla(0, 0%, 100%, 1);
-	padding-top: 0.0625rem;
 	transition: height 0.5s ease-in-out;
 
 	${({ shrink }) =>
@@ -190,7 +189,9 @@ const Link = styled(NavLink)`
 	${({ shrink }) =>
 		shrink &&
 		`
-    font-size: clamp(0.75rem, 0.333rem + 1.042vw, 1rem);
+    ${responsive.tablet`
+      font-size: clamp(0.75rem, 0.333rem + 1.042vw, 1rem);
+    `}
 
     ${responsive.laptop`
       font-size: clamp(1rem, 0.167rem + 1.042vw, 1.25rem);
