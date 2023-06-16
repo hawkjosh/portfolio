@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 import { FooterLogoIcon } from '../FooterLogoIcon.jsx'
 import { LinkedinIcon } from '../LinkedinIcon.jsx'
 import { GithubIcon } from '../GithubIcon.jsx'
@@ -17,22 +17,22 @@ const StyledFooter = styled.footer`
 	border-top: solid hsla(0, 0%, 100%, 1);
 `
 const FooterCopywrite = styled.div`
-  font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
-  font-weight: 300;
+	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
+	font-weight: 300;
 `
 const FooterLogo = styled(FooterLogoIcon)`
-  display: flex;
-  width: clamp(3.25rem, 2.45rem + 1.25vw, 3.75rem);
-  fill: hsla(0, 0%, 100%, 1);
-  stroke: var(--color-primary);
-  transition: transform 0.25s ease;
+	display: flex;
+	width: clamp(3.25rem, 2.45rem + 1.25vw, 3.75rem);
+	fill: hsla(0, 0%, 100%, 1);
+	stroke: var(--color-primary);
+	transition: transform 0.25s ease;
 
-  &:hover {
-    fill: var(--color-primary);
-    stroke: hsla(0, 0%, 100%, 1);
-    cursor: grab;
-    transform: scale(1.0625);
-  }
+	&:hover {
+		fill: var(--color-primary);
+		stroke: hsla(0, 0%, 100%, 1);
+		cursor: grab;
+		transform: scale(1.0625);
+	}
 `
 
 const LinkedIn = styled(LinkedinIcon)`
@@ -49,42 +49,50 @@ const LinkedIn = styled(LinkedinIcon)`
 `
 
 const GitHub = styled(GithubIcon)`
-  width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
-  display: flex;
-  stroke: hsla(0, 0%, 100%, 1);
-  transition: transform 0.25s ease;
+	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	display: flex;
+	stroke: hsla(0, 0%, 100%, 1);
+	transition: transform 0.25s ease;
 
-  &:hover {
-    stroke: var(--color-primary);
-    stroke-width: 8;
-    transform: scale(1.25);
-  }
+	&:hover {
+		stroke: var(--color-primary);
+		stroke-width: 8;
+		transform: scale(1.25);
+	}
 `
 
 const Codepen = styled(CodepenIcon)`
-  width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
-  display: flex;
-  stroke: hsla(0, 0%, 100%, 1);
-  transition: transform 0.25s ease;
+	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	display: flex;
+	stroke: hsla(0, 0%, 100%, 1);
+	transition: transform 0.25s ease;
 
-  &:hover {
-    stroke: var(--color-primary);
-    stroke-width: 8;
-    transform: scale(1.25);
-  }
+	&:hover {
+		stroke: var(--color-primary);
+		stroke-width: 8;
+		transform: scale(1.25);
+	}
 `
 
 const StackOverflow = styled(StackOverflowIcon)`
-  width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
-  display: flex;
-  stroke: hsla(0, 0%, 100%, 1);
-  transition: transform 0.25s ease;
+	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	display: flex;
+	stroke: hsla(0, 0%, 100%, 1);
+	transition: transform 0.25s ease;
 
-  &:hover {
-    stroke: var(--color-primary);
-    stroke-width: 8;
-    transform: scale(1.25);
-  }
+	&:hover {
+		stroke: var(--color-primary);
+		stroke-width: 8;
+		transform: scale(1.25);
+	}
 `
 
-export { StyledFooter, FooterCopywrite, FooterLogo, LinkedIn, GitHub, Codepen, StackOverflow }
+export {
+	StyledFooter,
+	FooterCopywrite,
+	FooterLogo,
+	LinkedIn,
+	GitHub,
+	Codepen,
+	StackOverflow,
+}

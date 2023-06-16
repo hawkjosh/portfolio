@@ -25,7 +25,7 @@ const menuItems = [
 
 export const Menu = () => {
 	const [showMenu, setShowMenu] = useState(false)
-	const [navRef, shrink] = useNavShrink()
+	const shrink = useNavShrink()
 
 	const toggleShowMenu = () => {
 		setShowMenu(!showMenu)
@@ -35,9 +35,7 @@ export const Menu = () => {
 		<>
 			<MenuIcon onClick={toggleShowMenu} />
 			{showMenu && (
-				<MenuList
-					ref={navRef}
-					shrink={shrink}>
+				<MenuList shrink={shrink ? 'shrink' : ''}>
 					{menuItems.map((item, index) => (
 						<ListItem
 							key={index}

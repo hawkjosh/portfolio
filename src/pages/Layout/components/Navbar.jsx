@@ -8,7 +8,7 @@ import {
 	StyledNavbar,
 	NavMenu,
 	NavLogos,
-	Logo,
+	StyledLogo,
 	LogoTitle,
 	NavLinks,
 	Link,
@@ -39,25 +39,16 @@ const links = [
 ]
 
 export const Navbar = () => {
-	const [navRef, shrink] = useNavShrink()
+	const shrink = useNavShrink()
 
 	return (
-		<StyledNavbar
-			ref={navRef}
-			shrink={shrink}>
+		<StyledNavbar shrink={shrink ? 'shrink' : ''}>
 			<NavMenu>
 				<Menu />
 			</NavMenu>
 			<NavLogos>
-				<Logo
-					ref={navRef}
-					shrink={shrink}
-				/>
-				<LogoTitle
-					ref={navRef}
-					shrink={shrink}>
-					The Hawk's Nest
-				</LogoTitle>
+				<StyledLogo shrink={shrink ? 'shrink' : ''} />
+				<LogoTitle shrink={shrink ? 'shrink' : ''}>The Hawk's Nest</LogoTitle>
 			</NavLogos>
 			<NavLinks>
 				{links.map((link, index) => {
@@ -65,30 +56,17 @@ export const Navbar = () => {
 						<Link
 							key={index}
 							to={link.url}
-							ref={navRef}
-							shrink={shrink}>
+							shrink={shrink ? 'shrink' : ''}>
 							{link.title}
 						</Link>
 					)
 				})}
 			</NavLinks>
 			<NavSocial>
-				<LinkedIn
-					ref={navRef}
-					shrink={shrink}
-				/>
-				<GitHub
-					ref={navRef}
-					shrink={shrink}
-				/>
-				<Codepen
-					ref={navRef}
-					shrink={shrink}
-				/>
-				<StackOverflow
-					ref={navRef}
-					shrink={shrink}
-				/>
+				<LinkedIn shrink={shrink ? 'shrink' : ''} />
+				<GitHub shrink={shrink ? 'shrink' : ''} />
+				<Codepen shrink={shrink ? 'shrink' : ''} />
+				<StackOverflow shrink={shrink ? 'shrink' : ''} />
 			</NavSocial>
 		</StyledNavbar>
 	)

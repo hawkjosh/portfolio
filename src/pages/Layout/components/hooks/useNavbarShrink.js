@@ -1,15 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useNavShrink = () => {
-	const navRef = useRef(null)
-	const [shrink, setShrink] = useState(false)
+	const [shrink, setShrink] = useState('')
 
 	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY === 0) {
-				setShrink(false)
+				setShrink('')
 			} else {
-				setShrink(true)
+				setShrink('shrink')
 			}
 		}
 
@@ -21,5 +20,5 @@ export const useNavShrink = () => {
 		}
 	}, [])
 
-	return [navRef, shrink]
+	return shrink
 }

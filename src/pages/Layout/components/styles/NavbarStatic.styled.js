@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 import { responsive } from '../../../../GlobalStyle.js'
 import { NavLink } from 'react-router-dom'
 import { NavLogoIcon } from '../NavLogoIcon.jsx'

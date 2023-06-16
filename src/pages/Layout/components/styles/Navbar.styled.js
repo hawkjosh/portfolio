@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 import { responsive } from '../../../../GlobalStyle.js'
 import { NavLink } from 'react-router-dom'
 import { NavLogoIcon } from '../NavLogoIcon.jsx'
@@ -68,7 +68,7 @@ const NavLogos = styled.div`
   `}
 `
 
-const Logo = styled(NavLogoIcon)`
+const StyledLogo = styled(NavLogoIcon)`
 	@keyframes rotate {
 		from {
 			transform: rotate(0deg);
@@ -293,7 +293,7 @@ export {
 	StyledNavbar,
 	NavMenu,
 	NavLogos,
-	Logo,
+	StyledLogo,
 	LogoTitle,
 	NavLinks,
 	Link,
