@@ -11,7 +11,7 @@ const StyledNavbar = styled.nav`
 	width: 100%;
 	height: 8rem;
 	position: sticky;
-	top: 0;
+	top: -0.0625rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
