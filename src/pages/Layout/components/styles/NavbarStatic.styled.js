@@ -9,7 +9,7 @@ import { StackOverflowIcon } from '../StackOverflowIcon.jsx'
 
 const StyledNavbar = styled.nav`
 	width: 100%;
-	height: 8rem;
+	height: 6rem;
 	position: sticky;
 	top: 0;
 	display: flex;
@@ -17,17 +17,10 @@ const StyledNavbar = styled.nav`
 	align-items: center;
 	background-color: var(--color-secondary);
 	border-bottom: solid hsla(0, 0%, 100%, 1);
-	transition: height 0.5s ease-in-out;
-
-	${({ shrink }) =>
-		shrink &&
-		`
-		height: 5rem;
-  `}
 `
 
 const NavMenu = styled.div`
-	min-height: 5rem;
+	height: 100%;
 	flex-basis: 20%;
 	display: flex;
 	justify-content: flex-start;
@@ -78,79 +71,49 @@ const Logo = styled(NavLogoIcon)`
 		}
 	}
 
-	width: clamp(3.5rem, 2.857rem + 2.857vw, 4rem);
+	width: clamp(2.5rem, 2.179rem + 1.429vw, 2.75rem);
 	display: flex;
 	fill: var(--color-primary);
-	stroke: white;
-	transition: width 0.5s ease-in-out;
+	stroke: hsla(0, 0%, 100%, 1);
 
 	&:hover {
-		fill: white;
+		fill: hsla(0, 0%, 100%, 1);
 		stroke: var(--color-primary);
 		cursor: grab;
 		animation: rotate 1.5s linear infinite;
 	}
 
 	${responsive.tablet`
-    width: clamp(3.5rem, 2.667rem + 2.083vw, 4rem);
+    width: clamp(2.75rem, 2.333rem + 1.042vw, 3rem);
   `}
 
 	${responsive.laptop`
-    width: clamp(4.5rem, 2.833rem + 2.083vw, 5rem);
-  `}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    width: clamp(2rem, 1.357rem + 2.857vw, 2.5rem);
-
-    ${responsive.tablet`
-      width: clamp(2rem, 1.167rem + 2.083vw, 2.5rem);
-    `}
-
-    ${responsive.laptop`
-      width: clamp(3rem, 1.333rem + 2.083vw, 3.5rem);
-    `}
+    width: clamp(3.25rem, 2.417rem + 1.042vw, 3.5rem);
   `}
 `
 
 const LogoTitle = styled.div`
-	font-size: clamp(1.15rem, 0.507rem + 2.857vw, 1.65rem);
+	font-size: clamp(1rem, 0.679rem + 1.429vw, 1.25rem);
 	font-weight: 500;
 	text-transform: uppercase;
-	transition: font-size 0.5s ease-in-out;
 
 	@media (width < 22.5rem) {
 		display: none;
 	}
 
 	${responsive.tablet`
-    font-size: clamp(1.15rem, 0.317rem + 2.083vw, 1.65rem);
+    font-size: clamp(1.25rem, 0.833rem + 1.042vw, 1.5rem);
   `}
 
 	${responsive.laptop`
-    font-size: clamp(1.75rem, 0.083rem + 2.083vw, 2.25rem);
-  `}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    font-size: clamp(0.95rem, 0.693rem + 1.143vw, 1.15rem);
-
-    ${responsive.tablet`
-      font-size: clamp(0.95rem, 0.617rem + 0.833vw, 1.15rem);
-    `}
-
-    ${responsive.laptop`
-      font-size: clamp(1.5rem, 0.667rem + 1.042vw, 1.75rem);
-    `}
+    font-size: clamp(1.75rem, 0.917rem + 1.042vw, 2rem);
   `}
 `
 
 const NavLinks = styled.div`
 	height: 100%;
 	align-items: center;
-	border-left: solid white;
+	border-left: solid hsla(0, 0%, 100%, 1);
 	gap: 1.5rem;
 	display: none;
 
@@ -171,7 +134,7 @@ const NavLinks = styled.div`
 
 const Link = styled(NavLink)`
 	text-transform: uppercase;
-	transition: transform 0.25s ease, font-size 0.5s ease-in-out;
+	transition: transform 0.25s ease;
 
 	&:hover {
 		color: var(--color-primary);
@@ -179,23 +142,11 @@ const Link = styled(NavLink)`
 	}
 
 	${responsive.tablet`
-    font-size: clamp(0.85rem, 0.183rem + 1.667vw, 1.25rem);
+    font-size: clamp(0.85rem, 0.517rem + 0.833vw, 1.05rem);
   `}
 
 	${responsive.laptop`
-    font-size: clamp(1.25rem, 0.417rem + 1.042vw, 1.5rem);
-  `}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    ${responsive.tablet`
-      font-size: clamp(0.75rem, 0.333rem + 1.042vw, 1rem);
-    `}
-
-    ${responsive.laptop`
-      font-size: clamp(1rem, 0.167rem + 1.042vw, 1.25rem);
-    `}
+    font-size: clamp(1.25rem, 0.583rem + 0.833vw, 1.45rem);
   `}
 `
 
@@ -208,7 +159,7 @@ const NavSocial = styled.div`
     flex-basis: 25%;
     justify-content: space-between;
     align-items: center;
-    border-left: solid white;
+    border-left: solid hsla(0, 0%, 100%, 1);
     padding: 0rem 2.5%;
   `}
 `
@@ -224,12 +175,6 @@ const LinkedIn = styled(LinkedinIcon)`
 		stroke-width: 8;
 		transform: scale(1.25);
 	}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-  `}
 `
 
 const GitHub = styled(GithubIcon)`
@@ -243,12 +188,6 @@ const GitHub = styled(GithubIcon)`
 		stroke-width: 8;
 		transform: scale(1.25);
 	}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-  `}
 `
 
 const Codepen = styled(CodepenIcon)`
@@ -262,12 +201,6 @@ const Codepen = styled(CodepenIcon)`
 		stroke-width: 8;
 		transform: scale(1.25);
 	}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-  `}
 `
 
 const StackOverflow = styled(StackOverflowIcon)`
@@ -281,12 +214,6 @@ const StackOverflow = styled(StackOverflowIcon)`
 		stroke-width: 8;
 		transform: scale(1.25);
 	}
-
-	${({ shrink }) =>
-		shrink &&
-		`
-    width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-  `}
 `
 
 export {

@@ -1,6 +1,8 @@
 import React from 'react'
 
-import { useNavShrink } from './hooks/useNavbarShrink'
+import { useNavShrink } from './hooks/useNavbarShrink.js'
+
+import { Menu } from './Menu.jsx'
 
 import {
 	StyledNavbar,
@@ -44,7 +46,7 @@ export const Navbar = () => {
 			ref={navRef}
 			shrink={shrink}>
 			<NavMenu>
-				<div>Menu</div>
+				<Menu />
 			</NavMenu>
 			<NavLogos>
 				<Logo
