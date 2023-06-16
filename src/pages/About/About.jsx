@@ -1,48 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import profile from './images/profile.png'
+
+import {
+	StyledContainer,
+	Profile,
+	StyledTextWrapper,
+	StyledText,
+	StyledBtnsWrapper,
+	ToolboxBtn,
+	ResumeBtn,
+} from './components/styles/About.styled.js'
+
+const paragraphs = [
+	{
+		index: 0,
+		pid: 'paragraph1of2',
+		text: `Welcome to my online portfolio! My name is Josh Hawk and I recently decided to forge a new path into the exciting world of programming and web development. Having spent the last 15 years as a high school educator with no real background in coding, I enrolled in a full stack web development boot camp through Georgia Tech to jumpstart this career change. I finished the bootcamp this past fall and have coded nearly every day since, each one bringing new opportunities to reinforce what I've already learned and to expand my knowledge base of this incredible and continuously evolving field.`,
+	},
+	{
+		index: 1,
+		pid: 'paragraph2of2',
+		text: `Please check out some of my favorite work samples while you're here. I've included individual and group projects I created throughout the boot camp, as well as some personal projects I tackled for fun. You can also look at the skills I've acquired and experiences I've gained by following the toolbox and resume links on this page. I'd love to hear from you so please feel free to reach out with any questions or comments using the contact link above. I hope you like what you see, and thanks for stopping by!`,
+	},
+]
 
 export const About = () => {
+	const [showToolbox, setShowToolbox] = useState(false)
+	const [showResume, setShowResume] = useState(false)
+
+	const handleToolboxClick = () => {
+		setShowToolbox(true)
+		window.scrollTo(0, 0)
+	}
+
+	const handleResumeClick = () => {
+		setShowResume(true)
+		window.scrollTo(0, 0)
+	}
+
 	return (
-		<>
-			<h1
-				style={{
-					textAlign: 'center',
-					fontSize: '3rem',
-					marginBottom: '1rem',
-					color: 'var(--color-secondary)',
-				}}>
-				About Page Component
-			</h1>
-			<div style={{ fontSize: '1.75rem', margin: '0 8rem 2rem', textAlign: 'justify' }}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque
-				earum, omnis natus, cumque recusandae neque molestias iusto assumenda
-				eos architecto tempora perferendis tempore quidem? Facilis quia ipsam
-				ducimus nulla. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-				Laboriosam culpa, error id esse ullam animi labore est, aliquid
-				recusandae laudantium consectetur, molestiae aspernatur mollitia aut
-				voluptates corporis quo beatae libero. Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Quibusdam reiciendis incidunt doloribus
-				repudiandae tempora perspiciatis asperiores nobis mollitia tenetur unde,
-				est nihil ab et accusamus, odit eaque atque nesciunt minus! Lorem ipsum
-				dolor sit, amet consectetur adipisicing elit. Nobis, voluptatibus
-				aliquam. Porro, quia asperiores dignissimos odio eos id rem. Natus
-				debitis saepe assumenda vitae cum minima fuga esse accusamus possimus.
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores
-				incidunt hic eum non ipsam! Hic, laudantium esse. Nulla deserunt
-				explicabo veritatis. Impedit maxime modi at ullam a amet vitae. Lorem
-				ipsum dolor sit amet consectetur adipisicing elit. Accusantium officiis
-				ratione aliquid earum laudantium cumque quaerat, possimus, quia
-				veritatis adipisci, dolore necessitatibus omnis consequatur iste officia
-				dolorum animi error dicta. Lorem ipsum dolor sit amet, consectetur
-				adipisicing elit. Doloremque consequatur cum illum nemo architecto
-				impedit ipsum saepe, harum necessitatibus quidem in commodi itaque eius
-				magni ipsam pariatur odit assumenda enim. Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Assumenda beatae placeat expedita eius
-				pariatur! Voluptas minus dolorum esse dolores, assumenda nulla tenetur
-				eos temporibus eum quisquam nostrum natus odio soluta. Lorem ipsum
-				dolor, sit amet consectetur adipisicing elit. Dicta omnis fugit suscipit
-				asperiores iusto inventore modi rem, ex aliquid minus doloribus nihil.
-				Delectus fugit animi voluptatibus atque rerum, perspiciatis corporis!
-			</div>
-		</>
+		<StyledContainer
+			style={{
+				height: showToolbox || showResume ? 'calc(100vh - 10rem)' : 'auto',
+				overflowY: showToolbox || showResume ? 'hidden' : 'visible',
+			}}>
+			<Profile
+				src={profile}
+				alt='My Profile Photo'
+			/>
+			<StyledTextWrapper>
+				<StyledText>{paragraphs[0].text}</StyledText>
+				<StyledText>{paragraphs[1].text}</StyledText>
+			</StyledTextWrapper>
+			<StyledBtnsWrapper>
+				<ToolboxBtn onClick={handleToolboxClick} />
+				<ResumeBtn onClick={handleResumeClick} />
+			</StyledBtnsWrapper>
+
+			{showToolbox && alert('Toolbox Component')}
+			{showResume && alert('Resume Component')}
+		</StyledContainer>
 	)
 }
