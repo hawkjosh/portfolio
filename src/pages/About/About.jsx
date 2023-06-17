@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 
 import profile from './images/profile.png'
 
+import { Toolbox } from './components/Toolbox.jsx'
+
 import {
 	StyledContainer,
 	Profile,
@@ -58,8 +60,8 @@ export const About = () => {
 				<ResumeBtn onClick={handleResumeClick} />
 			</StyledBtnsWrapper>
 
-			{showToolbox && alert('Toolbox Component')}
-			{showResume && alert('Resume Component')}
+			{showToolbox && <Toolbox setShowToolbox={setShowToolbox} />}
+			{/* {showResume && <Resume />} */}
 		</StyledContainer>
 	)
 }

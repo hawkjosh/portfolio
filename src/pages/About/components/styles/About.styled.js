@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-// import { responsive } from '../../../../GlobalStyle.js'
+import { responsive } from '../../../../GlobalStyle.js'
 import { ToolboxBtnIcon } from '../ToolboxBtnIcon.jsx'
 import { ResumeBtnIcon } from '../ResumeBtnIcon.jsx'
 
@@ -10,12 +10,12 @@ const StyledContainer = styled.div`
 	justify-content: center;
 	gap: 2rem;
 
-	@media (min-width: 768px) {
+	${responsive.tablet`
 		display: inline-block;
 		padding: 2rem;
 		max-width: 1440px;
 		margin: 0 auto;
-	}
+	`}
 `
 
 const Profile = styled.img`
@@ -30,21 +30,21 @@ const Profile = styled.img`
 	margin-bottom: 0;
 	width: clamp(16rem, 12.1rem + 16vw, 18.5rem);
 
-	@media (min-width: 768px) {
+	${responsive.tablet`
 		width: clamp(18.5rem, 15.5rem + 7.5vw, 20rem);
 		float: right;
 		shape-outside: ellipse(50% 50% at 50% 50%);
 		margin-left: clamp(2rem, 1.5rem + 1.25vw, 2.5rem);
 		margin-bottom: 1rem;
-	}
+	`}
 
-	@media (min-width: 1280px) {
+	${responsive.laptop`
 		width: 23rem;
 		float: right;
 		shape-outside: ellipse(50% 50% at 50% 50%);
 		margin-left: clamp(2rem, 1.5rem + 1.25vw, 2.5rem);
 		margin-bottom: 1rem;
-	}
+	`}
 `
 
 const StyledTextWrapper = styled.div`
@@ -52,13 +52,13 @@ const StyledTextWrapper = styled.div`
 	flex-direction: column;
 	gap: 1.25rem;
 
-	@media (min-width: 768px) {
+	${responsive.tablet`
 		margin-bottom: clamp(2rem, 1.5rem + 1.25vw, 2.25rem);
-	}
+	`}
 
-	@media (min-width: 1280px) {
+	${responsive.laptop`
 		margin-bottom: 2.5rem;
-	}
+	`}
 `
 
 const StyledText = styled.p`
@@ -76,15 +76,15 @@ const StyledText = styled.p`
 		}
 	}
 
-	@media (min-width: 768px) {
+	${responsive.tablet`
 		font-size: clamp(1.25rem, 1rem + 0.625vw, 1.375rem);
 		line-height: 1.5;
-	}
+	`}
 
-	@media (min-width: 1280px) {
+	${responsive.laptop`
 		font-size: 1.5rem;
 		line-height: 1.75;
-	}
+	`}
 `
 
 const StyledBtnsWrapper = styled.div`
@@ -97,9 +97,9 @@ const StyledBtnsWrapper = styled.div`
 	column-gap: 2rem;
 	row-gap: 1.25rem;
 
-	@media (min-width: 1280px) {
+	${responsive.laptop`
 		width: clamp(56rem, -8rem + 80vw, 64rem);
-	}
+	`}
 `
 
 const ToolboxBtn = styled(ToolboxBtnIcon)`
@@ -115,12 +115,13 @@ const ToolboxBtn = styled(ToolboxBtnIcon)`
 		transform: scale(1.25);
 	}
 
-	@media (min-width: 768px) {
+	${responsive.tablet`
 		width: clamp(12rem, 8rem + 10vw, 14rem);
-	}
-	@media (min-width: 1280px) {
+	`}
+
+	${responsive.laptop`
 		width: 16rem;
-	}
+	`}
 `
 
 const ResumeBtn = styled(ResumeBtnIcon)`
@@ -136,12 +137,13 @@ const ResumeBtn = styled(ResumeBtnIcon)`
 		transform: scale(1.25);
 	}
 
-	@media (min-width: 768px) {
+	${responsive.tablet`
 		width: clamp(12rem, 8rem + 10vw, 14rem);
-	}
-	@media (min-width: 1280px) {
+	`}
+
+	${responsive.laptop`
 		width: 16rem;
-	}
+	`}
 `
 
 export {
