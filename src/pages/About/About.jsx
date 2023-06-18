@@ -12,7 +12,7 @@ import {
 	StyledBtnsWrapper,
 	ToolboxBtn,
 	ResumeBtn,
-} from './components/styles/About.styled.js'
+} from './components/styles/AboutUpdate.styled.js'
 
 const paragraphs = [
 	{
