@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { responsive } from '../../../../GlobalStyle.js'
+
 import { CloseBtnIcon } from '../CloseBtnIcon.jsx'
 
 const ToolboxBackground = styled.div`
@@ -13,55 +13,59 @@ const ToolboxBackground = styled.div`
 `
 
 const ToolboxContainer = styled.div`
-	width: 85%;
 	position: absolute;
-	left: 7.5%;
-	height: calc(100vh - 8.5rem);
-	height: calc(100dvh - 8.5rem);
-	top: 4rem;
+	height: 80%;
+	top: 50%;
+	transform: translateY(-50%);
 	border: 0.3125rem solid var(--color-secondary);
 	border-radius: 1rem;
-	background-color: hsla(0, 0%, 100%, 1);
+	background-color: hsla(360, 100%, 100%, 1);
 	box-shadow: 0 0.3125rem 1.875rem hsla(0, 0%, 0%, 0.35);
 	padding: 0.5rem 1.25rem 1.75rem;
 	overflow-y: auto;
 	scrollbar-width: none;
 
-	${responsive.tablet`
-    width: 80%;
-    left: 10%;
-  `}
+	@media (width >= 1280px) {
+		width: 70%;
+		left: 15%;
+	}
+	@media (960px <= width < 1280px) {
+		width: 75%;
+		left: 12.5%;
+	}
+	@media (640px <= width < 960px) {
+		width: 80%;
+		left: 10%;
 
-	${responsive.laptop`
-    width: 70%;
-    right: 15%;
-  `}
+		@media (orientation: landscape) {
+			width: 90%;
+			left: 5%;
+		}
+	}
+	@media (width < 640px) {
+		width: 85%;
+		left: 7.5%;
+	}
 `
 
 const ToolboxCloseBtnWrapper = styled.div`
 	position: absolute;
 	top: 0.625rem;
 	right: 0.625rem;
+	width: 5%;
+	min-width: 1.75rem;
+	max-width: 2.5rem;
 `
 
 const ToolboxCloseBtn = styled(CloseBtnIcon)`
-	width: clamp(1.75rem, 1.429rem + 1.429vw, 2rem);
 	fill: var(--color-secondary);
 
 	&:hover {
-		fill: hsla(0, 0%, 100%, 1);
+		fill: hsla(360, 100%, 100%, 1);
 		stroke: var(--color-secondary);
 		stroke-width: 3;
 		cursor: pointer;
 	}
-
-	${responsive.tablet`
-    width: clamp(1.875rem, 1.375rem + 1.25vw, 2.125rem);
-  `}
-
-	${responsive.laptop`
-    width: clamp(2.25rem, 1.417rem + 1.042vw, 2.5rem);
-  `}
 `
 
 const ToolboxIconsWrapper = styled.div`
@@ -69,39 +73,51 @@ const ToolboxIconsWrapper = styled.div`
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-items: center;
-	row-gap: 2.5rem;
-	column-gap: calc(10% / 3);
+	row-gap: clamp(2.5rem, 2rem + 1.25vw, 3rem);
 	margin: 2.5rem 5% 0;
 
-	${responsive.tablet`
-    row-gap: 2.75rem;
-    column-gap: 2%;
-  `}
-
-	${responsive.laptop`
-    row-gap: 3rem;
-    column-gap: 2%;
-  `}
+	@media (width >= 1280px) {
+		column-gap: 2%;
+	}
+	@media (960px <= width < 1280px) {
+		column-gap: calc(10% / 3);
+	}
+	@media (640px <= width < 960px) {
+		column-gap: 2%;
+	}
+	@media (width < 640px) {
+		column-gap: calc(10% / 3);
+	}
 `
 
 const ToolboxIcon = styled.img`
-	width: 20%;
 	aspect-ratio: 3/2;
 	object-fit: contain;
 	transition: transform 0.25s ease-in-out;
+
+	@media (width >= 1280px) {
+		width: calc(80% / 6);
+		max-width: 8.625rem;
+	}
+	@media (960px <= width < 1280px) {
+		width: calc(80% / 4);
+	}
+	@media (640px <= width < 960px) {
+		width: calc(80% / 4);
+
+		@media (orientation: landscape) {
+			width: calc(80% / 6);
+		}
+	}
+	@media (width < 640px) {
+		width: calc(80% / 4);
+		min-width: 3rem;
+	}
 
 	&:hover {
 		transform: scale(1.25);
 		cursor: pointer;
 	}
-
-	${responsive.tablet`
-    width: calc(80% / 6);
-  `}
-
-	${responsive.laptop`
-    width: calc(80% / 6);
-  `}
 `
 
 export {

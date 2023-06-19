@@ -13,11 +13,11 @@ import {
 } from './styles/Footer.styled.js'
 
 export const Footer = () => {
-	const { isLaptop } = useWindowSize()
+	const { isWideScreen } = useWindowSize()
 
 	return (
 		<StyledFooter>
-			{isLaptop ? (
+			{isWideScreen ? (
 				<>
 					<FooterCopywrite>
 						© {new Date().getFullYear()} Joshua Wilde Hawk

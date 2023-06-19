@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useLocation } from 'react-router-dom'
 import { useNavShrink } from './hooks/useNavbarShrink.js'
 
 import { Menu } from './Menu.jsx'
@@ -8,10 +8,13 @@ import {
 	StyledNavbar,
 	NavMenu,
 	NavLogos,
-	StyledLogo,
-	LogoTitle,
+	Logo,
+	StaticLogo,
+	Title,
+	StaticTitle,
 	NavLinks,
 	Link,
+	StaticLink,
 	NavSocial,
 	LinkedIn,
 	GitHub,
@@ -40,28 +43,58 @@ const links = [
 
 export const Navbar = () => {
 	const shrink = useNavShrink()
+	const staticNav = Boolean(useLocation().pathname === '/work-samples')
 
 	return (
-		<StyledNavbar shrink={shrink ? 'shrink' : ''}>
+		<StyledNavbar
+			height={staticNav ? '6rem' : '8rem'}
+			top={staticNav ? '0' : '-0.0625rem'}
+			shrink={shrink ? 'shrink' : ''}>
 			<NavMenu>
 				<Menu />
 			</NavMenu>
 			<NavLogos>
-				<StyledLogo shrink={shrink ? 'shrink' : ''} />
-				<LogoTitle shrink={shrink ? 'shrink' : ''}>The Hawk's Nest</LogoTitle>
+				{staticNav ? (
+					<>
+						<StaticLogo shrink={shrink ? 'shrink' : ''} />
+						<StaticTitle shrink={shrink ? 'shrink' : ''}>
+							The Hawk's Nest
+						</StaticTitle>
+					</>
+				) : (
+					<>
+						<Logo shrink={shrink ? 'shrink' : ''} />
+						<Title shrink={shrink ? 'shrink' : ''}>The Hawk's Nest</Title>
+					</>
+				)}
 			</NavLogos>
-			<NavLinks>
-				{links.map((link, index) => {
-					return (
-						<Link
-							key={index}
-							to={link.url}
-							shrink={shrink ? 'shrink' : ''}>
-							{link.title}
-						</Link>
-					)
-				})}
-			</NavLinks>
+			{staticNav ? (
+				<NavLinks>
+					{links.map((link, index) => {
+						return (
+							<StaticLink
+								key={index}
+								to={link.url}
+								shrink={shrink ? 'shrink' : ''}>
+								{link.title}
+							</StaticLink>
+						)
+					})}
+				</NavLinks>
+			) : (
+				<NavLinks>
+					{links.map((link, index) => {
+						return (
+							<Link
+								key={index}
+								to={link.url}
+								shrink={shrink ? 'shrink' : ''}>
+								{link.title}
+							</Link>
+						)
+					})}
+				</NavLinks>
+			)}
 			<NavSocial>
 				<LinkedIn shrink={shrink ? 'shrink' : ''} />
 				<GitHub shrink={shrink ? 'shrink' : ''} />

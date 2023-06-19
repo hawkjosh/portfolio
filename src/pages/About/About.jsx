@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import profile from './images/profile.png'
 
 import { Toolbox } from './components/Toolbox.jsx'
+import { Resume } from './components/Resume.jsx'
 
 import {
 	StyledContainer,
@@ -12,7 +13,7 @@ import {
 	StyledBtnsWrapper,
 	ToolboxBtn,
 	ResumeBtn,
-} from './components/styles/AboutUpdate.styled.js'
+} from './components/styles/About.styled.js'
 
 const paragraphs = [
 	{
@@ -44,7 +45,7 @@ export const About = () => {
 	return (
 		<StyledContainer
 			style={{
-				height: showToolbox || showResume ? 'calc(100vh - 10rem)' : 'auto',
+				height: showToolbox || showResume ? 'calc(100vh - 12rem)' : 'auto',
 				overflowY: showToolbox || showResume ? 'hidden' : 'visible',
 			}}>
 			<Profile
@@ -61,7 +62,7 @@ export const About = () => {
 			</StyledBtnsWrapper>
 
 			{showToolbox && <Toolbox setShowToolbox={setShowToolbox} />}
-			{/* {showResume && <Resume />} */}
+			{showResume && <Resume setShowResume={setShowResume} />}
 		</StyledContainer>
 	)
 }

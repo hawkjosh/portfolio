@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
-
+import { useLocation } from 'react-router-dom'
 import { useNavShrink } from './hooks/useNavbarShrink.js'
 
-import { MenuIcon, MenuList, ListItem } from './styles/Menu.styled.js'
+import {
+	MenuIcon,
+	MenuList,
+	ListItem,
+} from './styles/Menu.styled.js'
 
 const menuItems = [
 	{
@@ -26,6 +30,7 @@ const menuItems = [
 export const Menu = () => {
 	const [showMenu, setShowMenu] = useState(false)
 	const shrink = useNavShrink()
+	const staticNav = Boolean(useLocation().pathname === '/work-samples')
 
 	const toggleShowMenu = () => {
 		setShowMenu(!showMenu)
@@ -35,7 +40,7 @@ export const Menu = () => {
 		<>
 			<MenuIcon onClick={toggleShowMenu} />
 			{showMenu && (
-				<MenuList shrink={shrink ? 'shrink' : ''}>
+				<MenuList top={staticNav ? '4.875rem' : '6.25rem'} shrink={shrink ? 'shrink' : ''}>
 					{menuItems.map((item, index) => (
 						<ListItem
 							key={index}

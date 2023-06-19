@@ -6,15 +6,15 @@ import { CodepenIcon } from '../CodepenIcon.jsx'
 import { StackOverflowIcon } from '../StackOverflowIcon.jsx'
 
 const StyledFooter = styled.footer`
+	height: 4rem;
 	position: relative;
 	bottom: 0;
-	height: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: clamp(2.5rem, 1.145rem + 6.024vw, 5rem);
 	background-color: var(--color-secondary);
-	border-top: solid hsla(0, 0%, 100%, 1);
+	border-top: solid hsla(360, 100%, 100%, 1);
 `
 const FooterCopywrite = styled.div`
 	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
@@ -23,67 +23,67 @@ const FooterCopywrite = styled.div`
 const FooterLogo = styled(FooterLogoIcon)`
 	display: flex;
 	width: clamp(3.25rem, 2.45rem + 1.25vw, 3.75rem);
-	fill: hsla(0, 0%, 100%, 1);
+	fill: hsla(360, 100%, 100%, 1);
 	stroke: var(--color-primary);
 	transition: transform 0.25s ease;
 
 	&:hover {
-		fill: var(--color-primary);
-		stroke: hsla(0, 0%, 100%, 1);
-		cursor: grab;
 		transform: scale(1.0625);
+		fill: var(--color-primary);
+		stroke: hsla(360, 100%, 100%, 1);
+		cursor: grab;
 	}
 `
 
 const LinkedIn = styled(LinkedinIcon)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
-	stroke: hsla(0, 0%, 100%, 1);
+	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
 
 	&:hover {
+		transform: scale(1.125);
 		stroke: var(--color-primary);
-		stroke-width: 8;
-		transform: scale(1.25);
+		stroke-width: 7.5;
 	}
 `
 
 const GitHub = styled(GithubIcon)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
-	stroke: hsla(0, 0%, 100%, 1);
+	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
 
 	&:hover {
+		transform: scale(1.125);
 		stroke: var(--color-primary);
-		stroke-width: 8;
-		transform: scale(1.25);
+		stroke-width: 7.5;
 	}
 `
 
 const Codepen = styled(CodepenIcon)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
-	stroke: hsla(0, 0%, 100%, 1);
+	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
 
 	&:hover {
+		transform: scale(1.125);
 		stroke: var(--color-primary);
-		stroke-width: 8;
-		transform: scale(1.25);
+		stroke-width: 7.5;
 	}
 `
 
 const StackOverflow = styled(StackOverflowIcon)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
-	stroke: hsla(0, 0%, 100%, 1);
+	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
 
 	&:hover {
+		transform: scale(1.125);
 		stroke: var(--color-primary);
-		stroke-width: 8;
-		transform: scale(1.25);
+		stroke-width: 7.5;
 	}
 `
 

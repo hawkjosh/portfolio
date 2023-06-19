@@ -18,7 +18,7 @@ const responsive = Object.keys(breakpoints).reduce((acc, label) => {
 const GlobalStyle = createGlobalStyle`
   :root {
     --font-primary: 'Open Sans', sans-serif;
-    --font-color: hsla(0, 0%, 100%, 1);
+    --font-color: hsla(0, 100%, 100%, 1);
     --color-primary: hsla(168, 76%, 42%, 1);
     --color-secondary: hsla(211, 30%, 24%, 1);
   }
