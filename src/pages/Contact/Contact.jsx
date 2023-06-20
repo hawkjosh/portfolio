@@ -28,7 +28,7 @@ export const Contact = () => {
 				<input
 					type='hidden'
 					name='_next'
-					value='http://localhost:5173/thanks'
+					value='https://hawks-nest.netlify.app/thanks'
 				/>
 				<StyledInput
 					name='name'
