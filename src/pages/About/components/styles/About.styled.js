@@ -7,6 +7,7 @@ const StyledContainer = styled.div`
 	max-width: 90rem;
 	margin: 0 auto;
 	padding: 2rem;
+	padding-bottom: 4rem;
 
 	@media (width < 640px) {
 		display: flex;
@@ -103,6 +104,7 @@ const StyledBtnsWrapper = styled.div`
 	align-items: center;
 	column-gap: 2rem;
 	row-gap: 1.25rem;
+	padding-top: 1rem;
 
 	@media (width>= 1280px) {
 		width: clamp(56rem, -8rem + 80vw, 64rem);

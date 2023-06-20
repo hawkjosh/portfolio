@@ -28,7 +28,7 @@ export const Contact = () => {
 				<input
 					type='hidden'
 					name='_next'
-					value='https://hawkjosh.com/thanks'
+					value='http://localhost:5173/thanks'
 				/>
 				<StyledInput
 					name='name'
