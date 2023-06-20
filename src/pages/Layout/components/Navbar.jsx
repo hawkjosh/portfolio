@@ -43,7 +43,10 @@ const links = [
 
 export const Navbar = () => {
 	const shrink = useNavShrink()
-	const staticNav = Boolean(useLocation().pathname === '/work-samples')
+	const staticNav = Boolean(
+		useLocation().pathname === '/work-samples' ||
+			useLocation().pathname === '/contact'
+	)
 
 	return (
 		<StyledNavbar
