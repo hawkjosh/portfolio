@@ -21,6 +21,7 @@ import workdayScheduler from './images/workday_scheduler.png'
 import courseTracker from './images/course_tracker.png'
 import miniGames from './images/mini_games.png'
 import songSearch from './images/song_search.png'
+import commentForum from './images/comment_forum.png'
 
 const items = [
 	{
@@ -81,6 +82,16 @@ const items = [
 		info: `A small but powerful music search tool that uses third party API's to retrieve song information via RESTful CRUD routes.`,
 		website: 'https://hawkjosh-song-search.onrender.com',
 		github: 'https://github.com/hawkjosh/song-search-update',
+		bonus: null,
+	},
+	{
+		index: 6,
+		image: commentForum,
+		alt: 'Comment Forum Image',
+		title: 'Comment Forum',
+		info: `An efficient and polished full-stack comment forum app, complete with user authentication and utilizing Jinja2 on the client-side for templating. The server-side is built with Python and Flask, leveraging sqlAlchemy as the ORM to communicate with a MySQL database for runtime API's.`,
+		website: 'https://hawkjosh.pythonanywhere.com',
+		github: 'https://github.com/hawkjosh/python-flask',
 		bonus: null,
 	},
 ]
