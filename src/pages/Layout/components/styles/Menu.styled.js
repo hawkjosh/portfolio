@@ -24,8 +24,8 @@ const MenuList = styled.div`
 	padding-right: 1rem;
 	transition: top 0.5s ease-in-out;
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
     top: 4.125rem;
   `}
@@ -39,6 +39,7 @@ const ListItem = styled(NavLink)`
 	display: block;
 	font-size: clamp(1.25rem, 0.929rem + 1.429vw, 1.5rem);
 	font-weight: 500;
+	text-transform: uppercase;
 	padding: 0.75rem 1rem;
 	transition: transform 0.25s ease;
 
@@ -46,6 +47,21 @@ const ListItem = styled(NavLink)`
 		transform: scale(1.15) translate(0.5rem);
 		color: var(--color-primary);
 	}
+
+	${(props) =>
+		props.active &&
+		`
+		font-weight: 500;
+		scale: 1.15;
+		translate: 0.5rem;
+		text-decoration: underline overline 0.0625rem var(--color-primary);
+		text-underline-offset: 0.4375rem;
+		&:hover {
+			color: unset;
+			transform: unset;
+			cursor: default;
+		}
+  `}
 `
 
 export { MenuIcon, MenuList, StaticMenuList, ListItem }

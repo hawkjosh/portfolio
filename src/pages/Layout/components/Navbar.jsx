@@ -32,7 +32,7 @@ const links = [
 		url: '/about',
 	},
 	{
-		title: 'Work Samples',
+		title: 'My Work',
 		url: '/work-samples',
 	},
 	{
@@ -74,11 +74,13 @@ export const Navbar = () => {
 			{staticNav ? (
 				<NavLinks>
 					{links.map((link, index) => {
+						const active = link.url === location.pathname
 						return (
 							<StaticLink
 								key={index}
 								to={link.url}
-								shrink={shrink ? 'shrink' : ''}>
+								shrink={shrink ? 'shrink' : ''}
+								active={active ? 'active' : ''}>
 								{link.title}
 							</StaticLink>
 						)
@@ -87,11 +89,13 @@ export const Navbar = () => {
 			) : (
 				<NavLinks>
 					{links.map((link, index) => {
+						const active = link.url === location.pathname
 						return (
 							<Link
 								key={index}
 								to={link.url}
-								shrink={shrink ? 'shrink' : ''}>
+								shrink={shrink ? 'shrink' : ''}
+								active={active ? 'active' : ''}>
 								{link.title}
 							</Link>
 						)

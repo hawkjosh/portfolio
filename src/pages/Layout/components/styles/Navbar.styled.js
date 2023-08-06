@@ -27,8 +27,8 @@ const StyledNavbar = styled.nav`
 	border-bottom: solid hsla(360, 100%, 100%, 1);
 	transition: height 0.5s ease-in-out;
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		height: 5rem;
   `}
@@ -105,8 +105,8 @@ const Logo = styled(StyledLogo)`
 		width: clamp(3.5rem, 2.857rem + 2.857vw, 4rem);
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(3rem, 1.333rem + 2.083vw, 3.5rem);
@@ -163,8 +163,8 @@ const Title = styled(StyledTitle)`
 		font-size: clamp(1.15rem, 0.507rem + 2.857vw, 1.65rem);
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			font-size: clamp(1.5rem, 0.667rem + 1.042vw, 1.75rem);
@@ -213,8 +213,8 @@ const NavLinks = styled.div`
 	}
 	@media (640px <= width < 1024px) {
 		flex-basis: 57.5%;
-		justify-content: flex-end;
-		padding-right: 2.5%;
+		justify-content: space-evenly;
+		padding: 0 2.5%;
 		gap: 1.5rem;
 	}
 	@media (width < 640px) {
@@ -227,7 +227,7 @@ const StyledLink = styled(NavLink)`
 
 	&:hover {
 		color: var(--color-primary);
-		transform: scale(1.25);
+		transform: scale(1.1875);
 	}
 `
 
@@ -244,8 +244,8 @@ const Link = styled(StyledLink)`
 		font-size: clamp(0.85rem, 0.183rem + 1.667vw, 1.25rem);
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			font-size: clamp(1rem, 0.167rem + 1.042vw, 1.25rem);
@@ -255,6 +255,20 @@ const Link = styled(StyledLink)`
 		}
 		@media (640px <= width < 1024px) {
 			font-size: clamp(0.75rem, 0.333rem + 1.042vw, 1rem);
+		}
+  `}
+
+	${(props) =>
+		props.active &&
+		`
+		font-weight: 500;
+		scale: 1.1875;
+		text-decoration: underline overline 0.0625rem var(--color-primary);
+		text-underline-offset: 0.375rem;
+		&:hover {
+			color: unset;
+			transform: unset;
+			cursor: default;
 		}
   `}
 `
@@ -271,6 +285,20 @@ const StaticLink = styled(StyledLink)`
 	@media (640px <= width < 1024px) {
 		font-size: clamp(0.85rem, 0.517rem + 0.833vw, 1.05rem);
 	}
+
+	${(props) =>
+		props.active &&
+		`
+		font-weight: 500;
+		scale: 1.1875;
+		text-decoration: underline overline 0.0625rem var(--color-primary);
+		text-underline-offset: 0.375rem;
+		&:hover {
+			color: unset;
+			transform: unset;
+			cursor: default;
+		}
+  `}
 `
 
 const NavSocial = styled.div`
@@ -307,8 +335,8 @@ const LinkedIn = styled(LinkedinIcon)`
 		stroke-width: 8;
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -337,8 +365,8 @@ const GitHub = styled(GithubIcon)`
 		stroke-width: 8;
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -367,8 +395,8 @@ const Codepen = styled(CodepenIcon)`
 		stroke-width: 8;
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -397,8 +425,8 @@ const StackOverflow = styled(StackOverflowIcon)`
 		stroke-width: 8;
 	}
 
-	${({ shrink }) =>
-		shrink &&
+	${(props) =>
+		props.shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
