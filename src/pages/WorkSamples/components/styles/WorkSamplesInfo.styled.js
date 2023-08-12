@@ -5,7 +5,10 @@ const InfoWrapper = styled.div`
 	grid-row: 1 / 2;
 	display: flex;
 	flex-direction: column;
-	transition: all 1s ease-in-out;
+	transition: opacity, transform, visibility;
+	transition-duration: 1s;
+	transition-timing-function: ease-in-out;
+	overflow-y: scroll;
 
 	@media (width >= 1280px) {
 		gap: 1rem;
@@ -84,14 +87,14 @@ const InfoText = styled.p`
 	font-weight: 200;
 
 	@media (width >= 1280px) {
-		font-size: 1.625rem;
+		font-size: 1.75rem;
 	}
 	@media (640px <= width < 1280px) {
 		@media (orientation: landscape) {
-			font-size: 1rem;
+			font-size: 1.625rem;
 
 			@media (height < 500px) {
-				font-size: 0.9375rem;
+				font-size: 0.953122rem;
 			}
 		}
 		@media (orientation: portrait) {
@@ -100,10 +103,10 @@ const InfoText = styled.p`
 	}
 	@media (width < 640px) {
 		@media (orientation: landscape) {
-			font-size: 0.875rem;
+			font-size: 1rem;
 		}
 		@media (orientation: portrait) {
-			font-size: 1rem;
+			font-size: 1.125rem;
 		}
 	}
 `

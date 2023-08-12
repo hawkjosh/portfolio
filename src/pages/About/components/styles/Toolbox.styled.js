@@ -90,6 +90,20 @@ const ToolboxIconsWrapper = styled.div`
 	}
 `
 
+const ToolboxSimpleIconsWrapper = styled.div`
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: clamp(2.5rem, 2rem + 1.25vw, 3rem);
+	margin: 2.5rem 5%;
+
+	@media (640px <= width < 960px) {
+		grid-template-columns: repeat(5, 1fr);
+	}
+	@media (width < 640px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+`
+
 const ToolboxIcon = styled.img`
 	aspect-ratio: 3/2;
 	object-fit: contain;
@@ -120,11 +134,25 @@ const ToolboxIcon = styled.img`
 	}
 `
 
+const ToolboxSimpleIcon = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.25s ease-in-out;
+
+	&:hover {
+		transform: scale(1.25);
+		cursor: pointer;
+	}
+`
+
 export {
 	ToolboxBackground,
 	ToolboxContainer,
 	ToolboxCloseBtnWrapper,
 	ToolboxCloseBtn,
 	ToolboxIconsWrapper,
+	ToolboxSimpleIconsWrapper,
 	ToolboxIcon,
+	ToolboxSimpleIcon,
 }

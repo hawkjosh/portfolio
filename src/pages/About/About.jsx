@@ -19,12 +19,12 @@ const paragraphs = [
 	{
 		index: 0,
 		pid: 'paragraph1of2',
-		text: `Welcome to my online portfolio! My name is Josh Hawk and I recently decided to forge a new path into the exciting world of programming and web development. Having spent the last 15 years as a high school educator with no real background in coding, I enrolled in a full stack web development boot camp through Georgia Tech to jumpstart this career change. I finished the bootcamp this past fall and have coded nearly every day since, each one bringing new opportunities to reinforce what I've already learned and to expand my knowledge base of this incredible and continuously evolving field.`,
+		text: `Welcome to my online portfolio! I'm Josh Hawk, a dedicated professional with 15 years of experience in education and a newfound passion for programming and web development. While I began my journey as a high school educator, I made a bold decision to transition into the incredible world of software engineering. To equip myself with the necessary skills, I enrolled in a comprehensive full stack web development boot camp at Georgia Tech. Since completing the boot camp, I've immersed myself in coding projects daily, consistently reinforcing my existing knowledge and embracing the boundless growth potential of this dynamic and ever-evolving field.`,
 	},
 	{
 		index: 1,
 		pid: 'paragraph2of2',
-		text: `Please check out some of my favorite work samples while you're here. I've included individual and group projects I created throughout the boot camp, as well as some personal projects I tackled for fun. You can also look at the skills I've acquired and experiences I've gained by following the toolbox and resume links on this page. I'd love to hear from you so please feel free to reach out with any questions or comments using the contact link above. I hope you like what you see, and thanks for stopping by!`,
+		text: `As you explore my portfolio, you'll discover a collection of standout projects that highlight my capabilities. From collaborative team efforts during the boot camp to personal undertakings, each project showcases my commitment to creating innovative solutions. Don't miss the opportunity to explore my acquired skills and professional experiences through the toolbox and resume links provided on this page. I'm always eager to connect, so don't hesitate to reach out via the contact link above. Thank you for visiting, and I look forward to the possibility of working together!`,
 	},
 ]
 

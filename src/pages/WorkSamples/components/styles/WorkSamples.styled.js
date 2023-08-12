@@ -10,32 +10,32 @@ const StyledContainer = styled.div`
 	overflow: hidden;
 
 	@media (width >= 1280px) {
-		grid-template-columns: 62% 38%;
-		grid-template-rows: 60% 27.5% 12.5%;
+		grid-template-columns: 65% 35%;
+		grid-template-rows: 75% 12.5% 12.5%;
 	}
 	@media (640px <= width < 1280px) {
 		@media (orientation: landscape) {
-			grid-template-columns: 52.5% 47.5%;
-			grid-template-rows: 67.5% 20% 12.5%;
+			grid-template-columns: 60% 40%;
+			grid-template-rows: 75% 12.5% 12.5%;
 
 			@media (height < 500px) {
-				grid-template-columns: 47.5% 45% 7.5%;
+				grid-template-columns: 50% 42.5% 7.5%;
 				grid-template-rows: 82.5% 17.5%;
 			}
 		}
 		@media (orientation: portrait) {
 			grid-template-columns: 1fr;
-			grid-template-rows: 50% 30% 10% 10%;
+			grid-template-rows: 50% 35% 7.5% 7.5%;
 		}
 	}
 	@media (width < 640px) {
 		@media (orientation: landscape) {
-			grid-template-columns: 47.5% 52.5%;
-			grid-template-rows: 60% 22.5% 17.5%;
+			grid-template-columns: 55% 45%;
+			grid-template-rows: 70% 15% 15%;
 		}
 		@media (orientation: portrait) {
 			grid-template-columns: 1fr;
-			grid-template-rows: 45% 35% 10% 10%;
+			grid-template-rows: 50% 35% 7% 8%;
 		}
 	}
 `

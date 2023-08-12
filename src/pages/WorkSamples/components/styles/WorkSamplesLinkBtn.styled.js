@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const LinkBtn = styled.button`
+const LinkBtn = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,7 +40,7 @@ const LinkBtn = styled.button`
 
 	& svg {
 		fill: var(--color-secondary);
-		transition: fill 0.25s ease-in-out 0.125s;
+		transition: fill 0.25s ease-in-out;
 
 		@media (width >= 1280px) {
 			width: 3rem;
@@ -65,9 +65,12 @@ const LinkBtn = styled.button`
 				width: 2rem;
 			}
 		}
+		&:hover {
+			fill: hsla(360, 100%, 100%, 1);
+		}
 	}
 
-	&:hover {
+	&[data-expand|='expanded'] {
 		border-radius: 2rem;
 		background-color: var(--color-secondary);
 
