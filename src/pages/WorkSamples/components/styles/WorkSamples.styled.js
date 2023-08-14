@@ -1,66 +1,55 @@
 import styled from 'styled-components'
 
-import { LeftArrowIcon } from '../../components/LeftArrowIcon.jsx'
-import { RightArrowIcon } from '../../components/RightArrowIcon.jsx'
+import { CircleChevronLeft, CircleChevronRight } from '@styled-icons/fa-solid'
 
 const StyledContainer = styled.div`
 	display: grid;
-	height: calc(100vh - 10rem);
-	height: calc(100dvh - 10rem);
+	height: calc(100vh - 8rem);
+	height: calc(100dvh - 8rem);
 	overflow: hidden;
 
 	@media (width >= 1280px) {
 		grid-template-columns: 65% 35%;
-		grid-template-rows: 75% 12.5% 12.5%;
+		grid-template-rows: 90% 10%;
 	}
 	@media (640px <= width < 1280px) {
 		@media (orientation: landscape) {
 			grid-template-columns: 60% 40%;
-			grid-template-rows: 75% 12.5% 12.5%;
-
-			@media (height < 500px) {
-				grid-template-columns: 50% 42.5% 7.5%;
-				grid-template-rows: 82.5% 17.5%;
-			}
+			grid-template-rows: 85% 15%;
 		}
 		@media (orientation: portrait) {
 			grid-template-columns: 1fr;
-			grid-template-rows: 50% 35% 7.5% 7.5%;
+			grid-template-rows: 50% 40% 10%;
 		}
 	}
 	@media (width < 640px) {
 		@media (orientation: landscape) {
 			grid-template-columns: 55% 45%;
-			grid-template-rows: 70% 15% 15%;
+			grid-template-rows: 80% 20%;
 		}
 		@media (orientation: portrait) {
 			grid-template-columns: 1fr;
-			grid-template-rows: 50% 35% 7% 8%;
+			grid-template-rows: 50% 40% 10%;
 		}
 	}
 `
 
 const ImageSection = styled.div`
+	position: relative;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr;
 
 	@media (width >= 1280px) {
 		grid-column: 1 / 2;
-		grid-row: 1 / 4;
-		border-right: solid white;
+		grid-row: 1 / 3;
+		border-right: solid hsla(360, 100%, 100%, 1);
 	}
 	@media (640px <= width < 1280px) {
 		@media (orientation: landscape) {
 			grid-column: 1 / 2;
-			grid-row: 1 / 4;
+			grid-row: 1 / 3;
 			border-right: solid hsla(360, 100%, 100%, 1);
-
-			@media (height < 500px) {
-				grid-column: 1 / 2;
-				grid-row: 1 / 3;
-				border-right: solid hsla(360, 100%, 100%, 1);
-			}
 		}
 		@media (orientation: portrait) {
 			grid-row: 1 / 2;
@@ -68,10 +57,9 @@ const ImageSection = styled.div`
 		}
 	}
 	@media (width < 640px) {
-		z-index: -1;
 		@media (orientation: landscape) {
 			grid-column: 1 / 2;
-			grid-row: 1 / 4;
+			grid-row: 1 / 3;
 			border-right: solid hsla(360, 100%, 100%, 1);
 		}
 		@media (orientation: portrait) {
@@ -87,6 +75,7 @@ const Image = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	transition: all 1s ease-in-out;
+	z-index: -1;
 
 	@media (width < 640px) {
 		&:nth-of-type(6) {
@@ -106,6 +95,47 @@ const Image = styled.div`
 	}
 `
 
+const PrevArrow = styled(CircleChevronLeft)`
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 5%;
+	width: 4rem;
+	color: slategray;
+	opacity: 0.75;
+	transition-property: transform, opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+	z-index: 1;
+
+	&:hover {
+		transform: translateY(-50%) scale(1.25);
+		opacity: 1;
+		cursor: pointer;
+	}
+`
+
+const NextArrow = styled(CircleChevronRight)`
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 5%;
+	width: 4rem;
+	color: slategray;
+	opacity: 0.75;
+	transition-property: transform, opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+	z-index: 1;
+
+	&:hover {
+		transform: translateY(-50%) scale(1.25);
+		opacity: 1;
+		cursor: pointer;
+	}
+`
+
 const InfoSection = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
@@ -121,10 +151,6 @@ const InfoSection = styled.div`
 			grid-column: 2 / 3;
 			grid-row: 1 / 2;
 			padding: 0.5rem 0.75rem 0.25rem;
-
-			@media (height < 500px) {
-				padding: 0.25rem 0.5rem 0.125rem;
-			}
 		}
 		@media (orientation: portrait) {
 			grid-row: 2 / 3;
@@ -158,12 +184,6 @@ const LinkSection = styled.div`
 		@media (orientation: landscape) {
 			grid-column: 2 / 3;
 			grid-row: 2 / 3;
-
-			@media (height < 500px) {
-				grid-column: 3 / 4;
-				grid-row: 1 / 3;
-				border-left: solid hsla(360, 100%, 100%, 1);
-			}
 		}
 		@media (orientation: portrait) {
 			grid-row: 3 / 4;
@@ -180,119 +200,12 @@ const LinkSection = styled.div`
 	}
 `
 
-const NavSection = styled.div`
-	display: flex;
-	justify-content: space-evenly;
-	border-top: solid hsla(360, 100%, 100%, 1);
-	cursor: pointer;
-
-	@media (width >= 1280px) {
-		grid-column: 2 / 3;
-		grid-row: 3 / 4;
-	}
-	@media (640px <= width < 1280px) {
-		@media (orientation: landscape) {
-			grid-column: 2 / 3;
-			grid-row: 3 / 4;
-
-			@media (height < 500px) {
-				grid-column: 2 / 3;
-				grid-row: 2 / 3;
-			}
-		}
-		@media (orientation: portrait) {
-			grid-row: 4 / 5;
-		}
-	}
-	@media (width < 640px) {
-		@media (orientation: landscape) {
-			grid-column: 2 / 3;
-			grid-row: 3 / 4;
-		}
-		@media (orientation: portrait) {
-			grid-row: 4 / 5;
-		}
-	}
-`
-
-const LeftArrow = styled(LeftArrowIcon)`
-	fill: hsla(360, 100%, 100%, 1);
-	transition: transform 0.375s ease-in-out;
-
-	@media (width >= 1280px) {
-		width: 3rem;
-	}
-	@media (640px <= width < 1280px) {
-		@media (orientation: landscape) {
-			width: 2rem;
-		}
-		@media (orientation: portrait) {
-			width: 2.75rem;
-		}
-	}
-	@media (width < 640px) {
-		@media (orientation: landscape) {
-			width: 2rem;
-		}
-		@media (orientation: portrait) {
-			width: 2.75rem;
-		}
-	}
-`
-
-const RightArrow = styled(RightArrowIcon)`
-	fill: hsla(360, 100%, 100%, 1);
-	transition: transform 0.375s ease-in-out;
-
-	@media (width >= 1280px) {
-		width: 3rem;
-	}
-	@media (640px <= width < 1280px) {
-		@media (orientation: landscape) {
-			width: 2rem;
-		}
-		@media (orientation: portrait) {
-			width: 2.75rem;
-		}
-	}
-	@media (width < 640px) {
-		@media (orientation: landscape) {
-			width: 2rem;
-		}
-		@media (orientation: portrait) {
-			width: 2.75rem;
-		}
-	}
-`
-
-const ArrowIconWrapper = styled.div`
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	transition: all 0.375s ease-in-out;
-
-	&:nth-of-type(2) {
-		border-left: solid hsla(360, 100%, 100%, 1);
-	}
-
-	&:hover {
-		background-color: hsla(211, 30%, 24%, 0.5);
-
-		& > ${LeftArrow}, ${RightArrow} {
-			transform: scale(1.25);
-		}
-	}
-`
-
 export {
 	StyledContainer,
 	ImageSection,
 	Image,
+	PrevArrow,
+	NextArrow,
 	InfoSection,
 	LinkSection,
-	NavSection,
-	ArrowIconWrapper,
-	LeftArrow,
-	RightArrow,
 }

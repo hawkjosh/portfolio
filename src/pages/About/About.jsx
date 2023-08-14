@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import profile from './images/profile.png'
+import profile from '/profile.png'
 
 import { Toolbox } from './components/Toolbox.jsx'
 import { Resume } from './components/Resume.jsx'

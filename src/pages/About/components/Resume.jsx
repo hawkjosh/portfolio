@@ -10,7 +10,7 @@ import {
 	ResumeCloseBtn,
 } from './styles/Resume.styled.js'
 
-import resume from '../images/resume.png'
+import resume from '/resume.png'
 
 export const Resume = ({ setShowResume }) => {
 	const handleDownload = () => {

@@ -1,6 +1,6 @@
 import React from 'react'
-
-import { useWindowSize } from './hooks/useWindowSize.js'
+import { useWindowSize } from '../../../hooks/useWindowSize.js'
+import { useLocation } from 'react-router-dom'
 
 import {
 	StyledFooter,
@@ -14,9 +14,14 @@ import {
 
 export const Footer = () => {
 	const { isWideScreen } = useWindowSize()
+	const location = useLocation()
+	const staticNav = Boolean(
+		location.pathname === '/work-samples' || location.pathname === '/contact'
+	)
+
 
 	return (
-		<StyledFooter>
+		<StyledFooter $height={staticNav ? '3rem' : '4rem'}>
 			{isWideScreen ? (
 				<>
 					<FooterCopywrite>

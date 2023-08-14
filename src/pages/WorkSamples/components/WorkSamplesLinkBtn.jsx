@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useWindowSize } from '../../Layout/components/hooks/useWindowSize.js'
+import { useWindowSize } from '../../../hooks/useWindowSize.js'
 
 import { LinkBtn, BtnText } from './styles/WorkSamplesLinkBtn.styled.js'
 

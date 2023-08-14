@@ -1,6 +1,17 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { CloseBtnIcon } from '../CloseBtnIcon.jsx'
+
+const tooltipHover = keyframes`
+	from {
+		scale: 0;
+		opacity: 0;
+	}
+	to {
+		scale: 1;
+		opacity: 1;
+	}
+`
 
 const ToolboxBackground = styled.div`
 	width: 100%;
@@ -43,8 +54,8 @@ const ToolboxContainer = styled.div`
 		}
 	}
 	@media (width < 640px) {
-		width: 85%;
-		left: 7.5%;
+		width: 90%;
+		left: 5%;
 	}
 `
 
@@ -69,31 +80,11 @@ const ToolboxCloseBtn = styled(CloseBtnIcon)`
 `
 
 const ToolboxIconsWrapper = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	row-gap: clamp(2.5rem, 2rem + 1.25vw, 3rem);
-	margin: 2.5rem 5% 0;
-
-	@media (width >= 1280px) {
-		column-gap: 2%;
-	}
-	@media (960px <= width < 1280px) {
-		column-gap: calc(10% / 3);
-	}
-	@media (640px <= width < 960px) {
-		column-gap: 2%;
-	}
-	@media (width < 640px) {
-		column-gap: calc(10% / 3);
-	}
-`
-
-const ToolboxSimpleIconsWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-	gap: clamp(2.5rem, 2rem + 1.25vw, 3rem);
+	/* gap: clamp(2.5rem, 2rem + 1.25vw, 3rem); */
+	row-gap: 2rem;
+	column-gap: 1.25rem;
 	margin: 2.5rem 5%;
 
 	@media (640px <= width < 960px) {
@@ -104,45 +95,34 @@ const ToolboxSimpleIconsWrapper = styled.div`
 	}
 `
 
-const ToolboxIcon = styled.img`
-	aspect-ratio: 3/2;
-	object-fit: contain;
-	transition: transform 0.25s ease-in-out;
-
-	@media (width >= 1280px) {
-		width: calc(80% / 6);
-		max-width: 8.625rem;
-	}
-	@media (960px <= width < 1280px) {
-		width: calc(80% / 4);
-	}
-	@media (640px <= width < 960px) {
-		width: calc(80% / 4);
-
-		@media (orientation: landscape) {
-			width: calc(80% / 6);
-		}
-	}
-	@media (width < 640px) {
-		width: calc(80% / 4);
-		min-width: 3rem;
-	}
-
-	&:hover {
-		transform: scale(1.25);
-		cursor: pointer;
-	}
-`
-
-const ToolboxSimpleIcon = styled.div`
-	display: flex;
+const Tooltip = styled.div`
+	position: absolute;
+	color: var(--color-secondary);
+	width: max-content;
 	justify-content: center;
 	align-items: center;
+	font-size: clamp(0.75rem, 0.667rem + 0.417vw, 1rem);
+	font-weight: 900;
+	z-index: 1;
+	top: 0;
+	transform: translateY(-125%);
+	display: none;
+`
+
+const ToolboxIcon = styled.div`
+	position: relative;
+	display: flex;
+	place-content: center;
 	transition: transform 0.25s ease-in-out;
 
 	&:hover {
-		transform: scale(1.25);
+		transform: scale(1.125);
 		cursor: pointer;
+
+		& ${Tooltip} {
+			animation: ${tooltipHover} 0.5s ease-in-out;
+			display: flex;
+		}
 	}
 `
 
@@ -152,7 +132,6 @@ export {
 	ToolboxCloseBtnWrapper,
 	ToolboxCloseBtn,
 	ToolboxIconsWrapper,
-	ToolboxSimpleIconsWrapper,
+	Tooltip,
 	ToolboxIcon,
-	ToolboxSimpleIcon,
 }

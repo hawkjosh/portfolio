@@ -1,6 +1,6 @@
 import React from 'react'
 
-import avatar from './images/avatar.svg'
+import avatar from '/avatar.svg'
 
 import {
 	StyledContainer,

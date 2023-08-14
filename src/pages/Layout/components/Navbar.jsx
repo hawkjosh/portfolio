@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import { useNavShrink } from './hooks/useNavbarShrink.js'
+import { useNavShrink } from '../../../hooks/useNavbarShrink.js'
 
 import { Menu } from './Menu.jsx'
 
@@ -15,6 +15,8 @@ import {
 	NavLinks,
 	Link,
 	StaticLink,
+	ActiveIconLeft,
+	ActiveIconRight,
 	NavSocial,
 	LinkedIn,
 	GitHub,
@@ -50,24 +52,24 @@ export const Navbar = () => {
 
 	return (
 		<StyledNavbar
-			height={staticNav ? '6rem' : '8rem'}
-			top={staticNav ? '0' : '-0.0625rem'}
-			shrink={shrink ? 'shrink' : ''}>
+			$height={staticNav ? '5rem' : '8rem'}
+			$top={staticNav ? '0' : '-0.0625rem'}
+			$shrink={shrink ? 'shrink' : ''}>
 			<NavMenu>
 				<Menu />
 			</NavMenu>
 			<NavLogos>
 				{staticNav ? (
 					<>
-						<StaticLogo shrink={shrink ? 'shrink' : ''} />
-						<StaticTitle shrink={shrink ? 'shrink' : ''}>
+						<StaticLogo $shrink={shrink ? 'shrink' : ''} />
+						<StaticTitle $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
 						</StaticTitle>
 					</>
 				) : (
 					<>
-						<Logo shrink={shrink ? 'shrink' : ''} />
-						<Title shrink={shrink ? 'shrink' : ''}>The Hawk's Nest</Title>
+						<Logo $shrink={shrink ? 'shrink' : ''} />
+						<Title $shrink={shrink ? 'shrink' : ''}>The Hawk's Nest</Title>
 					</>
 				)}
 			</NavLogos>
@@ -79,9 +81,17 @@ export const Navbar = () => {
 							<StaticLink
 								key={index}
 								to={link.url}
-								shrink={shrink ? 'shrink' : ''}
-								active={active ? 'active' : ''}>
+								$shrink={shrink ? 'shrink' : ''}
+								$active={active ? 'active' : ''}>
+								<ActiveIconLeft
+									size={15}
+									$active={active ? 'active' : ''}
+								/>
 								{link.title}
+								<ActiveIconRight
+									size={15}
+									$active={active ? 'active' : ''}
+								/>
 							</StaticLink>
 						)
 					})}
@@ -94,19 +104,27 @@ export const Navbar = () => {
 							<Link
 								key={index}
 								to={link.url}
-								shrink={shrink ? 'shrink' : ''}
-								active={active ? 'active' : ''}>
+								$shrink={shrink ? 'shrink' : ''}
+								$active={active ? 'active' : ''}>
+								<ActiveIconLeft
+									size={15}
+									$active={active ? 'active' : ''}
+								/>
 								{link.title}
+								<ActiveIconRight
+									size={15}
+									$active={active ? 'active' : ''}
+								/>
 							</Link>
 						)
 					})}
 				</NavLinks>
 			)}
 			<NavSocial>
-				<LinkedIn shrink={shrink ? 'shrink' : ''} />
-				<GitHub shrink={shrink ? 'shrink' : ''} />
-				<Codepen shrink={shrink ? 'shrink' : ''} />
-				<StackOverflow shrink={shrink ? 'shrink' : ''} />
+				<LinkedIn $shrink={shrink ? 'shrink' : ''} />
+				<GitHub $shrink={shrink ? 'shrink' : ''} />
+				<Codepen $shrink={shrink ? 'shrink' : ''} />
+				<StackOverflow $shrink={shrink ? 'shrink' : ''} />
 			</NavSocial>
 		</StyledNavbar>
 	)

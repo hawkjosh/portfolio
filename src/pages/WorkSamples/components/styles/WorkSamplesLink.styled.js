@@ -6,19 +6,9 @@ const LinkWrapper = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	padding-bottom: 1rem;
 	transition: opacity, transform, visibility;
 	transition-duration: 1s;
 	transition-timing-function: ease-in-out;
-
-	@media (640px <= width < 1280px) {
-		@media (orientation: landscape) {
-			@media (height < 500px) {
-				flex-direction: column;
-				padding-bottom: 0;
-			}
-		}
-	}
 
 	&[data-status|='active'] {
 		opacity: 1;

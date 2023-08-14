@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { NavMenuIcon } from '../NavMenuIcon.jsx'
 
+import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
+
 const MenuIcon = styled(NavMenuIcon)`
 	display: flex;
 	width: clamp(1.563rem, 0.759rem + 3.571vw, 2.188rem);
@@ -15,7 +17,7 @@ const MenuIcon = styled(NavMenuIcon)`
 `
 const MenuList = styled.div`
 	position: absolute;
-	top: ${(props) => props.top};
+	top: ${({ $top }) => $top};
 	left: 1.5rem;
 	background-color: var(--color-secondary);
 	border: 0.1875rem solid hsla(360, 100%, 100%, 1);
@@ -23,9 +25,10 @@ const MenuList = styled.div`
 	padding: 0.5rem;
 	padding-right: 1rem;
 	transition: top 0.5s ease-in-out;
+	z-index: 1;
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
     top: 4.125rem;
   `}
@@ -36,7 +39,9 @@ const StaticMenuList = styled(MenuList)`
 `
 
 const ListItem = styled(NavLink)`
-	display: block;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
 	font-size: clamp(1.25rem, 0.929rem + 1.429vw, 1.5rem);
 	font-weight: 500;
 	text-transform: uppercase;
@@ -48,14 +53,11 @@ const ListItem = styled(NavLink)`
 		color: var(--color-primary);
 	}
 
-	${(props) =>
-		props.active &&
+	${({ $active }) =>
+		$active &&
 		`
 		font-weight: 500;
 		scale: 1.15;
-		translate: 0.5rem;
-		text-decoration: underline overline 0.0625rem var(--color-primary);
-		text-underline-offset: 0.4375rem;
 		&:hover {
 			color: unset;
 			transform: unset;
@@ -64,4 +66,33 @@ const ListItem = styled(NavLink)`
   `}
 `
 
-export { MenuIcon, MenuList, StaticMenuList, ListItem }
+const ActiveIconLeft = styled(CaretLeft)`
+	color: var(--color-primary);
+	display: none;
+
+	${({ $active }) =>
+		$active &&
+		`
+	display: block;
+`}
+`
+
+const ActiveIconRight = styled(CaretRight)`
+	color: var(--color-primary);
+	display: none;
+
+	${({ $active }) =>
+		$active &&
+		`
+	display: block;
+`}
+`
+
+export {
+	MenuIcon,
+	MenuList,
+	StaticMenuList,
+	ListItem,
+	ActiveIconLeft,
+	ActiveIconRight,
+}

@@ -83,6 +83,12 @@ const InfoTitle = styled.h2`
 	}
 `
 
+const InfoTextWrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+`
+
 const InfoText = styled.p`
 	font-weight: 200;
 
@@ -111,4 +117,4 @@ const InfoText = styled.p`
 	}
 `
 
-export { InfoWrapper, InfoTitle, InfoText }
+export { InfoWrapper, InfoTitle, InfoTextWrapper, InfoText }

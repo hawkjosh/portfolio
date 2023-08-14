@@ -6,9 +6,10 @@ import { CodepenIcon } from '../CodepenIcon.jsx'
 import { StackOverflowIcon } from '../StackOverflowIcon.jsx'
 
 const StyledFooter = styled.footer`
-	height: 4rem;
+	height: ${({ $height }) => $height};
 	position: relative;
 	bottom: 0;
+	/* padding-top: 0.5rem; */
 	display: flex;
 	justify-content: center;
 	align-items: center;

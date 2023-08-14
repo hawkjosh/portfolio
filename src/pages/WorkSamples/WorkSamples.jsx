@@ -7,21 +7,23 @@ import {
 	StyledContainer,
 	ImageSection,
 	Image,
+	PrevArrow,
+	NextArrow,
 	InfoSection,
 	LinkSection,
-	NavSection,
-	ArrowIconWrapper,
-	LeftArrow,
-	RightArrow,
+	// NavSection,
+	// ArrowIconWrapper,
+	// LeftArrow,
+	// RightArrow,
 } from './components/styles/WorkSamples.styled.js'
 
-import noteTaker from './images/note_taker.png'
-import weatherDashboard from './images/weather_dashboard.png'
-import workdayScheduler from './images/workday_scheduler.png'
-import courseTracker from './images/course_tracker.png'
-import miniGames from './images/mini_games.png'
-import songSearch from './images/song_search.png'
-import commentForum from './images/comment_forum.png'
+import noteTaker from '/note_taker.png'
+import weatherDashboard from '/weather_dashboard.png'
+import workdayScheduler from '/workday_scheduler.png'
+import courseTracker from '/course_tracker.png'
+import miniGames from '/mini_games.png'
+import songSearch from '/song_search.png'
+import commentForum from '/comment_forum.png'
 
 const items = [
 	{
@@ -125,10 +127,11 @@ export const WorkSamples = () => {
 						<Image
 							key={item.index}
 							data-status={item.index === activeIndex ? 'active' : 'inactive'}
-							style={{ backgroundImage: `url(${item.image})` }}
-						/>
+							style={{ backgroundImage: `url(${item.image})` }} />
 					)
 				})}
+				<PrevArrow onClick={handleLeftClick} />
+				<NextArrow onClick={handleRightClick} />
 			</ImageSection>
 
 			<InfoSection>
@@ -155,7 +158,7 @@ export const WorkSamples = () => {
 				})}
 			</LinkSection>
 
-			<NavSection>
+			{/* <NavSection>
 				<ArrowIconWrapper onClick={handleLeftClick}>
 					<LeftArrow />
 				</ArrowIconWrapper>
@@ -163,7 +166,7 @@ export const WorkSamples = () => {
 				<ArrowIconWrapper onClick={handleRightClick}>
 					<RightArrow />
 				</ArrowIconWrapper>
-			</NavSection>
+			</NavSection> */}
 		</StyledContainer>
 	)
 }

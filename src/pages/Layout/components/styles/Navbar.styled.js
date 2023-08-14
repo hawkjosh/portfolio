@@ -7,6 +7,8 @@ import { GithubIcon } from '../GithubIcon.jsx'
 import { CodepenIcon } from '../CodepenIcon.jsx'
 import { StackOverflowIcon } from '../StackOverflowIcon.jsx'
 
+import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
+
 const rotate = keyframes`
 	from {
 		transform: rotate(0deg);
@@ -17,9 +19,9 @@ const rotate = keyframes`
 `
 
 const StyledNavbar = styled.nav`
-	height: ${(props) => props.height};
+	height: ${({ $height }) => $height};
 	position: sticky;
-	top: ${(props) => props.top};
+	top: ${({ $top }) => $top};
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -27,8 +29,8 @@ const StyledNavbar = styled.nav`
 	border-bottom: solid hsla(360, 100%, 100%, 1);
 	transition: height 0.5s ease-in-out;
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		height: 5rem;
   `}
@@ -105,8 +107,8 @@ const Logo = styled(StyledLogo)`
 		width: clamp(3.5rem, 2.857rem + 2.857vw, 4rem);
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(3rem, 1.333rem + 2.083vw, 3.5rem);
@@ -163,8 +165,8 @@ const Title = styled(StyledTitle)`
 		font-size: clamp(1.15rem, 0.507rem + 2.857vw, 1.65rem);
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			font-size: clamp(1.5rem, 0.667rem + 1.042vw, 1.75rem);
@@ -232,6 +234,10 @@ const StyledLink = styled(NavLink)`
 `
 
 const Link = styled(StyledLink)`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.125rem;
 	transition: transform 0.25s ease-in-out, font-size 0.5s ease-in-out;
 
 	@media (width >= 1280px) {
@@ -244,8 +250,8 @@ const Link = styled(StyledLink)`
 		font-size: clamp(0.85rem, 0.183rem + 1.667vw, 1.25rem);
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			font-size: clamp(1rem, 0.167rem + 1.042vw, 1.25rem);
@@ -258,13 +264,11 @@ const Link = styled(StyledLink)`
 		}
   `}
 
-	${(props) =>
-		props.active &&
+	${({ $active }) =>
+		$active &&
 		`
-		font-weight: 500;
-		scale: 1.1875;
-		text-decoration: underline overline 0.0625rem var(--color-primary);
-		text-underline-offset: 0.375rem;
+		font-weight: 700;
+		scale: 1.15;
 		&:hover {
 			color: unset;
 			transform: unset;
@@ -274,6 +278,10 @@ const Link = styled(StyledLink)`
 `
 
 const StaticLink = styled(StyledLink)`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.125rem;
 	transition: transform 0.25s ease-in-out;
 
 	@media (width >= 1280px) {
@@ -286,19 +294,39 @@ const StaticLink = styled(StyledLink)`
 		font-size: clamp(0.85rem, 0.517rem + 0.833vw, 1.05rem);
 	}
 
-	${(props) =>
-		props.active &&
+	${({ $active }) =>
+		$active &&
 		`
-		font-weight: 500;
-		scale: 1.1875;
-		text-decoration: underline overline 0.0625rem var(--color-primary);
-		text-underline-offset: 0.375rem;
+		font-weight: 700;
+		scale: 1.15;
 		&:hover {
 			color: unset;
 			transform: unset;
 			cursor: default;
 		}
   `}
+`
+
+const ActiveIconLeft = styled(CaretLeft)`
+	color: var(--color-primary);
+	display: none;
+
+	${({ $active }) =>
+		$active &&
+		`
+	display: block;
+`}
+`
+
+const ActiveIconRight = styled(CaretRight)`
+	color: var(--color-primary);
+	display: none;
+
+	${({ $active }) =>
+		$active &&
+		`
+	display: block;
+`}
 `
 
 const NavSocial = styled.div`
@@ -335,8 +363,8 @@ const LinkedIn = styled(LinkedinIcon)`
 		stroke-width: 8;
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -365,8 +393,8 @@ const GitHub = styled(GithubIcon)`
 		stroke-width: 8;
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -395,8 +423,8 @@ const Codepen = styled(CodepenIcon)`
 		stroke-width: 8;
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -425,8 +453,8 @@ const StackOverflow = styled(StackOverflowIcon)`
 		stroke-width: 8;
 	}
 
-	${(props) =>
-		props.shrink &&
+	${({ $shrink }) =>
+		$shrink &&
 		`
 		@media (width >= 1280px) {
 			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
@@ -448,6 +476,8 @@ export {
 	NavLinks,
 	Link,
 	StaticLink,
+	ActiveIconLeft,
+	ActiveIconRight,
 	NavSocial,
 	LinkedIn,
 	GitHub,

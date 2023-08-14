@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useTextareaScroll } from './components/hooks/useTextareaScroll.js'
+import { useTextareaScroll } from '../../hooks/useTextareaScroll.js'
 
 import {
 	StyledContainer,
