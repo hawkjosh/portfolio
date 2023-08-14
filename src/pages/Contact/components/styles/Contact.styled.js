@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-	height: 100%;
-	max-height: calc(100dvh - 10rem);
+	/* height: 100%;
+	max-height: calc(100dvh - 10rem); */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -74,6 +74,7 @@ const StyledInput = styled.input`
 const StyledTextarea = styled.textarea`
 	width: 100%;
 	height: 100%;
+	/* min-height: 25vh; */
 	justify-self: stretch;
 	font-family: inherit;
 	line-height: 1.25;

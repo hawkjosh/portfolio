@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
 		grid-template-columns: 65% 35%;
 		grid-template-rows: 90% 10%;
 	}
-	@media (640px <= width < 1280px) {
+	@media (960px <= width < 1280px) {
 		@media (orientation: landscape) {
 			grid-template-columns: 60% 40%;
 			grid-template-rows: 85% 15%;
@@ -22,10 +22,28 @@ const StyledContainer = styled.div`
 			grid-template-rows: 50% 40% 10%;
 		}
 	}
+	@media (640px <= width < 960px) {
+		@media (orientation: landscape) {
+			grid-template-columns: 60% 40%;
+			grid-template-rows: 85% 15%;
+			
+			@media (height < 450px) {
+				grid-template-rows: 80% 20%;
+			}
+		}
+		@media (orientation: portrait) {
+			grid-template-columns: 1fr;
+			grid-template-rows: 50% 40% 10%;
+		}
+	}
 	@media (width < 640px) {
 		@media (orientation: landscape) {
 			grid-template-columns: 55% 45%;
-			grid-template-rows: 80% 20%;
+			grid-template-rows: 85% 15%;
+
+			@media (height < 450px) {
+				grid-template-rows: 80% 20%;
+			}
 		}
 		@media (orientation: portrait) {
 			grid-template-columns: 1fr;
@@ -101,17 +119,17 @@ const PrevArrow = styled(CircleChevronLeft)`
 	top: 50%;
 	transform: translateY(-50%);
 	left: 5%;
-	width: 4rem;
-	color: slategray;
-	opacity: 0.75;
+	width: clamp(3rem, 2.156rem + 3.556vw, 5rem);
+	color: hsla(211, 30%, 24%, 1);
+	opacity: 0.625;
+	filter: drop-shadow(1rem 1rem 0.5rem hsla(211, 30%, 24%, 0.75));
 	transition-property: transform, opacity;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
-	z-index: 1;
 
 	&:hover {
 		transform: translateY(-50%) scale(1.25);
-		opacity: 1;
+		opacity: 0.875;
 		cursor: pointer;
 	}
 `
@@ -121,17 +139,17 @@ const NextArrow = styled(CircleChevronRight)`
 	top: 50%;
 	transform: translateY(-50%);
 	right: 5%;
-	width: 4rem;
-	color: slategray;
-	opacity: 0.75;
+	width: clamp(3rem, 2.156rem + 3.556vw, 5rem);
+	color: hsla(211, 30%, 24%, 1);
+	opacity: 0.625;
+	filter: drop-shadow(1rem 1rem 0.5rem hsla(211, 30%, 24%, 0.75));
 	transition-property: transform, opacity;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
-	z-index: 1;
 
 	&:hover {
 		transform: translateY(-50%) scale(1.25);
-		opacity: 1;
+		opacity: 0.875;
 		cursor: pointer;
 	}
 `

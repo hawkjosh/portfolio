@@ -25,37 +25,42 @@ const ToolboxBackground = styled.div`
 
 const ToolboxContainer = styled.div`
 	position: absolute;
+	max-width: 60rem;
 	height: 80%;
 	top: 50%;
-	transform: translateY(-50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 	border: 0.3125rem solid var(--color-secondary);
 	border-radius: 1rem;
 	background-color: hsla(360, 100%, 100%, 1);
 	box-shadow: 0 0.3125rem 1.875rem hsla(0, 0%, 0%, 0.35);
-	padding: 0.5rem 1.25rem 1.75rem;
+	padding: 0.75rem 1.25rem 1.75rem;
 	overflow-y: auto;
 	scrollbar-width: none;
 
 	@media (width >= 1280px) {
-		width: 70%;
-		left: 15%;
+		width: 75%;
 	}
 	@media (960px <= width < 1280px) {
-		width: 75%;
-		left: 12.5%;
-	}
-	@media (640px <= width < 960px) {
 		width: 80%;
-		left: 10%;
 
 		@media (orientation: landscape) {
-			width: 90%;
-			left: 5%;
+			width: 75%;
+		}
+	}
+	@media (640px <= width < 960px) {
+		width: 85%;
+
+		@media (orientation: landscape) {
+			width: 80%;
 		}
 	}
 	@media (width < 640px) {
 		width: 90%;
-		left: 5%;
+
+		@media (orientation: landscape) {
+			width: 85%;
+		}
 	}
 `
 
@@ -81,12 +86,16 @@ const ToolboxCloseBtn = styled(CloseBtnIcon)`
 
 const ToolboxIconsWrapper = styled.div`
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	/* gap: clamp(2.5rem, 2rem + 1.25vw, 3rem); */
-	row-gap: 2rem;
-	column-gap: 1.25rem;
+	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
+	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
 	margin: 2.5rem 5%;
 
+	@media (width >= 1280px) {
+		grid-template-columns: repeat(8, 1fr);
+	}
+	@media (960px <= width < 1280px) {
+		grid-template-columns: repeat(6, 1fr);
+	}
 	@media (640px <= width < 960px) {
 		grid-template-columns: repeat(5, 1fr);
 	}
@@ -97,15 +106,13 @@ const ToolboxIconsWrapper = styled.div`
 
 const Tooltip = styled.div`
 	position: absolute;
-	color: var(--color-secondary);
-	width: max-content;
-	justify-content: center;
-	align-items: center;
-	font-size: clamp(0.75rem, 0.667rem + 0.417vw, 1rem);
+	color: ${({ $color }) => $color};
+	text-align: center;
+	line-height: 1;
+	font-size: clamp(0.625rem, 0.414rem + 0.889vw, 1.125rem);
 	font-weight: 900;
-	z-index: 1;
 	top: 0;
-	transform: translateY(-125%);
+	transform: ${({ $transform }) => $transform || 'translateY(-125%)'};
 	display: none;
 `
 
@@ -113,15 +120,19 @@ const ToolboxIcon = styled.div`
 	position: relative;
 	display: flex;
 	place-content: center;
-	transition: transform 0.25s ease-in-out;
+	filter: contrast(0%);
+	transition-property: transform, filter;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
 
 	&:hover {
 		transform: scale(1.125);
+		filter: contrast(100%);
 		cursor: pointer;
 
 		& ${Tooltip} {
 			animation: ${tooltipHover} 0.5s ease-in-out;
-			display: flex;
+			display: block;
 		}
 	}
 `

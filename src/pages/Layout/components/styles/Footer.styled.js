@@ -23,7 +23,7 @@ const FooterCopywrite = styled.div`
 `
 const FooterLogo = styled(FooterLogoIcon)`
 	display: flex;
-	width: clamp(3.25rem, 2.45rem + 1.25vw, 3.75rem);
+	width: 2.5rem;
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: var(--color-primary);
 	transition: transform 0.25s ease;

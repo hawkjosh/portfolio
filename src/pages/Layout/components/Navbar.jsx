@@ -46,8 +46,11 @@ const links = [
 export const Navbar = () => {
 	const shrink = useNavShrink()
 	const location = useLocation()
+	// const staticNav = Boolean(
+	// 	location.pathname === '/work-samples' || location.pathname === '/contact'
+	// )
 	const staticNav = Boolean(
-		location.pathname === '/work-samples' || location.pathname === '/contact'
+		location.pathname === '/work-samples'
 	)
 
 	return (

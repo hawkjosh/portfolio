@@ -11,10 +11,6 @@ import {
 	NextArrow,
 	InfoSection,
 	LinkSection,
-	// NavSection,
-	// ArrowIconWrapper,
-	// LeftArrow,
-	// RightArrow,
 } from './components/styles/WorkSamples.styled.js'
 
 import noteTaker from '/note_taker.png'
@@ -157,16 +153,6 @@ export const WorkSamples = () => {
 					)
 				})}
 			</LinkSection>
-
-			{/* <NavSection>
-				<ArrowIconWrapper onClick={handleLeftClick}>
-					<LeftArrow />
-				</ArrowIconWrapper>
-
-				<ArrowIconWrapper onClick={handleRightClick}>
-					<RightArrow />
-				</ArrowIconWrapper>
-			</NavSection> */}
 		</StyledContainer>
 	)
 }

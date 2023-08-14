@@ -25,7 +25,6 @@ const MenuList = styled.div`
 	padding: 0.5rem;
 	padding-right: 1rem;
 	transition: top 0.5s ease-in-out;
-	z-index: 1;
 
 	${({ $shrink }) =>
 		$shrink &&

@@ -28,6 +28,7 @@ const StyledNavbar = styled.nav`
 	background-color: var(--color-secondary);
 	border-bottom: solid hsla(360, 100%, 100%, 1);
 	transition: height 0.5s ease-in-out;
+	z-index: 1;
 
 	${({ $shrink }) =>
 		$shrink &&
