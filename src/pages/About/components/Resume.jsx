@@ -16,7 +16,8 @@ export const Resume = ({ setShowResume }) => {
 	const handleDownload = () => {
 		window.open(
 			'https://1drv.ms/b/s!AjbK_Cd8W85etY8YbTzNuiafBgluAg?e=gtMTkI',
-			'_blank'
+			'_blank',
+			'noreferrer'
 		)
 		setShowResume(false)
 	}

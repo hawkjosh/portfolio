@@ -10,14 +10,15 @@ const ResumeBackground = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 2;
 `
 
 const ResumeContainer = styled.div`
 	position: absolute;
 	width: clamp(23.125rem, 3.857rem + 79.048vw, 75rem);
-	height: calc(100vh - 8.5rem);
-	height: calc(100dvh - 8.5rem);
-	top: 4rem;
+	height: calc(100vh - 8rem);
+	height: calc(100dvh - 8rem);
+	top: 6rem;
 	left: 50%;
 	transform: translateX(-50%);
 	border: 0.3125rem solid var(--color-secondary);
@@ -27,13 +28,20 @@ const ResumeContainer = styled.div`
 	padding: 0.5rem 0.25rem 1.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
+	z-index: 3;
+
+	@media (width < 960px) and (orientation: landscape) {
+		height: calc(100vh - 3rem);
+		height: calc(100dvh - 3rem);
+		top: 2rem;
+	}
 `
 
 const ResumeContentWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 	margin: 2.5rem 0.5rem 0;
 `
 

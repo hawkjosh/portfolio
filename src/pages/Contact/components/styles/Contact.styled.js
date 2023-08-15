@@ -39,6 +39,18 @@ const StyledForm = styled.form`
 	gap: 1.25rem;
 `
 
+const StyledInputWrapper = styled.div`
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	@media (orientation: landscape) {
+		flex-direction: row;
+		gap: 0.5rem;
+	}
+`
+
 const StyledInput = styled.input`
 	width: 100%;
 	line-height: 1.25;
@@ -74,7 +86,7 @@ const StyledInput = styled.input`
 const StyledTextarea = styled.textarea`
 	width: 100%;
 	height: 100%;
-	/* min-height: 25vh; */
+	min-height: 25vh;
 	justify-self: stretch;
 	font-family: inherit;
 	line-height: 1.25;
@@ -145,6 +157,7 @@ export {
 	StyledContainer,
 	StyledTitle,
 	StyledForm,
+	StyledInputWrapper,
 	StyledInput,
 	StyledTextarea,
 	SubmitBtn,

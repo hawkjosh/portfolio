@@ -21,22 +21,25 @@ const ToolboxBackground = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 2;
 `
 
 const ToolboxContainer = styled.div`
 	position: absolute;
 	max-width: 60rem;
-	height: 80%;
-	top: 50%;
+	height: calc(100vh - 8rem);
+	height: calc(100dvh - 8rem);
+	top: 6rem;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translateX(-50%);
 	border: 0.3125rem solid var(--color-secondary);
 	border-radius: 1rem;
 	background-color: hsla(360, 100%, 100%, 1);
 	box-shadow: 0 0.3125rem 1.875rem hsla(0, 0%, 0%, 0.35);
-	padding: 0.75rem 1.25rem 1.75rem;
+	padding: 0.75rem 1.25rem 0.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
+	z-index: 3;
 
 	@media (width >= 1280px) {
 		width: 75%;
@@ -53,6 +56,9 @@ const ToolboxContainer = styled.div`
 
 		@media (orientation: landscape) {
 			width: 80%;
+			height: calc(100vh - 3rem);
+			height: calc(100dvh - 3rem);
+			top: 2rem;
 		}
 	}
 	@media (width < 640px) {
@@ -60,6 +66,9 @@ const ToolboxContainer = styled.div`
 
 		@media (orientation: landscape) {
 			width: 85%;
+			height: calc(100vh - 3rem);
+			height: calc(100dvh - 3rem);
+			top: 1rem;
 		}
 	}
 `

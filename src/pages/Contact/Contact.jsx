@@ -6,6 +6,7 @@ import {
 	StyledContainer,
 	StyledTitle,
 	StyledForm,
+	StyledInputWrapper,
 	StyledInput,
 	StyledTextarea,
 	SubmitBtn,
@@ -30,18 +31,20 @@ export const Contact = () => {
 					name='_next'
 					value='https://hawks-nest.netlify.app/thanks'
 				/>
-				<StyledInput
-					name='name'
-					type='text'
-					placeholder='Full Name'
-					required
-				/>
-				<StyledInput
-					name='email'
-					type='email'
-					placeholder='Email Address'
-					required
-				/>
+				<StyledInputWrapper>
+					<StyledInput
+						name='name'
+						type='text'
+						placeholder='Full Name'
+						required
+					/>
+					<StyledInput
+						name='email'
+						type='email'
+						placeholder='Email Address'
+						required
+					/>
+				</StyledInputWrapper>
 				<StyledTextarea
 					ref={textareaRef}
 					name='message'

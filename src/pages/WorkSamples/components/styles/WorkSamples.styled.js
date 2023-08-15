@@ -26,7 +26,7 @@ const StyledContainer = styled.div`
 		@media (orientation: landscape) {
 			grid-template-columns: 60% 40%;
 			grid-template-rows: 85% 15%;
-			
+
 			@media (height < 450px) {
 				grid-template-rows: 80% 20%;
 			}
@@ -122,7 +122,6 @@ const PrevArrow = styled(CircleChevronLeft)`
 	width: clamp(3rem, 2.156rem + 3.556vw, 5rem);
 	color: hsla(211, 30%, 24%, 1);
 	opacity: 0.625;
-	filter: drop-shadow(1rem 1rem 0.5rem hsla(211, 30%, 24%, 0.75));
 	transition-property: transform, opacity;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
@@ -142,7 +141,6 @@ const NextArrow = styled(CircleChevronRight)`
 	width: clamp(3rem, 2.156rem + 3.556vw, 5rem);
 	color: hsla(211, 30%, 24%, 1);
 	opacity: 0.625;
-	filter: drop-shadow(1rem 1rem 0.5rem hsla(211, 30%, 24%, 0.75));
 	transition-property: transform, opacity;
 	transition-duration: 0.25s;
 	transition-timing-function: ease-in-out;
