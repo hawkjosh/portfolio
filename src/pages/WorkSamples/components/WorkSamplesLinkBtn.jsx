@@ -13,7 +13,7 @@ export const WorkSamplesLinkBtn = ({ icon, text, link }) => {
 	}
 
 	const handleLinkClick = () => {
-		window.open(link, '_blank', 'noopener,noreferrer')
+		window.open(link, '_blank', 'noreferrer')
 	}
 
 	useEffect(() => {
@@ -35,11 +35,7 @@ export const WorkSamplesLinkBtn = ({ icon, text, link }) => {
 			<LinkBtn
 				ref={buttonRef}
 				data-expand={expanded && 'expanded'}
-				onClick={
-					isTablet && !isPortrait && isShortScreen
-						? handleLinkClick
-						: handleExpandClick
-				}>
+				onClick={handleExpandClick}>
 				{icon}
 				{expanded && <BtnText onClick={handleLinkClick}>{text}</BtnText>}
 			</LinkBtn>

@@ -86,12 +86,6 @@ const LinkBtn = styled.div`
 			@media (orientation: landscape) {
 				width: 10rem;
 				font-size: 1rem;
-
-				@media (height < 500px) {
-					width: 2.5rem;
-					background-color: transparent;
-					transform: scale(1.25);
-				}
 			}
 			@media (orientation: portrait) {
 				width: 10rem;
