@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
 import { CloseBtnIcon } from '../CloseBtnIcon.jsx'
 
@@ -10,7 +10,7 @@ const ResumeBackground = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	z-index: 1;
 `
 
 const ResumeContainer = styled.div`
@@ -28,7 +28,7 @@ const ResumeContainer = styled.div`
 	padding: 0.5rem 0.25rem 1.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
-	z-index: 3;
+	z-index: 2;
 
 	@media (width < 960px) and (orientation: landscape) {
 		height: calc(100vh - 3rem);

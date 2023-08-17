@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
 import { ToolboxBtnIcon } from '../ToolboxBtnIcon.jsx'
 import { ResumeBtnIcon } from '../ResumeBtnIcon.jsx'

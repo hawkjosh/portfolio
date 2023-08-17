@@ -1,24 +1,14 @@
 import React from 'react'
-
 import { useTextareaScroll } from '../../hooks/useTextareaScroll.js'
-
-import {
-	StyledContainer,
-	StyledTitle,
-	StyledForm,
-	StyledInputWrapper,
-	StyledInput,
-	StyledTextarea,
-	SubmitBtn,
-} from './components/styles/Contact.styled.js'
+import * as Styled from './styles/Contact.styled.js'
 
 export const Contact = () => {
 	const textareaRef = useTextareaScroll()
 
 	return (
-		<StyledContainer>
-			<StyledTitle>Contact Me</StyledTitle>
-			<StyledForm
+		<Styled.Container>
+			<Styled.Title>Contact Me</Styled.Title>
+			<Styled.Form
 				action='https://formsubmit.co/fdc600bd598b4f6fe804872e952a9823'
 				method='POST'>
 				<input
@@ -31,28 +21,28 @@ export const Contact = () => {
 					name='_next'
 					value='https://hawks-nest.netlify.app/thanks'
 				/>
-				<StyledInputWrapper>
-					<StyledInput
+				<Styled.Wrapper>
+					<Styled.Input
 						name='name'
 						type='text'
 						placeholder='Full Name'
 						required
 					/>
-					<StyledInput
+					<Styled.Input
 						name='email'
 						type='email'
 						placeholder='Email Address'
 						required
 					/>
-				</StyledInputWrapper>
-				<StyledTextarea
+				</Styled.Wrapper>
+				<Styled.Textarea
 					ref={textareaRef}
 					name='message'
 					placeholder='Your Message'
 					required
 				/>
-				<SubmitBtn type='submit'>Submit Form</SubmitBtn>
-			</StyledForm>
-		</StyledContainer>
+				<Styled.Button type='submit'>Submit Form</Styled.Button>
+			</Styled.Form>
+		</Styled.Container>
 	)
 }

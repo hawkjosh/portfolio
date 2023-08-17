@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 import { FooterLogoIcon } from '../FooterLogoIcon.jsx'
 import { LinkedinIcon } from '../LinkedinIcon.jsx'
 import { GithubIcon } from '../GithubIcon.jsx'

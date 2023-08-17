@@ -1,8 +1,6 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
-const StyledContainer = styled.div`
-	/* height: 100%;
-	max-height: calc(100dvh - 10rem); */
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -10,7 +8,7 @@ const StyledContainer = styled.div`
 	padding: 1rem 0;
 `
 
-const StyledTitle = styled.h1`
+export const Title = styled.h1`
 	font-weight: 600;
 	text-transform: uppercase;
 	color: var(--color-secondary);
@@ -29,7 +27,7 @@ const StyledTitle = styled.h1`
 	}
 `
 
-const StyledForm = styled.form`
+export const Form = styled.form`
 	width: 90%;
 	max-width: 90rem;
 	height: 100%;
@@ -39,7 +37,7 @@ const StyledForm = styled.form`
 	gap: 1.25rem;
 `
 
-const StyledInputWrapper = styled.div`
+export const Wrapper = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -51,7 +49,7 @@ const StyledInputWrapper = styled.div`
 	}
 `
 
-const StyledInput = styled.input`
+export const Input = styled.input`
 	width: 100%;
 	line-height: 1.25;
 	color: var(--color-secondary);
@@ -83,7 +81,7 @@ const StyledInput = styled.input`
 	}
 `
 
-const StyledTextarea = styled.textarea`
+export const Textarea = styled.textarea`
 	width: 100%;
 	height: 100%;
 	min-height: 25vh;
@@ -120,7 +118,7 @@ const StyledTextarea = styled.textarea`
 	}
 `
 
-const SubmitBtn = styled.button`
+export const Button = styled.button`
 	text-transform: uppercase;
 	line-height: 1.5;
 	color: hsla(360, 100%, 100%, 1);
@@ -152,13 +150,3 @@ const SubmitBtn = styled.button`
 			0.125rem -0.125rem 0.625rem hsla(0, 0%, 100%, 0.5);
 	}
 `
-
-export {
-	StyledContainer,
-	StyledTitle,
-	StyledForm,
-	StyledInputWrapper,
-	StyledInput,
-	StyledTextarea,
-	SubmitBtn,
-}

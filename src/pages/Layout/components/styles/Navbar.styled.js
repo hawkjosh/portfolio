@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import { styled, keyframes } from 'styled-components'
 
 import { NavLink } from 'react-router-dom'
 import { NavLogoIcon } from '../NavLogoIcon.jsx'
@@ -27,8 +27,8 @@ const StyledNavbar = styled.nav`
 	align-items: center;
 	background-color: var(--color-secondary);
 	border-bottom: solid hsla(360, 100%, 100%, 1);
-	transition: height 0.5s ease-in-out;
-	z-index: 1;
+	transition: height 250ms ease-in-out;
+	z-index: 4;
 
 	${({ $shrink }) =>
 		$shrink &&

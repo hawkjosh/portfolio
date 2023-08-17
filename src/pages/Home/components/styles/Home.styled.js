@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled } from 'styled-components'
 
 import { LaptopIcon } from '../LaptopIcon.jsx'
 import { SuperheroIcon } from '../SuperheroIcon.jsx'

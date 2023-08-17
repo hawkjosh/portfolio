@@ -1,29 +1,22 @@
 import React from 'react'
-
-import {
-	InfoWrapper,
-	InfoTitle,
-	InfoTextWrapper,
-	InfoText,
-} from './styles/WorkSamplesInfo.styled.js'
+import * as Styled from '../styles/WorkSamplesInfo.styled.js'
 
 export const WorkSamplesInfo = ({ item, activeIndex }) => {
 	return (
-		<InfoWrapper
-			data-status={item.index === activeIndex ? 'active' : 'inactive'}>
-			<InfoTitle>{item.title}</InfoTitle>
+		<Styled.Container data-active={item.index === activeIndex ? true : null}>
+			<Styled.Title>{item.title}</Styled.Title>
 			{item.index === 0 ? (
-				<InfoTextWrapper>
-					<InfoText>{item.info}</InfoText>
-					<InfoText>
+				<Styled.Wrapper>
+					<Styled.Text>{item.info}</Styled.Text>
+					<Styled.Text>
 						<strong>BONUS</strong>: Check out an alternate version of this app
 						at the link below that uses an express.js backend to save and
 						retrieve notes from a JSON file.
-					</InfoText>
-				</InfoTextWrapper>
+					</Styled.Text>
+				</Styled.Wrapper>
 			) : (
-				<InfoText>{item.info}</InfoText>
+				<Styled.Text>{item.info}</Styled.Text>
 			)}
-		</InfoWrapper>
+		</Styled.Container>
 	)
 }

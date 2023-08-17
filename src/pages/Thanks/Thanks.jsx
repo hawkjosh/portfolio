@@ -1,21 +1,16 @@
 import React from 'react'
-
-import {
-	StyledContainer,
-	StyledTextWrapper,
-	StyledTextOne,
-	StyledTextTwo,
-	StyledButton,
-} from './components/styles/Thanks.styled.js'
+import * as Styled from './styles/Thanks.styled.js'
 
 export const Thanks = () => {
 	return (
-		<StyledContainer>
-			<StyledTextWrapper>
-				<StyledTextOne>Thanks for reaching out!</StyledTextOne>
-				<StyledTextTwo>I'll get back to you as soon as possible.</StyledTextTwo>
-			</StyledTextWrapper>
-			<StyledButton to='/'>Return</StyledButton>
-		</StyledContainer>
+		<Styled.Container>
+			<Styled.Wrapper>
+				<Styled.TextOne>Thanks for reaching out!</Styled.TextOne>
+				<Styled.TextTwo>
+					I'll get back to you as soon as possible.
+				</Styled.TextTwo>
+			</Styled.Wrapper>
+			<Styled.Button to='/'>Return</Styled.Button>
+		</Styled.Container>
 	)
 }

@@ -1,34 +1,29 @@
 import React from 'react'
-
 import { WorkSamplesLinkBtn } from './WorkSamplesLinkBtn.jsx'
-
-import { WebAppIconBtn } from './WebAppIconBtn.jsx'
-import { GithubIconBtn } from './GithubIconBtn.jsx'
-import { BonusIconBtn } from './BonusIconBtn.jsx'
-
-import { LinkWrapper } from './styles/WorkSamplesLink.styled.js'
+import { Gift, Globe } from '@styled-icons/fa-solid'
+import { Github } from '@styled-icons/simple-icons'
+import * as Styled from '../styles/WorkSamplesLink.styled.js'
 
 export const WorkSamplesLink = ({ item, activeIndex }) => {
 	return (
-		<LinkWrapper
-			data-status={item.index === activeIndex ? 'active' : 'inactive'}>
+		<Styled.Wrapper data-active={item.index === activeIndex ? true : null}>
 			<WorkSamplesLinkBtn
-				icon={<WebAppIconBtn />}
+				icon={<Globe />}
 				text='Web App'
 				link={item.website}
 			/>
 			<WorkSamplesLinkBtn
-				icon={<GithubIconBtn />}
+				icon={<Github />}
 				text='Github Repo'
 				link={item.github}
 			/>
 			{item.bonus !== null && (
 				<WorkSamplesLinkBtn
-					icon={<BonusIconBtn />}
+					icon={<Gift />}
 					text='Bonus'
 					link={item.bonus}
 				/>
 			)}
-		</LinkWrapper>
+		</Styled.Wrapper>
 	)
 }

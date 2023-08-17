@@ -1,9 +1,10 @@
 import React from 'react'
+import * as Styled from './styles/NoPage.styled.js'
 
 export const NoPage = () => {
 	return (
 		<>
-			<div>NoPage Component</div>
+			<Styled.Container>NoPage Component</Styled.Container>
 		</>
 	)
 }

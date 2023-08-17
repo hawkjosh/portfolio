@@ -1,19 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { useWindowSize } from '../../../hooks/useWindowSize.js'
-
-import { LinkBtn, BtnText } from './styles/WorkSamplesLinkBtn.styled.js'
+import * as Styled from '../styles/WorkSamplesLinkBtn.styled.js'
 
 export const WorkSamplesLinkBtn = ({ icon, text, link }) => {
 	const [expanded, setExpanded] = useState(false)
 	const buttonRef = useRef(null)
-	const { isTablet, isShortScreen, isPortrait } = useWindowSize()
 
 	const handleExpandClick = () => {
 		setExpanded(true)
 	}
 
-	const handleLinkClick = () => {
+	const handleLinkClick = (e) => {
+		e.stopPropagation()
 		window.open(link, '_blank', 'noreferrer')
+		setExpanded(false)
 	}
 
 	useEffect(() => {
@@ -32,13 +31,15 @@ export const WorkSamplesLinkBtn = ({ icon, text, link }) => {
 
 	return (
 		<>
-			<LinkBtn
+			<Styled.Button
 				ref={buttonRef}
-				data-expand={expanded && 'expanded'}
+				data-expand={expanded ? true : null}
 				onClick={handleExpandClick}>
 				{icon}
-				{expanded && <BtnText onClick={handleLinkClick}>{text}</BtnText>}
-			</LinkBtn>
+				{expanded && (
+					<Styled.Text onClick={handleLinkClick}>{text}</Styled.Text>
+				)}
+			</Styled.Button>
 		</>
 	)
 }

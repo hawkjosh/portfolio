@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import { styled, keyframes } from 'styled-components'
 
 import { CloseBtnIcon } from '../CloseBtnIcon.jsx'
 
@@ -21,7 +21,7 @@ const ToolboxBackground = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	z-index: 1;
 `
 
 const ToolboxContainer = styled.div`
@@ -39,7 +39,7 @@ const ToolboxContainer = styled.div`
 	padding: 0.75rem 1.25rem 0.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
-	z-index: 3;
+	z-index: 2;
 
 	@media (width >= 1280px) {
 		width: 75%;
