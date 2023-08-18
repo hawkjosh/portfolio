@@ -12,7 +12,7 @@ const rotate = keyframes`
 	}
 `
 
-export const StyledNavbar = styled.nav`
+export const Navbar = styled.nav`
 	height: ${({ $height }) => $height};
 	position: sticky;
 	top: ${({ $top }) => $top};
@@ -31,7 +31,7 @@ export const StyledNavbar = styled.nav`
   `}
 `
 
-export const NavMenu = styled.div`
+export const Menu = styled.div`
 	height: 100%;
 	flex-basis: 20%;
 	display: flex;
@@ -44,7 +44,7 @@ export const NavMenu = styled.div`
 	}
 `
 
-export const NavLogos = styled.div`
+export const NavBrand = styled.div`
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -73,7 +73,7 @@ export const NavLogos = styled.div`
 	}
 `
 
-export const StyledLogo = styled(icon.NavLogo)`
+const StyledLogo = styled(icon.NavLogo)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
@@ -135,7 +135,7 @@ export const StaticLogo = styled(StyledLogo)`
 	}
 `
 
-export const StyledTitle = styled.div`
+const StyledTitle = styled.div`
 	font-weight: 500;
 	text-transform: uppercase;
 
@@ -219,7 +219,7 @@ export const NavLinks = styled.div`
 	}
 `
 
-export const StyledLink = styled(NavLink)`
+const StyledLink = styled(NavLink)`
 	text-transform: uppercase;
 
 	&:hover {
@@ -302,26 +302,24 @@ export const StaticLink = styled(StyledLink)`
   `}
 `
 
-export const ActiveIconLeft = styled(CaretLeft)`
+export const LeftCaret = styled(CaretLeft)`
 	color: var(--color-primary);
 	display: none;
 
 	${({ $active }) =>
 		$active &&
-		`
-	display: block;
-`}
+		`display: block;
+	`}
 `
 
-export const ActiveIconRight = styled(CaretRight)`
+export const RightCaret = styled(CaretRight)`
 	color: var(--color-primary);
 	display: none;
 
 	${({ $active }) =>
 		$active &&
-		`
-	display: block;
-`}
+		`display: block;
+	`}
 `
 
 export const NavSocial = styled.div`

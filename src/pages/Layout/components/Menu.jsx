@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useNavShrink } from '../../../hooks/useNavbarShrink.js'
-
-import {
-	MenuIcon,
-	MenuList,
-	ListItem,
-	ActiveIconLeft,
-	ActiveIconRight,
-} from '../styles/Menu.styled.js'
+import * as styled from '../styles/Menu.styled.js'
 
 const menuItems = [
 	{
@@ -41,32 +34,32 @@ export const Menu = () => {
 
 	return (
 		<>
-			<MenuIcon onClick={toggleShowMenu} />
+			<styled.Menu onClick={toggleShowMenu} />
 			{showMenu && (
-				<MenuList
+				<styled.List
 					$top={staticNav ? '4.875rem' : '6.25rem'}
 					$shrink={shrink ? 'shrink' : ''}>
 					{menuItems.map((item, index) => {
 						const active = item.link === location.pathname
 						return (
-							<ListItem
+							<styled.Item
 								key={index}
 								to={item.link}
 								onClick={toggleShowMenu}
 								$active={active ? 'active' : ''}>
-								<ActiveIconLeft
+								<styled.LeftCaret
 									size={12.5}
 									$active={active ? 'active' : ''}
 								/>
 								{item.name}
-								<ActiveIconRight
+								<styled.RightCaret
 									size={12.5}
 									$active={active ? 'active' : ''}
 								/>
-							</ListItem>
+							</styled.Item>
 						)
 					})}
-				</MenuList>
+				</styled.List>
 			)}
 		</>
 	)

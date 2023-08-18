@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import * as icon from '../components/Icons.jsx'
 
-export const StyledFooter = styled.footer`
+export const Footer = styled.footer`
 	height: ${({ $height }) => $height};
 	position: relative;
 	bottom: 0;
@@ -12,11 +12,11 @@ export const StyledFooter = styled.footer`
 	background-color: var(--color-secondary);
 	border-top: solid hsla(360, 100%, 100%, 1);
 `
-export const FooterCopywrite = styled.div`
+export const Copywrite = styled.div`
 	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
 	font-weight: 300;
 `
-export const FooterLogo = styled(icon.FooterLogo)`
+export const Logo = styled(icon.FooterLogo)`
 	display: flex;
 	width: 2.5rem;
 	fill: hsla(360, 100%, 100%, 1);
@@ -32,7 +32,7 @@ export const FooterLogo = styled(icon.FooterLogo)`
 `
 
 export const LinkedIn = styled(icon.Linkedin)`
-	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	width: ${({ $width }) => $width};
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
@@ -45,7 +45,7 @@ export const LinkedIn = styled(icon.Linkedin)`
 `
 
 export const GitHub = styled(icon.Github)`
-	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	width: ${({ $width }) => $width};
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
@@ -58,7 +58,7 @@ export const GitHub = styled(icon.Github)`
 `
 
 export const Codepen = styled(icon.Codepen)`
-	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	width: ${({ $width }) => $width};
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;
@@ -71,7 +71,7 @@ export const Codepen = styled(icon.Codepen)`
 `
 
 export const StackOverflow = styled(icon.StackOverflow)`
-	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
+	width: ${({ $width }) => $width};
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease;

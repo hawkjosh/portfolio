@@ -1,16 +1,7 @@
 import React from 'react'
 import { useWindowSize } from '../../../hooks/useWindowSize.js'
 import { useLocation } from 'react-router-dom'
-
-import {
-	StyledFooter,
-	FooterCopywrite,
-	FooterLogo,
-	LinkedIn,
-	GitHub,
-	Codepen,
-	StackOverflow,
-} from '../styles/Footer.styled.js'
+import * as styled from '../styles/Footer.styled.js'
 
 export const Footer = () => {
 	const { isWideScreen } = useWindowSize()
@@ -19,24 +10,23 @@ export const Footer = () => {
 		location.pathname === '/work-samples' || location.pathname === '/contact'
 	)
 
-
 	return (
-		<StyledFooter $height={staticNav ? '3rem' : '4rem'}>
+		<styled.Footer $height={staticNav ? '3rem' : '4rem'}>
 			{isWideScreen ? (
 				<>
-					<FooterCopywrite>
+					<styled.Copywrite>
 						© {new Date().getFullYear()} Joshua Wilde Hawk
-					</FooterCopywrite>
-					<FooterLogo />
+					</styled.Copywrite>
+					<styled.Logo />
 				</>
 			) : (
 				<>
-					<LinkedIn />
-					<GitHub />
-					<Codepen />
-					<StackOverflow />
+					<styled.LinkedIn $width={staticNav ? '1.75rem' : '2rem'} />
+					<styled.GitHub $width={staticNav ? '1.75rem' : '2rem'} />
+					<styled.Codepen $width={staticNav ? '1.75rem' : '2rem'} />
+					<styled.StackOverflow $width={staticNav ? '1.75rem' : '2rem'} />
 				</>
 			)}
-		</StyledFooter>
+		</styled.Footer>
 	)
 }

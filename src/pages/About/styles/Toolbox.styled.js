@@ -132,7 +132,7 @@ export const CloseBtn = styled(CircleXmark)`
 	min-width: 1.75rem;
 	max-width: 2.5rem;
 	color: var(--color-secondary);
-	filter: contrast(0%);
+	filter: contrast(75%);
 	cursor: pointer;
 	transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
 
