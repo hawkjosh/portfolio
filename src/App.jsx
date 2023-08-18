@@ -8,7 +8,7 @@ import { About } from './pages/About/About.jsx'
 import { WorkSamples } from './pages/WorkSamples/WorkSamples.jsx'
 import { Contact } from './pages/Contact/Contact.jsx'
 import { Thanks } from './pages/Thanks/Thanks.jsx'
-// import { NoPage } from './pages/NoPage/NoPage.jsx'
+import { NoPage } from './pages/NoPage/NoPage.jsx'
 
 export const App = () => {
 	return (
@@ -38,10 +38,10 @@ export const App = () => {
 					path='/thanks'
 					element={<Thanks />}
 				/>
-				{/* <Route
+				<Route
 					path='*'
 					element={<NoPage />}
-				/> */}
+				/>
 			</Routes>
 		</Router>
 	)

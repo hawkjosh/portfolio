@@ -1,25 +1,24 @@
 import { styled } from 'styled-components'
+import { LaptopIcon } from '../components/LaptopIcon.jsx'
+import { SuperheroIcon } from '../components/SuperheroIcon.jsx'
+import { TennesseeIcon } from '../components/TennesseeIcon.jsx'
 
-import { LaptopIcon } from '../LaptopIcon.jsx'
-import { SuperheroIcon } from '../SuperheroIcon.jsx'
-import { TennesseeIcon } from '../TennesseeIcon.jsx'
-
-const StyledContainer = styled.div`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-bottom: 1.5rem;
 `
 
-const Avatar = styled.img`
+export const Image = styled.img`
 	width: clamp(18.75rem, 12.711rem + 26.84vw, 40.625rem);
 `
 
-const StyledDividerWrapper = styled.div`
+export const Wrapper = styled.div`
 	width: 100%;
 `
 
-const StyledDivider = styled.hr`
+export const Divider = styled.hr`
 	height: 0.15rem;
 	background-color: hsla(360, 100%, 100%, 1);
 	border-style: none;
@@ -30,7 +29,7 @@ const StyledDivider = styled.hr`
 	}
 `
 
-const StyledIcons = styled.div`
+export const Icons = styled.div`
 	width: 90%;
 	display: flex;
 	justify-content: space-evenly;
@@ -43,7 +42,7 @@ const StyledIcons = styled.div`
 	}
 `
 
-const Laptop = styled(LaptopIcon)`
+export const Laptop = styled(LaptopIcon)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
@@ -63,7 +62,7 @@ const Laptop = styled(LaptopIcon)`
 	}
 `
 
-const Superhero = styled(SuperheroIcon)`
+export const Superhero = styled(SuperheroIcon)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
@@ -83,7 +82,7 @@ const Superhero = styled(SuperheroIcon)`
 	}
 `
 
-const Tennessee = styled(TennesseeIcon)`
+export const Tennessee = styled(TennesseeIcon)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
@@ -102,14 +101,3 @@ const Tennessee = styled(TennesseeIcon)`
 		cursor: grab;
 	}
 `
-
-export {
-	StyledContainer,
-	Avatar,
-	StyledDividerWrapper,
-	StyledDivider,
-	StyledIcons,
-	Laptop,
-	Superhero,
-	Tennessee,
-}

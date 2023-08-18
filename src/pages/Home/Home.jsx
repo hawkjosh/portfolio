@@ -1,33 +1,21 @@
 import React from 'react'
-
-import avatar from '/avatar.svg'
-
-import {
-	StyledContainer,
-	Avatar,
-	StyledDividerWrapper,
-	StyledDivider,
-	StyledIcons,
-	Laptop,
-	Superhero,
-	Tennessee,
-} from './components/styles/Home.styled.js'
+import * as Styled from './styles/Home.styled.js'
 
 export const Home = () => {
 	return (
-		<StyledContainer>
-			<Avatar
-				src={avatar}
+		<Styled.Container>
+			<Styled.Image
+				src='/avatar.svg'
 				alt='My Avatar'
 			/>
-			<StyledDividerWrapper>
-				<StyledDivider />
-			</StyledDividerWrapper>
-			<StyledIcons>
-				<Laptop />
-				<Superhero />
-				<Tennessee />
-			</StyledIcons>
-		</StyledContainer>
+			<Styled.Wrapper>
+				<Styled.Divider />
+			</Styled.Wrapper>
+			<Styled.Icons>
+				<Styled.Laptop />
+				<Styled.Superhero />
+				<Styled.Tennessee />
+			</Styled.Icons>
+		</Styled.Container>
 	)
 }
