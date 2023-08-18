@@ -1,6 +1,5 @@
 import { styled, keyframes } from 'styled-components'
-
-import { CloseBtnIcon } from '../CloseBtnIcon.jsx'
+import { CircleXmark } from '@styled-icons/fa-solid'
 
 const tooltipHover = keyframes`
 	from {
@@ -13,7 +12,7 @@ const tooltipHover = keyframes`
 	}
 `
 
-const ToolboxBackground = styled.div`
+export const Background = styled.div`
 	width: 100%;
 	height: 100vh;
 	height: 100dvh;
@@ -21,10 +20,10 @@ const ToolboxBackground = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 4;
 `
 
-const ToolboxContainer = styled.div`
+export const Container = styled.div`
 	position: absolute;
 	max-width: 60rem;
 	height: calc(100vh - 8rem);
@@ -39,7 +38,6 @@ const ToolboxContainer = styled.div`
 	padding: 0.75rem 1.25rem 0.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
-	z-index: 2;
 
 	@media (width >= 1280px) {
 		width: 75%;
@@ -73,27 +71,7 @@ const ToolboxContainer = styled.div`
 	}
 `
 
-const ToolboxCloseBtnWrapper = styled.div`
-	position: absolute;
-	top: 0.625rem;
-	right: 0.625rem;
-	width: 5%;
-	min-width: 1.75rem;
-	max-width: 2.5rem;
-`
-
-const ToolboxCloseBtn = styled(CloseBtnIcon)`
-	fill: var(--color-secondary);
-
-	&:hover {
-		fill: hsla(360, 100%, 100%, 1);
-		stroke: var(--color-secondary);
-		stroke-width: 3;
-		cursor: pointer;
-	}
-`
-
-const ToolboxIconsWrapper = styled.div`
+export const Wrapper = styled.div`
 	display: grid;
 	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
 	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
@@ -113,7 +91,7 @@ const ToolboxIconsWrapper = styled.div`
 	}
 `
 
-const Tooltip = styled.div`
+export const Tooltip = styled.div`
 	position: absolute;
 	color: ${({ $color }) => $color};
 	text-align: center;
@@ -125,7 +103,7 @@ const Tooltip = styled.div`
 	display: none;
 `
 
-const ToolboxIcon = styled.div`
+export const Icon = styled.div`
 	position: relative;
 	display: flex;
 	place-content: center;
@@ -146,12 +124,20 @@ const ToolboxIcon = styled.div`
 	}
 `
 
-export {
-	ToolboxBackground,
-	ToolboxContainer,
-	ToolboxCloseBtnWrapper,
-	ToolboxCloseBtn,
-	ToolboxIconsWrapper,
-	Tooltip,
-	ToolboxIcon,
-}
+export const CloseBtn = styled(CircleXmark)`
+	position: absolute;
+	top: 0.625rem;
+	right: 0.625rem;
+	width: 5%;
+	min-width: 1.75rem;
+	max-width: 2.5rem;
+	color: var(--color-secondary);
+	filter: contrast(0%);
+	cursor: pointer;
+	transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
+
+	&:hover {
+		filter: contrast(100%);
+		transform: scale(1.125);
+	}
+`

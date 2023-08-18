@@ -1,16 +1,5 @@
 import React from 'react'
-
-import {
-	ResumeBackground,
-	ResumeContainer,
-	ResumeContentWrapper,
-	ResumePic,
-	DownloadBtn,
-	ResumeCloseBtnWrapper,
-	ResumeCloseBtn,
-} from './styles/Resume.styled.js'
-
-import resume from '/resume.png'
+import * as Styled from '../styles/Resume.styled.js'
 
 export const Resume = ({ setShowResume }) => {
 	const handleDownload = () => {
@@ -23,23 +12,19 @@ export const Resume = ({ setShowResume }) => {
 	}
 
 	return (
-		<ResumeBackground>
-			<ResumeContainer>
-				<ResumeContentWrapper>
-					<ResumePic
-						src={resume}
+		<Styled.Background>
+			<Styled.Container>
+				<Styled.Wrapper>
+					<Styled.Image
+						src='/resume.png'
 						alt='My Resume'
 					/>
-					<DownloadBtn onClick={handleDownload}>Download</DownloadBtn>
-				</ResumeContentWrapper>
-				<ResumeCloseBtnWrapper>
-					<ResumeCloseBtn
-						onClick={() => {
-							setShowResume(false)
-						}}
-					/>
-				</ResumeCloseBtnWrapper>
-			</ResumeContainer>
-		</ResumeBackground>
+					<Styled.DownloadBtn onClick={handleDownload}>
+						Download
+					</Styled.DownloadBtn>
+				</Styled.Wrapper>
+				<Styled.CloseBtn onClick={() => setShowResume(false)} />
+			</Styled.Container>
+		</Styled.Background>
 	)
 }

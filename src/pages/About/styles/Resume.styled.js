@@ -1,8 +1,7 @@
 import { styled } from 'styled-components'
+import { CircleXmark } from '@styled-icons/fa-solid'
 
-import { CloseBtnIcon } from '../CloseBtnIcon.jsx'
-
-const ResumeBackground = styled.div`
+export const Background = styled.div`
 	width: 100%;
 	height: 100vh;
 	height: 100dvh;
@@ -10,10 +9,10 @@ const ResumeBackground = styled.div`
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 4;
 `
 
-const ResumeContainer = styled.div`
+export const Container = styled.div`
 	position: absolute;
 	width: clamp(23.125rem, 3.857rem + 79.048vw, 75rem);
 	height: calc(100vh - 8rem);
@@ -28,7 +27,6 @@ const ResumeContainer = styled.div`
 	padding: 0.5rem 0.25rem 1.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
-	z-index: 2;
 
 	@media (width < 960px) and (orientation: landscape) {
 		height: calc(100vh - 3rem);
@@ -37,7 +35,7 @@ const ResumeContainer = styled.div`
 	}
 `
 
-const ResumeContentWrapper = styled.div`
+export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -45,13 +43,13 @@ const ResumeContentWrapper = styled.div`
 	margin: 2.5rem 0.5rem 0;
 `
 
-const ResumePic = styled.img`
+export const Image = styled.img`
 	width: clamp(21rem, 5.029rem + 65.524vw, 64rem);
 	border: 0.03125rem solid hsla(0, 0%, 83%, 1);
 	box-shadow: 0 0.3125rem 1.875rem hsla(0, 0%, 0%, 0.35);
 `
 
-const DownloadBtn = styled.button`
+export const DownloadBtn = styled.button`
 	font-size: 1.125rem;
 	text-transform: uppercase;
 	color: hsla(360, 100%, 100%, 1);
@@ -69,32 +67,20 @@ const DownloadBtn = styled.button`
 	}
 `
 
-const ResumeCloseBtnWrapper = styled.div`
+export const CloseBtn = styled(CircleXmark)`
 	position: absolute;
 	top: 0.625rem;
 	right: 0.625rem;
-  width: 5%;
+	width: 5%;
 	min-width: 1.75rem;
 	max-width: 2.5rem;
-`
-
-const ResumeCloseBtn = styled(CloseBtnIcon)`
-	fill: var(--color-secondary);
+	color: var(--color-secondary);
+	filter: contrast(0%);
+	cursor: pointer;
+	transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
 
 	&:hover {
-		fill: hsla(360, 100%, 100%, 1);
-		stroke: var(--color-secondary);
-		stroke-width: 3;
-		cursor: pointer;
+		filter: contrast(100%);
+		transform: scale(1.125);
 	}
 `
-
-export {
-	ResumeBackground,
-	ResumeContainer,
-	ResumeContentWrapper,
-	ResumePic,
-	DownloadBtn,
-	ResumeCloseBtnWrapper,
-	ResumeCloseBtn,
-}

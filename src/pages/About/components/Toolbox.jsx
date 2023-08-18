@@ -1,16 +1,6 @@
 import React from 'react'
-
 import * as simpleIcons from '@styled-icons/simple-icons'
-
-import {
-	ToolboxBackground,
-	ToolboxContainer,
-	ToolboxCloseBtnWrapper,
-	ToolboxCloseBtn,
-	ToolboxIconsWrapper,
-	Tooltip,
-	ToolboxIcon,
-} from './styles/Toolbox.styled.js'
+import * as Styled from '../styles/Toolbox.styled.js'
 
 const icons = [
 	{
@@ -430,28 +420,22 @@ const icons = [
 
 export const Toolbox = ({ setShowToolbox }) => {
 	return (
-		<ToolboxBackground>
-			<ToolboxContainer>
-				<ToolboxCloseBtnWrapper>
-					<ToolboxCloseBtn
-						onClick={() => {
-							setShowToolbox(false)
-						}}
-					/>
-				</ToolboxCloseBtnWrapper>
-				<ToolboxIconsWrapper>
+		<Styled.Background>
+			<Styled.Container>
+				<Styled.Wrapper>
 					{icons.map((icon, index) => (
-						<ToolboxIcon key={index}>
-							<Tooltip
+						<Styled.Icon key={index}>
+							<Styled.Tooltip
 								$color={icon.color}
 								$transform={icon.transform}>
 								{icon.name}
-							</Tooltip>
+							</Styled.Tooltip>
 							{icon.image}
-						</ToolboxIcon>
+						</Styled.Icon>
 					))}
-				</ToolboxIconsWrapper>
-			</ToolboxContainer>
-		</ToolboxBackground>
+				</Styled.Wrapper>
+				<Styled.CloseBtn onClick={() => setShowToolbox(false)} />
+			</Styled.Container>
+		</Styled.Background>
 	)
 }

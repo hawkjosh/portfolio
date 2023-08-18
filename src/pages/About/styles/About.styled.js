@@ -1,9 +1,8 @@
 import { styled } from 'styled-components'
+import { ToolboxBtnIcon } from '../components/ToolboxBtnIcon.jsx'
+import { ResumeBtnIcon } from '../components/ResumeBtnIcon.jsx'
 
-import { ToolboxBtnIcon } from '../ToolboxBtnIcon.jsx'
-import { ResumeBtnIcon } from '../ResumeBtnIcon.jsx'
-
-const StyledContainer = styled.div`
+export const Container = styled.div`
 	max-width: 90rem;
 	margin: 0 auto;
 	padding: 2rem;
@@ -18,7 +17,7 @@ const StyledContainer = styled.div`
 	}
 `
 
-const Profile = styled.img`
+export const Image = styled.img`
 	object-fit: cover;
 	border: 0.25rem solid hsla(360, 100%, 100%, 1);
 	border-radius: 50%;
@@ -48,7 +47,7 @@ const Profile = styled.img`
 	}
 `
 
-const StyledTextWrapper = styled.div`
+export const TextWrapper = styled.div`
 	@media (width >= 1280px) {
 		margin-bottom: 2.5rem;
 	}
@@ -65,7 +64,7 @@ const StyledTextWrapper = styled.div`
 	}
 `
 
-const StyledText = styled.p`
+export const Text = styled.p`
 	font-weight: 200;
 	text-align: justify;
 	text-justify: inter-character;
@@ -96,7 +95,7 @@ const StyledText = styled.p`
 	}
 `
 
-const StyledBtnsWrapper = styled.div`
+export const BtnsWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -114,7 +113,7 @@ const StyledBtnsWrapper = styled.div`
 	}
 `
 
-const ToolboxBtn = styled(ToolboxBtnIcon)`
+export const ToolboxBtn = styled(ToolboxBtnIcon)`
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease-in-out;
@@ -140,7 +139,7 @@ const ToolboxBtn = styled(ToolboxBtnIcon)`
 	}
 `
 
-const ResumeBtn = styled(ResumeBtnIcon)`
+export const ResumeBtn = styled(ResumeBtnIcon)`
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease-in-out;
@@ -165,13 +164,3 @@ const ResumeBtn = styled(ResumeBtnIcon)`
 		transform: scale(1.25);
 	}
 `
-
-export {
-	StyledContainer,
-	Profile,
-	StyledTextWrapper,
-	StyledText,
-	StyledBtnsWrapper,
-	ToolboxBtn,
-	ResumeBtn,
-}

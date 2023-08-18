@@ -1,19 +1,7 @@
 import React, { useState } from 'react'
-
-import profile from '/profile.png'
-
 import { Toolbox } from './components/Toolbox.jsx'
 import { Resume } from './components/Resume.jsx'
-
-import {
-	StyledContainer,
-	Profile,
-	StyledTextWrapper,
-	StyledText,
-	StyledBtnsWrapper,
-	ToolboxBtn,
-	ResumeBtn,
-} from './components/styles/About.styled.js'
+import * as Styled from './styles/About.styled.js'
 
 const paragraphs = [
 	{
@@ -43,26 +31,26 @@ export const About = () => {
 	}
 
 	return (
-		<StyledContainer
+		<Styled.Container
 			style={{
 				height: showToolbox || showResume ? 'calc(100vh - 12rem)' : 'auto',
 				overflowY: showToolbox || showResume ? 'hidden' : 'visible',
 			}}>
-			<Profile
-				src={profile}
+			<Styled.Image
+				src='/profile.png'
 				alt='My Profile Photo'
 			/>
-			<StyledTextWrapper>
-				<StyledText>{paragraphs[0].text}</StyledText>
-				<StyledText>{paragraphs[1].text}</StyledText>
-			</StyledTextWrapper>
-			<StyledBtnsWrapper>
-				<ToolboxBtn onClick={handleToolboxClick} />
-				<ResumeBtn onClick={handleResumeClick} />
-			</StyledBtnsWrapper>
+			<Styled.TextWrapper>
+				<Styled.Text>{paragraphs[0].text}</Styled.Text>
+				<Styled.Text>{paragraphs[1].text}</Styled.Text>
+			</Styled.TextWrapper>
+			<Styled.BtnsWrapper>
+				<Styled.ToolboxBtn onClick={handleToolboxClick} />
+				<Styled.ResumeBtn onClick={handleResumeClick} />
+			</Styled.BtnsWrapper>
 
 			{showToolbox && <Toolbox setShowToolbox={setShowToolbox} />}
 			{showResume && <Resume setShowResume={setShowResume} />}
-		</StyledContainer>
+		</Styled.Container>
 	)
 }
