@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
-import { ToolboxBtnIcon } from '../components/ToolboxBtnIcon.jsx'
-import { ResumeBtnIcon } from '../components/ResumeBtnIcon.jsx'
+import * as icon from '../components/Icons.jsx'
 
 export const Container = styled.div`
 	max-width: 90rem;
@@ -113,7 +112,7 @@ export const BtnsWrapper = styled.div`
 	}
 `
 
-export const ToolboxBtn = styled(ToolboxBtnIcon)`
+export const ToolboxBtn = styled(icon.ToolboxBtn)`
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease-in-out;
@@ -139,7 +138,7 @@ export const ToolboxBtn = styled(ToolboxBtnIcon)`
 	}
 `
 
-export const ResumeBtn = styled(ResumeBtnIcon)`
+export const ResumeBtn = styled(icon.ResumeBtn)`
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease-in-out;

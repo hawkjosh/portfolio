@@ -1,11 +1,9 @@
 import { styled } from 'styled-components'
-
 import { NavLink } from 'react-router-dom'
-import { NavMenuIcon } from '../NavMenuIcon.jsx'
-
+import * as icon from '../components/Icons.jsx'
 import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
 
-const MenuIcon = styled(NavMenuIcon)`
+export const MenuIcon = styled(icon.Menu)`
 	display: flex;
 	width: clamp(1.563rem, 0.759rem + 3.571vw, 2.188rem);
 	stroke: hsla(360, 100%, 100%, 1);
@@ -15,7 +13,8 @@ const MenuIcon = styled(NavMenuIcon)`
 		cursor: pointer;
 	}
 `
-const MenuList = styled.div`
+
+export const MenuList = styled.div`
 	position: absolute;
 	top: ${({ $top }) => $top};
 	left: 1.5rem;
@@ -33,11 +32,11 @@ const MenuList = styled.div`
   `}
 `
 
-const StaticMenuList = styled(MenuList)`
+export const StaticMenuList = styled(MenuList)`
 	top: 4.875rem;
 `
 
-const ListItem = styled(NavLink)`
+export const ListItem = styled(NavLink)`
 	display: flex;
 	align-items: center;
 	gap: 0.25rem;
@@ -65,7 +64,7 @@ const ListItem = styled(NavLink)`
   `}
 `
 
-const ActiveIconLeft = styled(CaretLeft)`
+export const ActiveIconLeft = styled(CaretLeft)`
 	color: var(--color-primary);
 	display: none;
 
@@ -76,7 +75,7 @@ const ActiveIconLeft = styled(CaretLeft)`
 `}
 `
 
-const ActiveIconRight = styled(CaretRight)`
+export const ActiveIconRight = styled(CaretRight)`
 	color: var(--color-primary);
 	display: none;
 
@@ -86,12 +85,3 @@ const ActiveIconRight = styled(CaretRight)`
 	display: block;
 `}
 `
-
-export {
-	MenuIcon,
-	MenuList,
-	StaticMenuList,
-	ListItem,
-	ActiveIconLeft,
-	ActiveIconRight,
-}

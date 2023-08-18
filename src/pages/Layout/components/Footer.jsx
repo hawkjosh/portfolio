@@ -10,7 +10,7 @@ import {
 	GitHub,
 	Codepen,
 	StackOverflow,
-} from './styles/Footer.styled.js'
+} from '../styles/Footer.styled.js'
 
 export const Footer = () => {
 	const { isWideScreen } = useWindowSize()

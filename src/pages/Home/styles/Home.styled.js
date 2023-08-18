@@ -1,7 +1,5 @@
 import { styled } from 'styled-components'
-import { LaptopIcon } from '../components/LaptopIcon.jsx'
-import { SuperheroIcon } from '../components/SuperheroIcon.jsx'
-import { TennesseeIcon } from '../components/TennesseeIcon.jsx'
+import * as icon from '../components/Icons.jsx'
 
 export const Container = styled.div`
 	display: flex;
@@ -42,7 +40,7 @@ export const Icons = styled.div`
 	}
 `
 
-export const Laptop = styled(LaptopIcon)`
+export const Laptop = styled(icon.Laptop)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
@@ -62,7 +60,7 @@ export const Laptop = styled(LaptopIcon)`
 	}
 `
 
-export const Superhero = styled(SuperheroIcon)`
+export const Superhero = styled(icon.Superhero)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
@@ -82,7 +80,7 @@ export const Superhero = styled(SuperheroIcon)`
 	}
 `
 
-export const Tennessee = styled(TennesseeIcon)`
+export const Tennessee = styled(icon.Tennessee)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 

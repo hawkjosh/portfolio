@@ -1,12 +1,6 @@
 import { styled, keyframes } from 'styled-components'
-
 import { NavLink } from 'react-router-dom'
-import { NavLogoIcon } from '../NavLogoIcon.jsx'
-import { LinkedinIcon } from '../LinkedinIcon.jsx'
-import { GithubIcon } from '../GithubIcon.jsx'
-import { CodepenIcon } from '../CodepenIcon.jsx'
-import { StackOverflowIcon } from '../StackOverflowIcon.jsx'
-
+import * as icon from '../components/Icons.jsx'
 import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
 
 const rotate = keyframes`
@@ -18,7 +12,7 @@ const rotate = keyframes`
 	}
 `
 
-const StyledNavbar = styled.nav`
+export const StyledNavbar = styled.nav`
 	height: ${({ $height }) => $height};
 	position: sticky;
 	top: ${({ $top }) => $top};
@@ -37,7 +31,7 @@ const StyledNavbar = styled.nav`
   `}
 `
 
-const NavMenu = styled.div`
+export const NavMenu = styled.div`
 	height: 100%;
 	flex-basis: 20%;
 	display: flex;
@@ -50,7 +44,7 @@ const NavMenu = styled.div`
 	}
 `
 
-const NavLogos = styled.div`
+export const NavLogos = styled.div`
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -79,7 +73,7 @@ const NavLogos = styled.div`
 	}
 `
 
-const StyledLogo = styled(NavLogoIcon)`
+export const StyledLogo = styled(icon.NavLogo)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
@@ -92,7 +86,7 @@ const StyledLogo = styled(NavLogoIcon)`
 	}
 `
 
-const Logo = styled(StyledLogo)`
+export const Logo = styled(StyledLogo)`
 	transition: width 0.5s ease-in-out;
 
 	@media (width >= 1280px) {
@@ -126,7 +120,7 @@ const Logo = styled(StyledLogo)`
   `}
 `
 
-const StaticLogo = styled(StyledLogo)`
+export const StaticLogo = styled(StyledLogo)`
 	@media (width >= 1280px) {
 		width: clamp(3.25rem, 2.417rem + 1.042vw, 3.5rem);
 	}
@@ -141,7 +135,7 @@ const StaticLogo = styled(StyledLogo)`
 	}
 `
 
-const StyledTitle = styled.div`
+export const StyledTitle = styled.div`
 	font-weight: 500;
 	text-transform: uppercase;
 
@@ -150,7 +144,7 @@ const StyledTitle = styled.div`
 	}
 `
 
-const Title = styled(StyledTitle)`
+export const Title = styled(StyledTitle)`
 	transition: font-size 0.5s ease-in-out;
 
 	@media (width >= 1280px) {
@@ -184,7 +178,7 @@ const Title = styled(StyledTitle)`
   `}
 `
 
-const StaticTitle = styled(StyledTitle)`
+export const StaticTitle = styled(StyledTitle)`
 	@media (width >= 1280px) {
 		font-size: clamp(1.75rem, 0.917rem + 1.042vw, 2rem);
 	}
@@ -199,7 +193,7 @@ const StaticTitle = styled(StyledTitle)`
 	}
 `
 
-const NavLinks = styled.div`
+export const NavLinks = styled.div`
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -225,7 +219,7 @@ const NavLinks = styled.div`
 	}
 `
 
-const StyledLink = styled(NavLink)`
+export const StyledLink = styled(NavLink)`
 	text-transform: uppercase;
 
 	&:hover {
@@ -234,7 +228,7 @@ const StyledLink = styled(NavLink)`
 	}
 `
 
-const Link = styled(StyledLink)`
+export const Link = styled(StyledLink)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -278,7 +272,7 @@ const Link = styled(StyledLink)`
   `}
 `
 
-const StaticLink = styled(StyledLink)`
+export const StaticLink = styled(StyledLink)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -308,7 +302,7 @@ const StaticLink = styled(StyledLink)`
   `}
 `
 
-const ActiveIconLeft = styled(CaretLeft)`
+export const ActiveIconLeft = styled(CaretLeft)`
 	color: var(--color-primary);
 	display: none;
 
@@ -319,7 +313,7 @@ const ActiveIconLeft = styled(CaretLeft)`
 `}
 `
 
-const ActiveIconRight = styled(CaretRight)`
+export const ActiveIconRight = styled(CaretRight)`
 	color: var(--color-primary);
 	display: none;
 
@@ -330,7 +324,7 @@ const ActiveIconRight = styled(CaretRight)`
 `}
 `
 
-const NavSocial = styled.div`
+export const NavSocial = styled.div`
 	height: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -346,7 +340,7 @@ const NavSocial = styled.div`
 	}
 `
 
-const LinkedIn = styled(LinkedinIcon)`
+export const LinkedIn = styled(icon.Linkedin)`
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
@@ -376,7 +370,7 @@ const LinkedIn = styled(LinkedinIcon)`
   `}
 `
 
-const GitHub = styled(GithubIcon)`
+export const GitHub = styled(icon.Github)`
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
@@ -406,7 +400,7 @@ const GitHub = styled(GithubIcon)`
   `}
 `
 
-const Codepen = styled(CodepenIcon)`
+export const Codepen = styled(icon.Codepen)`
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
@@ -436,7 +430,7 @@ const Codepen = styled(CodepenIcon)`
   `}
 `
 
-const StackOverflow = styled(StackOverflowIcon)`
+export const StackOverflow = styled(icon.StackOverflow)`
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
@@ -465,23 +459,3 @@ const StackOverflow = styled(StackOverflowIcon)`
 		}
   `}
 `
-
-export {
-	StyledNavbar,
-	NavMenu,
-	NavLogos,
-	Logo,
-	StaticLogo,
-	Title,
-	StaticTitle,
-	NavLinks,
-	Link,
-	StaticLink,
-	ActiveIconLeft,
-	ActiveIconRight,
-	NavSocial,
-	LinkedIn,
-	GitHub,
-	Codepen,
-	StackOverflow,
-}

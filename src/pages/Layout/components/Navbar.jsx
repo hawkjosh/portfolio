@@ -22,7 +22,7 @@ import {
 	GitHub,
 	Codepen,
 	StackOverflow,
-} from './styles/Navbar.styled.js'
+} from '../styles/Navbar.styled.js'
 
 const links = [
 	{
@@ -46,9 +46,6 @@ const links = [
 export const Navbar = () => {
 	const shrink = useNavShrink()
 	const location = useLocation()
-	// const staticNav = Boolean(
-	// 	location.pathname === '/work-samples' || location.pathname === '/contact'
-	// )
 	const staticNav = Boolean(
 		location.pathname === '/work-samples'
 	)

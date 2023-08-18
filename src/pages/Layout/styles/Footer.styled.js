@@ -1,15 +1,10 @@
 import { styled } from 'styled-components'
-import { FooterLogoIcon } from '../FooterLogoIcon.jsx'
-import { LinkedinIcon } from '../LinkedinIcon.jsx'
-import { GithubIcon } from '../GithubIcon.jsx'
-import { CodepenIcon } from '../CodepenIcon.jsx'
-import { StackOverflowIcon } from '../StackOverflowIcon.jsx'
+import * as icon from '../components/Icons.jsx'
 
-const StyledFooter = styled.footer`
+export const StyledFooter = styled.footer`
 	height: ${({ $height }) => $height};
 	position: relative;
 	bottom: 0;
-	/* padding-top: 0.5rem; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,11 +12,11 @@ const StyledFooter = styled.footer`
 	background-color: var(--color-secondary);
 	border-top: solid hsla(360, 100%, 100%, 1);
 `
-const FooterCopywrite = styled.div`
+export const FooterCopywrite = styled.div`
 	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
 	font-weight: 300;
 `
-const FooterLogo = styled(FooterLogoIcon)`
+export const FooterLogo = styled(icon.FooterLogo)`
 	display: flex;
 	width: 2.5rem;
 	fill: hsla(360, 100%, 100%, 1);
@@ -36,7 +31,7 @@ const FooterLogo = styled(FooterLogoIcon)`
 	}
 `
 
-const LinkedIn = styled(LinkedinIcon)`
+export const LinkedIn = styled(icon.Linkedin)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
@@ -49,7 +44,7 @@ const LinkedIn = styled(LinkedinIcon)`
 	}
 `
 
-const GitHub = styled(GithubIcon)`
+export const GitHub = styled(icon.Github)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
@@ -62,7 +57,7 @@ const GitHub = styled(GithubIcon)`
 	}
 `
 
-const Codepen = styled(CodepenIcon)`
+export const Codepen = styled(icon.Codepen)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
@@ -75,7 +70,7 @@ const Codepen = styled(CodepenIcon)`
 	}
 `
 
-const StackOverflow = styled(StackOverflowIcon)`
+export const StackOverflow = styled(icon.StackOverflow)`
 	width: clamp(1.75rem, 1.343rem + 1.807vw, 2.5rem);
 	display: flex;
 	stroke: hsla(360, 100%, 100%, 1);
@@ -87,13 +82,3 @@ const StackOverflow = styled(StackOverflowIcon)`
 		stroke-width: 7.5;
 	}
 `
-
-export {
-	StyledFooter,
-	FooterCopywrite,
-	FooterLogo,
-	LinkedIn,
-	GitHub,
-	Codepen,
-	StackOverflow,
-}

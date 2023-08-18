@@ -8,7 +8,7 @@ import {
 	ListItem,
 	ActiveIconLeft,
 	ActiveIconRight,
-} from './styles/Menu.styled.js'
+} from '../styles/Menu.styled.js'
 
 const menuItems = [
 	{
