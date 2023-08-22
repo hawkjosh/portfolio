@@ -1,6 +1,7 @@
 import { styled, keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import * as icon from '../components/Icons.jsx'
+import * as remixIcon from '@styled-icons/remix-line'
 import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
 
 const rotate = keyframes`
@@ -82,7 +83,7 @@ const StyledLogo = styled(icon.NavLogo)`
 		fill: hsla(0, 100%, 100%, 1);
 		stroke: var(--color-primary);
 		cursor: grab;
-		animation: ${rotate} 1.5s linear infinite;
+		animation: ${rotate} 1500ms linear infinite;
 	}
 `
 
@@ -338,122 +339,82 @@ export const NavSocial = styled.div`
 	}
 `
 
-export const LinkedIn = styled(icon.Linkedin)`
+export const SocialLink = styled.a`
+	width: 100%;
 	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+`
 
-	@media (width >= 1280px) {
-		width: clamp(2rem, 0.333rem + 2.083vw, 2.5rem);
-	}
-	@media (1024px <= width < 1280px) {
-		width: clamp(1.65rem, 0.45rem + 1.875vw, 1.95rem);
-	}
+export const LinkedIn = styled(remixIcon.Linkedin)`
+	color: hsla(360, 100%, 100%, 1);
+	transition: transform 0.25s ease, width 0.5s ease-in-out;
+	cursor: pointer;
+	width: 50%;
 
 	&:hover {
-		transform: scale(1.25);
-		stroke: var(--color-primary);
-		stroke-width: 8;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 
 	${({ $shrink }) =>
 		$shrink &&
 		`
-		@media (width >= 1280px) {
-			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-		}
-		@media (1024px <= width < 1280px) {
-			width: clamp(1.45rem, 0.25rem + 1.875vw, 1.75rem);
-		}
+		width: 40%;
   `}
 `
 
-export const GitHub = styled(icon.Github)`
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
+export const GitHub = styled(remixIcon.Github)`
+	color: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
-
-	@media (width >= 1280px) {
-		width: clamp(2rem, 0.333rem + 2.083vw, 2.5rem);
-	}
-	@media (1024px <= width < 1280px) {
-		width: clamp(1.65rem, 0.45rem + 1.875vw, 1.95rem);
-	}
+	cursor: pointer;
+	width: 50%;
 
 	&:hover {
-		transform: scale(1.25);
-		stroke: var(--color-primary);
-		stroke-width: 8;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 
 	${({ $shrink }) =>
 		$shrink &&
 		`
-		@media (width >= 1280px) {
-			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-		}
-		@media (1024px <= width < 1280px) {
-			width: clamp(1.45rem, 0.25rem + 1.875vw, 1.75rem);
-		}
+		width: 40%;
   `}
 `
 
-export const Codepen = styled(icon.Codepen)`
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
+export const CodePen = styled(remixIcon.Codepen)`
+	color: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
-
-	@media (width >= 1280px) {
-		width: clamp(2rem, 0.333rem + 2.083vw, 2.5rem);
-	}
-	@media (1024px <= width < 1280px) {
-		width: clamp(1.65rem, 0.45rem + 1.875vw, 1.95rem);
-	}
+	cursor: pointer;
+	width: 50%;
 
 	&:hover {
-		transform: scale(1.25);
-		stroke: var(--color-primary);
-		stroke-width: 8;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 
 	${({ $shrink }) =>
 		$shrink &&
 		`
-		@media (width >= 1280px) {
-			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-		}
-		@media (1024px <= width < 1280px) {
-			width: clamp(1.45rem, 0.25rem + 1.875vw, 1.75rem);
-		}
+		width: 40%;
   `}
 `
 
-export const StackOverflow = styled(icon.StackOverflow)`
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
+export const StackOverflow = styled(remixIcon.StackOverflow)`
+	color: hsla(360, 100%, 100%, 1);
 	transition: transform 0.25s ease, width 0.5s ease-in-out;
-
-	@media (width >= 1280px) {
-		width: clamp(2rem, 0.333rem + 2.083vw, 2.5rem);
-	}
-	@media (1024px <= width < 1280px) {
-		width: clamp(1.65rem, 0.45rem + 1.875vw, 1.95rem);
-	}
+	cursor: pointer;
+	width: 50%;
 
 	&:hover {
-		transform: scale(1.25);
-		stroke: var(--color-primary);
-		stroke-width: 8;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 
 	${({ $shrink }) =>
 		$shrink &&
 		`
-		@media (width >= 1280px) {
-			width: clamp(1.5rem, -0.167rem + 2.083vw, 2rem);
-		}
-		@media (1024px <= width < 1280px) {
-			width: clamp(1.45rem, 0.25rem + 1.875vw, 1.75rem);
-		}
+		width: 40%;
   `}
 `

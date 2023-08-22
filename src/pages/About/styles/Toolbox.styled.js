@@ -1,6 +1,15 @@
 import { styled, keyframes } from 'styled-components'
 import { CircleXmark } from '@styled-icons/fa-solid'
 
+const fadeIn = keyframes`
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+`
+
 const tooltipHover = keyframes`
 	from {
 		scale: 0;
@@ -12,32 +21,23 @@ const tooltipHover = keyframes`
 	}
 `
 
-export const Background = styled.div`
-	width: 100%;
-	height: 100vh;
-	height: 100dvh;
-	background-color: hsla(0, 0%, 78%, 0.5);
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 4;
-`
-
-export const Container = styled.div`
-	position: absolute;
+export const Modal = styled.dialog`
 	max-width: 60rem;
-	height: calc(100vh - 8rem);
-	height: calc(100dvh - 8rem);
-	top: 6rem;
-	left: 50%;
-	transform: translateX(-50%);
+	max-height: calc(100dvh - 8rem);
+	margin: auto;
 	border: 0.3125rem solid var(--color-secondary);
 	border-radius: 1rem;
-	background-color: hsla(360, 100%, 100%, 1);
+	background: hsla(360, 100%, 100%, 1);
 	box-shadow: 0 0.3125rem 1.875rem hsla(0, 0%, 0%, 0.35);
 	padding: 0.75rem 1.25rem 0.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
+	animation: ${fadeIn} 1000ms ease both;
+
+	&::backdrop {
+		animation: ${fadeIn} 1000ms ease both;
+		background: hsla(0, 0%, 78%, 0.5);
+	}
 
 	@media (width >= 1280px) {
 		width: 75%;
@@ -53,10 +53,8 @@ export const Container = styled.div`
 		width: 85%;
 
 		@media (orientation: landscape) {
-			width: 80%;
-			height: calc(100vh - 3rem);
-			height: calc(100dvh - 3rem);
-			top: 2rem;
+			width: 90%;
+			max-height: calc(100dvh - 3rem);
 		}
 	}
 	@media (width < 640px) {
@@ -85,6 +83,9 @@ export const Wrapper = styled.div`
 	}
 	@media (640px <= width < 960px) {
 		grid-template-columns: repeat(5, 1fr);
+		@media (orientation: landscape) {
+			grid-template-columns: repeat(8, 1fr);
+		}
 	}
 	@media (width < 640px) {
 		grid-template-columns: repeat(4, 1fr);

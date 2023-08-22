@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import * as simpleIcons from '@styled-icons/simple-icons'
 import * as Styled from '../styles/Toolbox.styled.js'
 
@@ -418,24 +418,35 @@ const icons = [
 	},
 ]
 
-export const Toolbox = ({ setShowToolbox }) => {
+export const Toolbox = ({ openToolbox, closeToolbox }) => {
+	const ref = useRef()
+
+	useEffect(() => {
+		if (openToolbox) {
+			ref.current.showModal()
+			ref.current.scrollTop = 0
+		} else {
+			ref.current.close()
+		}
+	}, [openToolbox])
+
 	return (
-		<Styled.Background>
-			<Styled.Container>
-				<Styled.Wrapper>
-					{icons.map((icon, index) => (
-						<Styled.Icon key={index}>
-							<Styled.Tooltip
-								$color={icon.color}
-								$transform={icon.transform}>
-								{icon.name}
-							</Styled.Tooltip>
-							{icon.image}
-						</Styled.Icon>
-					))}
-				</Styled.Wrapper>
-				<Styled.CloseBtn onClick={() => setShowToolbox(false)} />
-			</Styled.Container>
-		</Styled.Background>
+		<Styled.Modal
+			ref={ref}
+			onCancel={closeToolbox}>
+			<Styled.Wrapper>
+				{icons.map((icon, index) => (
+					<Styled.Icon key={index}>
+						<Styled.Tooltip
+							$color={icon.color}
+							$transform={icon.transform}>
+							{icon.name}
+						</Styled.Tooltip>
+						{icon.image}
+					</Styled.Icon>
+				))}
+			</Styled.Wrapper>
+			<Styled.CloseBtn onClick={closeToolbox} />
+		</Styled.Modal>
 	)
 }

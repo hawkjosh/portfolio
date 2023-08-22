@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import * as icon from '../components/Icons.jsx'
+import * as remixIcon from '@styled-icons/remix-line'
 
 export const Footer = styled.footer`
 	height: ${({ $height }) => $height};
@@ -12,10 +13,12 @@ export const Footer = styled.footer`
 	background-color: var(--color-secondary);
 	border-top: solid hsla(360, 100%, 100%, 1);
 `
+
 export const Copywrite = styled.div`
 	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
 	font-weight: 300;
 `
+
 export const Logo = styled(icon.FooterLogo)`
 	display: flex;
 	width: 2.5rem;
@@ -31,54 +34,54 @@ export const Logo = styled(icon.FooterLogo)`
 	}
 `
 
-export const LinkedIn = styled(icon.Linkedin)`
+export const SocialLink = styled.a`
+	text-decoration: none;
+`
+
+export const LinkedIn = styled(remixIcon.Linkedin)`
+	color: hsla(360, 100%, 100%, 1);
+	transition: transform 0.25s ease, width 0.5s ease-in-out;
+	cursor: pointer;
 	width: ${({ $width }) => $width};
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease;
 
 	&:hover {
-		transform: scale(1.125);
-		stroke: var(--color-primary);
-		stroke-width: 7.5;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 `
 
-export const GitHub = styled(icon.Github)`
+export const GitHub = styled(remixIcon.Github)`
+	color: hsla(360, 100%, 100%, 1);
+	transition: transform 0.25s ease, width 0.5s ease-in-out;
+	cursor: pointer;
 	width: ${({ $width }) => $width};
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease;
 
 	&:hover {
-		transform: scale(1.125);
-		stroke: var(--color-primary);
-		stroke-width: 7.5;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 `
 
-export const Codepen = styled(icon.Codepen)`
+export const CodePen = styled(remixIcon.Codepen)`
+	color: hsla(360, 100%, 100%, 1);
+	transition: transform 0.25s ease, width 0.5s ease-in-out;
+	cursor: pointer;
 	width: ${({ $width }) => $width};
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease;
 
 	&:hover {
-		transform: scale(1.125);
-		stroke: var(--color-primary);
-		stroke-width: 7.5;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 `
 
-export const StackOverflow = styled(icon.StackOverflow)`
+export const StackOverflow = styled(remixIcon.StackOverflow)`
+	color: hsla(360, 100%, 100%, 1);
+	transition: transform 0.25s ease, width 0.5s ease-in-out;
+	cursor: pointer;
 	width: ${({ $width }) => $width};
-	display: flex;
-	stroke: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease;
 
 	&:hover {
-		transform: scale(1.125);
-		stroke: var(--color-primary);
-		stroke-width: 7.5;
+		transform: scale(1.25) translateY(-5%);
+		color: var(--color-primary);
 	}
 `

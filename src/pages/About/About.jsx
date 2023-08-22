@@ -20,37 +20,60 @@ export const About = () => {
 	const [showToolbox, setShowToolbox] = useState(false)
 	const [showResume, setShowResume] = useState(false)
 
-	const handleToolboxClick = () => {
+	const handleToolboxOpen = () => {
 		setShowToolbox(true)
 		window.scrollTo(0, 0)
 	}
 
-	const handleResumeClick = () => {
+	const handleToolboxClose = () => {
+		setShowToolbox(false)
+	}
+
+	const handleResumeOpen = () => {
 		setShowResume(true)
 		window.scrollTo(0, 0)
 	}
 
-	return (
-		<Styled.Container
-			style={{
-				height: showToolbox || showResume ? 'calc(100vh - 12rem)' : 'auto',
-				overflowY: showToolbox || showResume ? 'hidden' : 'visible',
-			}}>
-			<Styled.Image
-				src='/profile.png'
-				alt='My Profile Photo'
-			/>
-			<Styled.TextWrapper>
-				<Styled.Text>{paragraphs[0].text}</Styled.Text>
-				<Styled.Text>{paragraphs[1].text}</Styled.Text>
-			</Styled.TextWrapper>
-			<Styled.BtnsWrapper>
-				<Styled.ToolboxBtn onClick={handleToolboxClick} />
-				<Styled.ResumeBtn onClick={handleResumeClick} />
-			</Styled.BtnsWrapper>
+	const handleResumeClose = () => {
+		setShowResume(false)
+	}
 
-			{showToolbox && <Toolbox setShowToolbox={setShowToolbox} />}
-			{showResume && <Resume setShowResume={setShowResume} />}
-		</Styled.Container>
+	return (
+		<>
+			<Styled.Container
+				style={{
+					height:
+						showToolbox || showResume
+							? 'calc(100vh - 12rem)'
+							: 'auto',
+					overflowY:
+						showToolbox || showResume ? 'hidden' : 'visible',
+				}}>
+				<Styled.Image
+					src='/profile.png'
+					alt='My Profile Photo'
+				/>
+				
+				<Styled.TextWrapper>
+					<Styled.Text>{paragraphs[0].text}</Styled.Text>
+					<Styled.Text>{paragraphs[1].text}</Styled.Text>
+				</Styled.TextWrapper>
+
+				<Styled.BtnsWrapper>
+					<Styled.ToolboxBtn onClick={handleToolboxOpen} />
+					<Styled.ResumeBtn onClick={handleResumeOpen} />
+				</Styled.BtnsWrapper>
+
+				<Toolbox
+					openToolbox={showToolbox}
+					closeToolbox={handleToolboxClose}>
+				</Toolbox>
+
+				<Resume
+					openResume={showResume}
+					closeResume={handleResumeClose}>
+				</Resume>
+			</Styled.Container>
+		</>
 	)
 }

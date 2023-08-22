@@ -28,6 +28,25 @@ export const Navbar = () => {
 	const location = useLocation()
 	const staticNav = Boolean(location.pathname === '/work-samples')
 
+	const socialIcons = [
+		{
+			icon: <styled.LinkedIn $shrink={shrink ? 'shrink' : ''} />,
+			link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
+		},
+		{
+			icon: <styled.GitHub $shrink={shrink ? 'shrink' : ''} />,
+			link: 'https://github.com/hawkjosh',
+		},
+		{
+			icon: <styled.CodePen $shrink={shrink ? 'shrink' : ''} />,
+			link: 'https://codepen.io/hawkjosh',
+		},
+		{
+			icon: <styled.StackOverflow $shrink={shrink ? 'shrink' : ''} />,
+			link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
+		},
+	]
+
 	return (
 		<styled.Navbar
 			$height={staticNav ? '5rem' : '8rem'}
@@ -101,11 +120,17 @@ export const Navbar = () => {
 					</styled.NavLinks>
 				</>
 			)}
+
 			<styled.NavSocial>
-				<styled.LinkedIn $shrink={shrink ? 'shrink' : ''} />
-				<styled.GitHub $shrink={shrink ? 'shrink' : ''} />
-				<styled.Codepen $shrink={shrink ? 'shrink' : ''} />
-				<styled.StackOverflow $shrink={shrink ? 'shrink' : ''} />
+				{socialIcons.map((icon, index) => (
+					<styled.SocialLink
+						key={index}
+						href={icon.link}
+						target='_blank'
+						rel='noreferrer'>
+						{icon.icon}
+					</styled.SocialLink>
+				))}
 			</styled.NavSocial>
 		</styled.Navbar>
 	)

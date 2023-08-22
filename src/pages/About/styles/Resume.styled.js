@@ -1,37 +1,36 @@
-import { styled } from 'styled-components'
+import { styled, keyframes } from 'styled-components'
 import { CircleXmark } from '@styled-icons/fa-solid'
 
-export const Background = styled.div`
-	width: 100%;
-	height: 100vh;
-	height: 100dvh;
-	background-color: hsla(0, 0%, 78%, 0.5);
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 4;
+const fadeIn = keyframes`
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 `
 
-export const Container = styled.div`
-	position: absolute;
+export const Modal = styled.dialog`
 	width: clamp(23.125rem, 3.857rem + 79.048vw, 75rem);
-	height: calc(100vh - 8rem);
-	height: calc(100dvh - 8rem);
-	top: 6rem;
-	left: 50%;
-	transform: translateX(-50%);
+	max-height: calc(100dvh - 8rem);
+	margin: auto;
 	border: 0.3125rem solid var(--color-secondary);
 	border-radius: 1rem;
-	background-color: white;
-	box-shadow: 0px 5px 30px hsla(0, 0%, 0%, 0.35);
-	padding: 0.5rem 0.25rem 1.5rem;
+	padding: 0.75rem 1.25rem 0.5rem;
+	background: hsla(360, 100%, 100%, 1);
 	overflow-y: auto;
 	scrollbar-width: none;
+	box-shadow: 0px 5px 30px hsla(0, 0%, 0%, 0.35);
+	animation: ${fadeIn} 1000ms ease both;
+
+	&::backdrop {
+		animation: ${fadeIn} 1000ms ease both;
+		background: hsla(0, 0%, 78%, 0.5);
+	}
 
 	@media (width < 960px) and (orientation: landscape) {
-		height: calc(100vh - 3rem);
+		width: 90%;
 		height: calc(100dvh - 3rem);
-		top: 2rem;
 	}
 `
 
