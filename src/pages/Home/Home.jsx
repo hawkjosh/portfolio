@@ -1,5 +1,4 @@
-import React from 'react'
-import * as Styled from './styles/Home.styled.js'
+import * as Styled from './styles/Home.styled.jsx'
 
 export const Home = () => {
 	return (
@@ -11,11 +10,11 @@ export const Home = () => {
 			<Styled.Wrapper>
 				<Styled.Divider />
 			</Styled.Wrapper>
-			<Styled.Icons>
+			<Styled.IconsContainer>
 				<Styled.Laptop />
 				<Styled.Superhero />
 				<Styled.Tennessee />
-			</Styled.Icons>
+			</Styled.IconsContainer>
 		</Styled.Container>
 	)
 }

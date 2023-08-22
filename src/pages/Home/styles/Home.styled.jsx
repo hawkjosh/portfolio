@@ -21,24 +21,58 @@ export const Divider = styled.hr`
 	background: hsla(360, 100%, 100%, 1);
 	border-style: none;
 	margin: 4rem 10%;
-
 	@media (width < 40rem) {
 		margin: 4rem 17.5%;
 	}
 `
 
-export const Icons = styled.div`
+export const IconsContainer = styled.div`
 	width: 90%;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-
 	@media (width < 40rem) {
 		width: 100%;
 		flex-direction: column;
 		gap: 5rem;
 	}
 `
+
+const IconStyle = styled.div`
+	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
+	fill: var(--color-secondary);
+	cursor: grab;
+
+	@media (width < 40rem) {
+		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
+	}
+
+	& text {
+		fill: hsla(360, 100%, 100%, 1);
+	}
+
+	&:hover {
+		fill: ${({ $fill }) => $fill};
+		stroke: ${({ $stroke }) => $stroke};
+		stroke-width: ${({ $swidth }) => $swidth};
+	}
+`
+
+export const Icon = ({ icon, ...props }) => {
+	return (
+		<IconStyle>
+			{icon === 'laptop' && (
+				<icon.Laptop {...props} />
+			)}
+			{icon === 'superhero' && (
+				<icon.Superhero {...props} />
+			)}
+			{icon === 'tennessee' && (
+				<icon.Tennessee {...props} />
+			)}
+		</IconStyle>
+	)
+}
 
 export const Laptop = styled(icon.Laptop)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);

@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { ResumeBtn, ToolboxBtn } from '../components/Icons.jsx'
+import * as btn from '../components/Icons.jsx'
 
 export const Container = styled.div`
 	max-width: 90rem;
@@ -133,7 +133,11 @@ const Button = styled.div`
 export const IconBtn = ({ icon, ...props }) => {
 	return (
 		<Button>
-			{icon === 'resume' ? <ResumeBtn {...props} /> : <ToolboxBtn {...props} />}
+			{icon === 'resume' ? (
+				<btn.ResumeBtn {...props} />
+			) : (
+				<btn.ToolboxBtn {...props} />
+			)}
 		</Button>
 	)
 }

@@ -1,6 +1,5 @@
-import React from 'react'
 import { useTextareaScroll } from '../../hooks/useTextareaScroll.jsx'
-import * as Styled from './styles/Contact.styled.js'
+import * as Styled from './styles/Contact.styled.jsx'
 
 export const Contact = () => {
 	const textareaRef = useTextareaScroll()

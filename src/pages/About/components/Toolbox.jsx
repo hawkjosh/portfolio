@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import * as simpleIcons from '@styled-icons/simple-icons'
-import * as Styled from '../styles/Toolbox.styled.js'
+import * as Styled from '../styles/Toolbox.styled.jsx'
 
 const icons = [
 	{
