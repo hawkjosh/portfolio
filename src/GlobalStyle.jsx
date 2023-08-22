@@ -6,7 +6,7 @@ const breakpoints = {
 	laptop: '80rem',
 }
 
-const responsive = Object.keys(breakpoints).reduce((acc, label) => {
+export const responsive = Object.keys(breakpoints).reduce((acc, label) => {
 	acc[label] = (...args) => `
 		@media (min-width: ${breakpoints[label]}) {
 			${args.join('')}
@@ -15,7 +15,7 @@ const responsive = Object.keys(breakpoints).reduce((acc, label) => {
 	return acc
 }, {})
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   :root {
     --font-primary: 'Open Sans', sans-serif;
     --font-color: hsla(0, 100%, 100%, 1);
@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
       min-height: 100dvh;
       font-family: var(--font-primary);
       color: var(--font-color);
-      background-color: var(--color-primary);
+      background: var(--color-primary);
       overflow-x: hidden;
 
       & a {
@@ -53,5 +53,3 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 `
-
-export { responsive, GlobalStyle }

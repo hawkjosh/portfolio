@@ -17,7 +17,7 @@ export const List = styled.div`
 	position: absolute;
 	top: ${({ $top }) => $top};
 	left: 1.5rem;
-	background-color: var(--color-secondary);
+	background: var(--color-secondary);
 	border: 0.1875rem solid hsla(360, 100%, 100%, 1);
 	border-radius: 1.5rem;
 	padding: 0.5rem;

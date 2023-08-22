@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { Toolbox } from './components/Toolbox.jsx'
+import { useState } from 'react'
 import { Resume } from './components/Resume.jsx'
-import * as Styled from './styles/About.styled.js'
+import { Toolbox } from './components/Toolbox.jsx'
+import * as Styled from './styles/About.styled.jsx'
 
 const paragraphs = [
 	{
@@ -18,62 +18,53 @@ const paragraphs = [
 
 export const About = () => {
 	const [showToolbox, setShowToolbox] = useState(false)
+
 	const [showResume, setShowResume] = useState(false)
 
-	const handleToolboxOpen = () => {
-		setShowToolbox(true)
+	const toggleToolbox = () => {
+		showToolbox ? setShowToolbox(false) : setShowToolbox(true)
 		window.scrollTo(0, 0)
 	}
 
-	const handleToolboxClose = () => {
-		setShowToolbox(false)
-	}
-
-	const handleResumeOpen = () => {
-		setShowResume(true)
+	const toggleResume = () => {
+		showResume ? setShowResume(false) : setShowResume(true)
 		window.scrollTo(0, 0)
-	}
-
-	const handleResumeClose = () => {
-		setShowResume(false)
 	}
 
 	return (
-		<>
-			<Styled.Container
-				style={{
-					height:
-						showToolbox || showResume
-							? 'calc(100vh - 12rem)'
-							: 'auto',
-					overflowY:
-						showToolbox || showResume ? 'hidden' : 'visible',
-				}}>
-				<Styled.Image
-					src='/profile.png'
-					alt='My Profile Photo'
+		<Styled.Container
+			$height={showToolbox || showResume ? 'calc(100vh - 12rem)' : 'auto'}
+			$overflow={showToolbox || showResume ? 'hidden' : 'visible'}>
+			<Styled.Image
+				src='/profile.png'
+				alt='My Profile Photo'
+			/>
+
+			<Styled.TextWrapper>
+				<Styled.Text>{paragraphs[0].text}</Styled.Text>
+				<Styled.Text>{paragraphs[1].text}</Styled.Text>
+			</Styled.TextWrapper>
+
+			<Styled.BtnsWrapper>
+				<Styled.IconBtn
+					icon='toolbox'
+					onClick={toggleToolbox}
 				/>
-				
-				<Styled.TextWrapper>
-					<Styled.Text>{paragraphs[0].text}</Styled.Text>
-					<Styled.Text>{paragraphs[1].text}</Styled.Text>
-				</Styled.TextWrapper>
+				<Styled.IconBtn
+					icon='resume'
+					onClick={toggleResume}
+				/>
+			</Styled.BtnsWrapper>
 
-				<Styled.BtnsWrapper>
-					<Styled.ToolboxBtn onClick={handleToolboxOpen} />
-					<Styled.ResumeBtn onClick={handleResumeOpen} />
-				</Styled.BtnsWrapper>
+			<Toolbox
+				openToolbox={showToolbox}
+				closeToolbox={toggleToolbox}
+			/>
 
-				<Toolbox
-					openToolbox={showToolbox}
-					closeToolbox={handleToolboxClose}>
-				</Toolbox>
-
-				<Resume
-					openResume={showResume}
-					closeResume={handleResumeClose}>
-				</Resume>
-			</Styled.Container>
-		</>
+			<Resume
+				openResume={showResume}
+				closeResume={toggleResume}
+			/>
+		</Styled.Container>
 	)
 }

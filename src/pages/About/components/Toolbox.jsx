@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import * as simpleIcons from '@styled-icons/simple-icons'
 import * as Styled from '../styles/Toolbox.styled.js'
 
@@ -32,7 +32,7 @@ const icons = [
 			/>
 		),
 		color: '#7952B3',
-		transform: 'translateY(-90%)',
+		transform: 'translateY(-100%)',
 	},
 	{
 		name: 'CodePen',
@@ -63,7 +63,7 @@ const icons = [
 			/>
 		),
 		color: '#4B32C3',
-		transform: 'translateY(-100%)',
+		transform: 'translateY(-110%)',
 	},
 	{
 		name: 'Git',
@@ -84,7 +84,7 @@ const icons = [
 			/>
 		),
 		color: '#000000',
-		transform: 'translateY(-100%)',
+		transform: 'translateY(-110%)',
 	},
 	{
 		name: 'GitHub',
@@ -95,7 +95,7 @@ const icons = [
 			/>
 		),
 		color: '#181717',
-		transform: 'translateY(-110%)',
+		transform: 'translateY(-115%)',
 	},
 	{
 		name: 'GitLab',
@@ -126,7 +126,7 @@ const icons = [
 			/>
 		),
 		color: '#000000',
-		transform: 'translateY(-50%)',
+		transform: 'translateY(-60%)',
 	},
 	{
 		name: 'Heroku',
@@ -187,7 +187,7 @@ const icons = [
 			/>
 		),
 		color: '#000000',
-		transform: 'translateY(-120%)',
+		transform: 'translateY(-125%)',
 	},
 	{
 		name: 'LinkedIn',
@@ -208,7 +208,7 @@ const icons = [
 			/>
 		),
 		color: '#007FFF',
-		transform: 'translateY(-100%)',
+		transform: 'translateY(-110%)',
 	},
 	{
 		name: 'MongoDB',
@@ -219,6 +219,7 @@ const icons = [
 			/>
 		),
 		color: '#47A248',
+		transform: 'translateY(-140%)',
 	},
 	{
 		name: 'MySQL',
@@ -229,7 +230,7 @@ const icons = [
 			/>
 		),
 		color: '#4479A1',
-		transform: 'translateY(-75%)',
+		transform: 'translateY(-80%)',
 	},
 	{
 		name: 'Netlify',
@@ -242,16 +243,6 @@ const icons = [
 		color: '#00C7B7',
 	},
 	{
-		name: 'NodeJS',
-		image: (
-			<simpleIcons.Nodedotjs
-				color='#339933'
-				size='100%'
-			/>
-		),
-		color: '#339933',
-	},
-	{
 		name: 'NextJS',
 		image: (
 			<simpleIcons.Nextdotjs
@@ -260,6 +251,16 @@ const icons = [
 			/>
 		),
 		color: '#000000',
+	},
+	{
+		name: 'NodeJS',
+		image: (
+			<simpleIcons.Nodedotjs
+				color='#339933'
+				size='100%'
+			/>
+		),
+		color: '#339933',
 	},
 	{
 		name: 'Nodemon',
@@ -300,7 +301,7 @@ const icons = [
 			/>
 		),
 		color: '#61DAFB',
-		transform: 'translateY(-110%)',
+		transform: 'translateY(-120%)',
 	},
 	{
 		name: 'Redux',
@@ -311,7 +312,7 @@ const icons = [
 			/>
 		),
 		color: '#764ABC',
-		transform: 'translateY(-110%)',
+		transform: 'translateY(-120%)',
 	},
 	{
 		name: 'Sequelize',
@@ -353,7 +354,7 @@ const icons = [
 			/>
 		),
 		color: '#DB7093',
-		transform: 'translateY(-75%)',
+		transform: 'translateY(-65%)',
 	},
 	{
 		name: 'SVG',
@@ -364,6 +365,7 @@ const icons = [
 			/>
 		),
 		color: '#FFB13B',
+		transform: 'translateY(-125%)',
 	},
 	{
 		name: 'Tailwind',
@@ -374,7 +376,7 @@ const icons = [
 			/>
 		),
 		color: '#06B6D4',
-		transform: 'translateY(-75%)',
+		transform: 'translateY(-70%)',
 	},
 	{
 		name: 'TypeScript',
@@ -385,6 +387,7 @@ const icons = [
 			/>
 		),
 		color: '#3178C6',
+		transform: 'translateY(-140%)',
 	},
 	{
 		name: 'Vite',

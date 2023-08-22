@@ -18,11 +18,11 @@ export const Wrapper = styled.div`
 
 export const Divider = styled.hr`
 	height: 0.15rem;
-	background-color: hsla(360, 100%, 100%, 1);
+	background: hsla(360, 100%, 100%, 1);
 	border-style: none;
 	margin: 4rem 10%;
 
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		margin: 4rem 17.5%;
 	}
 `
@@ -33,7 +33,7 @@ export const Icons = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		width: 100%;
 		flex-direction: column;
 		gap: 5rem;
@@ -44,7 +44,7 @@ export const Laptop = styled(icon.Laptop)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
 	}
 
@@ -64,7 +64,7 @@ export const Superhero = styled(icon.Superhero)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
 	}
 
@@ -84,7 +84,7 @@ export const Tennessee = styled(icon.Tennessee)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
 	}
 

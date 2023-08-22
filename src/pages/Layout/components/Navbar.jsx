@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import { useNavShrink } from '../../../hooks/useNavbarShrink.js'
+import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
 import { Menu } from './Menu.jsx'
 import * as styled from '../styles/Navbar.styled.js'
 

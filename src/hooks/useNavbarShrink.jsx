@@ -13,6 +13,7 @@ export const useNavShrink = () => {
 		}
 
 		handleScroll()
+
 		document.addEventListener('scroll', handleScroll)
 
 		return () => {

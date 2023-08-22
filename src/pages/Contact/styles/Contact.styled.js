@@ -13,16 +13,16 @@ export const Title = styled.h1`
 	text-transform: uppercase;
 	color: var(--color-secondary);
 
-	@media (width >= 1280px) {
+	@media (width >= 80rem) {
 		font-size: 2.25rem;
 	}
-	@media (1024px <= width < 1280px) {
+	@media (64rem <= width < 80rem) {
 		font-size: clamp(2rem, 1rem + 1.563vw, 2.25rem);
 	}
-	@media (640px <= width < 1024px) {
+	@media (40rem <= width < 64rem) {
 		font-size: clamp(1.75rem, 1.333rem + 1.042vw, 2rem);
 	}
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		font-size: 1.75rem;
 	}
 `
@@ -57,16 +57,16 @@ export const Input = styled.input`
 	border-radius: 0.5rem;
 	padding: 0.5rem 1rem;
 
-	@media (width >= 1280px) {
+	@media (width >= 80rem) {
 		font-size: 1.25rem;
 	}
-	@media (1024px <= width < 1280px) {
+	@media (64rem <= width < 80rem) {
 		font-size: clamp(1.125rem, 0.625rem + 0.781vw, 1.25rem);
 	}
-	@media (640px <= width < 1024px) {
+	@media (40rem <= width < 64rem) {
 		font-size: clamp(1rem, 0.792rem + 0.521vw, 1.125rem);
 	}
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		font-size: 1rem;
 	}
 
@@ -94,16 +94,16 @@ export const Textarea = styled.textarea`
 	padding: 0.5rem 1rem;
 	resize: none;
 
-	@media (width >= 1280px) {
+	@media (width >= 80rem) {
 		font-size: 1.25rem;
 	}
-	@media (1024px <= width < 1280px) {
+	@media (64rem <= width < 80rem) {
 		font-size: clamp(1.125rem, 0.625rem + 0.781vw, 1.25rem);
 	}
-	@media (640px <= width < 1024px) {
+	@media (40rem <= width < 64rem) {
 		font-size: clamp(1rem, 0.792rem + 0.521vw, 1.125rem);
 	}
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		font-size: 1rem;
 	}
 
@@ -122,22 +122,22 @@ export const Button = styled.button`
 	text-transform: uppercase;
 	line-height: 1.5;
 	color: hsla(360, 100%, 100%, 1);
-	background-color: var(--color-secondary);
+	background: var(--color-secondary);
 	border: 0.125rem solid hsla(360, 100%, 100%, 1);
 	border-radius: 0.75rem;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 
-	@media (width >= 1280px) {
+	@media (width >= 80rem) {
 		font-size: 1.5rem;
 	}
-	@media (1024px <= width < 1280px) {
+	@media (64rem <= width < 80rem) {
 		font-size: clamp(1.25rem, 0.25rem + 1.563vw, 1.5rem);
 	}
-	@media (640px <= width < 1024px) {
+	@media (40rem <= width < 64rem) {
 		font-size: clamp(1rem, 0.583rem + 1.042vw, 1.25rem);
 	}
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		font-size: 1rem;
 	}
 

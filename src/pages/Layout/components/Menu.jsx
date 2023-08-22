@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useNavShrink } from '../../../hooks/useNavbarShrink.js'
+import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
 import * as styled from '../styles/Menu.styled.js'
 
 const menuItems = [

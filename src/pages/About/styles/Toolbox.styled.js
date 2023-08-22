@@ -1,5 +1,5 @@
 import { styled, keyframes } from 'styled-components'
-import { CircleXmark } from '@styled-icons/fa-solid'
+import * as icon from '@styled-icons/fa-solid'
 
 const fadeIn = keyframes`
 	from {
@@ -22,47 +22,42 @@ const tooltipHover = keyframes`
 `
 
 export const Modal = styled.dialog`
-	max-width: 60rem;
-	max-height: calc(100dvh - 8rem);
+	max-width: 80rem;
+	max-height: 95%;
 	margin: auto;
-	border: 0.3125rem solid var(--color-secondary);
-	border-radius: 1rem;
+	border: none;
+	border-radius: 2rem;
+	outline: none;
 	background: hsla(360, 100%, 100%, 1);
-	box-shadow: 0 0.3125rem 1.875rem hsla(0, 0%, 0%, 0.35);
+	box-shadow: 0.75rem 0.75rem 0.375rem 0 hsla(0, 0%, 0%, 0.75);
 	padding: 0.75rem 1.25rem 0.5rem;
 	overflow-y: auto;
 	scrollbar-width: none;
 	animation: ${fadeIn} 1000ms ease both;
-
 	&::backdrop {
 		animation: ${fadeIn} 1000ms ease both;
-		background: hsla(0, 0%, 78%, 0.5);
+		background: hsla(0, 0%, 0%, 0.625);
 	}
-
-	@media (width >= 1280px) {
+	@media (width >= 80rem) {
 		width: 75%;
 	}
-	@media (960px <= width < 1280px) {
+	@media (60rem <= width < 80rem) {
 		width: 80%;
-
 		@media (orientation: landscape) {
-			width: 75%;
+			width: 85%;
 		}
 	}
-	@media (640px <= width < 960px) {
+	@media (40rem <= width < 60rem) {
 		width: 85%;
-
 		@media (orientation: landscape) {
 			width: 90%;
 			max-height: calc(100dvh - 3rem);
 		}
 	}
-	@media (width < 640px) {
+	@media (width < 40rem) {
 		width: 90%;
-
 		@media (orientation: landscape) {
 			width: 85%;
-			height: calc(100vh - 3rem);
 			height: calc(100dvh - 3rem);
 			top: 1rem;
 		}
@@ -74,69 +69,71 @@ export const Wrapper = styled.div`
 	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
 	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
 	margin: 2.5rem 5%;
-
-	@media (width >= 1280px) {
+	@media (width >= 80rem) {
 		grid-template-columns: repeat(8, 1fr);
 	}
-	@media (960px <= width < 1280px) {
-		grid-template-columns: repeat(6, 1fr);
-	}
-	@media (640px <= width < 960px) {
+	@media (60rem <= width < 80rem) {
 		grid-template-columns: repeat(5, 1fr);
 		@media (orientation: landscape) {
 			grid-template-columns: repeat(8, 1fr);
 		}
 	}
-	@media (width < 640px) {
+	@media (40rem <= width < 60rem) {
+		grid-template-columns: repeat(5, 1fr);
+		@media (orientation: landscape) {
+			grid-template-columns: repeat(8, 1fr);
+		}
+	}
+	@media (width < 40rem) {
 		grid-template-columns: repeat(4, 1fr);
 	}
 `
 
 export const Tooltip = styled.div`
+	visibility: hidden;
 	position: absolute;
 	color: ${({ $color }) => $color};
 	text-align: center;
-	line-height: 1;
-	font-size: clamp(0.625rem, 0.414rem + 0.889vw, 1.125rem);
+	line-height: 0.9;
+	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
 	font-weight: 900;
 	top: 0;
-	transform: ${({ $transform }) => $transform || 'translateY(-125%)'};
-	display: none;
+	transform: ${({ $transform }) => $transform || 'translateY(-135%)'};
 `
 
 export const Icon = styled.div`
 	position: relative;
 	display: flex;
-	place-content: center;
-	filter: contrast(0%);
+	justify-content: center;
+	align-items: center;
+	filter: contrast(10%);
 	transition-property: transform, filter;
-	transition-duration: 0.25s;
+	transition-duration: 250ms;
 	transition-timing-function: ease-in-out;
-
 	&:hover {
 		transform: scale(1.125);
-		filter: contrast(100%);
+		filter: contrast(125%);
 		cursor: pointer;
-
 		& ${Tooltip} {
-			animation: ${tooltipHover} 0.5s ease-in-out;
-			display: block;
+			animation: ${tooltipHover} 500ms ease-in-out;
+			visibility: visible;
 		}
 	}
 `
 
-export const CloseBtn = styled(CircleXmark)`
+export const CloseBtn = styled(icon.CircleXmark)`
 	position: absolute;
 	top: 0.625rem;
 	right: 0.625rem;
 	width: 5%;
-	min-width: 1.75rem;
-	max-width: 2.5rem;
+	min-width: 1.5rem;
+	max-width: 2rem;
 	color: var(--color-secondary);
-	filter: contrast(75%);
+	filter: contrast(50%);
 	cursor: pointer;
-	transition: filter 250ms ease-in-out, transform 250ms ease-in-out;
-
+	transition-property: filter, transform;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
 	&:hover {
 		filter: contrast(100%);
 		transform: scale(1.125);

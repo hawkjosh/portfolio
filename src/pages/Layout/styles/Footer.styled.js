@@ -10,7 +10,7 @@ export const Footer = styled.footer`
 	justify-content: center;
 	align-items: center;
 	gap: clamp(2.5rem, 1.145rem + 6.024vw, 5rem);
-	background-color: var(--color-secondary);
+	background: var(--color-secondary);
 	border-top: solid hsla(360, 100%, 100%, 1);
 `
 

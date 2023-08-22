@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="250"
-  viewBox="0 0 264 280" xmlns:v="https://vecta.io/nano">
+  viewBox="0 0 264 280">
   <defs>
     <circle id="A" cx="120" cy="120" r="120" />
     <path d="M12 160c0 66.274 53.726 120 120 120s120-53.726 120-120h12V0H0v160h12z" id="B" />

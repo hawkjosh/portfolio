@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import * as Styled from '../styles/Resume.styled.js'
+import { useEffect, useRef } from 'react'
+import * as Styled from '../styles/Resume.styled.jsx'
 
 export const Resume = ({ openResume, closeResume }) => {
 	const ref = useRef()
@@ -31,11 +31,11 @@ export const Resume = ({ openResume, closeResume }) => {
 					src='/resume.png'
 					alt='My Resume'
 				/>
+				<Styled.CloseBtn onClick={closeResume} />
 				<Styled.DownloadBtn onClick={handleDownload}>
 					Download
 				</Styled.DownloadBtn>
 			</Styled.Wrapper>
-			<Styled.CloseBtn onClick={closeResume} />
 		</Styled.Modal>
 	)
 }
