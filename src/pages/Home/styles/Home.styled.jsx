@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import * as icon from '../components/Icons.jsx'
+import * as homeIcon from '../components/Icons.jsx'
 
 export const Container = styled.div`
 	display: flex;
@@ -38,98 +38,96 @@ export const IconsContainer = styled.div`
 	}
 `
 
-const IconStyle = styled.div`
+// const IconStyle = styled.div`
+// 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
+// 	fill: var(--color-secondary);
+// 	cursor: grab;
+// 	&:hover {
+// 		fill: ${({fill}) => fill};
+// 		stroke: ${({stroke}) => stroke};
+// 		stroke-width: ${({strokeWidth}) => strokeWidth};
+// 	}
+// 	& text {
+// 		fill: hsla(360, 100%, 100%, 1);
+// 	}
+// 	@media (width < 40rem) {
+// 		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
+// 	}
+// `
+
+// export const Icon = ({ icon, hoverfill, ...props }) => {
+// 	return (
+// 		<IconStyle>
+// 			{icon === 'laptop' ? (
+// 				<homeIcon.Laptop hoverfill={hoverfill} {...props} />
+// 			) : icon === 'superhero' ? (
+// 				<homeIcon.Superhero {...props} />
+// 			) : (
+// 				<homeIcon.Tennessee {...props} />
+// 			)}
+// 		</IconStyle>
+// 	)
+// }
+
+export const Laptop = styled(homeIcon.Laptop)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 	cursor: grab;
-
-	@media (width < 40rem) {
-		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
-	}
-
-	& text {
-		fill: hsla(360, 100%, 100%, 1);
-	}
-
+	transition-property: transform, fill, stroke, stroke-width;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
 	&:hover {
-		fill: ${({ $fill }) => $fill};
-		stroke: ${({ $stroke }) => $stroke};
-		stroke-width: ${({ $swidth }) => $swidth};
-	}
-`
-
-export const Icon = ({ icon, ...props }) => {
-	return (
-		<IconStyle>
-			{icon === 'laptop' && (
-				<icon.Laptop {...props} />
-			)}
-			{icon === 'superhero' && (
-				<icon.Superhero {...props} />
-			)}
-			{icon === 'tennessee' && (
-				<icon.Tennessee {...props} />
-			)}
-		</IconStyle>
-	)
-}
-
-export const Laptop = styled(icon.Laptop)`
-	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
-	fill: var(--color-secondary);
-
-	@media (width < 40rem) {
-		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
-	}
-
-	& text {
-		fill: hsla(360, 100%, 100%, 1);
-	}
-
-	&:hover {
+		transform: scale(1.125);
 		fill: hsla(360, 100%, 100%, 1);
 		stroke: var(--color-secondary);
 		stroke-width: 15;
-		cursor: grab;
 	}
-`
-
-export const Superhero = styled(icon.Superhero)`
-	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
-	fill: var(--color-secondary);
-
-	@media (width < 40rem) {
-		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
-	}
-
 	& text {
 		fill: hsla(360, 100%, 100%, 1);
 	}
+	@media (width < 40rem) {
+		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
+	}
+`
 
+export const Superhero = styled(homeIcon.Superhero)`
+	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
+	fill: var(--color-secondary);
+	cursor: grab;
+	transition-property: transform, fill, stroke, stroke-width;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
 	&:hover {
+		transform: scale(1.125);
 		fill: hsla(240, 100%, 50%, 1);
 		stroke: hsla(0, 100%, 50%, 1);
 		stroke-width: 8;
-		cursor: grab;
 	}
-`
-
-export const Tennessee = styled(icon.Tennessee)`
-	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
-	fill: var(--color-secondary);
-
-	@media (width < 40rem) {
-		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
-	}
-
 	& text {
 		fill: hsla(360, 100%, 100%, 1);
 	}
+	@media (width < 40rem) {
+		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
+	}
+`
 
+export const Tennessee = styled(homeIcon.Tennessee)`
+	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
+	fill: var(--color-secondary);
+	cursor: grab;
+	transition-property: transform, fill, stroke, stroke-width;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
 	&:hover {
+		transform: scale(1.125);
 		fill: hsla(31, 100%, 48%, 1);
 		stroke: hsla(360, 100%, 100%, 1);
 		stroke-width: 8;
-		cursor: grab;
+	}
+	& text {
+		fill: hsla(360, 100%, 100%, 1);
+	}
+	@media (width < 40rem) {
+		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
 	}
 `
