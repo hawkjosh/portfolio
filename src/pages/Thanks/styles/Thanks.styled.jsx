@@ -17,11 +17,12 @@ export const Wrapper = styled.div`
 	gap: 0.75rem;
 `
 
-export const TextOne = styled.h2`
+export const TextOne = styled.div`
 	font-size: 1.625rem;
+	font-weight: 700;
 `
 
-export const TextTwo = styled.h4`
+export const TextTwo = styled.div`
 	font-size: 1.0625rem;
 	font-weight: 400;
 `

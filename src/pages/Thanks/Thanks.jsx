@@ -1,5 +1,4 @@
-import React from 'react'
-import * as Styled from './styles/Thanks.styled.js'
+import * as Styled from './styles/Thanks.styled.jsx'
 
 export const Thanks = () => {
 	return (

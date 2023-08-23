@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import * as btn from '../components/Icons.jsx'
+import * as icon from '../components/AboutIcon.jsx'
 
 export const Container = styled.div`
 	max-width: 90rem;
@@ -104,7 +104,7 @@ export const BtnsWrapper = styled.div`
 	}
 `
 
-const Button = styled.div`
+export const AboutBtn = styled(icon.AboutIcon)`
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: hsla(360, 100%, 100%, 1);
 	transition-property: transform, fill, stroke;
@@ -129,15 +129,3 @@ const Button = styled.div`
 		width: clamp(10rem, 6.88rem + 12.8vw, 12rem);
 	}
 `
-
-export const IconBtn = ({ icon, ...props }) => {
-	return (
-		<Button>
-			{icon === 'resume' ? (
-				<btn.ResumeBtn {...props} />
-			) : (
-				<btn.ToolboxBtn {...props} />
-			)}
-		</Button>
-	)
-}
