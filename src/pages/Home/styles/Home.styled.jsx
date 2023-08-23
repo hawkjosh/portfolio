@@ -38,36 +38,52 @@ export const IconsContainer = styled.div`
 	}
 `
 
-// const IconStyle = styled.div`
-// 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
-// 	fill: var(--color-secondary);
-// 	cursor: grab;
-// 	&:hover {
-// 		fill: ${({fill}) => fill};
-// 		stroke: ${({stroke}) => stroke};
-// 		stroke-width: ${({strokeWidth}) => strokeWidth};
-// 	}
-// 	& text {
-// 		fill: hsla(360, 100%, 100%, 1);
-// 	}
-// 	@media (width < 40rem) {
-// 		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
-// 	}
-// `
+const IconStyle = styled.div`
+	--laptop-fill: hsla(360, 100%, 100%, 1);
+	--laptop-stroke: var(--color-secondary);
+	--superhero-fill: hsla(240, 100%, 50%, 1);
+	--superhero-stroke: hsla(0, 100%, 50%, 1);
+	--tennessee-fill: hsla(31, 100%, 48%, 1);
+	--tennessee-stroke: hsla(360, 100%, 100%, 1);
+	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
+	fill: var(--color-secondary);
+	cursor: grab;
+	transition-property: transform, fill, stroke, stroke-width;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
+	&:hover {
+		transform: scale(1.125);
+		fill: ${(props) => props.variant === 'laptop' ? 'var(--laptop-fill)' : props.variant === 'superhero' ? 'var(--superher-fill)' : 'var(--tennessee-fill)'};
+		stroke: ${(props) => props.variant === 'laptop' ? 'var(--laptop-stroke)' : props.variant === 'superhero' ? 'var(--superher-stroke)' : 'var(--tennessee-stroke)'};
+		stroke-width: ${(props) => props.variant === 'laptop' ? 15 : 8};
+		/* fill: hsla(360, 100%, 100%, 1); */
+		/* stroke: var(--color-secondary); */
+		/* stroke-width: 8; */
+		/* & text {
+			fill: var(--color-secondary);
+		} */
+	}
+	& text {
+		fill: hsla(360, 100%, 100%, 1);
+	}
+	@media (width < 40rem) {
+		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
+	}
+`
 
-// export const Icon = ({ icon, hoverfill, ...props }) => {
-// 	return (
-// 		<IconStyle>
-// 			{icon === 'laptop' ? (
-// 				<homeIcon.Laptop hoverfill={hoverfill} {...props} />
-// 			) : icon === 'superhero' ? (
-// 				<homeIcon.Superhero {...props} />
-// 			) : (
-// 				<homeIcon.Tennessee {...props} />
-// 			)}
-// 		</IconStyle>
-// 	)
-// }
+export const Icon = ({ icon, ...props }) => {
+	return (
+		<IconStyle>
+			{icon === 'laptop' ? (
+				<homeIcon.Laptop variant='laptop' {...props} />
+			) : icon === 'superhero' ? (
+				<homeIcon.Superhero variant='superhero' {...props} />
+			) : (
+				<homeIcon.Tennessee variant='tennessee' {...props} />
+			)}
+		</IconStyle>
+	)
+}
 
 export const Laptop = styled(homeIcon.Laptop)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
