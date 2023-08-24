@@ -1,4 +1,3 @@
-import React from 'react'
 import { WorkSamplesLinkBtn } from './WorkSamplesLinkBtn.jsx'
 import { Gift, Globe } from '@styled-icons/fa-solid'
 import { Github } from '@styled-icons/simple-icons'

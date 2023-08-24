@@ -52,7 +52,7 @@ export const About = () => {
 				/>
 				<Styled.AboutBtn
 					type='resume'
-					onClick={toggleToolbox}
+					onClick={toggleResume}
 				/>
 			</Styled.BtnsWrapper>
 

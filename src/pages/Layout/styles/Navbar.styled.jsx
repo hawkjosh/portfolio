@@ -2,7 +2,7 @@ import { styled, keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import * as faIcon from '@styled-icons/fa-solid'
 import * as remixIcon from '@styled-icons/remix-line'
-import * as icon from '../components/Icons.jsx'
+import * as icon from '../components/LogoIcon.jsx'
 
 const rotate = keyframes`
 	from {
@@ -71,7 +71,7 @@ export const NavBrand = styled.div`
 	}
 `
 
-const StyledLogo = styled(icon.NavLogo)`
+const StyledLogo = styled(icon.LogoIcon)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
