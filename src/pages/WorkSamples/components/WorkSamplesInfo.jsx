@@ -1,4 +1,3 @@
-import React from 'react'
 import * as Styled from '../styles/WorkSamplesInfo.styled.js'
 
 export const WorkSamplesInfo = ({ item, activeIndex }) => {

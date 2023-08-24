@@ -1,8 +1,8 @@
 import { styled, keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import * as icon from '../components/Icons.jsx'
+import * as faIcon from '@styled-icons/fa-solid'
 import * as remixIcon from '@styled-icons/remix-line'
-import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
+import * as icon from '../components/LogoIcon.jsx'
 
 const rotate = keyframes`
 	from {
@@ -74,7 +74,7 @@ export const NavBrand = styled.div`
 	}
 `
 
-const StyledLogo = styled(icon.NavLogo)`
+const StyledLogo = styled(icon.LogoIcon)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
@@ -303,7 +303,7 @@ export const StaticLink = styled(StyledLink)`
   `}
 `
 
-export const LeftCaret = styled(CaretLeft)`
+export const LeftCaret = styled(faIcon.CaretLeft)`
 	color: var(--color-primary);
 	display: none;
 
@@ -313,7 +313,7 @@ export const LeftCaret = styled(CaretLeft)`
 	`}
 `
 
-export const RightCaret = styled(CaretRight)`
+export const RightCaret = styled(faIcon.CaretRight)`
 	color: var(--color-primary);
 	display: none;
 

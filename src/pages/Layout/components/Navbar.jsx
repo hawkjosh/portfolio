@@ -1,8 +1,7 @@
-import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
 import { Menu } from './Menu.jsx'
-import * as styled from '../styles/Navbar.styled.js'
+import * as styled from '../styles/Navbar.styled.jsx'
 
 const links = [
 	{
@@ -58,7 +57,7 @@ export const Navbar = () => {
 			{staticNav ? (
 				<>
 					<styled.NavBrand>
-						<styled.StaticLogo $shrink={shrink ? 'shrink' : ''} />
+						<styled.StaticLogo type='navbar' $shrink={shrink ? 'shrink' : ''} />
 						<styled.StaticTitle $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
 						</styled.StaticTitle>
@@ -90,7 +89,7 @@ export const Navbar = () => {
 			) : (
 				<>
 					<styled.NavBrand>
-						<styled.Logo $shrink={shrink ? 'shrink' : ''} />
+						<styled.Logo type='navbar' $shrink={shrink ? 'shrink' : ''} />
 						<styled.Title $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
 						</styled.Title>

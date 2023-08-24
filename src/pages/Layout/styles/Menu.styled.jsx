@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import { CaretLeft, CaretRight, Bars } from '@styled-icons/fa-solid'
+import * as faIcon from '@styled-icons/fa-solid'
 
-export const Menu = styled(Bars)`
+export const Menu = styled(faIcon.Bars)`
 	display: flex;
 	width: clamp(1.563rem, 0.759rem + 3.571vw, 2.188rem);
 	color: hsla(360, 100%, 100%, 1);
@@ -59,7 +59,7 @@ export const Item = styled(NavLink)`
   `}
 `
 
-export const LeftCaret = styled(CaretLeft)`
+export const LeftCaret = styled(faIcon.CaretLeft)`
 	color: var(--color-primary);
 	display: none;
 
@@ -70,7 +70,7 @@ export const LeftCaret = styled(CaretLeft)`
 `}
 `
 
-export const RightCaret = styled(CaretRight)`
+export const RightCaret = styled(faIcon.CaretRight)`
 	color: var(--color-primary);
 	display: none;
 
