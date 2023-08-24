@@ -1,4 +1,5 @@
 import { styled, keyframes } from 'styled-components'
+import { media } from '../../../GlobalStyle.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
 
 const fadeIn = keyframes`
@@ -38,25 +39,33 @@ export const Modal = styled.dialog`
 		animation: ${fadeIn} 1000ms ease both;
 		background: hsla(0, 0%, 0%, 0.625);
 	}
-	@media (width >= 80rem) {
+	@media ${media.xl} {
 		width: 75%;
 	}
-	@media (60rem <= width < 80rem) {
+	@media ${media.lg} {
 		width: 80%;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			width: 85%;
 		}
 	}
-	@media (40rem <= width < 60rem) {
+	@media ${media.md} {
 		width: 85%;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			width: 90%;
 			max-height: calc(100dvh - 3rem);
 		}
 	}
-	@media (width < 40rem) {
+	@media ${media.sm} {
 		width: 90%;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
+			width: 85%;
+			height: calc(100dvh - 3rem);
+			top: 1rem;
+		}
+	}
+	@media ${media.xs} {
+		width: 90%;
+		@media ${media.landscape} {
 			width: 85%;
 			height: calc(100dvh - 3rem);
 			top: 1rem;
@@ -69,22 +78,25 @@ export const Wrapper = styled.div`
 	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
 	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
 	margin: 2.5rem 5%;
-	@media (width >= 80rem) {
+	@media ${media.xl} {
 		grid-template-columns: repeat(8, 1fr);
 	}
-	@media (60rem <= width < 80rem) {
+	@media ${media.lg} {
 		grid-template-columns: repeat(5, 1fr);
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			grid-template-columns: repeat(8, 1fr);
 		}
 	}
-	@media (40rem <= width < 60rem) {
+	@media ${media.md} {
 		grid-template-columns: repeat(5, 1fr);
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			grid-template-columns: repeat(8, 1fr);
 		}
 	}
-	@media (width < 40rem) {
+	@media ${media.sm} {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	@media ${media.xs} {
 		grid-template-columns: repeat(4, 1fr);
 	}
 `
@@ -107,15 +119,19 @@ export const Icon = styled.div`
 	justify-content: center;
 	align-items: center;
 	filter: contrast(10%);
-	transition-property: transform, filter;
-	transition-duration: 250ms;
-	transition-timing-function: ease-in-out;
+	@media ${media.noTouch} {
+		cursor: pointer;
+		transition-property: transform, filter;
+		transition-duration: 250ms;
+		transition-timing-function: ease-in-out;
+	}
 	&:hover {
 		transform: scale(1.125);
 		filter: contrast(125%);
-		cursor: pointer;
 		& ${Tooltip} {
-			animation: ${tooltipHover} 500ms ease-in-out;
+			@media ${media.noTouch} {
+				animation: ${tooltipHover} 500ms ease-in-out;
+			}
 			visibility: visible;
 		}
 	}
@@ -130,10 +146,12 @@ export const CloseBtn = styled(faIcon.CircleXmark)`
 	max-width: 2rem;
 	color: var(--color-secondary);
 	filter: contrast(50%);
-	cursor: pointer;
-	transition-property: filter, transform;
-	transition-duration: 250ms;
-	transition-timing-function: ease-in-out;
+	@media ${media.noTouch} {
+		cursor: pointer;
+		transition-property: filter, transform;
+		transition-duration: 250ms;
+		transition-timing-function: ease-in-out;
+	}
 	&:hover {
 		filter: contrast(100%);
 		transform: scale(1.125);

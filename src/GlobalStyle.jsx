@@ -1,40 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
-// const breakpoints = {
-// 	mobile: '20rem',
-// 	tablet: '48rem',
-// 	laptop: '80rem',
-// }
-
-// export const responsive = Object.keys(breakpoints).reduce((acc, label) => {
-// 	acc[label] = (...args) => `
-// 		@media (min-width: ${breakpoints[label]}) {
-// 			${args.join('')}
-// 		}
-// 	`
-// 	return acc
-// }, {})
-
-const breakpoints = {
-	mobilePort: '428px',
-	tabletSmPort: '768px',
-	tabletLgPort: '820px',
-	mobileLand: '832px',
-	tabletSmLand: '1024px',
-	tabletLgLand: '1180px',
-	LaptopSm: '1280px',
-	LaptopLg: '1440px',
-}
-
-export const devices = {
-	mobilePort: `(min-width: ${breakpoints.mobilePort}) and (orientation: portrait)`,
-	tabletSmPort: `(min-width: ${breakpoints.tabletSmPort}) and (orientation: portrait)`,
-	tabletLgPort: `(min-width: ${breakpoints.tabletLgPort}) and (orientation: portrait)`,
-	mobileLand: `(min-width: ${breakpoints.mobileLand}) and (orientation: landscape)`,
-	tabletSmLand: `(min-width: ${breakpoints.tabletSmLand}) and (orientation: landscape)`,
-	tabletLgLand: `(min-width: ${breakpoints.tabletLgLand}) and (orientation: landscape)`,
-	LaptopSm: `(min-width: ${breakpoints.LaptopSm})`,
-	LaptopLg: `(min-width: ${breakpoints.LaptopLg})`,
+export const media = {
+	xs: '(width < 26.75rem)',
+	sm: '(26.75rem <= width < 48rem)',
+	md: '(48rem <= width < 64rem)',
+	lg: '(64rem <= width < 80rem)',
+	xl: '(width >=80rem)',
+	portrait: '(orientation: portrait)',
+	landscape: '(orientation: landscape)',
+	noTouch: '(hover: hover)',
 }
 
 export const GlobalStyle = createGlobalStyle`
