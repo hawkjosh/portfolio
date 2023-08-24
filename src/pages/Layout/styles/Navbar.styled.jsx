@@ -1,8 +1,8 @@
 import { styled, keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
-import * as icon from '../components/Icons.jsx'
+import * as faIcon from '@styled-icons/fa-solid'
 import * as remixIcon from '@styled-icons/remix-line'
-import { CaretLeft, CaretRight } from '@styled-icons/fa-solid'
+import * as icon from '../components/Icons.jsx'
 
 const rotate = keyframes`
 	from {
@@ -13,7 +13,7 @@ const rotate = keyframes`
 	}
 `
 
-export const Navbar = styled.nav`
+export const Navbar = styled.div`
 	height: ${({ $height }) => $height};
 	position: sticky;
 	top: ${({ $top }) => $top};
@@ -24,7 +24,6 @@ export const Navbar = styled.nav`
 	border-bottom: solid hsla(360, 100%, 100%, 1);
 	transition: height 250ms ease-in-out;
 	z-index: 4;
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -39,7 +38,6 @@ export const Menu = styled.div`
 	justify-content: flex-start;
 	align-items: center;
 	padding-left: 1.5rem;
-
 	@media (width >= 40rem) {
 		display: none;
 	}
@@ -50,7 +48,6 @@ export const NavBrand = styled.div`
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-
 	@media (width >= 80rem) {
 		flex-basis: 31.5%;
 		justify-content: flex-start;
@@ -78,7 +75,6 @@ const StyledLogo = styled(icon.NavLogo)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
-
 	&:hover {
 		fill: hsla(0, 100%, 100%, 1);
 		stroke: var(--color-primary);
@@ -88,8 +84,7 @@ const StyledLogo = styled(icon.NavLogo)`
 `
 
 export const Logo = styled(StyledLogo)`
-	transition: width 0.5s ease-in-out;
-
+	transition: width 500ms ease-in-out;
 	@media (width >= 80rem) {
 		width: clamp(4.5rem, 2.833rem + 2.083vw, 5rem);
 	}
@@ -102,7 +97,6 @@ export const Logo = styled(StyledLogo)`
 	@media (width < 40rem) {
 		width: clamp(3.5rem, 2.857rem + 2.857vw, 4rem);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -139,15 +133,13 @@ export const StaticLogo = styled(StyledLogo)`
 const StyledTitle = styled.div`
 	font-weight: 500;
 	text-transform: uppercase;
-
 	@media (width < 22.5rem) {
 		display: none;
 	}
 `
 
 export const Title = styled(StyledTitle)`
-	transition: font-size 0.5s ease-in-out;
-
+	transition: font-size 500ms ease-in-out;
 	@media (width >= 80rem) {
 		font-size: clamp(1.75rem, 0.083rem + 2.083vw, 2.25rem);
 	}
@@ -160,7 +152,6 @@ export const Title = styled(StyledTitle)`
 	@media (width < 40rem) {
 		font-size: clamp(1.15rem, 0.507rem + 2.857vw, 1.65rem);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -200,7 +191,6 @@ export const NavLinks = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	border-left: solid hsla(360, 100%, 100%, 1);
-
 	@media (width >= 80rem) {
 		flex-basis: 43.5%;
 		padding: 0rem 2.5%;
@@ -222,7 +212,6 @@ export const NavLinks = styled.div`
 
 const StyledLink = styled(NavLink)`
 	text-transform: uppercase;
-
 	&:hover {
 		color: var(--color-primary);
 		transform: scale(1.1875);
@@ -234,8 +223,9 @@ export const Link = styled(StyledLink)`
 	justify-content: center;
 	align-items: center;
 	gap: 0.125rem;
-	transition: transform 0.25s ease-in-out, font-size 0.5s ease-in-out;
-
+	transition-property: transform, font-size;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease-in-out;
 	@media (width >= 80rem) {
 		font-size: clamp(1.25rem, 0.417rem + 1.042vw, 1.5rem);
 	}
@@ -245,7 +235,6 @@ export const Link = styled(StyledLink)`
 	@media (40rem <= width < 64rem) {
 		font-size: clamp(0.85rem, 0.183rem + 1.667vw, 1.25rem);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -259,7 +248,6 @@ export const Link = styled(StyledLink)`
 			font-size: clamp(0.75rem, 0.333rem + 1.042vw, 1rem);
 		}
   `}
-
 	${({ $active }) =>
 		$active &&
 		`
@@ -278,8 +266,7 @@ export const StaticLink = styled(StyledLink)`
 	justify-content: center;
 	align-items: center;
 	gap: 0.125rem;
-	transition: transform 0.25s ease-in-out;
-
+	transition: transform 250ms ease-in-out;
 	@media (width >= 80rem) {
 		font-size: clamp(1.25rem, 0.583rem + 0.833vw, 1.45rem);
 	}
@@ -289,7 +276,6 @@ export const StaticLink = styled(StyledLink)`
 	@media (40rem <= width < 64rem) {
 		font-size: clamp(0.85rem, 0.517rem + 0.833vw, 1.05rem);
 	}
-
 	${({ $active }) =>
 		$active &&
 		`
@@ -303,20 +289,18 @@ export const StaticLink = styled(StyledLink)`
   `}
 `
 
-export const LeftCaret = styled(CaretLeft)`
+export const LeftCaret = styled(faIcon.CaretLeft)`
 	color: var(--color-primary);
 	display: none;
-
 	${({ $active }) =>
 		$active &&
 		`display: block;
 	`}
 `
 
-export const RightCaret = styled(CaretRight)`
+export const RightCaret = styled(faIcon.CaretRight)`
 	color: var(--color-primary);
 	display: none;
-
 	${({ $active }) =>
 		$active &&
 		`display: block;
@@ -330,7 +314,6 @@ export const NavSocial = styled.div`
 	align-items: center;
 	border-left: solid hsla(360, 100%, 100%, 1);
 	padding: 0rem 2.5%;
-
 	@media (width >= 64rem) {
 		flex-basis: 25%;
 	}
@@ -344,20 +327,19 @@ export const SocialLink = styled.a`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-decoration: none;
 `
 
 export const LinkedIn = styled(remixIcon.Linkedin)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: 50%;
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -366,16 +348,16 @@ export const LinkedIn = styled(remixIcon.Linkedin)`
 `
 
 export const GitHub = styled(remixIcon.Github)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: 50%;
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -384,16 +366,16 @@ export const GitHub = styled(remixIcon.Github)`
 `
 
 export const CodePen = styled(remixIcon.Codepen)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: 50%;
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`
@@ -402,16 +384,16 @@ export const CodePen = styled(remixIcon.Codepen)`
 `
 
 export const StackOverflow = styled(remixIcon.StackOverflow)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: 50%;
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
 	}
-
 	${({ $shrink }) =>
 		$shrink &&
 		`

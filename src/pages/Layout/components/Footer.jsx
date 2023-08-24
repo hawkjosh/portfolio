@@ -1,7 +1,7 @@
 import React from 'react'
 import { useWindowSize } from '../../../hooks/useWindowSize.jsx'
 import { useLocation } from 'react-router-dom'
-import * as styled from '../styles/Footer.styled.js'
+import * as styled from '../styles/Footer.styled.jsx'
 
 export const Footer = () => {
 	const { isWideScreen } = useWindowSize()

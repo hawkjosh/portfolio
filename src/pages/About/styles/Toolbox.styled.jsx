@@ -1,5 +1,5 @@
 import { styled, keyframes } from 'styled-components'
-import * as icon from '@styled-icons/fa-solid'
+import * as faIcon from '@styled-icons/fa-solid'
 
 const fadeIn = keyframes`
 	from {
@@ -121,7 +121,7 @@ export const Icon = styled.div`
 	}
 `
 
-export const CloseBtn = styled(icon.CircleXmark)`
+export const CloseBtn = styled(faIcon.CircleXmark)`
 	position: absolute;
 	top: 0.625rem;
 	right: 0.625rem;

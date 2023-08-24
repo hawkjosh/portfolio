@@ -1,22 +1,19 @@
 import { styled } from 'styled-components'
-import { CircleChevronLeft, CircleChevronRight } from '@styled-icons/fa-solid'
+import * as faIcon from '@styled-icons/fa-solid'
 
 export const Container = styled.div`
 	display: grid;
 	height: calc(100vh - 8rem);
 	height: calc(100dvh - 8rem);
 	overflow: hidden;
-
 	@media (orientation: landscape) {
 		grid-template-columns: 60% 40%;
 		grid-template-rows: 90% 10%;
-
 		@media (height <= 40rem) {
 			grid-template-columns: 50% 50%;
 			grid-template-rows: 80% 20%;
 		}
 	}
-
 	@media (orientation: portrait) {
 		grid-template-columns: 100%;
 		grid-template-rows: 50% 40% 10%;
@@ -26,13 +23,11 @@ export const Container = styled.div`
 export const ImageSection = styled.div`
 	position: relative;
 	width: 100%;
-
 	@media (orientation: landscape) {
 		grid-column: 1 / 2;
 		grid-row: 1 / 3;
 		border-right: solid hsla(360, 100%, 100%, 1);
 	}
-
 	@media (orientation: portrait) {
 		grid-row: 1 / 2;
 		border-bottom: solid hsla(360, 100%, 100%, 1);
@@ -48,7 +43,6 @@ export const Image = styled.div`
 	opacity: 0;
 	transition: opacity 500ms ease-in-out;
 	transition-delay: 500ms;
-
 	&[data-active] {
 		opacity: 1;
 		z-index: 1;
@@ -56,7 +50,7 @@ export const Image = styled.div`
 	}
 `
 
-export const PrevArrow = styled(CircleChevronLeft)`
+export const PrevArrow = styled(faIcon.CircleChevronLeft)`
 	display: block;
 	position: absolute;
 	top: 50%;
@@ -67,10 +61,9 @@ export const PrevArrow = styled(CircleChevronLeft)`
 	color: hsla(211, 30%, 24%, 1);
 	opacity: 0.625;
 	transition-property: transform, opacity;
-	transition-duration: 0.25s;
+	transition-duration: 250ms;
 	transition-timing-function: ease-in-out;
 	z-index: 2;
-
 	&:hover {
 		cursor: pointer;
 		@media (hover: hover) {
@@ -80,7 +73,7 @@ export const PrevArrow = styled(CircleChevronLeft)`
 	}
 `
 
-export const NextArrow = styled(CircleChevronRight)`
+export const NextArrow = styled(faIcon.CircleChevronRight)`
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -90,10 +83,9 @@ export const NextArrow = styled(CircleChevronRight)`
 	color: hsla(211, 30%, 24%, 1);
 	opacity: 0.625;
 	transition-property: transform, opacity;
-	transition-duration: 0.25s;
+	transition-duration: 250ms;
 	transition-timing-function: ease-in-out;
 	z-index: 2;
-
 	&:hover {
 		cursor: pointer;
 		@media (hover: hover) {
@@ -107,13 +99,11 @@ export const InfoSection = styled.div`
 	position: relative;
 	width: 100%;
 	overflow-y: auto;
-
 	@media (orientation: landscape) {
 		grid-column: 2 / 3;
 		grid-row: 1 / 2;
 		border-bottom: solid hsla(360, 100%, 100%, 1);
 	}
-
 	@media (orientation: portrait) {
 		grid-row: 2 / 3;
 		border-bottom: solid hsla(360, 100%, 100%, 1);
@@ -125,12 +115,10 @@ export const LinkSection = styled.div`
 	width: 100%;
 	display: flex;
 	place-items: center;
-
 	@media (orientation: landscape) {
 		grid-column: 2 / 3;
 		grid-row: 2 / 3;
 	}
-
 	@media (orientation: portrait) {
 		grid-row: 3 / 4;
 	}

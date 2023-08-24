@@ -4,7 +4,8 @@ export const NoPage = () => {
 	return (
 		<Styled.Container>
 			<Styled.Text>
-				Uh oh! Looks like something went wrong. Click <a href='/'>HERE</a> to return.
+				Uh oh! Looks like something went wrong. Click{' '}
+				<Styled.Link href='/'>HERE</Styled.Link> to return.
 			</Styled.Text>
 		</Styled.Container>
 	)

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { WorkSamplesInfo } from './components/WorkSamplesInfo.jsx'
 import { WorkSamplesLink } from './components/WorkSamplesLink.jsx'
-import * as Styled from './styles/WorkSamples.styled.js'
+import * as Styled from './styles/WorkSamples.styled.jsx'
 
 const items = [
 	{

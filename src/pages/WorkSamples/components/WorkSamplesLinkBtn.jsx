@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import * as Styled from '../styles/WorkSamplesLinkBtn.styled.js'
+import * as Styled from '../styles/WorkSamplesLinkBtn.styled.jsx'
 
 export const WorkSamplesLinkBtn = ({ icon, text, link }) => {
 	const [expanded, setExpanded] = useState(false)

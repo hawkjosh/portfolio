@@ -8,7 +8,7 @@ export const Container = styled.div`
 	padding: 1rem 0;
 `
 
-export const Title = styled.h1`
+export const Title = styled.div`
 	font-weight: 600;
 	text-transform: uppercase;
 	color: var(--color-secondary);
@@ -110,7 +110,7 @@ export const Textarea = styled.textarea`
 	}
 `
 
-export const Button = styled.button`
+export const Button = styled.div`
 	text-transform: uppercase;
 	line-height: 1.5;
 	color: hsla(360, 100%, 100%, 1);

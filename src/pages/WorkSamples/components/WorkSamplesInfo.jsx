@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Styled from '../styles/WorkSamplesInfo.styled.js'
+import * as Styled from '../styles/WorkSamplesInfo.styled.jsx'
 
 export const WorkSamplesInfo = ({ item, activeIndex }) => {
 	return (

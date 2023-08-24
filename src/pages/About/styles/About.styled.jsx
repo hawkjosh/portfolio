@@ -61,7 +61,7 @@ export const TextWrapper = styled.div`
 	}
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
 	font-weight: 200;
 	text-align: justify;
 	text-justify: inter-character;

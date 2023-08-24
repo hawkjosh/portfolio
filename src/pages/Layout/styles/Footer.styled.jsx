@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
-import * as icon from '../components/Icons.jsx'
 import * as remixIcon from '@styled-icons/remix-line'
+import * as icon from '../components/Icons.jsx'
 
-export const Footer = styled.footer`
+export const Footer = styled.div`
 	height: ${({ $height }) => $height};
 	position: relative;
 	bottom: 0;
@@ -24,8 +24,7 @@ export const Logo = styled(icon.FooterLogo)`
 	width: 2.5rem;
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: var(--color-primary);
-	transition: transform 0.25s ease;
-
+	transition: transform 500ms ease-out;
 	&:hover {
 		transform: scale(1.0625);
 		fill: var(--color-primary);
@@ -35,15 +34,18 @@ export const Logo = styled(icon.FooterLogo)`
 `
 
 export const SocialLink = styled.a`
-	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `
 
 export const LinkedIn = styled(remixIcon.Linkedin)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: ${({ $width }) => $width};
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
@@ -51,11 +53,12 @@ export const LinkedIn = styled(remixIcon.Linkedin)`
 `
 
 export const GitHub = styled(remixIcon.Github)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: ${({ $width }) => $width};
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
@@ -63,11 +66,12 @@ export const GitHub = styled(remixIcon.Github)`
 `
 
 export const CodePen = styled(remixIcon.Codepen)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: ${({ $width }) => $width};
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);
@@ -75,11 +79,12 @@ export const CodePen = styled(remixIcon.Codepen)`
 `
 
 export const StackOverflow = styled(remixIcon.StackOverflow)`
-	color: hsla(360, 100%, 100%, 1);
-	transition: transform 0.25s ease, width 0.5s ease-in-out;
-	cursor: pointer;
 	width: ${({ $width }) => $width};
-
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: transform, width;
+	transition-duration: 250ms, 500ms;
+	transition-timing-function: ease, ease-in-out;
+	cursor: pointer;
 	&:hover {
 		transform: scale(1.25) translateY(-5%);
 		color: var(--color-primary);

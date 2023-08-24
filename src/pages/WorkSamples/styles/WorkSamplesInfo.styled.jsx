@@ -14,30 +14,25 @@ export const Container = styled.div`
 	}
 `
 
-export const Title = styled.h2`
+export const Title = styled.div`
+	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
-
 	@media (width >= 80rem) {
 		font-size: 2.75rem;
 	}
-
 	@media (60rem <= width < 80rem) {
 		font-size: 2.5rem;
-
 		@media (orientation: landscape) {
 			font-size: 2rem;
 		}
 	}
-
 	@media (40rem <= width < 60rem) {
 		font-size: 2.25rem;
-
 		@media (orientation: landscape) {
 			font-size: 2rem;
 		}
 	}
-
 	@media (width < 40rem) {
 		font-size: 1.75rem;
 	}
@@ -49,29 +44,23 @@ export const Wrapper = styled.div`
 	gap: 1.5rem;
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
 	font-weight: 200;
-
 	@media (width >= 80rem) {
 		font-size: 1.625rem;
 	}
-
 	@media (60rem <= width < 80rem) {
 		font-size: 1.5rem;
-
 		@media (orientation: landscape) {
 			font-size: 1.375rem;
 		}
 	}
-
 	@media (40rem <= width < 60rem) {
 		font-size: 1.375rem;
-
 		@media (orientation: landscape) {
 			font-size: 1.125rem;
 		}
 	}
-
 	@media (width < 40rem) {
 		font-size: 1.125rem;
 	}
