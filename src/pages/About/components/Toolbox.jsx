@@ -312,13 +312,7 @@ export const Toolbox = ({ openToolbox, closeToolbox }) => {
 					// 		{icon.name}
 					// 	</Styled.Tooltip>
 					// </Styled.Icon>
-					<Styled.Icon key={index} icon={icon.image} color={icon.color}>
-						{/* <Styled.Tooltip
-							$top={icon.top}
-							$color={icon.color}
-							$shadow={icon.shadow}>
-							{icon.name}
-						</Styled.Tooltip> */}
+					<Styled.Icon key={index} icon={icon.image} color={icon.color} $top={icon.top} $shadow={icon.shadow} name={icon.name}>
 					</Styled.Icon>
 					// <Styled.Icon
 					// 	key={index}

@@ -177,11 +177,28 @@ export const Tooltip = styled.span`
 // 	}
 // `
 
-const StyledIcon = styled.div``
+const StyledIcon = styled.div`
+	filter: contrast(10%);
+	cursor: grab;
+	transition-property: filter, transform;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
+	&:hover {
+		filter: contrast(100%);
+		transform: scale(1.125);
+		& ${Tooltip} {
+			animation: ${tooltipHover} 500ms ease-in-out;
+			visibility: visible;
+		}
+	}
+`
 
-export const Icon = ({ icon, color }) => (
+export const Icon = ({ icon, color, top, shadow, name }) => (
 	<StyledIcon>
 		{React.cloneElement(icon, { color })}
+		<Tooltip $top={top} $color={color} $shadow={shadow}>
+			{name}
+		</Tooltip>
 	</StyledIcon>
 )
 
