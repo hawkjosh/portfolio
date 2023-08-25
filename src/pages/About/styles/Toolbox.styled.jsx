@@ -104,14 +104,16 @@ export const Wrapper = styled.div`
 export const Tooltip = styled.div`
 	visibility: hidden;
 	position: absolute;
+	width: min-content;
 	color: ${({ $color }) => $color};
-	text-shadow: ${({ $shadow }) => `0.125rem 0 ${$shadow}, 0 0.125rem  ${$shadow}`};
+	text-shadow: ${({ $shadow }) => `0.09375rem 0 ${$shadow}, 0 0.09375rem  ${$shadow}`};
 	text-align: center;
 	line-height: 0.9;
 	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
 	font-weight: 900;
-	top: 0;
-	transform: ${({ $transform }) => $transform || 'translateY(-135%)'};
+	/* top: 0; */
+	/* transform: ${({ $transform }) => $transform || 'translateY(-2.5rem)'}; */
+	transform: translateY(-2.5rem);
 `
 
 // export const Icon = styled.svg`
@@ -137,21 +139,27 @@ export const Tooltip = styled.div`
 // 	}
 // `
 
+// export const Icon = styled.div`
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	cursor: pointer;
+// 	transition-property: transform, filter;
+// 	transition-duration: 250ms;
+// 	transition-timing-function: ease-in-out;
+// 	&:hover {
+// 		transform: scale(1.125);
+// 		filter: contrast(125%);
+// 		& ${Tooltip} {
+// 			animation: ${tooltipHover} 500ms ease-in-out;
+// 			visibility: visible;
+// 		}
+// 	}
+// `
+
 export const Icon = styled.div`
-	display: flex;
-	justify-content: center;
-	cursor: pointer;
-	transition-property: transform, filter;
-	transition-duration: 250ms;
-	transition-timing-function: ease-in-out;
-	&:hover {
-		transform: scale(1.125);
-		filter: contrast(125%);
-		& ${Tooltip} {
-			animation: ${tooltipHover} 500ms ease-in-out;
-			visibility: visible;
-		}
-	}
+	width: 100%;
 `
 
 export const CloseBtn = styled(faIcon.CircleXmark)`
