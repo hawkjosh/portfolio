@@ -4,65 +4,70 @@ import { useWindowSize } from '../../hooks/useWindowSize.jsx'
 
 export const Home = () => {
 	const {
-		isMobile,
-		isTablet,
+		isMobilePortrait,
+		isMobileLandscape,
+		isTabletPortrait,
+		isTabletLandscape,
 		isLaptop,
+		isPortrait,
+		isLandscape,
+		isHover,
 		isWideScreen,
 		isShortScreen,
-		isPortrait,
-		isHover,
-		isMobilePortrait,
-		isMobileLandscape
+		isWidthXs,
+		isWidthSm,
+		isWidthMd,
+		isWidthLg,
+		isWidthXl,
 	} = useWindowSize()
 	return (
 		<Styled.Container>
-			{isPortrait ? (
-				<div
-					style={{
-						textAlign: 'center',
-						fontSize: '1.5rem',
-						fontWeight: 'bold',
-						color: 'rebeccapurple',
-						paddingBottom: '0.5rem',
-					}}>
-					Orientation:{' '}
-					<span style={{ textDecoration: 'underline' }}>PORTRAIT</span>
-				</div>
-			) : (
-				<div
-					style={{
-						textAlign: 'center',
-						fontSize: '1.5rem',
-						fontWeight: 'bold',
-						color: 'rebeccapurple',
-						paddingBottom: '0.5rem',
-					}}>
-					Orientation:{' '}
-					<span style={{ textDecoration: 'underline' }}>LANDSCAPE</span>
-				</div>
-			)}
-			{isMobile && (
+			{isMobilePortrait && (
 				<div
 					style={{
 						textAlign: 'center',
 						fontSize: '1.25rem',
-						color: 'yellow',
+						color: 'black',
 						paddingBottom: '0.5rem',
 					}}>
-					Viewport Width:{' '}
-					<span style={{ textDecoration: 'underline' }}>MOBILE</span>
+					Device Type:{' '}
+					<span style={{ textDecoration: 'underline' }}>MOBILE PORTRAIT</span>
 				</div>
 			)}
-			{isTablet && (
+			{isMobileLandscape && (
 				<div
 					style={{
 						textAlign: 'center',
 						fontSize: '1.25rem',
-						color: 'yellow',
+						color: 'black',
 						paddingBottom: '0.5rem',
 					}}>
-					Viewport Width:{' '}
-					<span style={{ textDecoration: 'underline' }}>TABLET</span>
+					Device Type:{' '}
+					<span style={{ textDecoration: 'underline' }}>MOBILE LANDSCAPE</span>
+				</div>
+			)}
+			{isTabletPortrait && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
+						color: 'black',
+						paddingBottom: '0.5rem',
+					}}>
+					Device Type:{' '}
+					<span style={{ textDecoration: 'underline' }}>TABLET PORTRAIT</span>
+				</div>
+			)}
+			{isTabletLandscape && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
+						color: 'black',
+						paddingBottom: '0.5rem',
+					}}>
+					Device Type:{' '}
+					<span style={{ textDecoration: 'underline' }}>TABLET LANDSCAPE</span>
 				</div>
 			)}
 			{isLaptop && (
@@ -70,11 +75,71 @@ export const Home = () => {
 					style={{
 						textAlign: 'center',
 						fontSize: '1.25rem',
+						color: 'black',
+						paddingBottom: '0.5rem',
+					}}>
+					Device Type:{' '}
+					<span style={{ textDecoration: 'underline' }}>LAPTOP/DESKTOP</span>
+				</div>
+			)}
+			{isWidthXs && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
 						color: 'yellow',
 						paddingBottom: '0.5rem',
 					}}>
-					Viewport Width:{' '}
-					<span style={{ textDecoration: 'underline' }}>LAPTOP</span>
+					Breakpoint Width:{' '}
+					<span style={{ textDecoration: 'underline' }}>EXTRA SMALL</span>
+				</div>
+			)}
+			{isWidthSm && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
+						color: 'yellow',
+						paddingBottom: '0.5rem',
+					}}>
+					Breakpoint Width:{' '}
+					<span style={{ textDecoration: 'underline' }}>SMALL</span>
+				</div>
+			)}
+			{isWidthMd && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
+						color: 'yellow',
+						paddingBottom: '0.5rem',
+					}}>
+					Breakpoint Width:{' '}
+					<span style={{ textDecoration: 'underline' }}>MEDIUM</span>
+				</div>
+			)}
+			{isWidthLg && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
+						color: 'yellow',
+						paddingBottom: '0.5rem',
+					}}>
+					Breakpoint Width:{' '}
+					<span style={{ textDecoration: 'underline' }}>LARGE</span>
+				</div>
+			)}
+			{isWidthXl && (
+				<div
+					style={{
+						textAlign: 'center',
+						fontSize: '1.25rem',
+						color: 'yellow',
+						paddingBottom: '0.5rem',
+					}}>
+					Breakpoint Width:{' '}
+					<span style={{ textDecoration: 'underline' }}>EXTRA LARGE</span>
 				</div>
 			)}
 			{isWideScreen && (
@@ -124,31 +189,32 @@ export const Home = () => {
 					<span style={{ textDecoration: 'underline' }}>MOBILE</span>
 				</div>
 			)}
-			{isMobilePortrait && (
+			{isPortrait && (
 				<div
 					style={{
 						textAlign: 'center',
-						fontSize: '1.25rem',
-						color: 'black',
+						fontSize: '1.5rem',
+						fontWeight: 'bold',
+						color: 'rebeccapurple',
 						paddingBottom: '0.5rem',
 					}}>
-					Device Type:{' '}
-					<span style={{ textDecoration: 'underline' }}>MOBILE PORTRAIT</span>
+					Orientation:{' '}
+					<span style={{ textDecoration: 'underline' }}>PORTRAIT</span>
 				</div>
 			)}
-			{isMobileLandscape && (
+			{isLandscape && (
 				<div
 					style={{
 						textAlign: 'center',
-						fontSize: '1.25rem',
-						color: 'black',
+						fontSize: '1.5rem',
+						fontWeight: 'bold',
+						color: 'rebeccapurple',
 						paddingBottom: '0.5rem',
 					}}>
-					Device Type:{' '}
-					<span style={{ textDecoration: 'underline' }}>MOBILE LANDSCAPE</span>
+					Orientation:{' '}
+					<span style={{ textDecoration: 'underline' }}>LANDSCAPE</span>
 				</div>
 			)}
-
 
 			<Styled.Image
 				src='/avatar.svg'
