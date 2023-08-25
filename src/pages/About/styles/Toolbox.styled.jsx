@@ -105,6 +105,7 @@ export const Tooltip = styled.div`
 	visibility: hidden;
 	position: absolute;
 	color: ${({ $color }) => $color};
+	text-shadow: ${({ $shadow }) => `0.125rem 0 ${$shadow}, 0 0.125rem  ${$shadow}`};
 	text-align: center;
 	line-height: 0.9;
 	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
@@ -136,6 +137,23 @@ export const Tooltip = styled.div`
 // 	}
 // `
 
+export const Icon = styled.div`
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	transition-property: transform, filter;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
+	&:hover {
+		transform: scale(1.125);
+		filter: contrast(125%);
+		& ${Tooltip} {
+			animation: ${tooltipHover} 500ms ease-in-out;
+			visibility: visible;
+		}
+	}
+`
+
 export const CloseBtn = styled(faIcon.CircleXmark)`
 	position: absolute;
 	top: 0.625rem;
@@ -145,12 +163,10 @@ export const CloseBtn = styled(faIcon.CircleXmark)`
 	max-width: 2rem;
 	color: var(--color-secondary);
 	filter: contrast(50%);
-	@media ${media.noTouch} {
-		cursor: pointer;
-		transition-property: filter, transform;
-		transition-duration: 250ms;
-		transition-timing-function: ease-in-out;
-	}
+	cursor: pointer;
+	transition-property: filter, transform;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
 	&:hover {
 		filter: contrast(100%);
 		transform: scale(1.125);
