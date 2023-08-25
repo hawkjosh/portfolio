@@ -113,28 +113,28 @@ export const Tooltip = styled.div`
 	transform: ${({ $transform }) => $transform || 'translateY(-135%)'};
 `
 
-export const Icon = styled.div`
-	position: relative;
-	aspect-ratio: 1 / 1;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: ${({ $color }) => $color};
-	filter: contrast(10%);
-	cursor: pointer;
-	transition-property: transform, filter;
-	transition-duration: 250ms;
-	transition-timing-function: ease-in-out;
-	&:hover {
-		transform: scale(1.125);
-		filter: contrast(125%);
-		& ${Tooltip} {
-			animation: ${tooltipHover} 500ms ease-in-out;
-			visibility: visible;
-		}
-	}
-`
+// export const Icon = styled.svg`
+// 	position: relative;
+// 	aspect-ratio: 1 / 1;
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	color: ${({ $color }) => $color};
+// 	filter: contrast(10%);
+// 	cursor: pointer;
+// 	transition-property: transform, filter;
+// 	transition-duration: 250ms;
+// 	transition-timing-function: ease-in-out;
+// 	&:hover {
+// 		transform: scale(1.125);
+// 		filter: contrast(125%);
+// 		& ${Tooltip} {
+// 			animation: ${tooltipHover} 500ms ease-in-out;
+// 			visibility: visible;
+// 		}
+// 	}
+// `
 
 export const CloseBtn = styled(faIcon.CircleXmark)`
 	position: absolute;

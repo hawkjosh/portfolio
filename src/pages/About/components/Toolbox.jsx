@@ -239,16 +239,19 @@ export const Toolbox = ({ openToolbox, closeToolbox }) => {
 			onCancel={closeToolbox}>
 			<Styled.Wrapper>
 				{icons.map((icon, index) => (
-					<Styled.Icon
-						key={index}
-						$color={icon.color}>
-						<Styled.Tooltip
-							$color={icon.color}
-							$transform={icon.transform}>
-							{icon.name}
-						</Styled.Tooltip>
+					<div key={index}>
 						{icon.image}
-					</Styled.Icon>
+					</div>
+					// <Styled.Icon
+					// 	key={index}
+					// 	$color={icon.color}>
+					// 	<Styled.Tooltip
+					// 		$color={icon.color}
+					// 		$transform={icon.transform}>
+					// 		{icon.name}
+					// 	</Styled.Tooltip>
+					// 	{icon.image}
+					// </Styled.Icon>
 				))}
 			</Styled.Wrapper>
 			<Styled.CloseBtn onClick={closeToolbox} />
