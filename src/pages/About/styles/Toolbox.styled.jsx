@@ -115,6 +115,7 @@ export const Tooltip = styled.div`
 
 export const Icon = styled.div`
 	position: relative;
+	aspect-ratio: 1 / 1;
 	width: 100%;
 	display: flex;
 	justify-content: center;
