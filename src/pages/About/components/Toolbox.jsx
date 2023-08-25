@@ -303,27 +303,14 @@ export const Toolbox = ({ openToolbox, closeToolbox }) => {
 			onCancel={closeToolbox}>
 			<Styled.Wrapper>
 				{icons.map((icon, index) => (
-					// <Styled.Icon key={index}>
-					// 	{icon.image}
-					// 	<Styled.Tooltip
-					// 		$color={icon.color}
-					// 		$transform={icon.transform}
-					// 		$shadow={icon.shadow}>
-					// 		{icon.name}
-					// 	</Styled.Tooltip>
-					// </Styled.Icon>
-					<Styled.Icon key={index} icon={icon.image} color={icon.color} $top={icon.top} $shadow={icon.shadow} name={icon.name}>
-					</Styled.Icon>
-					// <Styled.Icon
-					// 	key={index}
-					// 	$color={icon.color}>
-					// 	<Styled.Tooltip
-					// 		$color={icon.color}
-					// 		$transform={icon.transform}>
-					// 		{icon.name}
-					// 	</Styled.Tooltip>
-					// 	{icon.image}
-					// </Styled.Icon>
+					<Styled.Icon
+						key={index}
+						icon={icon.image}
+						color={icon.color}
+						// $top={icon.top}
+						// $shadow={icon.shadow}
+						// name={icon.name}
+					/>
 				))}
 			</Styled.Wrapper>
 			<Styled.CloseBtn onClick={closeToolbox} />
