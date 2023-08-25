@@ -9,6 +9,11 @@ export const media = {
 	portrait: '(orientation: portrait)',
 	landscape: '(orientation: landscape)',
 	noTouch: '(hover: hover)',
+  mobilePortrait: '(width < 48rem) and (max-aspect-ratio: 3/4)',
+  mobileLandscape: '(width < 53rem) and (min-aspect-ratio: 2/1)',
+  tabletPortrait: '(width < 62.5rem) and (max-aspect-ratio: 9/10)',
+  tabletLandscape: '(width < 80rem) and (min-aspect-ratio: 3/2)',
+  laptop: '(width >= 80rem)',
 }
 
 export const GlobalStyle = createGlobalStyle`
