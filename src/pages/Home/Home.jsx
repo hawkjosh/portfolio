@@ -11,9 +11,9 @@ export const Home = () => {
 				<Styled.Divider />
 			</Styled.Wrapper>
 			<Styled.IconsContainer>
-				<Styled.HomeIcon type='laptop' />
-				<Styled.HomeIcon type='superhero' />
-				<Styled.HomeIcon type='tennessee' />
+				<Styled.Icon type='laptop' />
+				<Styled.Icon type='superhero' />
+				<Styled.Icon type='tennessee' />
 			</Styled.IconsContainer>
 		</Styled.Container>
 	)

@@ -1,4 +1,4 @@
-export const LogoIcon = ({ type, ...props }) => {
+export const LayoutIcon = ({ type, ...props }) => {
 	return (
 		<svg
 			{...props}

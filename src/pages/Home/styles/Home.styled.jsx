@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import * as icon from '../components/HomeIcon.jsx'
+import { HomeIcon } from '../components/Home.icons.jsx'
 
 export const Container = styled.div`
 	display: flex;
@@ -38,7 +38,7 @@ export const IconsContainer = styled.div`
 	}
 `
 
-export const HomeIcon = styled(icon.HomeIcon)`
+export const Icon = styled(HomeIcon)`
 	width: clamp(9.375rem, 3.516rem + 14.648vw, 18.75rem);
 	fill: var(--color-secondary);
 	cursor: grab;

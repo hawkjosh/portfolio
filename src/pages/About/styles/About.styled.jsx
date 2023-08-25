@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import * as icon from '../components/AboutIcon.jsx'
+import { AboutIcon } from '../components/About.icons.jsx'
 
 export const Container = styled.div`
 	max-width: 90rem;
@@ -104,7 +104,7 @@ export const BtnsWrapper = styled.div`
 	}
 `
 
-export const AboutBtn = styled(icon.AboutIcon)`
+export const Icon = styled(AboutIcon)`
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: hsla(360, 100%, 100%, 1);
 	transition-property: transform, fill, stroke;

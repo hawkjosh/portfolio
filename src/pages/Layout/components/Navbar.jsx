@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
 import { Menu } from './Menu.jsx'
-import * as styled from '../styles/Navbar.styled.jsx'
+import * as Styled from '../styles/Navbar.styled.jsx'
 
 const links = [
 	{
@@ -29,108 +29,114 @@ export const Navbar = () => {
 
 	const socialIcons = [
 		{
-			icon: <styled.LinkedIn $shrink={shrink ? 'shrink' : ''} />,
+			icon: <Styled.LinkedIn $shrink={shrink ? 'shrink' : ''} />,
 			link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
 		},
 		{
-			icon: <styled.GitHub $shrink={shrink ? 'shrink' : ''} />,
+			icon: <Styled.GitHub $shrink={shrink ? 'shrink' : ''} />,
 			link: 'https://github.com/hawkjosh',
 		},
 		{
-			icon: <styled.CodePen $shrink={shrink ? 'shrink' : ''} />,
+			icon: <Styled.CodePen $shrink={shrink ? 'shrink' : ''} />,
 			link: 'https://codepen.io/hawkjosh',
 		},
 		{
-			icon: <styled.StackOverflow $shrink={shrink ? 'shrink' : ''} />,
+			icon: <Styled.StackOverflow $shrink={shrink ? 'shrink' : ''} />,
 			link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
 		},
 	]
 
 	return (
-		<styled.Navbar
+		<Styled.Navbar
 			$height={staticNav ? '5rem' : '8rem'}
 			$top={staticNav ? '0' : '-0.0625rem'}
 			$shrink={shrink ? 'shrink' : ''}>
-			<styled.Menu>
+			<Styled.Menu>
 				<Menu />
-			</styled.Menu>
+			</Styled.Menu>
 			{staticNav ? (
 				<>
-					<styled.NavBrand>
-						<styled.StaticLogo type='navbar' $shrink={shrink ? 'shrink' : ''} />
-						<styled.StaticTitle $shrink={shrink ? 'shrink' : ''}>
+					<Styled.NavBrand>
+						<Styled.StaticIcon
+							type='navbar'
+							$shrink={shrink ? 'shrink' : ''}
+						/>
+						<Styled.StaticTitle $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
-						</styled.StaticTitle>
-					</styled.NavBrand>
+						</Styled.StaticTitle>
+					</Styled.NavBrand>
 
-					<styled.NavLinks>
+					<Styled.NavLinks>
 						{links.map((link, index) => {
 							const active = link.url === location.pathname
 							return (
-								<styled.StaticLink
+								<Styled.StaticLink
 									key={index}
 									to={link.url}
 									$shrink={shrink ? 'shrink' : ''}
 									$active={active ? 'active' : ''}>
-									<styled.LeftCaret
+									<Styled.LeftCaret
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
 									{link.title}
-									<styled.RightCaret
+									<Styled.RightCaret
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
-								</styled.StaticLink>
+								</Styled.StaticLink>
 							)
 						})}
-					</styled.NavLinks>
+					</Styled.NavLinks>
 				</>
 			) : (
 				<>
-					<styled.NavBrand>
-						<styled.Logo type='navbar' $shrink={shrink ? 'shrink' : ''} />
-						<styled.Title $shrink={shrink ? 'shrink' : ''}>
+					<Styled.NavBrand>
+						<Styled.Icon
+							type='navbar'
+							$shrink={shrink ? 'shrink' : ''}
+						/>
+						<Styled.Title $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
-						</styled.Title>
-					</styled.NavBrand>
+						</Styled.Title>
+					</Styled.NavBrand>
 
-					<styled.NavLinks>
+					<Styled.NavLinks>
 						{links.map((link, index) => {
 							const active = link.url === location.pathname
 							return (
-								<styled.Link
+								<Styled.Link
 									key={index}
 									to={link.url}
 									$shrink={shrink ? 'shrink' : ''}
 									$active={active ? 'active' : ''}>
-									<styled.LeftCaret
+									<Styled.LeftCaret
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
 									{link.title}
-									<styled.RightCaret
+									<Styled.RightCaret
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
-								</styled.Link>
+								</Styled.Link>
 							)
 						})}
-					</styled.NavLinks>
+					</Styled.NavLinks>
 				</>
 			)}
 
-			<styled.NavSocial>
+			<Styled.NavSocial>
 				{socialIcons.map((icon, index) => (
-					<styled.SocialLink
+					<Styled.SocialLink
 						key={index}
 						href={icon.link}
 						target='_blank'
 						rel='noreferrer'>
 						{icon.icon}
-					</styled.SocialLink>
+					</Styled.SocialLink>
 				))}
-			</styled.NavSocial>
-		</styled.Navbar>
+			</Styled.NavSocial>
+		</Styled.Navbar>
 	)
 }

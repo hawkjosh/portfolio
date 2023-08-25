@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
+import { LayoutIcon } from '../components/Layout.icons.jsx'
 import * as remixIcon from '@styled-icons/remix-line'
-import * as icon from '../components/LogoIcon.jsx'
 
 export const Footer = styled.div`
 	height: ${({ $height }) => $height};
@@ -19,7 +19,7 @@ export const Copywrite = styled.div`
 	font-weight: 300;
 `
 
-export const Logo = styled(icon.LogoIcon)`
+export const Icon = styled(LayoutIcon)`
 	display: flex;
 	width: 2.5rem;
 	fill: hsla(360, 100%, 100%, 1);

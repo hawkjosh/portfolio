@@ -46,11 +46,11 @@ export const About = () => {
 			</Styled.TextWrapper>
 
 			<Styled.BtnsWrapper>
-				<Styled.AboutBtn
+				<Styled.Icon
 					type='toolbox'
 					onClick={toggleToolbox}
 				/>
-				<Styled.AboutBtn
+				<Styled.Icon
 					type='resume'
 					onClick={toggleResume}
 				/>

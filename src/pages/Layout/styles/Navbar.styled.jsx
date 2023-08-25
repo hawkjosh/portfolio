@@ -1,8 +1,8 @@
 import { styled, keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
+import { LayoutIcon } from '../components/Layout.icons.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
 import * as remixIcon from '@styled-icons/remix-line'
-import * as icon from '../components/LogoIcon.jsx'
 
 const rotate = keyframes`
 	from {
@@ -71,7 +71,7 @@ export const NavBrand = styled.div`
 	}
 `
 
-const StyledLogo = styled(icon.LogoIcon)`
+const StyledIcon = styled(LayoutIcon)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
@@ -83,7 +83,7 @@ const StyledLogo = styled(icon.LogoIcon)`
 	}
 `
 
-export const Logo = styled(StyledLogo)`
+export const Icon = styled(StyledIcon)`
 	transition: width 500ms ease-in-out;
 	@media (width >= 80rem) {
 		width: clamp(4.5rem, 2.833rem + 2.083vw, 5rem);
@@ -115,7 +115,7 @@ export const Logo = styled(StyledLogo)`
   `}
 `
 
-export const StaticLogo = styled(StyledLogo)`
+export const StaticIcon = styled(StyledIcon)`
 	@media (width >= 80rem) {
 		width: clamp(3.25rem, 2.417rem + 1.042vw, 3.5rem);
 	}
