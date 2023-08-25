@@ -29,7 +29,7 @@ export const Modal = styled.dialog`
 	border: none;
 	border-radius: 2rem;
 	outline: none;
-	background: hsla(360, 100%, 100%, 1);
+	background: hsla(20, 14%, 96%, 0.75);
 	box-shadow: 0.75rem 0.75rem 0.375rem 0 hsla(0, 0%, 0%, 0.75);
 	padding: 0.75rem 1.25rem 0.5rem;
 	overflow-y: auto;
@@ -115,23 +115,21 @@ export const Tooltip = styled.div`
 
 export const Icon = styled.div`
 	position: relative;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: ${({ $color }) => $color};
 	filter: contrast(10%);
-	@media ${media.noTouch} {
-		cursor: pointer;
-		transition-property: transform, filter;
-		transition-duration: 250ms;
-		transition-timing-function: ease-in-out;
-	}
+	cursor: pointer;
+	transition-property: transform, filter;
+	transition-duration: 250ms;
+	transition-timing-function: ease-in-out;
 	&:hover {
 		transform: scale(1.125);
 		filter: contrast(125%);
 		& ${Tooltip} {
-			@media ${media.noTouch} {
-				animation: ${tooltipHover} 500ms ease-in-out;
-			}
+			animation: ${tooltipHover} 500ms ease-in-out;
 			visibility: visible;
 		}
 	}
