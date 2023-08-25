@@ -1,6 +1,7 @@
 import { styled, keyframes } from 'styled-components'
 import { media } from '../../../GlobalStyle.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
+import React from 'react'
 
 const fadeIn = keyframes`
 	from {
@@ -159,22 +160,30 @@ export const Tooltip = styled.span`
 // 	}
 // `
 
-export const Icon = styled.div`
-	width: 100%;
-	filter: contrast(10%);
-	cursor: pointer;
-	transition-property: transform, filter;
-	transition-duration: 250ms;
-	transition-timing-function: ease-in-out;
-	&:hover {
-		transform: scale(1.125);
-		filter: contrast(125%);
-		& ${Tooltip} {
-			animation: ${tooltipHover} 500ms ease-in-out;
-			visibility: visible;
-		}
-	}
-`
+// export const Icon = styled.div`
+// 	width: 100%;
+// 	filter: contrast(10%);
+// 	cursor: pointer;
+// 	transition-property: transform, filter;
+// 	transition-duration: 250ms;
+// 	transition-timing-function: ease-in-out;
+// 	&:hover {
+// 		transform: scale(1.125);
+// 		filter: contrast(125%);
+// 		& ${Tooltip} {
+// 			animation: ${tooltipHover} 500ms ease-in-out;
+// 			visibility: visible;
+// 		}
+// 	}
+// `
+
+const StyledIcon = styled.div``
+
+export const Icon = ({ icon, color }) => (
+	<StyledIcon>
+		{React.cloneElement(icon, { color })}
+	</StyledIcon>
+)
 
 export const CloseBtn = styled(faIcon.CircleXmark)`
 	position: absolute;
