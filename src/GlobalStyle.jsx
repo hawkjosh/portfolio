@@ -2,9 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 export const media = {
 	xs: '(width < 26.75rem)',
-	sm: '(26.75rem <= width < 48rem)',
-	md: '(48rem <= width < 64rem)',
-	lg: '(64rem <= width < 80rem)',
+	// sm: '(26.75rem <= width < 48rem)',
+	sm: '(width < 48rem)',
+	// md: '(48rem <= width < 64rem)',
+	md: '(width < 64rem)',
+	// lg: '(64rem <= width < 80rem)',
+	lg: '(width < 80rem)',
 	xl: '(width >=80rem)',
 	portrait: '(orientation: portrait)',
 	landscape: '(orientation: landscape)',

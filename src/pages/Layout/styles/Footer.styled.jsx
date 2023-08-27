@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
 import { LayoutIcon } from '../components/Layout.icons.jsx'
-import * as remixIcon from '@styled-icons/remix-line'
 
 export const Footer = styled.div`
 	height: ${({ $height }) => $height};
@@ -19,7 +18,7 @@ export const Copywrite = styled.div`
 	font-weight: 300;
 `
 
-export const Icon = styled(LayoutIcon)`
+export const LogoIcon = styled(LayoutIcon)`
 	display: flex;
 	width: 2.5rem;
 	fill: hsla(360, 100%, 100%, 1);
@@ -39,46 +38,9 @@ export const SocialLink = styled.a`
 	align-items: center;
 `
 
-export const LinkedIn = styled(remixIcon.Linkedin)`
-	width: ${({ $width }) => $width};
-	color: hsla(360, 100%, 100%, 1);
-	transition-property: transform, width;
-	transition-duration: 250ms, 500ms;
-	transition-timing-function: ease, ease-in-out;
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.25) translateY(-5%);
-		color: var(--color-primary);
-	}
-`
-
-export const GitHub = styled(remixIcon.Github)`
-	width: ${({ $width }) => $width};
-	color: hsla(360, 100%, 100%, 1);
-	transition-property: transform, width;
-	transition-duration: 250ms, 500ms;
-	transition-timing-function: ease, ease-in-out;
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.25) translateY(-5%);
-		color: var(--color-primary);
-	}
-`
-
-export const CodePen = styled(remixIcon.Codepen)`
-	width: ${({ $width }) => $width};
-	color: hsla(360, 100%, 100%, 1);
-	transition-property: transform, width;
-	transition-duration: 250ms, 500ms;
-	transition-timing-function: ease, ease-in-out;
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.25) translateY(-5%);
-		color: var(--color-primary);
-	}
-`
-
-export const StackOverflow = styled(remixIcon.StackOverflow)`
+export const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
+	<IconComponent {...rest} />
+))`
 	width: ${({ $width }) => $width};
 	color: hsla(360, 100%, 100%, 1);
 	transition-property: transform, width;

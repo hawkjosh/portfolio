@@ -1,8 +1,6 @@
 import { styled, keyframes } from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { LayoutIcon } from '../components/Layout.icons.jsx'
-import * as faIcon from '@styled-icons/fa-solid'
-import * as remixIcon from '@styled-icons/remix-line'
 
 const rotate = keyframes`
 	from {
@@ -289,16 +287,9 @@ export const StaticLink = styled(StyledLink)`
   `}
 `
 
-export const LeftCaret = styled(faIcon.CaretLeft)`
-	color: var(--color-primary);
-	display: none;
-	${({ $active }) =>
-		$active &&
-		`display: block;
-	`}
-`
-
-export const RightCaret = styled(faIcon.CaretRight)`
+export const CaretIcon = styled(({ icon: IconComponent, ...rest }) => (
+	<IconComponent {...rest} />
+))`
 	color: var(--color-primary);
 	display: none;
 	${({ $active }) =>
@@ -323,67 +314,14 @@ export const NavSocial = styled.div`
 `
 
 export const SocialLink = styled.a`
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 `
 
-export const LinkedIn = styled(remixIcon.Linkedin)`
-	width: 50%;
-	color: hsla(360, 100%, 100%, 1);
-	transition-property: transform, width;
-	transition-duration: 250ms, 500ms;
-	transition-timing-function: ease, ease-in-out;
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.25) translateY(-5%);
-		color: var(--color-primary);
-	}
-	${({ $shrink }) =>
-		$shrink &&
-		`
-		width: 40%;
-  `}
-`
-
-export const GitHub = styled(remixIcon.Github)`
-	width: 50%;
-	color: hsla(360, 100%, 100%, 1);
-	transition-property: transform, width;
-	transition-duration: 250ms, 500ms;
-	transition-timing-function: ease, ease-in-out;
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.25) translateY(-5%);
-		color: var(--color-primary);
-	}
-	${({ $shrink }) =>
-		$shrink &&
-		`
-		width: 40%;
-  `}
-`
-
-export const CodePen = styled(remixIcon.Codepen)`
-	width: 50%;
-	color: hsla(360, 100%, 100%, 1);
-	transition-property: transform, width;
-	transition-duration: 250ms, 500ms;
-	transition-timing-function: ease, ease-in-out;
-	cursor: pointer;
-	&:hover {
-		transform: scale(1.25) translateY(-5%);
-		color: var(--color-primary);
-	}
-	${({ $shrink }) =>
-		$shrink &&
-		`
-		width: 40%;
-  `}
-`
-
-export const StackOverflow = styled(remixIcon.StackOverflow)`
+export const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
+	<IconComponent {...rest} />
+))`
 	width: 50%;
 	color: hsla(360, 100%, 100%, 1);
 	transition-property: transform, width;

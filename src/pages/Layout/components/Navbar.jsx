@@ -1,6 +1,8 @@
 import { useLocation } from 'react-router-dom'
 import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
 import { Menu } from './Menu.jsx'
+import * as faIcon from '@styled-icons/fa-solid'
+import * as remixIcon from '@styled-icons/remix-line'
 import * as Styled from '../styles/Navbar.styled.jsx'
 
 const links = [
@@ -29,19 +31,19 @@ export const Navbar = () => {
 
 	const socialIcons = [
 		{
-			icon: <Styled.LinkedIn $shrink={shrink ? 'shrink' : ''} />,
+			icon: remixIcon.Linkedin,
 			link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
 		},
 		{
-			icon: <Styled.GitHub $shrink={shrink ? 'shrink' : ''} />,
+			icon: remixIcon.Github,
 			link: 'https://github.com/hawkjosh',
 		},
 		{
-			icon: <Styled.CodePen $shrink={shrink ? 'shrink' : ''} />,
+			icon: remixIcon.Codepen,
 			link: 'https://codepen.io/hawkjosh',
 		},
 		{
-			icon: <Styled.StackOverflow $shrink={shrink ? 'shrink' : ''} />,
+			icon: remixIcon.StackOverflow,
 			link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
 		},
 	]
@@ -75,12 +77,14 @@ export const Navbar = () => {
 									to={link.url}
 									$shrink={shrink ? 'shrink' : ''}
 									$active={active ? 'active' : ''}>
-									<Styled.LeftCaret
+									<Styled.CaretIcon
+										icon={faIcon.CaretLeft}
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
 									{link.title}
-									<Styled.RightCaret
+									<Styled.CaretIcon
+										icon={faIcon.CaretRight}
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
@@ -110,12 +114,14 @@ export const Navbar = () => {
 									to={link.url}
 									$shrink={shrink ? 'shrink' : ''}
 									$active={active ? 'active' : ''}>
-									<Styled.LeftCaret
+									<Styled.CaretIcon
+										icon={faIcon.CaretLeft}
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
 									{link.title}
-									<Styled.RightCaret
+									<Styled.CaretIcon
+										icon={faIcon.CaretRight}
 										size={15}
 										$active={active ? 'active' : ''}
 									/>
@@ -133,7 +139,10 @@ export const Navbar = () => {
 						href={icon.link}
 						target='_blank'
 						rel='noreferrer'>
-						{icon.icon}
+						<Styled.SocialIcon
+							icon={icon.icon}
+							$shrink={shrink ? 'shrink' : ''}
+						/>
 					</Styled.SocialLink>
 				))}
 			</Styled.NavSocial>

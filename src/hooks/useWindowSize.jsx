@@ -19,12 +19,17 @@ export const useWindowSize = () => {
 	useEffect(() => {
 		const handleDeviceChecks = () => {
 			const aspectRatio = window.innerWidth / window.innerHeight
-			const mobilePortrait = window.innerWidth < window.innerHeight && (window.innerWidth < 768 && aspectRatio <= 0.75)
-			const mobileLandscape = window.innerWidth > window.innerHeight && (window.innerWidth <= 832 && aspectRatio >= 2)
-			const tabletPortrait = window.innerWidth >= 768 && window.innerWidth < 1280 && aspectRatio <= 0.9
-			const tabletLandscape = window.innerWidth > 832 && window.innerWidth < 1280 && aspectRatio >= 1.5
+			const mobilePortrait = window.innerWidth < 768 && aspectRatio <= 0.75
+			const mobileLandscape = window.innerWidth <= 832 && aspectRatio >= 2
+			const tabletPortrait =
+				window.innerWidth >= 768 &&
+				window.innerWidth < 1280 &&
+				aspectRatio <= 0.9
+			const tabletLandscape =
+				window.innerWidth > 832 &&
+				window.innerWidth < 1280 &&
+				aspectRatio >= 1.5
 			const laptop = window.innerWidth >= 1280
-			console.log(aspectRatio)
 			setIsMobilePortrait(mobilePortrait)
 			setIsMobileLandscape(mobileLandscape)
 			setIsTabletPortrait(tabletPortrait)
