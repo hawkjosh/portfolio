@@ -9,8 +9,6 @@ export const useWindowSize = () => {
 	const [isPortrait, setIsPortrait] = useState(false)
 	const [isLandscape, setIsLandscape] = useState(false)
 	const [isHover, setIsHover] = useState(false)
-	const [isWideScreen, setIsWideScreen] = useState(false)
-	const [isShortScreen, setIsShortScreen] = useState(false)
 	const [isWidthXs, setIsWidthXs] = useState(false)
 	const [isWidthSm, setIsWidthSm] = useState(false)
 	const [isWidthMd, setIsWidthMd] = useState(false)
@@ -21,8 +19,8 @@ export const useWindowSize = () => {
 	useEffect(() => {
 		const handleDeviceChecks = () => {
 			const aspectRatio = window.innerWidth / window.innerHeight
-			const mobilePortrait = window.innerWidth < 768 && aspectRatio <= 0.75
-			const mobileLandscape = window.innerWidth <= 832 && aspectRatio >= 2
+			const mobilePortrait = window.innerWidth < window.innerHeight && (window.innerWidth < 768 && aspectRatio <= 0.75)
+			const mobileLandscape = window.innerWidth > window.innerHeight && (window.innerWidth <= 832 && aspectRatio >= 2)
 			const tabletPortrait = window.innerWidth >= 768 && window.innerWidth < 1280 && aspectRatio <= 0.9
 			const tabletLandscape = window.innerWidth > 832 && window.innerWidth < 1280 && aspectRatio >= 1.5
 			const laptop = window.innerWidth >= 1280
@@ -72,22 +70,6 @@ export const useWindowSize = () => {
 		return () => matchMediaQuery.removeEventListener('change', handleChange)
 	}, [])
 
-	// Checks special screen width and height scenarios
-	useEffect(() => {
-		const handleDeviceChecks = () => {
-			const wideScreen = window.innerWidth >= 1024
-			const shortScreen = window.innerWidth < 480
-			setIsWideScreen(wideScreen)
-			setIsShortScreen(shortScreen)
-		}
-
-		handleDeviceChecks()
-
-		window.addEventListener('resize', handleDeviceChecks)
-
-		return () => window.removeEventListener('resize', handleDeviceChecks)
-	}, [])
-
 	// Checks breakpoints screen width
 	useEffect(() => {
 		const handleDeviceChecks = () => {
@@ -119,8 +101,6 @@ export const useWindowSize = () => {
 		isPortrait,
 		isLandscape,
 		isHover,
-		isWideScreen,
-		isShortScreen,
 		isWidthXs,
 		isWidthSm,
 		isWidthMd,

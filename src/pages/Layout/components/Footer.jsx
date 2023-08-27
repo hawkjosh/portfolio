@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import * as Styled from '../styles/Footer.styled.jsx'
 
 export const Footer = () => {
-	const { isWideScreen } = useWindowSize()
+	const { isWidthLg, isWidthXl } = useWindowSize()
 	const location = useLocation()
 	const staticNav = Boolean(
 		location.pathname === '/work-samples' || location.pathname === '/contact'
@@ -30,7 +30,7 @@ export const Footer = () => {
 
 	return (
 		<Styled.Footer $height={staticNav ? '3rem' : '4rem'}>
-			{isWideScreen ? (
+			{isWidthLg || isWidthXl ? (
 				<>
 					<Styled.Copywrite>
 						© {new Date().getFullYear()} Joshua Wilde Hawk

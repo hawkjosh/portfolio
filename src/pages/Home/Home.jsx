@@ -12,8 +12,6 @@ export const Home = () => {
 		isPortrait,
 		isLandscape,
 		isHover,
-		isWideScreen,
-		isShortScreen,
 		isWidthXs,
 		isWidthSm,
 		isWidthMd,
@@ -140,30 +138,6 @@ export const Home = () => {
 					}}>
 					Breakpoint Width:{' '}
 					<span style={{ textDecoration: 'underline' }}>EXTRA LARGE</span>
-				</div>
-			)}
-			{isWideScreen && (
-				<div
-					style={{
-						textAlign: 'center',
-						fontSize: '1.25rem',
-						fontStyle: 'italic',
-						color: 'blue',
-					}}>
-					Special Screen Mode:{' '}
-					<span style={{ textDecoration: 'underline' }}>WIDESCREEN</span>
-				</div>
-			)}
-			{isShortScreen && (
-				<div
-					style={{
-						textAlign: 'center',
-						fontSize: '1.25rem',
-						fontStyle: 'italic',
-						color: 'blue',
-					}}>
-					Special Screen Mode:{' '}
-					<span style={{ textDecoration: 'underline' }}>SHORTSCREEN</span>
 				</div>
 			)}
 			{isHover ? (
