@@ -1,97 +1,115 @@
 import { useEffect, useState } from 'react'
 
 export const useWindowSize = () => {
-	const [isMobile, setIsMobile] = useState(false)
-
-	const [isTablet, setIsTablet] = useState(false)
-
+	const [isMobilePortrait, setIsMobilePortrait] = useState(false)
+	const [isMobileLandscape, setIsMobileLandscape] = useState(false)
+	const [isTabletPortrait, setIsTabletPortrait] = useState(false)
+	const [isTabletLandscape, setIsTabletLandscape] = useState(false)
 	const [isLaptop, setIsLaptop] = useState(false)
-
-	const [isWideScreen, setIsWideScreen] = useState(false)
-
-	const [isShortScreen, setIsShortScreen] = useState(false)
-
 	const [isPortrait, setIsPortrait] = useState(false)
+	const [isLandscape, setIsLandscape] = useState(false)
+	const [isHover, setIsHover] = useState(false)
+	const [isWidthXs, setIsWidthXs] = useState(false)
+	const [isWidthSm, setIsWidthSm] = useState(false)
+	const [isWidthMd, setIsWidthMd] = useState(false)
+	const [isWidthLg, setIsWidthLg] = useState(false)
+	const [isWidthXl, setIsWidthXl] = useState(false)
 
+	// Checks specific parameters for my iPhone, iPad Mini, iPad Air, and laptops
 	useEffect(() => {
-		const handleResizeMobile = () => {
-			setIsMobile(window.innerWidth < 640)
+		const handleDeviceChecks = () => {
+			const aspectRatio = window.innerWidth / window.innerHeight
+			const mobilePortrait = window.innerWidth < 768 && aspectRatio <= 0.75
+			const mobileLandscape = window.innerWidth <= 832 && aspectRatio >= 2
+			const tabletPortrait =
+				window.innerWidth >= 768 &&
+				window.innerWidth < 1280 &&
+				aspectRatio <= 0.9
+			const tabletLandscape =
+				window.innerWidth > 832 &&
+				window.innerWidth < 1280 &&
+				aspectRatio >= 1.5
+			const laptop = window.innerWidth >= 1280
+			setIsMobilePortrait(mobilePortrait)
+			setIsMobileLandscape(mobileLandscape)
+			setIsTabletPortrait(tabletPortrait)
+			setIsTabletLandscape(tabletLandscape)
+			setIsLaptop(laptop)
 		}
 
-		handleResizeMobile()
+		handleDeviceChecks()
 
-		window.addEventListener('resize', handleResizeMobile)
+		window.addEventListener('resize', handleDeviceChecks)
 
-		return () => window.removeEventListener('resize', handleResizeMobile)
+		return () => window.removeEventListener('resize', handleDeviceChecks)
 	}, [])
 
+	// Checks screen orientation
 	useEffect(() => {
-		const handleResizeTablet = () => {
-			setIsTablet(window.innerWidth >= 640 && window.innerWidth < 1280)
+		const handleDeviceChecks = () => {
+			const portraitOrientation = screen.orientation.type.includes('portrait')
+			const landscapeOrientation = screen.orientation.type.includes('landscape')
+			setIsPortrait(portraitOrientation)
+			setIsLandscape(landscapeOrientation)
 		}
 
-		handleResizeTablet()
+		handleDeviceChecks()
 
-		window.addEventListener('resize', handleResizeTablet)
-
-		return () => window.removeEventListener('resize', handleResizeTablet)
-	}, [])
-
-	useEffect(() => {
-		const handleResizeLaptop = () => {
-			setIsLaptop(window.innerWidth >= 1280)
-		}
-
-		handleResizeLaptop()
-
-		window.addEventListener('resize', handleResizeLaptop)
-
-		return () => window.removeEventListener('resize', handleResizeLaptop)
-	}, [])
-
-	useEffect(() => {
-		const handleResizeWideScreen = () => {
-			setIsWideScreen(window.innerWidth >= 1024)
-		}
-
-		handleResizeWideScreen()
-
-		window.addEventListener('resize', handleResizeWideScreen)
-
-		return () => window.removeEventListener('resize', handleResizeWideScreen)
-	}, [])
-
-	useEffect(() => {
-		const handleResizeShortScreen = () => {
-			setIsShortScreen(window.innerHeight < 500)
-		}
-
-		handleResizeShortScreen()
-
-		window.addEventListener('resize', handleResizeShortScreen)
-
-		return () => window.removeEventListener('resize', handleResizeShortScreen)
-	}, [])
-
-	useEffect(() => {
-		const handleOrientationChange = () => {
-			setIsPortrait(window.innerWidth < window.innerHeight)
-		}
-
-		handleOrientationChange()
-
-		window.addEventListener('orientationchange', handleOrientationChange)
+		screen.orientation.addEventListener('change', handleDeviceChecks)
 
 		return () =>
-			window.removeEventListener('orientationchange', handleOrientationChange)
+			screen.orientation.removeEventListener('change', handleDeviceChecks)
+	}, [])
+
+	// Checks pointer device for hover effects
+	useEffect(() => {
+		const matchMediaQuery = window.matchMedia('(hover: hover)')
+		setIsHover(matchMediaQuery.matches)
+
+		const handleChange = (e) => {
+			setIsHover(e.matches)
+		}
+
+		matchMediaQuery.addEventListener('change', handleChange)
+
+		return () => matchMediaQuery.removeEventListener('change', handleChange)
+	}, [])
+
+	// Checks breakpoints screen width
+	useEffect(() => {
+		const handleDeviceChecks = () => {
+			const widthXs = window.innerWidth < 428
+			const widthSm = window.innerWidth >= 428 && window.innerWidth < 768
+			const widthMd = window.innerWidth >= 768 && window.innerWidth < 1024
+			const widthLg = window.innerWidth >= 1024 && window.innerWidth < 1280
+			const widthXl = window.innerWidth >= 1280
+			setIsWidthXs(widthXs)
+			setIsWidthSm(widthSm)
+			setIsWidthMd(widthMd)
+			setIsWidthLg(widthLg)
+			setIsWidthXl(widthXl)
+		}
+
+		handleDeviceChecks()
+
+		window.addEventListener('resize', handleDeviceChecks)
+
+		return () => window.removeEventListener('resize', handleDeviceChecks)
 	}, [])
 
 	return {
-		isMobile,
-		isTablet,
+		isMobilePortrait,
+		isMobileLandscape,
+		isTabletPortrait,
+		isTabletLandscape,
 		isLaptop,
-		isWideScreen,
-		isShortScreen,
 		isPortrait,
+		isLandscape,
+		isHover,
+		isWidthXs,
+		isWidthSm,
+		isWidthMd,
+		isWidthLg,
+		isWidthXl,
 	}
 }

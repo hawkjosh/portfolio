@@ -2,13 +2,21 @@ import { createGlobalStyle } from 'styled-components'
 
 export const media = {
 	xs: '(width < 26.75rem)',
-	sm: '(26.75rem <= width < 48rem)',
-	md: '(48rem <= width < 64rem)',
-	lg: '(64rem <= width < 80rem)',
+	// sm: '(26.75rem <= width < 48rem)',
+	sm: '(width < 48rem)',
+	// md: '(48rem <= width < 64rem)',
+	md: '(width < 64rem)',
+	// lg: '(64rem <= width < 80rem)',
+	lg: '(width < 80rem)',
 	xl: '(width >=80rem)',
 	portrait: '(orientation: portrait)',
 	landscape: '(orientation: landscape)',
 	noTouch: '(hover: hover)',
+  mobilePortrait: '(width < 48rem) and (max-aspect-ratio: 3/4)',
+  mobileLandscape: '(width < 53rem) and (min-aspect-ratio: 2/1)',
+  tabletPortrait: '(width < 62.5rem) and (max-aspect-ratio: 9/10)',
+  tabletLandscape: '(width < 80rem) and (min-aspect-ratio: 3/2)',
+  laptop: '(width >= 80rem)',
 }
 
 export const GlobalStyle = createGlobalStyle`

@@ -55,22 +55,13 @@ export const Item = styled(NavLink)`
   `}
 `
 
-export const LeftCaret = styled(faIcon.CaretLeft)`
+export const CaretIcon = styled(({ icon: IconComponent, ...rest }) => (
+	<IconComponent {...rest} />
+))`
 	color: var(--color-primary);
 	display: none;
 	${({ $active }) =>
 		$active &&
-		`
-	display: block;
-`}
-`
-
-export const RightCaret = styled(faIcon.CaretRight)`
-	color: var(--color-primary);
-	display: none;
-	${({ $active }) =>
-		$active &&
-		`
-	display: block;
+		`display: block;
 `}
 `

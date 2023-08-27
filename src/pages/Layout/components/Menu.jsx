@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
-import * as styled from '../styles/Menu.styled.jsx'
+import * as faIcon from '@styled-icons/fa-solid'
+import * as Styled from '../styles/Menu.Styled.jsx'
 
 const menuItems = [
 	{
@@ -34,32 +35,34 @@ export const Menu = () => {
 
 	return (
 		<>
-			<styled.Menu onClick={toggleShowMenu} />
+			<Styled.Menu onClick={toggleShowMenu} />
 			{showMenu && (
-				<styled.List
+				<Styled.List
 					$top={staticNav ? '4.875rem' : '6.25rem'}
 					$shrink={shrink ? 'shrink' : ''}>
 					{menuItems.map((item, index) => {
 						const active = item.link === location.pathname
 						return (
-							<styled.Item
+							<Styled.Item
 								key={index}
 								to={item.link}
 								onClick={toggleShowMenu}
 								$active={active ? 'active' : ''}>
-								<styled.LeftCaret
-									size={12.5}
+								<Styled.CaretIcon
+									icon={faIcon.CaretLeft}
+									size={15}
 									$active={active ? 'active' : ''}
 								/>
 								{item.name}
-								<styled.RightCaret
-									size={12.5}
+								<Styled.CaretIcon
+									icon={faIcon.CaretRight}
+									size={15}
 									$active={active ? 'active' : ''}
 								/>
-							</styled.Item>
+							</Styled.Item>
 						)
 					})}
-				</styled.List>
+				</Styled.List>
 			)}
 		</>
 	)
