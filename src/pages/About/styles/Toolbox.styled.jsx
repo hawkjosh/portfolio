@@ -127,15 +127,30 @@ export const Tooltip = styled.div`
 	line-height: 0.9;
 	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
 	font-weight: 900;
-	top: ${({ $top }) => $top};
+	top: ${({ $top }) => $top || '-35%'};
 	left: 50%;
 	transform: translateX(-50%);
+`
+
+export const ToolboxIconWrapper = styled.div`
+	position: relative;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:hover > ${Tooltip} {
+		animation: ${tooltipHover} 500ms ease-in-out;
+		visibility: visible;
+	}
 `
 
 export const ToolboxIcon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	filter: contrast(10%);
 	cursor: grab;
 	transition-property: filter, transform;
@@ -144,10 +159,6 @@ export const ToolboxIcon = styled(({ icon: IconComponent, ...rest }) => (
 	&:hover {
 		filter: contrast(100%);
 		transform: scale(1.125);
-		& ${Tooltip} {
-			animation: ${tooltipHover} 500ms ease-in-out;
-			visibility: visible;
-		}
 	}
 `
 
