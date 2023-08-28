@@ -1,10 +1,10 @@
-import { useWindowSize } from '../../../hooks/useWindowSize.jsx'
+import { useWindowProps } from '../../../hooks/useWindowProps.jsx'
 import { useLocation } from 'react-router-dom'
 import * as remixIcon from '@styled-icons/remix-line'
 import * as Styled from '../styles/Footer.styled.jsx'
 
 export const Footer = () => {
-	const { isWidthLg, isWidthXl } = useWindowSize()
+	const { isWidthLg, isWidthXl } = useWindowProps()
 	const location = useLocation()
 	const staticNav = Boolean(
 		location.pathname === '/work-samples' || location.pathname === '/contact'

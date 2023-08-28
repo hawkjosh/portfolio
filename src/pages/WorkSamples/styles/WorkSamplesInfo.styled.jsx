@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { breakpoints, media } from '../../../GlobalStyle.jsx'
 
 export const Container = styled.div`
 	position: absolute;
@@ -7,7 +8,6 @@ export const Container = styled.div`
 	gap: 0.5rem;
 	padding: 0.75rem 1.25rem;
 	opacity: 0;
-
 	&[data-active] {
 		opacity: 1;
 		z-index: 1;
@@ -18,22 +18,32 @@ export const Title = styled.div`
 	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
-	@media (width >= 80rem) {
+	/* @media (width >= ${breakpoints.xl}) { */
+	@media ${media.xl} {
 		font-size: 2.75rem;
 	}
-	@media (60rem <= width < 80rem) {
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
+	@media ${media.lg} {
 		font-size: 2.5rem;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			font-size: 2rem;
 		}
 	}
-	@media (40rem <= width < 60rem) {
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
+	@media ${media.md} {
 		font-size: 2.25rem;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			font-size: 2rem;
 		}
 	}
-	@media (width < 40rem) {
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		font-size: 1.75rem;
+	}
+	@media ${media.xs} {
 		font-size: 1.75rem;
 	}
 `
@@ -46,22 +56,32 @@ export const Wrapper = styled.div`
 
 export const Text = styled.div`
 	font-weight: 200;
-	@media (width >= 80rem) {
+	/* @media (width >= ${breakpoints.xl}) { */
+	@media ${media.xl} {
 		font-size: 1.625rem;
 	}
-	@media (60rem <= width < 80rem) {
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
+	@media ${media.lg} {
 		font-size: 1.5rem;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			font-size: 1.375rem;
 		}
 	}
-	@media (40rem <= width < 60rem) {
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
+	@media ${media.md} {
 		font-size: 1.375rem;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			font-size: 1.125rem;
 		}
 	}
-	@media (width < 40rem) {
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		font-size: 1.125rem;
+	}
+	@media ${media.xs} {
 		font-size: 1.125rem;
 	}
 `

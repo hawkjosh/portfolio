@@ -53,12 +53,12 @@ export const Navbar = () => {
 			$height={staticNav ? '5rem' : '8rem'}
 			$top={staticNav ? '0' : '-0.0625rem'}
 			$shrink={shrink ? 'shrink' : ''}>
-			<Styled.Menu>
+			<Styled.MenuSection>
 				<Menu />
-			</Styled.Menu>
+			</Styled.MenuSection>
 			{staticNav ? (
 				<>
-					<Styled.NavBrand>
+					<Styled.NavBrandSection>
 						<Styled.StaticIcon
 							type='navbar'
 							$shrink={shrink ? 'shrink' : ''}
@@ -66,9 +66,9 @@ export const Navbar = () => {
 						<Styled.StaticTitle $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
 						</Styled.StaticTitle>
-					</Styled.NavBrand>
+					</Styled.NavBrandSection>
 
-					<Styled.NavLinks>
+					<Styled.NavLinkSection>
 						{links.map((link, index) => {
 							const active = link.url === location.pathname
 							return (
@@ -91,11 +91,11 @@ export const Navbar = () => {
 								</Styled.StaticLink>
 							)
 						})}
-					</Styled.NavLinks>
+					</Styled.NavLinkSection>
 				</>
 			) : (
 				<>
-					<Styled.NavBrand>
+					<Styled.NavBrandSection>
 						<Styled.Icon
 							type='navbar'
 							$shrink={shrink ? 'shrink' : ''}
@@ -103,9 +103,9 @@ export const Navbar = () => {
 						<Styled.Title $shrink={shrink ? 'shrink' : ''}>
 							The Hawk's Nest
 						</Styled.Title>
-					</Styled.NavBrand>
+					</Styled.NavBrandSection>
 
-					<Styled.NavLinks>
+					<Styled.NavLinkSection>
 						{links.map((link, index) => {
 							const active = link.url === location.pathname
 							return (
@@ -128,11 +128,11 @@ export const Navbar = () => {
 								</Styled.Link>
 							)
 						})}
-					</Styled.NavLinks>
+					</Styled.NavLinkSection>
 				</>
 			)}
 
-			<Styled.NavSocial>
+			<Styled.NavSocialSection>
 				{socialIcons.map((icon, index) => (
 					<Styled.SocialLink
 						key={index}
@@ -145,7 +145,7 @@ export const Navbar = () => {
 						/>
 					</Styled.SocialLink>
 				))}
-			</Styled.NavSocial>
+			</Styled.NavSocialSection>
 		</Styled.Navbar>
 	)
 }

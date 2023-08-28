@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { media } from '../../../GlobalStyle.jsx'
+import { breakpoints, media } from '../../../GlobalStyle.jsx'
 
 export const Container = styled.div`
 	display: flex;
@@ -14,25 +14,32 @@ export const Text = styled.div`
 	color: hsla(60, 100%, 50%, 1);
 	text-align: center;
 	text-wrap: balance;
-	@media ${media.xs} {
-		font-size: 1.5rem;
-		line-height: 1.75;
+	/* @media (width >= ${breakpoints.xl}) { */
+	@media ${media.xl} {
+		font-size: 2rem;
+		line-height: 2.25;
 	}
-	@media ${media.sm} {
-		font-size: 1.625rem;
-		line-height: 1.875;
-	}
-	@media ${media.md} {
-		font-size: 1.75rem;
-		line-height: 2;
-	}
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
 	@media ${media.lg} {
 		font-size: 1.875rem;
 		line-height: 2.125;
 	}
-	@media ${media.xl} {
-		font-size: 2rem;
-		line-height: 2.25;
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
+	@media ${media.md} {
+		font-size: 1.75rem;
+		line-height: 2;
+	}
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		font-size: 1.625rem;
+		line-height: 1.875;
+	}
+	@media ${media.xs} {
+		font-size: 1.5rem;
+		line-height: 1.75;
 	}
 `
 
@@ -52,24 +59,31 @@ export const Link = styled.a`
 		color: hsla(9, 100%, 64%, 1);
 		border-color: hsla(60, 100%, 50%, 1);
 	}
-	@media ${media.xs} {
-		font-size: 1.5rem;
-		line-height: 1.75;
+	/* @media (width >= ${breakpoints.xl}) { */
+	@media ${media.xl} {
+		font-size: 2.5rem;
+		line-height: 2.75;
 	}
-	@media ${media.sm} {
-		font-size: 1.75rem;
-		line-height: 2;
-	}
-	@media ${media.md} {
-		font-size: 2rem;
-		line-height: 2.25;
-	}
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
 	@media ${media.lg} {
 		font-size: 2.25rem;
 		line-height: 2.5;
 	}
-	@media ${media.xl} {
-		font-size: 2.5rem;
-		line-height: 2.75;
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
+	@media ${media.md} {
+		font-size: 2rem;
+		line-height: 2.25;
+	}
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		font-size: 1.75rem;
+		line-height: 2;
+	}
+	@media ${media.xs} {
+		font-size: 1.5rem;
+		line-height: 1.75;
 	}
 `

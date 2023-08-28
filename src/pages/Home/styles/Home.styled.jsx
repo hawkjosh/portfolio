@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { breakpoints, media } from '../../../GlobalStyle.jsx'
 import { HomeIcon } from '../components/Home.icons.jsx'
 
 export const Container = styled.div`
@@ -21,7 +22,12 @@ export const Divider = styled.hr`
 	background: hsla(360, 100%, 100%, 1);
 	border-style: none;
 	margin: 4rem 10%;
-	@media (width < 40rem) {
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		margin: 4rem 17.5%;
+	}
+	@media ${media.xs} {
 		margin: 4rem 17.5%;
 	}
 `
@@ -31,7 +37,14 @@ export const IconsContainer = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	@media (width < 40rem) {
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		width: 100%;
+		flex-direction: column;
+		gap: 5rem;
+	}
+	@media ${media.xs} {
 		width: 100%;
 		flex-direction: column;
 		gap: 5rem;
@@ -68,7 +81,12 @@ export const Icon = styled(HomeIcon)`
 	& text {
 		fill: hsla(360, 100%, 100%, 1);
 	}
-	@media (width < 40rem) {
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
+	}
+	@media ${media.xs} {
 		width: clamp(9.375rem, 5.357rem + 17.857vw, 12.5rem);
 	}
 `
