@@ -1,5 +1,5 @@
 import { styled, keyframes } from 'styled-components'
-import { media } from '../../../GlobalStyle.jsx'
+import { breakpoints, media } from '../../../GlobalStyle.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
 import React from 'react'
 
@@ -12,16 +12,16 @@ const fadeIn = keyframes`
 	}
 `
 
-// const tooltipHover = keyframes`
-// 	from {
-// 		scale: 0;
-// 		opacity: 0;
-// 	}
-// 	to {
-// 		scale: 1;
-// 		opacity: 1;
-// 	}
-// `
+const tooltipHover = keyframes`
+	from {
+		scale: 0;
+		opacity: 0;
+	}
+	to {
+		scale: 1;
+		opacity: 1;
+	}
+`
 
 export const Modal = styled.dialog`
 	max-width: 80rem;
@@ -40,15 +40,20 @@ export const Modal = styled.dialog`
 		animation: ${fadeIn} 1000ms ease both;
 		background: hsla(0, 0%, 0%, 0.625);
 	}
+	/* @media (width >= ${breakpoints.xl}) { */
 	@media ${media.xl} {
 		width: 75%;
 	}
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
 	@media ${media.lg} {
 		width: 80%;
 		@media ${media.landscape} {
 			width: 85%;
 		}
 	}
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
 	@media ${media.md} {
 		width: 85%;
 		@media ${media.landscape} {
@@ -56,6 +61,8 @@ export const Modal = styled.dialog`
 			max-height: calc(100dvh - 3rem);
 		}
 	}
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
 	@media ${media.sm} {
 		width: 90%;
 		@media ${media.landscape} {
@@ -74,26 +81,33 @@ export const Modal = styled.dialog`
 	}
 `
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
 	display: grid;
 	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
 	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
 	margin: 2.5rem 5%;
+	/* @media (width >= ${breakpoints.xl}) { */
 	@media ${media.xl} {
 		grid-template-columns: repeat(8, 1fr);
 	}
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
 	@media ${media.lg} {
 		grid-template-columns: repeat(5, 1fr);
 		@media ${media.landscape} {
 			grid-template-columns: repeat(8, 1fr);
 		}
 	}
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
 	@media ${media.md} {
 		grid-template-columns: repeat(5, 1fr);
 		@media ${media.landscape} {
 			grid-template-columns: repeat(8, 1fr);
 		}
 	}
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
 	@media ${media.sm} {
 		grid-template-columns: repeat(4, 1fr);
 	}
@@ -102,39 +116,41 @@ export const Wrapper = styled.div`
 	}
 `
 
-// export const Tooltip = styled.span`
-// 	visibility: hidden;
-// 	position: absolute;
-// 	width: min-content;
-// 	color: ${({ $color }) => $color};
-// 	text-shadow: ${({ $shadow }) =>
-// 		`0.09375rem 0 ${$shadow}, 0 0.09375rem  ${$shadow}`};
-// 	text-align: center;
-// 	line-height: 0.9;
-// 	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
-// 	font-weight: 900;
-// 	top: ${({ $top }) => $top};
-// 	left: 50%;
-// 	transform: translateX(-50%);
-// `
+export const Tooltip = styled.div`
+	visibility: hidden;
+	position: absolute;
+	width: min-content;
+	color: ${({ $color }) => $color};
+	text-shadow: ${({ $shadow }) =>
+		`0.09375rem 0 ${$shadow}, 0 0.09375rem  ${$shadow}`};
+	text-align: center;
+	line-height: 0.9;
+	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
+	font-weight: 900;
+	top: ${({ $top }) => $top || '-35%'};
+	left: 50%;
+	transform: translateX(-50%);
+`
 
-// const StyledIcon = styled.div`
-// 	filter: contrast(10%);
-// 	cursor: grab;
-// 	transition-property: filter, transform;
-// 	transition-duration: 250ms;
-// 	transition-timing-function: ease-in-out;
-// 	&:hover {
-// 		filter: contrast(100%);
-// 		transform: scale(1.125);
-// 		& ${Tooltip} {
-// 			animation: ${tooltipHover} 500ms ease-in-out;
-// 			visibility: visible;
-// 		}
-// 	}
-// `
+export const IconWrapper = styled.div`
+	position: relative;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&:hover > ${Tooltip} {
+		animation: ${tooltipHover} 500ms ease-in-out;
+		visibility: visible;
+	}
+`
 
-const StyledIcon = styled.div`
+export const Icon = styled(({ icon: IconComponent, ...rest }) => (
+	<IconComponent {...rest} />
+))`
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	filter: contrast(10%);
 	cursor: grab;
 	transition-property: filter, transform;
@@ -145,19 +161,6 @@ const StyledIcon = styled.div`
 		transform: scale(1.125);
 	}
 `
-
-// export const Icon = ({ icon, color, top, shadow, name }) => (
-// 	<StyledIcon>
-// 		{React.cloneElement(icon, { color })}
-// 		<Tooltip $top={top} $color={color} $shadow={shadow}>
-// 			{name}
-// 		</Tooltip>
-// 	</StyledIcon>
-// )
-
-export const Icon = ({ icon, color }) => (
-	<StyledIcon>{React.cloneElement(icon, { color })}</StyledIcon>
-)
 
 export const CloseBtn = styled(faIcon.CircleXmark)`
 	position: absolute;

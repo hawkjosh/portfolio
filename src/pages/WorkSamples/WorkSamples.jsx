@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { WorkSamplesInfo } from './components/WorkSamplesInfo.jsx'
 import { WorkSamplesLink } from './components/WorkSamplesLink.jsx'
+import * as faIcon from '@styled-icons/fa-solid'
 import * as Styled from './styles/WorkSamples.styled.jsx'
 
 const items = [
@@ -109,8 +110,16 @@ export const WorkSamples = () => {
 						/>
 					)
 				})}
-				<Styled.PrevArrow onClick={handleLeftClick} />
-				<Styled.NextArrow onClick={handleRightClick} />
+				<Styled.ArrowIcon
+					icon={faIcon.CircleChevronLeft}
+					$left='5%'
+					onClick={handleLeftClick}
+				/>
+				<Styled.ArrowIcon
+					icon={faIcon.CircleChevronRight}
+					$right='5%'
+					onClick={handleRightClick}
+				/>
 			</Styled.ImageSection>
 
 			<Styled.InfoSection>

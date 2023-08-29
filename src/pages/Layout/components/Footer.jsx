@@ -1,59 +1,56 @@
-import { useWindowSize } from '../../../hooks/useWindowSize.jsx'
-import { useLocation } from 'react-router-dom'
+import { useNavMin } from '../../../hooks/useNavMin.jsx'
+import { useStaticNav } from '../../../hooks/useStaticNav.jsx'
 import * as remixIcon from '@styled-icons/remix-line'
 import * as Styled from '../styles/Footer.styled.jsx'
 
-export const Footer = () => {
-	const { isWidthLg, isWidthXl } = useWindowSize()
-	const location = useLocation()
-	const staticNav = Boolean(
-		location.pathname === '/work-samples' || location.pathname === '/contact'
-	)
+const icons = [
+	{
+		icon: remixIcon.Linkedin,
+		link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
+	},
+	{
+		icon: remixIcon.Github,
+		link: 'https://github.com/hawkjosh',
+	},
+	{
+		icon: remixIcon.Codepen,
+		link: 'https://codepen.io/hawkjosh',
+	},
+	{
+		icon: remixIcon.StackOverflow,
+		link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
+	},
+]
 
-	const socialIcons = [
-		{
-			icon: remixIcon.Linkedin,
-			link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
-		},
-		{
-			icon: remixIcon.Github,
-			link: 'https://github.com/hawkjosh',
-		},
-		{
-			icon: remixIcon.Codepen,
-			link: 'https://codepen.io/hawkjosh',
-		},
-		{
-			icon: remixIcon.StackOverflow,
-			link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
-		},
-	]
+export const Footer = () => {
+	const navMin = useNavMin()
+	const staticNav = useStaticNav()
 
 	return (
-		<Styled.Footer $height={staticNav ? '3rem' : '4rem'}>
-			{isWidthLg || isWidthXl ? (
-				<>
-					<Styled.Copywrite>
-						© {new Date().getFullYear()} Joshua Wilde Hawk
-					</Styled.Copywrite>
-					<Styled.LogoIcon type='footer' />
-				</>
-			) : (
-				<>
-					{socialIcons.map((icon, index) => (
+		<Styled.Container $static={staticNav ? 'static' : ''}>
+			{navMin ? (
+				<Styled.Footer>
+					{icons.map((item, index) => (
 						<Styled.SocialLink
 							key={index}
-							href={icon.link}
+							href={item.link}
 							target='_blank'
 							rel='noreferrer'>
 							<Styled.SocialIcon
-								icon={icon.icon}
-								$width={staticNav ? '1.75rem' : '2rem'}
+								icon={item.icon}
+								$static={staticNav ? 'static' : ''}
 							/>
 						</Styled.SocialLink>
 					))}
-				</>
+				</Styled.Footer>
+			) : (
+				<Styled.Footer>
+					<Styled.Copywrite>© {new Date().getFullYear()} Joshua Wilde Hawk</Styled.Copywrite>
+					<Styled.LogoIcon type='footer' />
+				</Styled.Footer>
 			)}
-		</Styled.Footer>
+		</Styled.Container>
 	)
 }
+
+// Styled-Components

@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { breakpoints, media } from '../../../GlobalStyle.jsx'
 
 export const Button = styled.div`
 	display: flex;
@@ -23,22 +24,32 @@ export const Button = styled.div`
 		transition-property: transform, color;
 		transition-duration: 250ms;
 		transition-timing-function: ease-in-out;
-		@media (width >= 80rem) {
+		/* @media (width >= ${breakpoints.xl}) { */
+		@media ${media.xl} {
 			width: 3rem;
 		}
-		@media (60rem <= width < 80rem) {
+		/* @media (width < ${breakpoints.xl}) { */
+		/* @media ${media.maxLg} { */
+		@media ${media.lg} {
 			width: 2.75rem;
-			@media (orientation: landscape) {
+			@media ${media.landscape} {
 				width: 2rem;
 			}
 		}
-		@media (40rem <= width < 60rem) {
+		/* @media (width < ${breakpoints.lg}) { */
+		/* @media ${media.maxMd} { */
+		@media ${media.md} {
 			width: 2.5rem;
-			@media (orientation: landscape) {
+			@media ${media.landscape} {
 				width: 1.5rem;
 			}
 		}
-		@media (width < 40rem) {
+		/* @media (width < ${breakpoints.md}) { */
+		/* @media ${media.maxSm} { */
+		@media ${media.sm} {
+			width: 2rem;
+		}
+		@media ${media.xs} {
 			width: 2rem;
 		}
 	}
@@ -49,54 +60,78 @@ export const Button = styled.div`
 			color: hsla(360, 100%, 100%, 1);
 			transform: scale(0.75);
 		}
-		@media (width >= 80rem) {
+		/* @media (width >= ${breakpoints.xl}) { */
+		@media ${media.xl} {
 			width: 12rem;
 			font-size: 1.25rem;
 		}
-		@media (60rem <= width < 80rem) {
+		/* @media (width < ${breakpoints.xl}) { */
+		/* @media ${media.maxLg} { */
+		@media ${media.lg} {
 			width: 11rem;
 			font-size: 1.125rem;
-			@media (orientation: landscape) {
+			@media ${media.landscape} {
 				width: 10rem;
 				font-size: 1rem;
 			}
 		}
-		@media (40rem <= width < 60rem) {
+		/* @media (width < ${breakpoints.lg}) { */
+		/* @media ${media.maxMd} { */
+		@media ${media.md} {
 			width: 10rem;
 			font-size: 1rem;
-			@media (orientation: landscape) {
+			@media ${media.landscape} {
 				width: 9rem;
 				font-size: 0.875rem;
 			}
 		}
-		@media (width < 40rem) {
+		/* @media (width < ${breakpoints.md}) { */
+		/* @media ${media.maxSm} { */
+		@media ${media.sm} {
 			width: 9rem;
 			font-size: 0.875rem;
-			@media (orientation: landscape) {
+			@media ${media.landscape} {
+			}
+		}
+		@media ${media.xs} {
+			width: 9rem;
+			font-size: 0.875rem;
+			@media ${media.landscape} {
 			}
 		}
 	}
-	@media (width >= 80rem) {
+	/* @media (width >= ${breakpoints.xl}) { */
+	@media ${media.xl} {
 		width: 3rem;
 		height: 3.5rem;
 	}
-	@media (60rem <= width < 80rem) {
+	/* @media (width < ${breakpoints.xl}) { */
+	/* @media ${media.maxLg} { */
+	@media ${media.lg} {
 		width: 2.75;
 		height: 3.25rem;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			width: 2rem;
 			height: 2.5rem;
 		}
 	}
-	@media (40rem <= width < 60rem) {
+	/* @media (width < ${breakpoints.lg}) { */
+	/* @media ${media.maxMd} { */
+	@media ${media.md} {
 		width: 2.5rem;
 		height: 3rem;
-		@media (orientation: landscape) {
+		@media ${media.landscape} {
 			width: 1.5rem;
 			height: 2rem;
 		}
 	}
-	@media (width < 40rem) {
+	/* @media (width < ${breakpoints.md}) { */
+	/* @media ${media.maxSm} { */
+	@media ${media.sm} {
+		width: 2rem;
+		height: 2.5rem;
+	}
+	@media ${media.xs} {
 		width: 2rem;
 		height: 2.5rem;
 	}
