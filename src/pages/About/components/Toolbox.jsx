@@ -317,12 +317,15 @@ const tooltipHover = keyframes`
 `
 
 const Modal = styled.dialog`
-	max-width: 80rem;
-	max-height: 95%;
+	width: 90%;
+	max-width: 75rem;
+	height: max-content;
+	/* max-height: 95%; */
+	max-height: calc(100dvh - 3rem);
 	margin: auto;
+	outline: none;
 	border: none;
 	border-radius: 2rem;
-	outline: none;
 	background: hsla(20, 14%, 96%, 0.75);
 	box-shadow: 0.75rem 0.75rem 0.375rem 0 hsla(0, 0%, 0%, 0.75);
 	padding: 0.75rem 1.25rem 0.5rem;
@@ -333,44 +336,23 @@ const Modal = styled.dialog`
 		animation: ${fadeIn} 1000ms ease both;
 		background: hsla(0, 0%, 0%, 0.625);
 	}
-	/* @media (width >= ${breakpoints.xl}) { */
-	@media ${screen.xl} {
-		width: 75%;
+	@media ${screen.landscape} {
+		width: 85%;
 	}
-	/* @media (width < ${breakpoints.xl}) { */
-	/* @media ${screen.maxLg} { */
-	@media ${screen.lg} {
-		width: 80%;
-		@media ${screen.landscape} {
-			width: 85%;
-		}
-	}
-	/* @media (width < ${breakpoints.lg}) { */
-	/* @media ${screen.maxMd} { */
-	@media ${screen.md} {
+	@media ${screen.minSm} {
 		width: 85%;
 		@media ${screen.landscape} {
-			width: 90%;
-			max-height: calc(100dvh - 3rem);
+			width: 80%;
 		}
 	}
-	/* @media (width < ${breakpoints.md}) { */
-	/* @media ${screen.maxSm} { */
-	@media ${screen.sm} {
-		width: 90%;
+	@media ${screen.minMd} {
+		width: 80%;
 		@media ${screen.landscape} {
-			width: 85%;
-			height: calc(100dvh - 3rem);
-			top: 1rem;
+			width: 75%;
 		}
 	}
-	@media ${screen.xs} {
-		width: 90%;
-		@media ${screen.landscape} {
-			width: 85%;
-			height: calc(100dvh - 3rem);
-			top: 1rem;
-		}
+	@media ${screen.minLg} {
+		width: 75%;
 	}
 `
 

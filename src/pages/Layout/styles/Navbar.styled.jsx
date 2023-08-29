@@ -36,7 +36,7 @@ export const Container = styled.div`
 
 export const Navbar = styled.div`
 	width: 100%;
-	max-width: 80rem;
+	max-width: 84rem;
 	height: 100%;
 	margin: auto;
 	display: flex;
@@ -101,6 +101,7 @@ export const Icon = styled(LayoutIcon)`
 	display: flex;
 	fill: var(--color-primary);
 	stroke: hsla(0, 100%, 100%, 1);
+	transition: width 500ms ease-in-out;
 	&:hover {
 		fill: hsla(0, 100%, 100%, 1);
 		stroke: var(--color-primary);

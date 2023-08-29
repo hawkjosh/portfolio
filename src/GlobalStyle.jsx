@@ -10,10 +10,13 @@ export const breakpoints = {
 export const screen = {
 	xs: '(width < 26.75rem)',
 	sm: '(26.75rem <= width < 48rem)',
+	minSm: '(width >= 48rem)',
 	maxSm: '(width < 48rem)',
 	md: '(48rem <= width < 64rem)',
+	minMd: '(width >= 64rem)',
 	maxMd: '(width < 64rem)',
 	lg: '(64rem <= width < 80rem)',
+	minLg: '(width >= 80rem)',
 	maxLg: '(width < 80rem)',
 	xl: '(width >= 80rem)',
 	portrait: '(orientation: portrait)',

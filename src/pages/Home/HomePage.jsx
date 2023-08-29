@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints } from '../../GlobalStyle.jsx'
+import { breakpoints, screen } from '../../GlobalStyle.jsx'
 import { HomeIcon } from './components/Home.icons.jsx'
 
 export const HomePage = () => {
@@ -41,7 +41,8 @@ const Divider = styled.hr`
 	background: hsla(360, 100%, 100%, 1);
 	border-style: none;
 	margin: 4rem 17.5%;
-	@media (width >= ${breakpoints.md}) {
+	/* @media (width >= ${breakpoints.md}) { */
+	@media ${screen.minSm} {
 		max-width: 80%;
 		margin: 4rem 10%;
 	}
@@ -53,7 +54,8 @@ const IconsContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 5rem;
-	@media (width >= ${breakpoints.md}) {
+	/* @media (width >= ${breakpoints.md}) { */
+	@media ${screen.minSm} {
 		width: 90%;
 		flex-direction: row;
 		justify-content: space-evenly;
@@ -91,7 +93,8 @@ const Icon = styled(HomeIcon)`
 	& text {
 		fill: hsla(360, 100%, 100%, 1);
 	}
-	@media (width >= ${breakpoints.md}) {
+	/* @media (width >= ${breakpoints.md}) { */
+	@media ${screen.minSm} {
 		width: clamp(9.375rem, 6.235rem + 11.737vw, 15.625rem);
 	}
 `
