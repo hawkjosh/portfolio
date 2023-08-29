@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { About } from './pages/About/About.jsx'
-import { Contact } from './pages/Contact/Contact.jsx'
-import { Home } from './pages/Home/Home.jsx'
-import { Layout } from './pages/Layout/Layout.jsx'
+import { AppLayout } from './pages/Layout/AppLayout.jsx'
+import { AboutPage } from './pages/About/AboutPage.jsx'
+import { ContactPage } from './pages/Contact/ContactPage.jsx'
+import { HomePage } from './pages/Home/HomePage.jsx'
 import { NoPage } from './pages/NoPage/NoPage.jsx'
-import { Thanks } from './pages/Thanks/Thanks.jsx'
-import { WorkSamples } from './pages/WorkSamples/WorkSamples.jsx'
+import { ThanksPage } from './pages/Thanks/ThanksPage.jsx'
+import { WorkSamplesPage } from './pages/WorkSamples/WorkSamplesPage.jsx'
 
 export const App = () => {
 	return (
@@ -13,27 +13,27 @@ export const App = () => {
 			<Routes>
 				<Route
 					path='/'
-					element={<Layout />}>
+					element={<AppLayout />}>
 					<Route
 						index
-						element={<Home />}
+						element={<HomePage />}
 					/>
 					<Route
 						path='/about'
-						element={<About />}
+						element={<AboutPage />}
 					/>
 					<Route
 						path='/work-samples'
-						element={<WorkSamples />}
+						element={<WorkSamplesPage />}
 					/>
 					<Route
 						path='/contact'
-						element={<Contact />}
+						element={<ContactPage />}
 					/>
 				</Route>
 				<Route
 					path='/thanks'
-					element={<Thanks />}
+					element={<ThanksPage />}
 				/>
 				<Route
 					path='*'

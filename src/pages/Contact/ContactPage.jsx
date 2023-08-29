@@ -1,7 +1,7 @@
 import { useTextareaScroll } from '../../hooks/useTextareaScroll.jsx'
 import * as Styled from './styles/Contact.styled.jsx'
 
-export const Contact = () => {
+export const ContactPage = () => {
 	const textareaRef = useTextareaScroll()
 
 	return (

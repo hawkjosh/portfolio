@@ -52,5 +52,3 @@ export const Footer = () => {
 		</Styled.Container>
 	)
 }
-
-// Styled-Components

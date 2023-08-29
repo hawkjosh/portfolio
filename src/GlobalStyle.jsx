@@ -7,7 +7,7 @@ export const breakpoints = {
 	xl: '80rem',
 }
 
-export const media = {
+export const screen = {
 	xs: '(width < 26.75rem)',
 	sm: '(26.75rem <= width < 48rem)',
 	maxSm: '(width < 48rem)',

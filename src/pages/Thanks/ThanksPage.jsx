@@ -1,6 +1,6 @@
 import * as Styled from './styles/Thanks.styled.jsx'
 
-export const Thanks = () => {
+export const ThanksPage = () => {
 	return (
 		<Styled.Container>
 			<Styled.Wrapper>

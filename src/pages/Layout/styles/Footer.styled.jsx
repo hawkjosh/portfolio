@@ -17,7 +17,7 @@ export const Container = styled.div`
 
 export const Footer = styled.div`
 	width: 100%;
-	max-width: 90rem;
+	max-width: 80rem;
 	height: 100%;
 	margin: auto;
 	display: flex;

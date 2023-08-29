@@ -77,7 +77,7 @@ const items = [
 	},
 ]
 
-export const WorkSamples = () => {
+export const WorkSamplesPage = () => {
 	const [activeIndex, setActiveIndex] = useState(0)
 
 	const updateIndex = (newIndex) => {

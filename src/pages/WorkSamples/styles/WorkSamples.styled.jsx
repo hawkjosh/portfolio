@@ -1,12 +1,12 @@
 import { styled } from 'styled-components'
-import { breakpoints, media } from '../../../GlobalStyle.jsx'
+import { breakpoints, screen } from '../../../GlobalStyle.jsx'
 
 export const Container = styled.div`
 	display: grid;
 	height: calc(100vh - 8rem);
 	height: calc(100dvh - 8rem);
 	overflow: hidden;
-	@media ${media.landscape} {
+	@media ${screen.landscape} {
 		grid-template-columns: 60% 40%;
 		grid-template-rows: 90% 10%;
 		@media (height <= ${breakpoints.sm}) {
@@ -14,7 +14,7 @@ export const Container = styled.div`
 			grid-template-rows: 80% 20%;
 		}
 	}
-	@media ${media.portrait} {
+	@media ${screen.portrait} {
 		grid-template-columns: 100%;
 		grid-template-rows: 50% 40% 10%;
 	}
@@ -23,12 +23,12 @@ export const Container = styled.div`
 export const ImageSection = styled.div`
 	position: relative;
 	width: 100%;
-	@media ${media.landscape} {
+	@media ${screen.landscape} {
 		grid-column: 1 / 2;
 		grid-row: 1 / 3;
 		border-right: solid hsla(360, 100%, 100%, 1);
 	}
-	@media ${media.portrait} {
+	@media ${screen.portrait} {
 		grid-row: 1 / 2;
 		border-bottom: solid hsla(360, 100%, 100%, 1);
 	}
@@ -79,12 +79,12 @@ export const InfoSection = styled.div`
 	position: relative;
 	width: 100%;
 	overflow-y: auto;
-	@media ${media.landscape} {
+	@media ${screen.landscape} {
 		grid-column: 2 / 3;
 		grid-row: 1 / 2;
 		border-bottom: solid hsla(360, 100%, 100%, 1);
 	}
-	@media ${media.portrait} {
+	@media ${screen.portrait} {
 		grid-row: 2 / 3;
 		border-bottom: solid hsla(360, 100%, 100%, 1);
 	}
@@ -95,11 +95,11 @@ export const LinkSection = styled.div`
 	width: 100%;
 	display: flex;
 	place-items: center;
-	@media ${media.landscape} {
+	@media ${screen.landscape} {
 		grid-column: 2 / 3;
 		grid-row: 2 / 3;
 	}
-	@media ${media.portrait} {
+	@media ${screen.portrait} {
 		grid-row: 3 / 4;
 	}
 `

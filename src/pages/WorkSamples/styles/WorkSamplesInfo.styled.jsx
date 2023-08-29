@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { breakpoints, media } from '../../../GlobalStyle.jsx'
+import { breakpoints, screen } from '../../../GlobalStyle.jsx'
 
 export const Container = styled.div`
 	position: absolute;
@@ -19,31 +19,31 @@ export const Title = styled.div`
 	text-align: center;
 	text-transform: uppercase;
 	/* @media (width >= ${breakpoints.xl}) { */
-	@media ${media.xl} {
+	@media ${screen.xl} {
 		font-size: 2.75rem;
 	}
 	/* @media (width < ${breakpoints.xl}) { */
-	/* @media ${media.maxLg} { */
-	@media ${media.lg} {
+	/* @media ${screen.maxLg} { */
+	@media ${screen.lg} {
 		font-size: 2.5rem;
-		@media ${media.landscape} {
+		@media ${screen.landscape} {
 			font-size: 2rem;
 		}
 	}
 	/* @media (width < ${breakpoints.lg}) { */
-	/* @media ${media.maxMd} { */
-	@media ${media.md} {
+	/* @media ${screen.maxMd} { */
+	@media ${screen.md} {
 		font-size: 2.25rem;
-		@media ${media.landscape} {
+		@media ${screen.landscape} {
 			font-size: 2rem;
 		}
 	}
 	/* @media (width < ${breakpoints.md}) { */
-	/* @media ${media.maxSm} { */
-	@media ${media.sm} {
+	/* @media ${screen.maxSm} { */
+	@media ${screen.sm} {
 		font-size: 1.75rem;
 	}
-	@media ${media.xs} {
+	@media ${screen.xs} {
 		font-size: 1.75rem;
 	}
 `
@@ -57,31 +57,31 @@ export const Wrapper = styled.div`
 export const Text = styled.div`
 	font-weight: 200;
 	/* @media (width >= ${breakpoints.xl}) { */
-	@media ${media.xl} {
+	@media ${screen.xl} {
 		font-size: 1.625rem;
 	}
 	/* @media (width < ${breakpoints.xl}) { */
-	/* @media ${media.maxLg} { */
-	@media ${media.lg} {
+	/* @media ${screen.maxLg} { */
+	@media ${screen.lg} {
 		font-size: 1.5rem;
-		@media ${media.landscape} {
+		@media ${screen.landscape} {
 			font-size: 1.375rem;
 		}
 	}
 	/* @media (width < ${breakpoints.lg}) { */
-	/* @media ${media.maxMd} { */
-	@media ${media.md} {
+	/* @media ${screen.maxMd} { */
+	@media ${screen.md} {
 		font-size: 1.375rem;
-		@media ${media.landscape} {
+		@media ${screen.landscape} {
 			font-size: 1.125rem;
 		}
 	}
 	/* @media (width < ${breakpoints.md}) { */
-	/* @media ${media.maxSm} { */
-	@media ${media.sm} {
+	/* @media ${screen.maxSm} { */
+	@media ${screen.sm} {
 		font-size: 1.125rem;
 	}
-	@media ${media.xs} {
+	@media ${screen.xs} {
 		font-size: 1.125rem;
 	}
 `
