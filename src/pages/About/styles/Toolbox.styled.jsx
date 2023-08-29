@@ -81,7 +81,7 @@ export const Modal = styled.dialog`
 	}
 `
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
 	display: grid;
 	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
 	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
@@ -132,7 +132,7 @@ export const Tooltip = styled.div`
 	transform: translateX(-50%);
 `
 
-export const ToolboxIconWrapper = styled.div`
+export const IconWrapper = styled.div`
 	position: relative;
 	height: 100%;
 	display: flex;
@@ -144,10 +144,10 @@ export const ToolboxIconWrapper = styled.div`
 	}
 `
 
-export const ToolboxIcon = styled(({ icon: IconComponent, ...rest }) => (
+export const Icon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
-	position: relative;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -6,7 +6,7 @@ export const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	gap: 1.25rem;
-	padding: 1rem 0;
+	padding: 1rem 0 5rem;
 `
 
 export const Title = styled.div`

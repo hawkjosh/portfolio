@@ -6,7 +6,7 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-bottom: 1.5rem;
+	padding-bottom: 5rem;
 `
 
 export const Image = styled.img`

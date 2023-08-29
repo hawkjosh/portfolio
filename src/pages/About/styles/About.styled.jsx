@@ -7,6 +7,7 @@ export const Container = styled.div`
 	height: ${({ $height }) => $height};
 	margin: auto;
 	padding: 2rem;
+	padding-bottom: 5rem;
 	overflow-y: ${({ $overflow }) => $overflow};
 	/* @media (width < ${breakpoints.md}) { */
 	/* @media ${media.maxSm} { */

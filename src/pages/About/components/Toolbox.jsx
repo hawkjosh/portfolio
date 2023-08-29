@@ -4,252 +4,252 @@ import * as Styled from '../styles/Toolbox.styled.jsx'
 
 const icons = [
 	{
-		name: 'Apollo',
+		title: 'Apollo',
 		icon: simpleIcon.Apollographql,
 		color: '#311C87',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Babel',
+		title: 'Babel',
 		icon: simpleIcon.Babel,
 		color: '#F9DC3E',
 		shadow: '#36354F',
 	},
 	{
-		name: 'Bootstrap',
+		title: 'Bootstrap',
 		icon: simpleIcon.Bootstrap,
 		color: '#7952B3',
 		shadow: '#FFFFFF',
 		top: '-25%',
 	},
 	{
-		name: 'CodePen',
+		title: 'CodePen',
 		icon: simpleIcon.Codepen,
 		color: '#000000',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'CSS',
+		title: 'CSS',
 		icon: simpleIcon.Css3,
 		color: '#1572B6',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'ESLint',
+		title: 'ESLint',
 		icon: simpleIcon.Eslint,
 		color: '#4B32C3',
 		shadow: '#FFFFFF',
 		top: '-30%',
 	},
 	{
-		name: 'Flask',
+		title: 'Flask',
 		icon: simpleIcon.Flask,
 		color: '#000000',
 		shadow: '#FFFFFF',
 		top: '-25%',
 	},
 	{
-		name: 'Git',
+		title: 'Git',
 		icon: simpleIcon.Git,
 		color: '#F05032',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'GitHub',
+		title: 'GitHub',
 		icon: simpleIcon.Github,
 		color: '#181717',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'GitLab',
+		title: 'GitLab',
 		icon: simpleIcon.Gitlab,
 		color: '#FC6D26',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'GraphQL',
+		title: 'GraphQL',
 		icon: simpleIcon.Graphql,
 		color: '#E10098',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Handlebars',
+		title: 'Handlebars',
 		icon: simpleIcon.Handlebarsdotjs,
 		color: '#000000',
 		shadow: '#FFFFFF',
 		top: '-15%',
 	},
 	{
-		name: 'Heroku',
+		title: 'Heroku',
 		icon: simpleIcon.Heroku,
 		color: '#430098',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'HTML',
+		title: 'HTML',
 		icon: simpleIcon.Html5,
 		color: '#E34F26',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'JavaScript',
+		title: 'JavaScript',
 		icon: simpleIcon.Javascript,
 		color: '#F7DF1E',
 		shadow: '#36354F',
 		top: '-40%',
 	},
 	{
-		name: 'Jest',
+		title: 'Jest',
 		icon: simpleIcon.Jest,
 		color: '#C21325',
 		shadow: '#FFFFFF',
 		top: '-40%',
 	},
 	{
-		name: 'JQuery',
+		title: 'JQuery',
 		icon: simpleIcon.Jquery,
 		color: '#0769AD',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'JSON',
+		title: 'JSON',
 		icon: simpleIcon.Json,
 		color: '#000000',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'LinkedIn',
+		title: 'LinkedIn',
 		icon: simpleIcon.Linkedin,
 		color: '#0A66C2',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Material',
+		title: 'Material',
 		icon: simpleIcon.Mui,
 		color: '#007FFF',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'MongoDB',
+		title: 'MongoDB',
 		icon: simpleIcon.Mongodb,
 		color: '#47A248',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'MySQL',
+		title: 'MySQL',
 		icon: simpleIcon.Mysql,
 		color: '#4479A1',
 		shadow: '#FFFFFF',
 		top: '-20%',
 	},
 	{
-		name: 'Netlify',
+		title: 'Netlify',
 		icon: simpleIcon.Netlify,
 		color: '#00C7B7',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'NextJS',
+		title: 'NextJS',
 		icon: simpleIcon.Nextdotjs,
 		color: '#000000',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'NodeJS',
+		title: 'NodeJS',
 		icon: simpleIcon.Nodedotjs,
 		color: '#339933',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Nodemon',
+		title: 'Nodemon',
 		icon: simpleIcon.Nodemon,
 		color: '#76D04B',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'NPM',
+		title: 'NPM',
 		icon: simpleIcon.Npm,
 		color: '#CB3837',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Python',
+		title: 'Python',
 		icon: simpleIcon.Python,
 		color: '#3776AB',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'ReactJS',
+		title: 'ReactJS',
 		icon: simpleIcon.ReactLogo,
 		color: '#61DAFB',
 		shadow: '#36354F',
 	},
 	{
-		name: 'Redux',
+		title: 'Redux',
 		icon: simpleIcon.Redux,
 		color: '#764ABC',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Sequelize',
+		title: 'Sequelize',
 		icon: simpleIcon.Sequelize,
 		color: '#52B0E7',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Slack',
+		title: 'Slack',
 		icon: simpleIcon.Slack,
 		color: '#4A154B',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'Stack Overflow',
+		title: 'Stack Overflow',
 		icon: simpleIcon.Stackoverflow,
 		color: '#F58025',
 		shadow: '#FFFFFF',
 		top: '-55%',
 	},
 	{
-		name: 'Styled Components',
+		title: 'Styled Components',
 		icon: simpleIcon.Styledcomponents,
 		color: '#DB7093',
 		shadow: '#FFFFFF',
 		top: '-25%',
 	},
 	{
-		name: 'SVG',
+		title: 'SVG',
 		icon: simpleIcon.Svg,
 		color: '#FFB13B',
 		shadow: '#36354F',
 	},
 	{
-		name: 'Tailwind',
+		title: 'Tailwind',
 		icon: simpleIcon.Tailwindcss,
 		color: '#06B6D4',
 		shadow: '#FFFFFF',
 		top: '-20%',
 	},
 	{
-		name: 'TypeScript',
+		title: 'TypeScript',
 		icon: simpleIcon.Typescript,
 		color: '#3178C6',
 		shadow: '#FFFFFF',
 		top: '-40%',
 	},
 	{
-		name: 'Vite',
+		title: 'Vite',
 		icon: simpleIcon.Vite,
 		color: '#646CFF',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'VSCode',
+		title: 'VSCode',
 		icon: simpleIcon.Visualstudiocode,
 		color: '#007ACC',
 		shadow: '#FFFFFF',
 	},
 	{
-		name: 'WebPack',
+		title: 'WebPack',
 		icon: simpleIcon.Webpack,
 		color: '#8DD6F9',
 		shadow: '#36354F',
@@ -272,22 +272,22 @@ export const Toolbox = ({ openToolbox, closeToolbox }) => {
 		<Styled.Modal
 			ref={ref}
 			onCancel={closeToolbox}>
-			<Styled.Wrapper>
-				{icons.map((icon, index) => (
-					<Styled.ToolboxIconWrapper key={index}>
-						<Styled.ToolboxIcon
-							// key={index}
-							icon={icon.icon}
-							color={icon.color}></Styled.ToolboxIcon>
+			<Styled.Container>
+				{icons.map((item, index) => (
+					<Styled.IconWrapper key={index}>
+						<Styled.Icon
+							icon={item.icon}
+							color={item.color}
+						/>
 						<Styled.Tooltip
-							$top={icon.top}
-							$color={icon.color}
-							$shadow={icon.shadow}>
-							{icon.name}
+							$top={item.top}
+							$color={item.color}
+							$shadow={item.shadow}>
+							{item.title}
 						</Styled.Tooltip>
-					</Styled.ToolboxIconWrapper>
+					</Styled.IconWrapper>
 				))}
-			</Styled.Wrapper>
+			</Styled.Container>
 			<Styled.CloseBtn onClick={closeToolbox} />
 		</Styled.Modal>
 	)
