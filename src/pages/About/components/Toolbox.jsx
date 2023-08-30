@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
-import { breakpoints, screen } from '../../../GlobalStyle.jsx'
+import { screen } from '../../../GlobalStyle.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
 import * as simpleIcon from '@styled-icons/simple-icons'
 
@@ -9,7 +9,6 @@ const icons = [
 		title: 'Apollo',
 		icon: simpleIcon.Apollographql,
 		color: '#311C87',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Babel',
@@ -21,164 +20,138 @@ const icons = [
 		title: 'Bootstrap',
 		icon: simpleIcon.Bootstrap,
 		color: '#7952B3',
-		shadow: '#FFFFFF',
-		top: '-25%',
+		top: '-1.375rem',
 	},
 	{
 		title: 'CodePen',
 		icon: simpleIcon.Codepen,
 		color: '#000000',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'CSS',
 		icon: simpleIcon.Css3,
 		color: '#1572B6',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'ESLint',
 		icon: simpleIcon.Eslint,
 		color: '#4B32C3',
-		shadow: '#FFFFFF',
-		top: '-30%',
+		top: '-1.4375rem',
 	},
 	{
 		title: 'Flask',
 		icon: simpleIcon.Flask,
 		color: '#000000',
-		shadow: '#FFFFFF',
-		top: '-25%',
+		top: '-1.4375rem',
 	},
 	{
 		title: 'Git',
 		icon: simpleIcon.Git,
 		color: '#F05032',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'GitHub',
 		icon: simpleIcon.Github,
 		color: '#181717',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'GitLab',
 		icon: simpleIcon.Gitlab,
 		color: '#FC6D26',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'GraphQL',
 		icon: simpleIcon.Graphql,
 		color: '#E10098',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Handlebars',
 		icon: simpleIcon.Handlebarsdotjs,
 		color: '#000000',
-		shadow: '#FFFFFF',
-		top: '-15%',
+		top: '-1rem',
 	},
 	{
 		title: 'Heroku',
 		icon: simpleIcon.Heroku,
 		color: '#430098',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'HTML',
 		icon: simpleIcon.Html5,
 		color: '#E34F26',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'JavaScript',
 		icon: simpleIcon.Javascript,
 		color: '#F7DF1E',
 		shadow: '#36354F',
-		top: '-40%',
 	},
 	{
 		title: 'Jest',
 		icon: simpleIcon.Jest,
 		color: '#C21325',
-		shadow: '#FFFFFF',
-		top: '-40%',
 	},
 	{
 		title: 'JQuery',
 		icon: simpleIcon.Jquery,
 		color: '#0769AD',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'JSON',
 		icon: simpleIcon.Json,
 		color: '#000000',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'LinkedIn',
 		icon: simpleIcon.Linkedin,
 		color: '#0A66C2',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Material',
 		icon: simpleIcon.Mui,
 		color: '#007FFF',
-		shadow: '#FFFFFF',
+		top: '-1.375rem',
 	},
 	{
 		title: 'MongoDB',
 		icon: simpleIcon.Mongodb,
 		color: '#47A248',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'MySQL',
 		icon: simpleIcon.Mysql,
 		color: '#4479A1',
-		shadow: '#FFFFFF',
-		top: '-20%',
+		top: '-1rem',
 	},
 	{
 		title: 'Netlify',
 		icon: simpleIcon.Netlify,
 		color: '#00C7B7',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'NextJS',
 		icon: simpleIcon.Nextdotjs,
 		color: '#000000',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'NodeJS',
 		icon: simpleIcon.Nodedotjs,
 		color: '#339933',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Nodemon',
 		icon: simpleIcon.Nodemon,
 		color: '#76D04B',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'NPM',
 		icon: simpleIcon.Npm,
 		color: '#CB3837',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Python',
 		icon: simpleIcon.Python,
 		color: '#3776AB',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'ReactJS',
@@ -190,33 +163,28 @@ const icons = [
 		title: 'Redux',
 		icon: simpleIcon.Redux,
 		color: '#764ABC',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Sequelize',
 		icon: simpleIcon.Sequelize,
 		color: '#52B0E7',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Slack',
 		icon: simpleIcon.Slack,
 		color: '#4A154B',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'Stack Overflow',
 		icon: simpleIcon.Stackoverflow,
 		color: '#F58025',
-		shadow: '#FFFFFF',
-		top: '-55%',
+		top: '-2.375rem',
 	},
 	{
 		title: 'Styled Components',
 		icon: simpleIcon.Styledcomponents,
 		color: '#DB7093',
-		shadow: '#FFFFFF',
-		top: '-25%',
+		top: '-1.375rem',
 	},
 	{
 		title: 'SVG',
@@ -228,27 +196,22 @@ const icons = [
 		title: 'Tailwind',
 		icon: simpleIcon.Tailwindcss,
 		color: '#06B6D4',
-		shadow: '#FFFFFF',
-		top: '-20%',
+		top: '-1rem',
 	},
 	{
 		title: 'TypeScript',
 		icon: simpleIcon.Typescript,
 		color: '#3178C6',
-		shadow: '#FFFFFF',
-		top: '-40%',
 	},
 	{
 		title: 'Vite',
 		icon: simpleIcon.Vite,
 		color: '#646CFF',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'VSCode',
 		icon: simpleIcon.Visualstudiocode,
 		color: '#007ACC',
-		shadow: '#FFFFFF',
 	},
 	{
 		title: 'WebPack',
@@ -318,9 +281,8 @@ const tooltipHover = keyframes`
 
 const Modal = styled.dialog`
 	width: 90%;
-	max-width: 75rem;
+	max-width: 70rem;
 	height: max-content;
-	/* max-height: 95%; */
 	max-height: calc(100dvh - 3rem);
 	margin: auto;
 	outline: none;
@@ -335,24 +297,6 @@ const Modal = styled.dialog`
 	&::backdrop {
 		animation: ${fadeIn} 1000ms ease both;
 		background: hsla(0, 0%, 0%, 0.625);
-	}
-	@media ${screen.landscape} {
-		width: 85%;
-	}
-	@media ${screen.minSm} {
-		width: 85%;
-		@media ${screen.landscape} {
-			width: 80%;
-		}
-	}
-	@media ${screen.minMd} {
-		width: 80%;
-		@media ${screen.landscape} {
-			width: 75%;
-		}
-	}
-	@media ${screen.minLg} {
-		width: 75%;
 	}
 `
 
@@ -377,36 +321,14 @@ const CloseBtn = styled(faIcon.CircleXmark)`
 
 const ToolboxContainer = styled.div`
 	display: grid;
-	row-gap: clamp(2.25rem, 1.722rem + 2.222vw, 3.5rem);
-	column-gap: clamp(1.5rem, 0.867rem + 2.667vw, 3rem);
-	margin: 2.5rem 5%;
-	/* @media (width >= ${breakpoints.xl}) { */
-	@media ${screen.xl} {
-		grid-template-columns: repeat(8, 1fr);
-	}
-	/* @media (width < ${breakpoints.xl}) { */
-	/* @media ${screen.maxLg} { */
-	@media ${screen.lg} {
-		grid-template-columns: repeat(5, 1fr);
-		@media ${screen.landscape} {
-			grid-template-columns: repeat(8, 1fr);
-		}
-	}
-	/* @media (width < ${breakpoints.lg}) { */
-	/* @media ${screen.maxMd} { */
-	@media ${screen.md} {
-		grid-template-columns: repeat(5, 1fr);
-		@media ${screen.landscape} {
-			grid-template-columns: repeat(8, 1fr);
-		}
-	}
-	/* @media (width < ${breakpoints.md}) { */
-	/* @media ${screen.maxSm} { */
-	@media ${screen.sm} {
-		grid-template-columns: repeat(4, 1fr);
-	}
+	grid-template-columns: repeat(5, 1fr);
+	row-gap: 2.75rem;
+	margin: 2.5rem 2.5% 1rem;
 	@media ${screen.xs} {
 		grid-template-columns: repeat(4, 1fr);
+	}
+	@media ${screen.minMd} {
+		grid-template-columns: repeat(8, 1fr);
 	}
 `
 
@@ -416,19 +338,20 @@ const Tooltip = styled.div`
 	width: min-content;
 	color: ${({ $color }) => $color};
 	text-shadow: ${({ $shadow }) =>
-		`0.09375rem 0 ${$shadow}, 0 0.09375rem  ${$shadow}`};
+		$shadow
+			? `0.09375rem 0 ${$shadow}, 0 0.09375rem ${$shadow}`
+			: '0.09375rem 0 hsla(0, 0%, 100%, 1), 0 0.09375rem hsla(0, 0%, 100%, 1)'};
 	text-align: center;
 	line-height: 0.9;
-	font-size: clamp(0.75rem, 0.624rem + 0.469vw, 1rem);
-	font-weight: 900;
-	top: ${({ $top }) => $top || '-35%'};
+	font-size: clamp(0.875rem, 0.844rem + 0.117vw, 0.938rem);
+	font-weight: 700;
+	top: ${({ $top }) => $top || '-1.5rem'};
 	left: 50%;
 	transform: translateX(-50%);
 `
 
 const IconWrapper = styled.div`
 	position: relative;
-	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -442,6 +365,7 @@ const Icon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
 	width: 100%;
+	max-width: clamp(2.5rem, 1.244rem + 4.695vw, 5rem);
 	display: flex;
 	justify-content: center;
 	align-items: center;

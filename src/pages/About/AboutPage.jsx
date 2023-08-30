@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { breakpoints } from '../../GlobalStyle.jsx'
+import { screen } from '../../GlobalStyle.jsx'
 import { Resume } from './components/Resume.jsx'
 import { Toolbox } from './components/Toolbox.jsx'
 import { AboutIcon } from './components/About.icons.jsx'
@@ -79,7 +79,7 @@ const PageWrapper = styled.div`
 	padding: 2rem;
 	padding-bottom: 5rem;
 	overflow-y: ${({ $overflow }) => $overflow};
-	@media (width >= ${breakpoints.md}) {
+	@media ${screen.minSm} {
 		display: block;
 	}
 `
@@ -93,7 +93,7 @@ const Image = styled.img`
 	box-shadow: 0.375rem 0.375rem 0.5rem 0.25rem hsla(0, 0%, 0%, 0.4);
 	margin-bottom: 2rem;
 	padding: 0.5rem;
-	@media (width >= ${breakpoints.md}) {
+	@media ${screen.minSm} {
 		width: clamp(18.5rem, 11.75rem + 14.063vw, 23rem);
 		float: right;
 		box-shadow: -0.375rem 0.375rem 0.5rem 0.25rem hsla(0, 0%, 0%, 0.4);
@@ -108,7 +108,7 @@ const TextContainer = styled.div`
 	flex-direction: column;
 	gap: 1.25rem;
 	margin-bottom: 2rem;
-	@media (width >= ${breakpoints.md}) {
+	@media ${screen.minSm} {
 		display: block;
 		margin-bottom: clamp(2rem, 1.25rem + 1.563vw, 2.5rem);
 	}
@@ -122,11 +122,11 @@ const Text = styled.div`
 	line-height: 1.375;
 	&:nth-of-type(1) {
 		margin-bottom: clamp(1.75rem, 1.25rem + 1.25vw, 2.25rem);
-		@media (width < ${breakpoints.md}) {
+		@media ${screen.maxSm} {
 			margin-bottom: 0;
 		}
 	}
-	@media (width >= ${breakpoints.md}) {
+	@media ${screen.minSm} {
 		font-size: clamp(1.25rem, 1.063rem + 0.391vw, 1.375rem);
 		line-height: 1.5;
 	}
@@ -140,7 +140,7 @@ const BtnsContainer = styled.div`
 	align-items: center;
 	column-gap: 2rem;
 	row-gap: 1.25rem;
-	@media (width >= ${breakpoints.lg}) {
+	@media ${screen.minMd} {
 		width: 75%;
 	}
 `
@@ -158,7 +158,7 @@ const Button = styled(AboutIcon)`
 		stroke: var(--color-secondary);
 		transform: scale(1.125);
 	}
-	@media (width >= ${breakpoints.md}) {
+	@media ${screen.minSm} {
 		width: clamp(12rem, 6rem + 12.5vw, 16rem);
 	}
 `
