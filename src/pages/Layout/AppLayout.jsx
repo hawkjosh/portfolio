@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import { Footer } from './components/Footer.jsx'
-import { Navbar } from './components/Navbar.jsx'
+import { FooterComponent } from './components/FooterComponent.jsx'
+import { NavbarComponent } from './components/NavbarComponent.jsx'
 import { Outlet } from 'react-router-dom'
 
 export const AppLayout = () => {
 	return (
 		<Layout>
-			<Navbar />
+			<NavbarComponent />
 			<Outlet />
-			<Footer />
+			<FooterComponent />
 		</Layout>
 	)
 }

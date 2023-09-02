@@ -9,6 +9,7 @@ export const breakpoints = {
 
 export const screen = {
 	xs: '(width < 26.75rem)',
+  minXs: '(width >= 26.75rem)',
 	sm: '(26.75rem <= width < 48rem)',
 	minSm: '(width >= 48rem)',
 	maxSm: '(width < 48rem)',
@@ -22,12 +23,6 @@ export const screen = {
 	portrait: '(orientation: portrait)',
 	landscape: '(orientation: landscape)',
 	noTouch: '(hover: hover)',
-  mobilePortrait: '(width < 48rem) and (max-aspect-ratio: 3/4)',
-  // mobileLandscape: '(width < 53rem) and (min-aspect-ratio: 2/1)',
-  mobileLandscape: '(width < 53rem) and (height < 24rem)',
-  tabletPortrait: '(width < 62.5rem) and (max-aspect-ratio: 9/10)',
-  tabletLandscape: '(width < 80rem) and (min-aspect-ratio: 3/2)',
-  laptop: '(width >= 80rem)',
 }
 
 export const GlobalStyle = createGlobalStyle`

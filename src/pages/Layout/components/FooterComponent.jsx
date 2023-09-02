@@ -1,0 +1,129 @@
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { useNavMin } from '../../../hooks/useNavMin.jsx'
+import { useStaticNav } from '../../../hooks/useStaticNav.jsx'
+import { LayoutIcon } from '../components/Layout.icons.jsx'
+import * as remixIcon from '@styled-icons/remix-line'
+
+const icons = [
+	{
+		icon: remixIcon.Linkedin,
+		link: 'https://www.linkedin.com/in/josh-hawk-6591a3230/',
+	},
+	{
+		icon: remixIcon.Github,
+		link: 'https://github.com/hawkjosh',
+	},
+	{
+		icon: remixIcon.Codepen,
+		link: 'https://codepen.io/hawkjosh',
+	},
+	{
+		icon: remixIcon.StackOverflow,
+		link: 'https://stackoverflow.com/users/19513873/hawkjosh?tab=profile',
+	},
+]
+
+export const FooterComponent = () => {
+	const navMin = useNavMin()
+	const staticNav = useStaticNav()
+
+	return (
+		<ComponentWrapper $static={staticNav ? 'static' : ''}>
+			{navMin ? (
+				<Footer>
+					{icons.map((item, index) => (
+						<SocialLink
+							key={index}
+							to={item.link}
+							target='_blank'
+							rel='noreferrer'>
+							<SocialIcon
+								icon={item.icon}
+								$static={staticNav ? 'static' : ''}
+							/>
+						</SocialLink>
+					))}
+				</Footer>
+			) : (
+				<Footer>
+					<Copywrite>© {new Date().getFullYear()} Joshua Wilde Hawk</Copywrite>
+					<LogoIcon type='footer' />
+				</Footer>
+			)}
+		</ComponentWrapper>
+	)
+}
+
+// Styled-Components
+const ComponentWrapper = styled.div`
+	width: 100%;
+	height: 4rem;
+	position: fixed;
+	bottom: -0.0625rem;
+	background: var(--color-secondary);
+	border-top: solid hsla(360, 100%, 100%, 1);
+	${({ $static }) =>
+		$static &&
+		`
+		height: 3rem;
+  `}
+`
+
+const Footer = styled.div`
+	width: 100%;
+	max-width: 80rem;
+	height: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: clamp(2.5rem, 1.145rem + 6.024vw, 5rem);
+	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
+	font-weight: 300;
+`
+
+const Copywrite = styled.div`
+	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
+	font-weight: 300;
+`
+
+const LogoIcon = styled(LayoutIcon)`
+	display: flex;
+	width: 2.5rem;
+	fill: hsla(360, 100%, 100%, 1);
+	stroke: var(--color-primary);
+	transition: transform 500ms ease-out;
+	&:hover {
+		transform: scale(1.0625);
+		fill: var(--color-primary);
+		stroke: hsla(360, 100%, 100%, 1);
+		cursor: grab;
+	}
+`
+
+const SocialLink = styled(Link)`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
+
+const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
+	<IconComponent {...rest} />
+))`
+	width: 2rem;
+	color: hsla(360, 100%, 100%, 1);
+	transition-property: width, transform;
+	transition-duration: 500ms, 250ms;
+	transition-timing-function: ease-in-out, ease;
+	cursor: pointer;
+	&:hover {
+		color: var(--color-primary);
+		transform: scale(1.25) translateY(-5%);
+	}
+	${({ $static }) =>
+		$static &&
+		`
+		width: 1.75rem;
+  `}
+`
