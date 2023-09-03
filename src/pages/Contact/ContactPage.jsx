@@ -76,7 +76,7 @@ const Title = styled.div`
 	color: var(--color-secondary);
 `
 
-const Button = styled.div`
+const Button = styled.button`
 	grid-column: 3 / 5;
 	grid-row: 1 / 2;
 	place-self: end;
