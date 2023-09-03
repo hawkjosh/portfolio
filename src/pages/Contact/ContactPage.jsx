@@ -16,7 +16,7 @@ export const ContactPage = () => {
 				<input
 					type='hidden'
 					name='_next'
-					value='https://hawks-nest.netlify.app/thanks'
+					value='https://hawkjosh.com/thanks'
 				/>
 				<InputContainer>
 					<Input
