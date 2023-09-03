@@ -113,12 +113,12 @@ export const WorkSamplesPage = () => {
 				})}
 				<ArrowIcon
 					icon={faIcon.CircleChevronLeft}
-					$left='5%'
+					style={{left: '5%'}}
 					onClick={handleLeftClick}
 				/>
 				<ArrowIcon
 					icon={faIcon.CircleChevronRight}
-					$right='5%'
+					style={{right: '5%'}}
 					onClick={handleRightClick}
 				/>
 			</ImageSection>
@@ -227,8 +227,6 @@ const ArrowIcon = styled(({ icon: IconComponent, ...rest }) => (
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	left: ${(props) => props.$left || null};
-	right: ${(props) => props.$right || null};
 	background: transparent;
 	width: clamp(3rem, 2.156rem + 3.556vw, 5rem);
 	color: hsla(210, 47%, 28%, 1);
