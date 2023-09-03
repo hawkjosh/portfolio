@@ -227,8 +227,8 @@ const ArrowIcon = styled(({ icon: IconComponent, ...rest }) => (
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	left: ${({ $left }) => $left || ''};
-	right: ${({ $right }) => $right || ''};
+	left: ${(props) => props.$left || ''};
+	right: ${(props) => props.$right || ''};
 	background: transparent;
 	width: clamp(3rem, 2.156rem + 3.556vw, 5rem);
 	color: hsla(211, 30%, 24%, 1);
