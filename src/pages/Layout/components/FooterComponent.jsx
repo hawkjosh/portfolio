@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { useNavMin } from '../../../hooks/useNavMin.jsx'
-import { useStaticNav } from '../../../hooks/useStaticNav.jsx'
+import { useNavEffects } from '../../../hooks/useNavEffects.jsx'
 import { LayoutIcon } from '../components/Layout.icons.jsx'
 import * as remixIcon from '@styled-icons/remix-line'
 
@@ -25,13 +24,21 @@ const icons = [
 ]
 
 export const FooterComponent = () => {
-	const navMin = useNavMin()
-	const staticNav = useStaticNav()
+	const { fixed, min } = useNavEffects()
 
 	return (
-		<ComponentWrapper $static={staticNav ? 'static' : ''}>
-			{navMin ? (
-				<Footer>
+		<ComponentWrapper height={fixed ? '3rem' : '4rem'}>
+			<Footer>
+				<FooterContent display={min ? 'none' : 'flex'}>
+					<Copywrite fontSize={fixed ? '1.375rem' : '1.5rem'}>
+						© {new Date().getFullYear()} Joshua Wilde Hawk
+					</Copywrite>
+					<LogoIcon
+						type='footer'
+						width={fixed ? '2.25rem' : '2.625rem'}
+					/>
+				</FooterContent>
+				<FooterContent display={min ? 'flex' : 'none'}>
 					{icons.map((item, index) => (
 						<SocialLink
 							key={index}
@@ -40,17 +47,12 @@ export const FooterComponent = () => {
 							rel='noreferrer'>
 							<SocialIcon
 								icon={item.icon}
-								$static={staticNav ? 'static' : ''}
+								width={fixed ? '1.75rem' : '2rem'}
 							/>
 						</SocialLink>
 					))}
-				</Footer>
-			) : (
-				<Footer>
-					<Copywrite>© {new Date().getFullYear()} Joshua Wilde Hawk</Copywrite>
-					<LogoIcon type='footer' />
-				</Footer>
-			)}
+				</FooterContent>
+			</Footer>
 		</ComponentWrapper>
 	)
 }
@@ -58,16 +60,11 @@ export const FooterComponent = () => {
 // Styled-Components
 const ComponentWrapper = styled.div`
 	width: 100%;
-	height: 4rem;
+	height: ${(props) => props.height};
 	position: fixed;
 	bottom: -0.0625rem;
 	background: var(--color-secondary);
 	border-top: solid hsla(360, 100%, 100%, 1);
-	${({ $static }) =>
-		$static &&
-		`
-		height: 3rem;
-  `}
 `
 
 const Footer = styled.div`
@@ -75,22 +72,25 @@ const Footer = styled.div`
 	max-width: 80rem;
 	height: 100%;
 	margin: auto;
-	display: flex;
+`
+
+const FooterContent = styled.div`
+	width: 100%;
+	height: 100%;
+	display: ${(props) => props.display};
 	justify-content: center;
 	align-items: center;
-	gap: clamp(2.5rem, 1.145rem + 6.024vw, 5rem);
-	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
-	font-weight: 300;
+	gap: clamp(2.5rem, 1.244rem + 4.695vw, 5rem);
 `
 
 const Copywrite = styled.div`
-	font-size: clamp(1.5rem, 0.7rem + 1.25vw, 2rem);
+	font-size: ${(props) => props.fontSize};
 	font-weight: 300;
 `
 
 const LogoIcon = styled(LayoutIcon)`
 	display: flex;
-	width: 2.5rem;
+	width: ${(props) => props.width};
 	fill: hsla(360, 100%, 100%, 1);
 	stroke: var(--color-primary);
 	transition: transform 500ms ease-out;
@@ -111,9 +111,9 @@ const SocialLink = styled(Link)`
 const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
-	width: 2rem;
+	width: ${(props) => props.width};
 	color: hsla(360, 100%, 100%, 1);
-	transition-property: width, transform;
+	transition-property: color, transform;
 	transition-duration: 500ms, 250ms;
 	transition-timing-function: ease-in-out, ease;
 	cursor: pointer;
@@ -121,9 +121,4 @@ const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
 		color: var(--color-primary);
 		transform: scale(1.25) translateY(-5%);
 	}
-	${({ $static }) =>
-		$static &&
-		`
-		width: 1.75rem;
-  `}
 `

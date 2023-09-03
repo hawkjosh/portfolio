@@ -1,8 +1,9 @@
 import styled, { keyframes } from 'styled-components'
 import { Link, NavLink } from 'react-router-dom'
-import { breakpoints, screen } from '../../../GlobalStyle.jsx'
+import { screen } from '../../../GlobalStyle.jsx'
 import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
 import { useStaticNav } from '../../../hooks/useStaticNav.jsx'
+import { useNavEffects } from '../../../hooks/useNavEffects.jsx'
 import { MenuComponent } from './MenuComponent.jsx'
 import { LayoutIcon } from '../components/Layout.icons.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
@@ -47,71 +48,96 @@ const icons = [
 ]
 
 export const NavbarComponent = () => {
-	const shrink = useNavShrink()
+	// const shrink = useNavShrink()
 	const staticNav = useStaticNav()
+	const { fixed, shrink } = useNavEffects()
 
 	return (
 		<ComponentWrapper
-			$shrink={shrink ? 'shrink' : ''}
-			$static={staticNav ? 'static' : ''}>
+			height={fixed || shrink ? '5rem' : '8rem'}
+			top={fixed ? '0' : '-0.0625rem'}>
 			<Navbar>
 				<MenuSection>
 					<MenuComponent />
 				</MenuSection>
 
-				<NavBrandSection $shrink={shrink ? 'shrink' : ''}>
-					<Icon
-						type='navbar'
-						// $shrink={shrink ? 'shrink' : ''}
-						$static={staticNav ? 'static' : ''}
-					/>
-					<Title
-						// $shrink={shrink ? 'shrink' : ''}
-						$static={staticNav ? 'static' : ''}>
-						The Hawk's Nest
-					</Title>
-				</NavBrandSection>
+				<NavSectionContainer flexBasis={screen.minSm ? '40%' : screen.minMd ? '32.5%' : '100%'}>
+					<NavBrandSection
+						transform={shrink ? 'scale(0.75)' : null}
+						transition={
+							shrink
+								? 'transform 500ms ease-in-out'
+								: 'transform 250ms ease-in-out'
+						}>
+						<Icon
+							type='navbar'
+							// $shrink={shrink ? 'shrink' : ''}
+							$static={staticNav ? 'static' : ''}
+						/>
+						<Title
+							// $shrink={shrink ? 'shrink' : ''}
+							$static={staticNav ? 'static' : ''}>
+							The Hawk's Nest
+						</Title>
+					</NavBrandSection>
+				</NavSectionContainer>
 
-				<NavLinkSection $shrink={shrink ? 'shrink' : ''}>
-					{links.map((item, index) => {
-						const active = item.url === location.pathname
-						return (
-							<PageLink
+				<NavSectionContainer flexBasis={screen.minSm ? '60%' : screen.minMd ? '45%' : null}>
+					<NavLinkSection
+						transform={shrink ? 'scale(0.75)' : null}
+						transition={
+							shrink
+								? 'transform 500ms ease-in-out'
+								: 'transform 250ms ease-in-out'
+						}>
+						{links.map((item, index) => {
+							const active = item.url === location.pathname
+							return (
+								<PageLink
+									key={index}
+									to={item.url}
+									// $shrink={shrink ? 'shrink' : ''}
+									$active={active ? 'active' : ''}>
+									<CaretIcon
+										icon={faIcon.CaretLeft}
+										size={15}
+										$active={active ? 'active' : ''}
+									/>
+									{item.title}
+									<CaretIcon
+										icon={faIcon.CaretRight}
+										size={15}
+										$active={active ? 'active' : ''}
+									/>
+								</PageLink>
+							)
+						})}
+					</NavLinkSection>
+				</NavSectionContainer>
+
+				<NavSectionContainer flexBasis={screen.minMd ? '22.5%' : null} borderLeft={screen.minMd ? 'solid hsla(360, 100%, 100%, 1)' : 'none'}>
+					<NavSocialSection
+						transform={shrink ? 'scale(0.75)' : null}
+						transition={
+							shrink
+								? 'transform 500ms ease-in-out'
+								: 'transform 250ms ease-in-out'
+						}>
+						{icons.map((item, index) => (
+							<SocialLink
 								key={index}
-								to={item.url}
-								// $shrink={shrink ? 'shrink' : ''}
-								$active={active ? 'active' : ''}>
-								<CaretIcon
-									icon={faIcon.CaretLeft}
-									size={15}
-									$active={active ? 'active' : ''}
+								to={item.link}
+								target='_blank'
+								rel='noreferrer'>
+								<SocialIcon
+									icon={item.icon}
+									// $shrink={shrink ? 'shrink' : ''}
+									$static={staticNav ? 'static' : ''}
 								/>
-								{item.title}
-								<CaretIcon
-									icon={faIcon.CaretRight}
-									size={15}
-									$active={active ? 'active' : ''}
-								/>
-							</PageLink>
-						)
-					})}
-				</NavLinkSection>
-
-				<NavSocialSection $shrink={shrink ? 'shrink' : ''}>
-					{icons.map((item, index) => (
-						<SocialLink
-							key={index}
-							to={item.link}
-							target='_blank'
-							rel='noreferrer'>
-							<SocialIcon
-								icon={item.icon}
-								// $shrink={shrink ? 'shrink' : ''}
-								$static={staticNav ? 'static' : ''}
-							/>
-						</SocialLink>
-					))}
-				</NavSocialSection>
+							</SocialLink>
+						))}
+					</NavSocialSection>
+				</NavSectionContainer>
 			</Navbar>
 		</ComponentWrapper>
 	)
@@ -127,29 +153,18 @@ const rotate = keyframes`
 	}
 `
 
-export const ComponentWrapper = styled.div`
+const ComponentWrapper = styled.div`
 	width: 100%;
-	height: 8rem;
+	height: ${(props) => props.height};
 	position: sticky;
-	top: -0.0625rem;
+	top: ${(props) => props.top};
 	background: var(--color-secondary);
 	border-bottom: solid hsla(360, 100%, 100%, 1);
 	transition: height 250ms ease-in-out;
 	z-index: 4;
-	${({ $shrink }) =>
-		$shrink &&
-		`
-		height: 5rem;
-  `}
-	${({ $static }) =>
-		$static &&
-		`
-		height: 5rem;
-		top: 0;
-  `}
 `
 
-export const Navbar = styled.div`
+const Navbar = styled.div`
 	width: 100%;
 	max-width: 84rem;
 	height: 100%;
@@ -159,7 +174,7 @@ export const Navbar = styled.div`
 	align-items: center;
 `
 
-export const MenuSection = styled.div`
+const MenuSection = styled.div`
 	height: 100%;
 	display: flex;
 	justify-content: flex-start;
@@ -170,33 +185,28 @@ export const MenuSection = styled.div`
 	}
 `
 
-export const NavBrandSection = styled.div`
-	flex: 1;
+const NavBrandSection = styled.div`
+	/* flex: 1; */
 	height: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: row-reverse;
 	gap: 1rem;
 	padding-right: 2.5%;
-	transition: transform 250ms ease-in-out;
+	transform: ${(props) => props.transform};
+	transition: ${(props) => props.transition};
 	@media ${screen.minSm} {
-		flex-basis: 40%;
+		/* flex-basis: 40%; */
 		flex-direction: row;
 		padding-right: 0;
 		padding-left: 2.5%;
-		${({ $shrink }) =>
-		$shrink &&
-		`
-		transform: scale(0.75);
-		transition: transform 500ms ease-in-out;
-  `}
 	}
 	@media ${screen.minMd} {
-		flex-basis: 32.5%;
+		/* flex-basis: 32.5%; */
 	}
 `
 
-export const Icon = styled(LayoutIcon)`
+const Icon = styled(LayoutIcon)`
 	display: flex;
 	width: clamp(3.5rem, 2.746rem + 2.817vw, 5rem);
 	fill: var(--color-primary);
@@ -221,14 +231,14 @@ export const Icon = styled(LayoutIcon)`
   `}
 `
 
-export const Title = styled.div`
+const Title = styled.div`
 	display: none;
 	@media ${screen.minXs} {
 		display: flex;
 		font-size: clamp(1rem, 0.498rem + 1.878vw, 2rem);
 		font-weight: 500;
 		text-transform: uppercase;
-		transition: transform 500ms ease-in-out;
+		/* transition: transform 500ms ease-in-out; */
 		/* ${({ $shrink }) =>
 			$shrink &&
 			`
@@ -243,31 +253,26 @@ export const Title = styled.div`
 	}
 `
 
-export const NavLinkSection = styled.div`
+const NavLinkSection = styled.div`
 	display: none;
 	@media ${screen.minSm} {
-		flex-basis: 60%;
+		/* flex-basis: 60%; */
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border-left: solid hsla(360, 100%, 100%, 1);
+		/* border-left: solid hsla(360, 100%, 100%, 1); */
 		padding: 0 5%;
-		transition: transform 250ms ease-in-out;
+		transform: ${(props) => props.transform};
+		transition: ${(props) => props.transition};
 	}
 	@media ${screen.minMd} {
-		flex-basis: 45%;
+		/* flex-basis: 45%; */
 		padding: 0 2.5%;
 	}
-	${({ $shrink }) =>
-		$shrink &&
-		`
-		transform: scale(0.75);
-		transition: transform 500ms ease-in-out;
-  `}
 `
 
-export const PageLink = styled(NavLink)`
+const PageLink = styled(NavLink)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -292,8 +297,7 @@ export const PageLink = styled(NavLink)`
 			transform: scale(1.125);
 			cursor: default;
 		}
-  `}
-	/* ${({ $active, $shrink }) =>
+  `}/* ${({ $active, $shrink }) =>
 		$active &&
 		$shrink &&
 		`
@@ -333,7 +337,7 @@ export const PageLink = styled(NavLink)`
   `} */
 `
 
-export const CaretIcon = styled(({ icon: IconComponent, ...rest }) => (
+const CaretIcon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
 	display: none;
@@ -344,33 +348,28 @@ export const CaretIcon = styled(({ icon: IconComponent, ...rest }) => (
 	`}
 `
 
-export const NavSocialSection = styled.div`
+const NavSocialSection = styled.div`
 	display: none;
 	@media ${screen.minMd} {
-		flex-basis: 22.5%;
+		/* flex-basis: 22.5%; */
 		height: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border-left: solid hsla(360, 100%, 100%, 1);
+		/* border-left: solid hsla(360, 100%, 100%, 1); */
 		padding: 0 2.5%;
-		transition: transform 250ms ease-in-out;
-	${({ $shrink }) =>
-		$shrink &&
-		`
-		transform: scale(0.75);
-		transition: transform 500ms ease-in-out;
-  `}
+		transform: ${(props) => props.transform};
+		transition: ${(props) => props.transition};
 	}
 `
 
-export const SocialLink = styled(Link)`
+const SocialLink = styled(Link)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 `
 
-export const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
+const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
 	width: 50%;
@@ -400,4 +399,12 @@ export const SocialIcon = styled(({ icon: IconComponent, ...rest }) => (
 		`
 		width: 45%;
   `}
+`
+
+const NavSectionContainer = styled.div`
+	width: 100%;
+	height: 100%;
+	display: ${(props) => props.display};
+	border-left: ${(props) => props.borderLeft};
+	flex-basis: ${(props) => props.flexBasis};
 `
