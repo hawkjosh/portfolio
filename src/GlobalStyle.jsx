@@ -31,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     --font-color: hsla(0, 100%, 100%, 1);
     --color-primary: hsla(168, 76%, 42%, 1);
     --color-secondary: hsla(211, 30%, 24%, 1);
+    --nav-divider: solid hsla(360, 100%, 100%, 1);
   }
 
   * {

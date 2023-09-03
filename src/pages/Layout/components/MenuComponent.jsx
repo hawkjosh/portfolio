@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { NavLink, useLocation } from 'react-router-dom'
-import { useNavShrink } from '../../../hooks/useNavbarShrink.jsx'
+import { useNavEffects } from '../../../hooks/useNavEffects.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
 
 const menuItems = [
@@ -25,9 +25,8 @@ const menuItems = [
 
 export const MenuComponent = () => {
 	const [showMenu, setShowMenu] = useState(false)
-	const shrink = useNavShrink()
 	const location = useLocation()
-	const staticNav = Boolean(location.pathname === '/work-samples')
+	const { fixed, shrink } = useNavEffects()
 
 	const toggleShowMenu = () => {
 		setShowMenu(!showMenu)
@@ -37,27 +36,24 @@ export const MenuComponent = () => {
 		<ComponentWrapper>
 			<Menu onClick={toggleShowMenu} />
 			{showMenu && (
-				<List
-					$top={staticNav ? '4.875rem' : '6.25rem'}
-					$shrink={shrink ? 'shrink' : ''}>
+				<List $top={fixed || shrink ? '4.125rem' : '6.25rem'}>
 					{menuItems.map((item, index) => {
 						const active = item.link === location.pathname
 						return (
 							<Item
 								key={index}
 								to={item.link}
-								onClick={toggleShowMenu}
-								$active={active ? 'active' : ''}>
+								onClick={toggleShowMenu}>
 								<CaretIcon
 									icon={faIcon.CaretLeft}
 									size={15}
-									$active={active ? 'active' : ''}
+									$active={active && 'block'}
 								/>
 								{item.name}
 								<CaretIcon
 									icon={faIcon.CaretRight}
 									size={15}
-									$active={active ? 'active' : ''}
+									$active={active && 'block'}
 								/>
 							</Item>
 						)
@@ -85,19 +81,14 @@ const Menu = styled(faIcon.Bars)`
 
 const List = styled.div`
 	position: absolute;
-	top: ${({ $top }) => $top};
+	top: ${(props) => props.$top};
 	left: 1.5rem;
 	background: var(--color-secondary);
 	border: 0.1875rem solid hsla(360, 100%, 100%, 1);
 	border-radius: 1.5rem;
 	padding: 0.5rem;
 	padding-right: 1rem;
-	transition: top 500ms ease-in-out;
-	${({ $shrink }) =>
-		$shrink &&
-		`
-    top: 4.125rem;
-  `}
+	transition: top 250ms ease-in-out;
 `
 
 const Item = styled(NavLink)`
@@ -113,26 +104,19 @@ const Item = styled(NavLink)`
 		transform: scale(1.15) translate(0.5rem);
 		color: var(--color-primary);
 	}
-	${({ $active }) =>
-		$active &&
-		`
-		font-weight: 500;
-		scale: 1.15;
+	&.active {
+		font-weight: 700;
+		cursor: default;
 		&:hover {
 			color: unset;
 			transform: unset;
-			cursor: default;
 		}
-  `}
+	}
 `
 
 const CaretIcon = styled(({ icon: IconComponent, ...rest }) => (
 	<IconComponent {...rest} />
 ))`
+	display: ${(props) => props.$active || 'none'};
 	color: var(--color-primary);
-	display: none;
-	${({ $active }) =>
-		$active &&
-		`display: block;
-`}
 `

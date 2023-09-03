@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { screen } from '../../../GlobalStyle.jsx'
 import * as faIcon from '@styled-icons/fa-solid'
