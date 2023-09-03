@@ -113,12 +113,12 @@ export const WorkSamplesPage = () => {
 				})}
 				<ArrowIcon
 					icon={faIcon.CircleChevronLeft}
-					style={{left: '5%'}}
+					style={{ left: '5%' }}
 					onClick={handleLeftClick}
 				/>
 				<ArrowIcon
 					icon={faIcon.CircleChevronRight}
-					style={{right: '5%'}}
+					style={{ right: '5%' }}
 					onClick={handleRightClick}
 				/>
 			</ImageSection>
