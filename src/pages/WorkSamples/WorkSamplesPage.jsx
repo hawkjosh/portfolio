@@ -76,6 +76,16 @@ const items = [
 		github: 'https://github.com/hawkjosh/python-flask',
 		bonus: null,
 	},
+	{
+		index: 7,
+		image: '/mlb_hq.png',
+		alt: 'MLB HQ Image',
+		title: 'MLB Headquarters',
+		info: `Discover a dynamic MLB stats app designed to bring you real-time data directly from the diamond. This Next.js-powered application employs TailwindCSS for a visually compelling and responsive user experience. Leveraging API calls to the official MLB stats api, the app populates specialized team pages with current statistics and other useful information. The result is a seamless blend of front-end aesthetics and back-end functionality, creating an indispensable tool for any baseball aficionado.`,
+		website: 'https://next-mlb.vercel.app/',
+		github: 'https://github.com/hawkjosh/next-mlb',
+		bonus: null,
+	},
 ]
 
 export const WorkSamplesPage = () => {
